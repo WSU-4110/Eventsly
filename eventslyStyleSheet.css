@@ -1,0 +1,69 @@
+body {
+    background-color: #EEEBEA;
+    color: #2D3043;
+    font-size: 1.1em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.colorful {
+    color: #2D3043;
+}
+  a:hover, a:active {
+    background-color:#689DC7;
+  }
+
+  form{
+    float: right;
+    background-color: #2D3043;
+  }
+
+  table, th, td {
+    border: 3.5px solid white;
+    border-collapse: collapse;
+    background-color: cornflowerblue;
+  }
+  /*For the navagation bar on each page*/
+  body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: #2D3043;
+  }
+  
+  .topnav a {
+    float: left;
+    color: #689DC7;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .topnav .search-container {
+    float: right;
+  }
+  .topnav a:hover {
+    background-color: #94ABB5;
+    color: #2D3043;
+  }
+  
+  .topnav a.active {
+    background-color: #18e7dd;
+    color: white;
+  }
+  .active {
+    background-color: #18e7dd;
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .responsive {
+    width: 100%;
+    height: auto;
+  }
