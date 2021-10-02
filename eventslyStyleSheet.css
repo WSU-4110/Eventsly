@@ -1,20 +1,22 @@
 body {
-    background-color: #EEEBEA;
-    color: #2D3043;
+    background-color: #F6F5F5;
+    color: #3A3E5E;
     font-size: 1.1em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .colorful {
-    color: #2D3043;
+    color: #3A3E5E;
 }
   a:hover, a:active {
-    background-color:#689DC7;
+    background-color:#F6F5F5;
+    opacity: 0.6;
+    transition: 0.3s;
   }
 
-  form{
+  form {
     float: right;
-    background-color: #2D3043;
+    background-color: #3A3E5E;
   }
 
   table, th, td {
@@ -22,48 +24,79 @@ body {
     border-collapse: collapse;
     background-color: cornflowerblue;
   }
-  /*For the navagation bar on each page*/
+  /*For the navigation bar on each page*/
   body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
-  .topnav {
-    overflow: hidden;
-    background-color: #2D3043;
+
+  /* Logo font CSS */
+  .logo {
+    font-family: 'Montserrat', sans-serif;
   }
   
-  .topnav a {
-    float: left;
-    color: #689DC7;
+  /* Desktop Navbar CSS */
+  nav {
+    display: block;
+    justify-content: space-between;
+    background-color: #3A3E5E;
+    width: 100%;
+    padding: 0px !important;
+    
+  }
+  
+  nav a {
+    display: block;
+    width: 100%;
+    min-width: 6rem;
     text-align: center;
+    float: left;
+    color: #F6F5F5;
     padding: 10px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  nav ul {
+    display: flex;
   }
   
-  .topnav .search-container {
+  nav .search-container {
     float: right;
   }
-  .topnav a:hover {
-    background-color: #94ABB5;
-    color: #2D3043;
+  
+  nav a:hover {
+    background-color: #F6F5F5;
+    color: #3A3E5E;
+    width: 100%;
   }
   
-  .topnav a.active {
-    background-color: #18e7dd;
-    color: white;
+  /* Main and other CSS */
+  .main {
+    width: 45%;
+    min-width: 330px;
   }
-  .active {
-    background-color: #18e7dd;
-  }
+
   .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
   }
+
   .responsive {
     width: 100%;
     height: auto;
+  }
+
+  /* Font awesome specific CSS */
+  .fas {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  footer {
+    background-color: #3A3E5E;
   }

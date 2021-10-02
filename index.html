@@ -3,21 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Eventsly</title>
-<meta name="viewport" content="width=device-width, initial-scale = 1">
-<link rel="stylesheet" href="eventslyStyleSheet.scss">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="eventslyStyleSheet.css">
+
+<!-- Font Awesome JS load for Eventsly Logo -->
+<script src="https://kit.fontawesome.com/3f6d9190cb.js" crossorigin="anonymous"></script>
+
+<!-- Google Font API load for Eventsly Logo -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
 
-<h1>Eventsly</h1>  <i class="fas fa-map-marked" style="color:#2D3043" alt="Eventsly"></i>
+<!-- Eventsly Logo -->
+<h1 class="logo"><i class="fas fa-map-marked" style="color:#2D3043" alt="Eventsly"></i>Eventsly</h1> 
+
   <header> 
-    <div class="topnav">
-      <a href="index.html">Home</a>
-      <a href="Bookmarks.html">Bookmarks</a>
-      <a href="About.html">About Us</a>
-      <a href="Contact.html">Contact</a>
-    </div>
+  <!-- Desktop Navigation bar -->   
+  <nav role="navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Bookmarks.html">Bookmarks</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+  </nav>
+
+  <!-- Login --> 
     <form action="/action_page.php">
       <input type="text" placeholder="Username" name="username">
       <input type="text" placeholder="Password" name="psw">
@@ -25,17 +39,23 @@
     </form>
   </header>
 
+<!-- Rest of Body Page -->
 <h2>Find events in your area</h2>
+
 <!--Search bar -->
 <p><center><input type="text" placeholder="Search for event.." name ="search"></center></p>
 
 <main>
+
   <!--Placeholder, will replace with real map-->
   <img src="images/exampleGoogleMap.png" alt="map" class="center">
+
 </main>
+
 <footer>
-<p> <small>All content copyright &copy; 2021, Eventsly.</small></p>
+<p><small>All content copyright &copy; 2021, Eventsly.</small></p>
 </footer>
+
 </div>
 </body>
 </html>
