@@ -16,8 +16,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
 
   <!-- Required for Leaflet map -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <link rel="stylesheet" href="/static/styles/mapStyleSheet.css">
 
 </head>
 
@@ -56,7 +61,10 @@
   <main>
 
     <!-- Leaflet Map -->
+
+    <!-- <iframe width='100%' height=400px src="https://api.mapbox.com/styles/v1/csc4110group5/ckucwad213k4v17mkl9exlivj.html?title=false&access_token=pk.eyJ1IjoiY3NjNDExMGdyb3VwNSIsImEiOiJja3VjdmR4aWcxNGZjMzFvMzd2dHJhdnZmIn0.chI1y1ZmmmcdOX0nj1NtEQ&zoomwheel=false#12/48.8665/2.3176" title="Basic" style="border:none;"></iframe> -->
     <div id="mapid"></div>
+    <script src="/static/scripts/mapScripts.js"></script>
 
   </main>
 

@@ -1,6 +1,6 @@
 /* Leaflet Map CSS */
 #mapid {
     height: 50vh;
-    width: 90%;
-    background-color: black;
+    width: 100%;
+    border: 2px solid #3A3E5E;
   }
