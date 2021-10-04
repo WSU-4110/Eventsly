@@ -24,6 +24,11 @@
     crossorigin=""></script>
   <link rel="stylesheet" href="/static/styles/mapStyleSheet.css">
 
+  <!-- Leaflet Geocoding plugin: https://github.com/domoritz/leaflet-locatecontrol -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.css" />
+
 </head>
 
 <body>
@@ -59,14 +64,11 @@
   </p>
 
   <main>
-
-    <!-- Leaflet Map -->
-
-    <!-- <iframe width='100%' height=400px src="https://api.mapbox.com/styles/v1/csc4110group5/ckucwad213k4v17mkl9exlivj.html?title=false&access_token=pk.eyJ1IjoiY3NjNDExMGdyb3VwNSIsImEiOiJja3VjdmR4aWcxNGZjMzFvMzd2dHJhdnZmIn0.chI1y1ZmmmcdOX0nj1NtEQ&zoomwheel=false#12/48.8665/2.3176" title="Basic" style="border:none;"></iframe> -->
+    <!-- Leaflet Map - these <script> tags must be after this div for some reason -->
     <div id="mapid"></div>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
     <script src="/static/scripts/mapScripts.js"></script>
-
-  </main>
+   </main>
 
   <footer>
     <p><small>All content copyright &copy; 2021, Eventsly.</small></p>
