@@ -1,37 +1,43 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="UTF-8">
-<title>Eventsly</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="/static/styles/eventslyStyleSheet.css">
+  <meta charset="UTF-8">
+  <title>Eventsly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/styles/eventslyStyleSheet.css">
 
-<!-- Font Awesome JS load for Eventsly Logo -->
-<script src="https://kit.fontawesome.com/3f6d9190cb.js" crossorigin="anonymous"></script>
+  <!-- Font Awesome JS load for Eventsly Logo -->
+  <script src="https://kit.fontawesome.com/3f6d9190cb.js" crossorigin="anonymous"></script>
 
-<!-- Google Font API load for Eventsly Logo -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet"> 
+  <!-- Google Font API load for Eventsly Logo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+
+  <!-- Required for Leaflet map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
 </head>
 
 <body>
 
-<!-- Eventsly Logo -->
-<h1 class="logo"><i class="fas fa-map-marked" style="color:#2D3043" alt="Eventsly"></i>Eventsly</h1> 
+  <!-- Eventsly Logo -->
+  <h1 class="logo"><i class="fas fa-map-marked" style="color:#2D3043" alt="Eventsly"></i>Eventsly</h1>
 
-  <header> 
-  <!-- Desktop Navigation bar -->   
-  <nav role="navigation">
+  <header>
+    <!-- Desktop Navigation bar -->
+    <nav role="navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="Bookmarks.html">Bookmarks</a></li>
         <li><a href="About.html">About Us</a></li>
         <li><a href="Contact.html">Contact</a></li>
       </ul>
-  </nav>
+    </nav>
 
-  <!-- Login --> 
+    <!-- Login -->
     <form action="/action_page.php">
       <input type="text" placeholder="Username" name="username">
       <input type="text" placeholder="Password" name="psw">
@@ -39,23 +45,26 @@
     </form>
   </header>
 
-<!-- Rest of Body Page -->
-<h2>Find events in your area</h2>
+  <!-- Rest of Body Page -->
+  <h2>Find events in your area</h2>
 
-<!--Search bar -->
-<p><center><input type="text" placeholder="Search for event.." name ="search"></center></p>
+  <!--Search bar -->
+  <p>
+    <center><input type="text" placeholder="Search for event.." name="search"></center>
+  </p>
 
-<main>
+  <main>
 
-  <!--Placeholder, will replace with real map-->
-  <img src="/static/images/exampleGoogleMap.png" alt="map" class="center"/>
+    <!-- Leaflet Map -->
+    <div id="mapid"></div>
 
-</main>
+  </main>
 
-<footer>
-<p><small>All content copyright &copy; 2021, Eventsly.</small></p>
-</footer>
+  <footer>
+    <p><small>All content copyright &copy; 2021, Eventsly.</small></p>
+  </footer>
 
-</div>
+  </div>
 </body>
+
 </html>
