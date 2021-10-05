@@ -50,8 +50,7 @@ nav a.text-link {
         /* padding: 22.5px 20px; */
         color: white;
         /* border-bottom: 1px solid #3A3E5E; */
-        border-top: 1px solid #3A3E5E;
-        border-bottom: 1px solid #3A3E5E;
+        border-top: 2px solid #3A3E5E;
     }
     nav a.active {
         box-sizing: border-box;
