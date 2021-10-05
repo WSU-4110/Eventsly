@@ -1,6 +1,6 @@
 footer {
     background-color: #3A3E5E;
-    height: 52px;
+    height: 70px;
   }
 
 footer ul {
@@ -10,7 +10,7 @@ footer ul {
     align-items: center;
     list-style-type: none;
     color: white;
-    margin: 10px 0 0 0;
+    margin: 18px 0 18px 0;
     padding: 0 1.2em;
     clear: both;
 }
