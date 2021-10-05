@@ -1,0 +1,30 @@
+footer {
+    background-color: #3A3E5E;
+    height: 52px;
+  }
+
+footer ul {
+    display: flex;
+    text-align: center;
+    justify-content:space-between;
+    align-items: center;
+    list-style-type: none;
+    color: white;
+    margin: 10px 0 0 0;
+    padding: 0 1.2em;
+    clear: both;
+}
+/*--------------------------*/
+/* styles for small screens */
+/*--------------------------*/
+@media screen and (max-width: 550px) {
+    footer li {
+        padding: 0 7px;
+    }
+    footer a {
+        font-size: 12pt;
+    }
+    footer ul {
+        font-size: 0.8rem;
+    }
+}
