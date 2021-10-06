@@ -2,7 +2,7 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'splite:///apple.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'splite:///apple.db' # the name is random. if you can think of a better one feel free to replace it.
 db = SQLAlchemy(app)
 
 @app.route("/")
