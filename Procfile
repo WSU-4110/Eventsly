@@ -1,1 +1,1 @@
-heroku ps:scale
+web: python app.py
