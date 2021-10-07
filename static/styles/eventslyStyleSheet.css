@@ -14,6 +14,10 @@ body {
     overflow: hidden;
   }
 
+h1 {
+  margin: 0;
+}
+
 /* Flexbox Styling */
 header {
   flex: 0 1 auto;
@@ -21,6 +25,7 @@ header {
 
 main {
   flex: 1 1 auto;
+  padding: 1.2em;
 }
 
 footer {
@@ -37,7 +42,6 @@ table, th, td {
   border-collapse: collapse;
   background-color: cornflowerblue;
 }
-/*For the navigation bar on each page*/
 
 .center {
   display: block;

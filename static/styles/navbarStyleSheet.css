@@ -35,7 +35,7 @@ nav {
     nav {
         flex-direction: row;
         height: 100%;
-        width: 100%;
+        width: 100%; 
     }
     .spacer {
         margin-left: auto;
@@ -45,10 +45,9 @@ nav {
         align-items: center;
         color: white;
         padding: 0 20px;
-        outline: #3A3E5E solid 2px;
-        border-top: 2px solid #3A3E5E;
-        border-bottom: 2px solid #3A3E5E;
-        box-sizing: border-box;
+        box-sizing: border-box;;
+        border: 2px solid #3A3E5E;
+        margin-left: -1px; /* prevent double border */
         height: 100%;
         font-size: 1.2rem;
     }
@@ -63,15 +62,16 @@ nav {
     }
     .logo {
         font-size: 1.6em;
-        padding-right: 1.2em;
-        padding-left: 1.2em;
+        justify-content: center;
         display: flex;
         align-items: center;
+        min-width: 221px;
     }
     .fa-map-marked {
         padding-right: 5px;
+        min-width: 32px;
       }
     .fa-stack {
-        padding-left: 20px;
+        min-width: 55px;
     }
 }
