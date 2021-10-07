@@ -10,7 +10,7 @@ nav {
 .nav-item {
     font-weight: bold;
     text-decoration: none;
-    color: #F6F5F5;
+    color: white;
   }
 .logo {
     font-family: 'Montserrat', sans-serif;
@@ -50,15 +50,14 @@ nav {
         margin-left: -1px; /* prevent double border */
         height: 100%;
         font-size: 1.2rem;
+        transition: all 0.5s ease 0s;
     }
     .active {
         background-color: white;
         color: #3A3E5E;
     }
-    a.nav-item:hover {
-        color: #3A3E5E;
-        transition: 0.3s;
-        background-color: #b0b2bf;
+    a.nav-item:hover:not(.active) {
+        background-color: #7b82b3;
     }
     .logo {
         font-size: 1.6em;
