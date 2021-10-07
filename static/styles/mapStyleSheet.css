@@ -2,5 +2,16 @@
 #mapid {
     height: 100%;
     z-index: 1;
-    background-color: black;
   }
+
+@media screen and (min-width: 1200px) {
+  #mapid {
+    /* fade in on page load */
+    animation: fadein 1.5s;
+  }
+
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
