@@ -22,5 +22,9 @@ def about():
 def contact():
     return render_template("Contact.html")
 
+@app.route("/register.html")
+def register():
+    return render_template("register.html")
+    
 if __name__ == "__main__":
     app.run(debug=True)
