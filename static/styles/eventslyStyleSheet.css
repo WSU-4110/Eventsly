@@ -6,7 +6,6 @@ body {
 body {
     background-color: #F6F5F5;
     color: #3A3E5E;
-    font-size: 1.1em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-flow: column;
