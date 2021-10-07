@@ -1,39 +1,30 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 body {
     background-color: #F6F5F5;
     color: #3A3E5E;
     font-size: 1.1em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    overflow: hidden;
   }
 
-html,
-
 /* Flexbox Styling */
-body {
-  height: 100%;
-  margin: 0;
-}
-
 header {
   flex: 0 1 auto;
 }
 
 main {
   flex: 1 1 auto;
-  position: relative;
 }
 
 footer {
-  flex: 0 1 40px;
-}
-
-.container {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
-}
-
-.colorful {
-    color: #3A3E5E;
+  flex: 0 1 auto;
 }
 
 form {
@@ -47,15 +38,6 @@ table, th, td {
   background-color: cornflowerblue;
 }
 /*For the navigation bar on each page*/
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-/* Main and other CSS */
-/* .main {
-  width: 45%;
-  min-width: 330px;
-} */
 
 .center {
   display: block;
@@ -67,13 +49,4 @@ body {
 .responsive {
   width: 100%;
   height: auto;
-}
-
-.search {
-  z-index: 2;
-  position: absolute;
-  right: 0;
-  top: 0;
-  margin: 1.2em 1.2em 0 0;
-  height: 2em;
 }

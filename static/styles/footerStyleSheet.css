@@ -1,30 +1,25 @@
 footer {
     background-color: #3A3E5E;
-    height: 70px;
   }
 
 footer ul {
     display: flex;
-    text-align: center;
-    justify-content:space-between;
-    align-items: center;
+    justify-content: space-between;
     list-style-type: none;
     color: white;
-    margin: 18px 0 18px 0;
-    padding: 0 1.2em;
-    clear: both;
 }
-/*--------------------------*/
-/* styles for small screens */
-/*--------------------------*/
-@media screen and (max-width: 550px) {
-    footer li {
-        padding: 0 7px;
-    }
-    footer a {
-        font-size: 12pt;
+
+@media screen and (min-width: 1200px) {
+    footer {
+        height: 55px;
     }
     footer ul {
-        font-size: 0.8rem;
+        padding: 0 1.2em;
+        height: 100%;
+        margin: 0;
+        align-items: center;
+    }
+    footer li {
+        font-size: 0.9em;
     }
 }
