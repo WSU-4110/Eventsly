@@ -27,12 +27,15 @@ function buildMap() {
   // remove double click zoom
   map.doubleClickZoom.disable();
 
-  // geolocation - HIGHLY inaccurate on PC, likely better on mobile.
+  // user location - HIGHLY inaccurate on PC, likely better on mobile.
   map.addControl(L.control.locate({
     locateOptions: {
       enableHighAccuracy: true
     }
   }));
+
+  // address geolocation/search
+  L.control.geocoder('pk.7963fb77afa804ed20fabb795cc1295d').addTo(map);
 }
 
 function userTools() {
