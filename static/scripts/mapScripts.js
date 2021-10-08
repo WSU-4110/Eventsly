@@ -13,6 +13,8 @@ defaultZoom = 15;
 
 var map = L.map('mapid').setView([defaultLat, defaultLng], 15);
 
+var geocoder = L.control.geocoder('pk.7963fb77afa804ed20fabb795cc1295d').addTo(map);
+
 function buildMap() {
   // get map from mapbox
   L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -34,16 +36,18 @@ function buildMap() {
     }
   }));
 
-  // address geolocation/search
-  L.control.geocoder('pk.7963fb77afa804ed20fabb795cc1295d').addTo(map);
+  
 }
 
 function userTools() {
   var marker
-
   // add a marker with a popup
   map.on('click', function (e) {
-    if (marker) {
+    if (geocoder.markers.length == 1) {
+      geocoder.reset();
+      geocoder.collapse();
+    }
+    else if (marker) {
       map.removeLayer(marker);
       marker = false;
     }
