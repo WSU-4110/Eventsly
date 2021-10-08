@@ -11,8 +11,10 @@ defaultZoom = 15;
 /* 15: Buildings     */
 /*-------------------*/
 
+// all controls related to the leaflet map & user location fider
 var map = L.map('mapid').setView([defaultLat, defaultLng], 15);
 
+// all controls related only to the search map feature
 var geocoder = L.control.geocoder('pk.7963fb77afa804ed20fabb795cc1295d').addTo(map);
 
 function buildMap() {
@@ -29,19 +31,20 @@ function buildMap() {
   // remove double click zoom
   map.doubleClickZoom.disable();
 
-  // user location - HIGHLY inaccurate on PC, likely better on mobile.
+  // find user location option
   map.addControl(L.control.locate({
     locateOptions: {
       enableHighAccuracy: true
     }
   }));
-
-  
 }
 
 function userTools() {
+  // placeholder for user placed pin
   var marker
-  // add a marker with a popup
+
+  // on click, either remove existing pin from search or placement
+  // or place a new pin if there are no existing pins
   map.on('click', function (e) {
     if (geocoder.markers.length == 1) {
       geocoder.reset();
@@ -53,6 +56,8 @@ function userTools() {
     }
     else {
       marker = new L.Marker(e.latlng, { draggable: true }).addTo(map);
+
+      // popup text
       marker.bindPopup("test");
     }
   });
