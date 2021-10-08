@@ -24,6 +24,9 @@ function buildMap() {
     accessToken: 'pk.eyJ1IjoiY3NjNDExMGdyb3VwNSIsImEiOiJja3VjdmR4aWcxNGZjMzFvMzd2dHJhdnZmIn0.chI1y1ZmmmcdOX0nj1NtEQ'
   }).addTo(map);
 
+  // remove double click zoom
+  map.doubleClickZoom.disable();
+
   // geolocation - HIGHLY inaccurate on PC, likely better on mobile.
   map.addControl(L.control.locate({
     locateOptions: {
