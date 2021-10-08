@@ -39,7 +39,7 @@ def about():
 def contact():
     return render_template("Contact.html")
 
-@app.route("/register.html", methods=['POST'])
+@app.route("/register.html", methods=['POST','GET'])
 def register():
     if request.method == 'POST':
         user_firstname = request.form['firstname']

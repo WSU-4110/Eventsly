@@ -48,14 +48,15 @@
       <form action="/register.html" method="POST">
 
         <ul class="form-list">
-        <li><label for='firstname'>First name: <input type='text' name='firstname' id='firstname'></label></li>
-        <li><label for='lastname'>Last name: <input type='text' name='lastname' id='lastname'></label></li>
-        <li><label for='phone'>Phone number: <input type="tel" name='phone' id='phone'></label></li>
-        <li><label for='email'>Email address: <input type="email" name='email' id='email'></label></li>
-        <li><label for='username'>Username: <input type='text' name='username' id='username'></label></li>
-        <li><label for='password'>Password: <input type='password' name='password' id='password'></label></li>
+        <li><label for='firstname'>First name: <input type='text' name='firstname' id='firstname' required></label></li>
+        <li><label for='lastname'>Last name: <input type='text' name='lastname' id='lastname' required></label></li>
+        <li><label for='phone'>Phone number: <input type="tel" name='phone' id='phone' required></label></li>
+        <li><label for='email'>Email address: <input type="email" name='email' id='email' required></label></li>
+        <li><label for='username'>Username: <input type='text' name='username' id='username' required></label></li>
+        <li><label for='password'>Password: <input type='password' name='password' id='password' required></label></li>
       </ul>
         
+      <p><input type="submit" value = "Sign Up!" class="formbtn"><input type="reset" class="formbtn"</p>
       </form>
 
 <h1></h1>
