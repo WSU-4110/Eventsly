@@ -1,6 +1,17 @@
 /* Leaflet Map CSS */
 #mapid {
-    height: 50vh;
-    width: 100%;
-    border: 2px solid #3A3E5E;
+    height: 100%;
+    z-index: 1;
   }
+
+@media screen and (min-width: 1200px) {
+  #mapid {
+    /* fade in on page load */
+    animation: fadein 1.5s;
+  }
+
+  @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}

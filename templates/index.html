@@ -5,7 +5,15 @@
   <meta charset="UTF-8">
   <title>Eventsly</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/static/styles/eventslyStyleSheet.css">
+  <style type='text/css'>
+    @import '/static/styles/eventslyStyleSheet.css';
+    @import '/static/styles/navbarStyleSheet.css';
+    @import '/static/styles/footerStyleSheet.css';
+    /* no padding on index */
+    main {
+      padding: 0;
+    }
+  </style>
 
   <!-- Font Awesome JS load for Eventsly Logo -->
   <script src="https://kit.fontawesome.com/3f6d9190cb.js" crossorigin="anonymous"></script>
@@ -32,49 +40,42 @@
 </head>
 
 <body>
-
-  <!-- Eventsly Logo -->
-  <h1 class="logo"><i class="fas fa-map-marked" style="color:#2D3043" alt="Eventsly"></i>Eventsly</h1>
-
   <header>
-    <!-- Desktop Navigation bar -->
     <nav role="navigation">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Bookmarks.html">Bookmarks</a></li>
-        <li><a href="About.html">About Us</a></li>
-        <li><a href="Contact.html">Contact</a></li>
-      </ul>
+      <!-- Eventsly Logo -->
+      <a href="index.html" class="logo">
+        <i class="fas fa-map-marked" style="color:white" alt="Eventsly"></i>Eventsly
+      </a>
+      <a href="index.html" class="nav-item active">Home</a>
+      <a href="Bookmarks.html" class="nav-item">Bookmarks</a>
+      <a href="About.html" class="nav-item">About Us</a>
+      <a href="Contact.html" class="nav-item">Contact</a>
+      <div class="search">
+        <span class="fa-stack" style="vertical-align: top;">
+          <i class="fas fa-circle fa-stack-2x"></i>
+          <i class="fa fa-search fa-stack-1x" aria-hidden="true"></i>
+        </span>
+      </div>
+      <div class="spacer"></div>
+      <a href="#" class="nav-item">Log In</a>
+      <a href="#" class="nav-item">Sign Up</a>
     </nav>
-
-    <!-- Login -->
-    <form action="/action_page.php">
-      <input type="text" placeholder="Username" name="username">
-      <input type="text" placeholder="Password" name="psw">
-      <button type="submit">Login</button>
-    </form>
   </header>
-
-  <!-- Rest of Body Page -->
-  <h2>Find events in your area</h2>
-
-  <!--Search bar -->
-  <p>
-    <center><input type="text" placeholder="Search for event.." name="search"></center>
-  </p>
 
   <main>
     <!-- Leaflet Map - these <script> tags must be after this div for some reason -->
     <div id="mapid"></div>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
+        charset="utf-8"></script>
     <script src="/static/scripts/mapScripts.js"></script>
-   </main>
+  </main>
 
   <footer>
-    <p><small>All content copyright &copy; 2021, Eventsly.</small></p>
+    <ul>
+      <li>Connect with your community</li>
+      <li>All content copyright &copy; 2021, Eventsly</li>
+    </ul>
   </footer>
-
-  </div>
 </body>
 
 </html>
