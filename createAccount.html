@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<h2>Create your Eventsly account below</h2>
+
+<div class="container">
+<!-- the action could be incorrect using python not php -->
+  <form action="/action_page.py">
+    <label for="Firstname">First Name</label>
+	<input type="text" id="firstname" name="firstname" required> <br> <br>
+	<label for="Lastname">Last Name</label>
+	<input type="text" id="lastname" name="lastname" required><br> <br>
+	<label for="Email">Email Address</label>
+	<input type="text" id="email" name="email" required><br> <br>
+    <label for="Username">Username</label>
+    <input type="text" id="username" name="username" required> <br> <br>
+	
+
+    <label for="psw">Password</label>
+    <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must requirements" required> <br> <br>
+    
+    <input type="submit" value="Submit">
+	
+	<p> <small>
+		<strong>Note:</strong> <br>
+		All fields are required to create an account.
+  </small></P>
+  </form>
+</div>
+
+<div id="message">
+  <h3>Password must contain the following:</h3>
+  <p id="letter" class="invalid">At least one <b>lowercase</b> letter</p>
+  <p id="capital" class="invalid">At least one <b>capital (uppercase)</b> letter</p>
+  <p id="number" class="invalid">At least one <b>number</b></p>
+  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+</div>
+				
+
+
+</body>
+</html>
