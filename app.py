@@ -1,23 +1,22 @@
-from flask import Flask, render_template, request, redirect
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, request, redirect, flash, url_for, session, logging
+from flask_mysqldb import MySQL
+from wtforms import Form, StringField, PasswordField, TelField, validators
+from passlib.hash import sha256_crypt
 from datetime import datetime
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///eventsly.db'
-db = SQLAlchemy(app)
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    firstname = db.Column(db.String(200),nullable=False)
-    lastname = db.Column(db.String(200), nullable=False)
-    phone = db.Column(db.String(200), nullable=False)
-    email = db.Column(db.String(200), nullable=False)
-    username = db.Column(db.String(200), nullable=False)
-    password = db.Column(db.String(200), nullable=False)
-
-    def __repr__(self):
-        return '<User %r>' %  self.id
-
+class RegisterForm(Form):
+    firstname = StringField('Firstname', [validators.Length(min = 1, max=50)])
+    lastname = StringField('Lastname', [validators.Length(min = 1, max=50)])    
+    phone = TelField('Phone', [validators.Lenght(min=9,max=10)])
+    username = StringField('Username', [validators.Length(min=4, max=30)])
+    email = StringField('Email', [validators.Length(min=6, max=50)])
+    password = PasswordField('Password', [
+        validators.DataRequired(),
+        validators.EqualTo('confirm', message='Passwords do not match')
+    ])
+    confirm = PasswordField('Confirm Password.')
 
 @app.route("/")
 def home():
@@ -41,25 +40,7 @@ def contact():
 
 @app.route("/register.html", methods=['POST','GET'])
 def register():
-    if request.method == 'POST':
-        user_firstname = request.form['firstname']
-        user_lastname = request.form['lastname']
-        user_phone = request.form['phone']
-        user_email = request.form['email']
-        user_username = request.form['username']
-        user_password = request.form['password']
-
-        new_user = User(firstname = user_firstname, lastname = user_lastname, phone = user_phone,
-        email = user_email, username = user_username, password = user_password)
-    
-        try:
-            db.session.add(new_user)
-            db.session.commit()
-            return redirect('/register.html')
-        except:
-            return 'Unable to create your account. Please try again later.'
-    else:
-        return render_template("/register.html")
+    form = RegisterForm(request.form)
 
 if __name__ == "__main__":
     app.run(debug=True)

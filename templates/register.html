@@ -45,19 +45,33 @@
 
       <h1>Eventsly Sign-Up</h1>
       <h2>Please fill out the information below.</h2>
-      <form action="/register.html" method="POST">
+      <div id="register-content">
+        <form action="/register.html" method="POST">
 
-        <ul class="form-list">
-        <li><label for='firstname'>First name: <input type='text' name='firstname' id='firstname' required></label></li>
-        <li><label for='lastname'>Last name: <input type='text' name='lastname' id='lastname' required></label></li>
-        <li><label for='phone'>Phone number: <input type="tel" name='phone' id='phone' required></label></li>
-        <li><label for='email'>Email address: <input type="email" name='email' id='email' required></label></li>
-        <li><label for='username'>Username: <input type='text' name='username' id='username' required></label></li>
-        <li><label for='password'>Password: <input type='password' name='password' id='password' required></label></li>
-      </ul>
-        
-      <p><input type="submit" value = "Sign Up!" class="formbtn"><input type="reset" class="formbtn"</p>
-      </form>
+          <ul class="form-list">
+          <li><label for='firstname'>First name: <input type='text' name='firstname' id='firstname' required></label></li>
+          <li><label for='lastname'>Last name: <input type='text' name='lastname' id='lastname' required></label></li>
+          <li><label for='phone'>Phone number: <input type="tel" name='phone' id='phone' required></label></li>
+          <li><label for='email'>Email address: <input type="email" name='email' id='email' required></label></li>
+          <li><label for='username'>Username: <input type='text' name='username' id='username' required></label></li>
+          <li><label for='password'>Password: <input type='password' name='password' id='password' required></label></li>
+        </ul>
+          
+        <p><input type="submit" value = "Sign Up!" class="formbtn"><input type="reset" class="formbtn"</p>
+        </form>
+      </div>
+
+      <table>
+        <tr>
+          <th>First name</th>
+          <th>username</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+          <td>{{user.firstname}}</td>
+          <td>{{user.username}}</td>
+        </tr>
+      </table>
 
 <h1></h1>
 <footer>
