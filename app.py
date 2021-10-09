@@ -6,6 +6,15 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+#Configurate MySQL
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'kiddobean19'
+app.config['MYSQL_DB'] = 'eventsly'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+#initialize MYSQL
+mysql = MySQL(app)
+
 class RegisterForm(Form):
     firstname = StringField('Firstname', [validators.Length(min = 1, max=50)])
     lastname = StringField('Lastname', [validators.Length(min = 1, max=50)])    
@@ -38,13 +47,33 @@ def about():
 def contact():
     return render_template("Contact.html")
 
-@app.route("/register.html", methods=['GET','POST'])
+@app.route("/register.html", methods=['POST','GET'])
 def register():
     form = RegisterForm(request.form)
     if request.method == 'POST' and form.validate():
-        return render_template("register.html")
-    else:
-        return render_template("register.html", form=form)
+        firstname = form.firstname.data
+        lastname = form.lastname.data
+        phone = form.phone.data
+        email = form.email.data
+        username = form.username.data
+        password = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
+
+        #Create cursor
+        cur = mysql.connection.cursor() #used to execute commands
+
+        cur.execute("INSERT INTO users(firstname, lastname, phone, email, username, password) VALUES(%s, %s, %s, %s, %s, %s )", 
+        (firstname, lastname, phone, email, username, password))
+
+        #commit to db
+        mysql.connection.commit()
+
+        #close connection
+        cur.close()
+
+        flash('Your account has been created!', 'success')
+        redirect(url_for('index.html'))
+    return render_template("register.html", form=form)
+    
 
 
 if __name__ == "__main__":
