@@ -30,5 +30,9 @@ def createAccount():
 def login():
     return render_template("login.html")
 
+@app.route("/createEvent.html")
+def createEvent():
+    return render_template("createEvent.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
