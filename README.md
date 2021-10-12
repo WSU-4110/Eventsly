@@ -8,11 +8,11 @@
 
 ## Group Members
 
-###### Greg Flores
-###### Devin Stawicki
-###### Racquel Martens
-###### Mark Slattery
-###### CJ Fox
+- Greg Flores
+- Devin Stawicki
+- Racquel Martens
+- Mark Slattery
+- CJ Fox
 
 ## Running the Eventsly Application
 
