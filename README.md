@@ -8,11 +8,11 @@
 
 ## Group Members
 
-#### Greg Flores
-#### Devin Stawicki
-#### Racquel Martens
-#### Mark Slattery
-#### CJ Fox
+###### Greg Flores
+###### Devin Stawicki
+###### Racquel Martens
+###### Mark Slattery
+###### CJ Fox
 
 ## Running the Eventsly Application
 
@@ -22,11 +22,14 @@
 ## Technology Stack
 
 ### Front end
+---
 ###### HTML, CSS, Javascript
 
 ### Back end
+---
 ###### Python (Flask)
-###### SQL Database
+###### MySQL Database
 
 ### Hosting Service (Deployment)
+---
 ###### Heroku
