@@ -33,24 +33,30 @@ nav {
 /* styles for small screens */
 /*--------------------------*/
 @media screen and (max-width: 1199px) {
+    header {
+        z-index: 3;
+    }
     nav {
+        height: 64px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1rem 1.5rem;
+        padding: 0 1.5rem;
+        z-index: 3;
     }
     .nav-item {
         margin: 2.5rem 0;
     }
     .fa-bars {
         color: white;
+        z-index: 3;
     }
     .nav-menu {
         display: flex;
         justify-content: space-between;
         position: fixed;
+        top: 63px;
         left: -100%;
-        top: 64px;
         flex-direction: column;
     }
     .dropdown {
