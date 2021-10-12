@@ -1,5 +1,6 @@
 footer {
     background-color: #3A3E5E;
+    z-index: 3;
   }
 
 footer ul {

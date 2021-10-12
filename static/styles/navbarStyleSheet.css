@@ -11,6 +11,7 @@ nav {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
+    transition: all 0.5s ease 0s;
 }
 .logo {
     font-family: 'Montserrat', sans-serif;
@@ -22,6 +23,13 @@ nav {
     align-items: center;
     font-size: 1.8em;
  }
+.active {
+    background-color: white;
+    color: #3A3E5E;
+}
+a.nav-item:hover:not(.active) {
+    background-color: #7b82b3;
+}
 .fa-circle {
     color: white;
 }
@@ -37,36 +45,40 @@ nav {
         z-index: 3;
     }
     nav {
-        height: 64px;
+        height: 4em;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 1.5rem;
-        z-index: 3;
+        border-bottom: 1px solid #3A3E5E;
     }
     .nav-item {
-        margin: 2.5rem 0;
+        width: 100%;
+        padding: 2em 0;
+        text-align: center;
+    }
+    .spacer {
+        display: none;
     }
     .fa-bars {
         color: white;
-        z-index: 3;
     }
     .nav-menu {
         display: flex;
         justify-content: space-between;
         position: fixed;
-        top: 63px;
+        top: 4em;
         left: -100%;
         flex-direction: column;
+        width: 100%;
+        background-color: #3A3E5E;
+        align-items: center;
+        z-index: 2;
+        transition: 1s;
     }
     .dropdown {
         left: 0;
-        width: 100%;
-        background-color: #3A3E5E;
-        display: flex;
-        align-items: center;
-        transition: 0.3s;
-        z-index: 2;
+
     }
 }
 
@@ -99,22 +111,13 @@ nav {
     .nav-item {
         display: flex;
         align-items: center;
-        color: white;
         padding: 0 20px;
         box-sizing: border-box;;
         border: 2px solid #3A3E5E;
         margin-left: -1px;
         height: 100%;
-        transition: all 0.5s ease 0s;
+        
     }
-    .active {
-        background-color: white;
-        color: #3A3E5E;
-    }
-    a.nav-item:hover:not(.active) {
-        background-color: #7b82b3;
-    }
-
     .fa-map-marked {
         padding-right: 5px;
         min-width: 32px;
