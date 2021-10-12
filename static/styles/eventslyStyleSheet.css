@@ -31,11 +31,11 @@ footer {
   flex: 0 1 auto;
 }
 
-form {
+/*form {
   float: right;
   background-color: #3A3E5E;
 }
-
+*/
 table, th, td {
   border: 3.5px solid white;
   border-collapse: collapse;

@@ -22,5 +22,13 @@ def about():
 def contact():
     return render_template("Contact.html")
 
+@app.route("/createAccount.html")
+def createAccount():
+    return render_template("createAccount.html")
+
+@app.route("/login.html")
+def login():
+    return render_template("login.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
