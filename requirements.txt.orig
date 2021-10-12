@@ -13,6 +13,9 @@ pipreqs==0.4.10
 requests==2.26.0
 urllib3==1.26.7
 Werkzeug==2.0.1
+<<<<<<< HEAD
 yarg==0.1.9
+=======
 zipp==3.5.1
 gunicorn==20.0.4
+>>>>>>> 69ef2d40b0deaa97b58a990f589337031987c748
