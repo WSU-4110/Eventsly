@@ -64,8 +64,3 @@ table, th, td {
 .event-create span {
   margin: 0 auto;
 }
-
-.fa-plus {
-  color: #3A3E5E;
-  z-index: 101px;
-}
