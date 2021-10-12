@@ -56,15 +56,12 @@ table, th, td {
 
 .event-create {  
   position: absolute; 
+  bottom: 64px;
+  width: 100%; /* Need a specific value to work */
+  z-index: 4;
   display: flex;
-  justify-self: center;
-  text-align: center;
-  bottom: 0;  
-  z-index: 100;  
 }
-
 .event-create span {
-  display: flex;
   margin: 0 auto;
 }
 
