@@ -1,1 +1,1 @@
-web: Eventsly 
+web: gunicorn app:app 
