@@ -31,7 +31,7 @@ def login():
     return render_template("login.html")
 
 @app.route("/createEvent.html")
-def login():
+def createEvent():
     return render_template("createEvent.html")
 
 if __name__ == "__main__":
