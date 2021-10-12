@@ -9,7 +9,11 @@ footer ul {
     list-style-type: none;
     color: white;
 }
-
+@media screen and (max-width: 1199px) {
+    footer {
+        display: none;
+    }
+}
 @media screen and (min-width: 1200px) {
     footer {
         height: 55px;
