@@ -23,7 +23,10 @@ class RegisterForm(Form):
     email = StringField('Email', [validators.Length(min=6, max=50)])
     password = PasswordField('Password', [
         validators.DataRequired(),
-        validators.EqualTo('confirm', message='Passwords do not match')
+        validators.EqualTo('confirm', message='Passwords do not match.'),
+        validators.Regexp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]", flags=0, 
+        message='Password must contain at least one uppercase, lowercase, special character, and number.'),
+        validators.Length(min=8)
     ])
     confirm = PasswordField('Confirm Password.')
 
@@ -61,20 +64,22 @@ def register():
         #Create cursor
         cur = mysql.connection.cursor() #used to execute commands
 
+        #Execute query
         cur.execute("INSERT INTO users(firstname, lastname, phone, email, username, password) VALUES(%s, %s, %s, %s, %s, %s )", 
         (firstname, lastname, phone, email, username, password))
 
-        #commit to db
+        #Commit to db
         mysql.connection.commit()
 
-        #close connection
+        #Close connection
         cur.close()
 
         flash('Your account has been created!', 'success')
-        redirect(url_for('index.html'))
+        return redirect(url_for('index'))
     return render_template("register.html", form=form)
     
 
 
 if __name__ == "__main__":
+    app.secret_key = 'wsu4110eventsly'
     app.run(debug=True)
