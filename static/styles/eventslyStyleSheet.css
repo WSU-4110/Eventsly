@@ -53,3 +53,22 @@ table, th, td {
   width: 100%;
   height: auto;
 }
+
+.event-create {  
+  position: absolute; 
+  display: flex;
+  justify-self: center;
+  text-align: center;
+  bottom: 0;  
+  z-index: 100;  
+}
+
+.event-create span {
+  display: flex;
+  margin: 0 auto;
+}
+
+.fa-plus {
+  color: #3A3E5E;
+  z-index: 101px;
+}
