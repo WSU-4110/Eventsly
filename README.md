@@ -21,12 +21,12 @@
 
 ## Technology Stack
 
-#### Front end
-##### HTML, CSS, Javascript
+### Front end
+###### HTML, CSS, Javascript
 
-#### Back end
-##### Python (Flask)
-##### SQL Database
+### Back end
+###### Python (Flask)
+###### SQL Database
 
-#### Hosting Service (Deployment)
-##### Heroku
+### Hosting Service (Deployment)
+###### Heroku
