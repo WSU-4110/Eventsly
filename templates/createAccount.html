@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Bookmarks</title>
+  <title>Sign Up</title>
   <meta name="viewport" content="width=device-width, initial-scale = 1">
   <style type='text/css'>
     @import '/static/styles/eventslyStyleSheet.css';
@@ -30,7 +30,7 @@
       </a>
       <div class='nav-menu'>
         <a href="index.html" class="nav-item">Home</a>
-        <a href="Bookmarks.html" class="nav-item active">Bookmarks</a>
+        <a href="Bookmarks.html" class="nav-item">Bookmarks</a>
         <a href="About.html" class="nav-item">About Us</a>
         <a href="Contact.html" class="nav-item">Contact</a>
         <div class="search nav-item">
@@ -41,14 +41,49 @@
         </div>
         <div class="spacer"></div>
         <a href="login.html" class="nav-item">Log In</a>
-        <a href="createAccount.html" class="nav-item">Sign Up</a>
+        <a href="createAccount.html" class="nav-item active">Sign Up</a>
       </div>
       <i class='fa fa-bars fa-inverse fa-2x' aria-hidden="true"></i>
     </nav>
   </header>
 
   <main>
-    <h1><img src="/static/images/examplePic.png" width="50" height="40" alt="Eventsly">Bookmarks</h1>
+    <h1><img src="/static/images/examplePic.png" width="50" height="40" alt="Eventsly">Create your Eventsly account
+      below</h1>
+    <br>
+    <div class="container">
+      <!-- the action could be incorrect using python not php -->
+      <form action="/action_page.py">
+        <label for="Firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname" required> <br> <br>
+        <label for="Lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" required><br> <br>
+        <label for="Email">Email Address</label>
+        <input type="text" id="email" name="email" required><br> <br>
+        <label for="Username">Username</label>
+        <input type="text" id="username" name="username" required> <br> <br>
+
+
+        <label for="psw">Password</label>
+        <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+          title="Password must requirements" required> <br> <br>
+
+        <input type="submit" value="Submit">
+
+        <p> <small>
+            <strong>Note:</strong> <br>
+            All fields are required to create an account.
+          </small></P>
+      </form>
+    </div>
+
+    <div id="message">
+      <h3>Password must contain the following:</h3>
+      <p id="letter" class="invalid">At least one <b>lowercase</b> letter</p>
+      <p id="capital" class="invalid">At least one <b>capital (uppercase)</b> letter</p>
+      <p id="number" class="invalid">At least one <b>number</b></p>
+      <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+    </div>
   </main>
 
   <footer>
