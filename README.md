@@ -19,7 +19,7 @@
 #### To run the Eventsly app, simply use "git clone" in a CLI with the project link: https://github.com/WSU-4110/Eventsly
 #### Open the git project in VSCode or the directory in a CLI and type "flask run" into the terminal without quotes. 
 
-### Technology Stack
+## Technology Stack
 
 #### Front end
 ##### HTML, CSS, Javascript
