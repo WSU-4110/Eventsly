@@ -55,10 +55,11 @@ table, th, td {
 }
 
 .event-create {  
-  position: absolute; 
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
   bottom: 64px;
-  width: 100%; /* Need a specific value to work */
-  z-index: 4;
+  z-index: 2;
   display: flex;
 }
 .event-create span {

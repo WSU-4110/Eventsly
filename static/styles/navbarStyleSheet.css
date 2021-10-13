@@ -76,7 +76,7 @@ a.nav-item:hover:not(.active) {
         width: 100%;
         background-color: #3A3E5E;
         align-items: center;
-        z-index: 2;
+        z-index: 3;
         transition: 1s;
         height: calc(100% - 64px);
     }
