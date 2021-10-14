@@ -87,3 +87,396 @@
 2021-10-14 16:21:29,493 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 16:21:29] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
 2021-10-14 16:21:29,648 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 16:21:29] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
 2021-10-14 16:21:30,607 INFO werkzeug Thread-22 : 127.0.0.1 - - [14/Oct/2021 16:21:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 16:57:37,079 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 16:57:46,209 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 16:57:46] "GET / HTTP/1.1" 200 -
+2021-10-14 16:57:47,213 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 16:57:47] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:47,214 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 16:57:47] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:47,216 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 16:57:47] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:47,217 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 16:57:47] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:47,222 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 16:57:47] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 16:57:47,238 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 16:57:47] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 16:57:48,746 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 16:57:48] "GET / HTTP/1.1" 200 -
+2021-10-14 16:57:48,781 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 16:57:48] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:48,784 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 16:57:48] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:48,788 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 16:57:48] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:48,790 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 16:57:48] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:48,791 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 16:57:48] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 16:57:48,843 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 16:57:48] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 16:57:50,771 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 16:57:50] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 16:57:50,810 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 16:57:50] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:50,810 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 16:57:50] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:50,813 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 16:57:50] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:57:50,816 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 16:57:50] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:58:07,485 INFO models Thread-20 : User test account was created.
+2021-10-14 16:58:07,487 ERROR models Thread-20 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 44, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 16:58:07,510 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 16:58:07] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 16:58:07,984 INFO werkzeug Thread-22 : 127.0.0.1 - - [14/Oct/2021 16:58:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 16:58:22,363 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 16:58:23,238 WARNING werkzeug MainThread :  * Debugger is active!
+2021-10-14 16:58:23,249 INFO werkzeug MainThread :  * Debugger PIN: 205-523-811
+2021-10-14 16:58:23,653 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 16:59:58,489 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 16:59:59,279 WARNING werkzeug MainThread :  * Debugger is active!
+2021-10-14 16:59:59,288 INFO werkzeug MainThread :  * Debugger PIN: 205-523-811
+2021-10-14 16:59:59,560 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 17:00:11,699 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 17:00:11] "GET / HTTP/1.1" 200 -
+2021-10-14 17:00:12,724 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 17:00:12] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:12,725 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 17:00:12] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:00:12,733 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 17:00:12] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:12,733 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 17:00:12] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:12,738 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 17:00:12] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:12,742 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 17:00:12] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:00:14,649 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 17:00:14] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 17:00:14,689 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 17:00:14] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:14,691 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 17:00:14] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:14,694 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 17:00:14] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:14,696 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 17:00:14] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:36,081 INFO models Thread-14 : User test4 account was created.
+2021-10-14 17:00:36,082 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 17:00:36] "[32mPOST /register.html HTTP/1.1[0m" 302 -
+2021-10-14 17:00:36,090 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 17:00:36] "GET /index.html HTTP/1.1" 200 -
+2021-10-14 17:00:36,139 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 17:00:36] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:36,139 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 17:00:36] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:36,143 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 17:00:36] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:36,146 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 17:00:36] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:00:36,147 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 17:00:36] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:00:36,199 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 17:00:36] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:00:36,654 INFO werkzeug Thread-22 : 127.0.0.1 - - [14/Oct/2021 17:00:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:00:54,937 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 17:01:01,790 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 17:01:01] "GET / HTTP/1.1" 200 -
+2021-10-14 17:01:02,789 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 17:01:02] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:02,789 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 17:01:02] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:02,790 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 17:01:02] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:02,791 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 17:01:02] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:01:02,796 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 17:01:02] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:02,802 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 17:01:02] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:01:04,239 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 17:01:04] "GET / HTTP/1.1" 200 -
+2021-10-14 17:01:04,274 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 17:01:04] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:04,278 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 17:01:04] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:04,282 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 17:01:04] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:04,285 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 17:01:04] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:04,286 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 17:01:04] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:01:04,329 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 17:01:04] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:01:12,666 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 17:01:12] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 17:01:12,709 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 17:01:12] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:12,711 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 17:01:12] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:12,714 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 17:01:12] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:12,715 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 17:01:12] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:01:33,488 INFO models Thread-20 : User testlocal account was created.
+2021-10-14 17:01:33,488 ERROR models Thread-20 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 44, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 17:01:33,491 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 17:01:33] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 17:01:33,970 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 17:01:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:03:04,928 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 17:04:36,151 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 17:04:36] "GET / HTTP/1.1" 200 -
+2021-10-14 17:04:37,059 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 17:04:37] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:04:37,059 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 17:04:37] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:04:37,060 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 17:04:37] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:04:37,061 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 17:04:37] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:04:37,067 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 17:04:37] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:04:37,080 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 17:04:37] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:04:39,016 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 17:04:39] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 17:04:39,059 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 17:04:39] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:04:39,060 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 17:04:39] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:04:39,063 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 17:04:39] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:04:39,064 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 17:04:39] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:04:54,719 INFO models Thread-13 : User test5 account was created.
+2021-10-14 17:04:54,719 ERROR models Thread-13 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 44, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 17:04:54,730 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 17:04:54] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 17:04:55,213 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 17:04:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:07:52,462 ERROR models Thread-15 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "constraint_name"
+DETAIL:  Key (email, username)=(test5@test.com, test5) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 42, in register
+    app.logger.info(f'User {form.username.data} account was created.')
+  File "<string>", line 2, in commit
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3339, in flush
+    self._flush(objects)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3479, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3439, in _flush
+    flush_context.execute()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\persistence.py", line 1219, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1611, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1478, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 2023, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "constraint_name"
+DETAIL:  Key (email, username)=(test5@test.com, test5) already exists.
+
+[SQL: INSERT INTO users (firstname, lastname, phone, email, username, password) VALUES (%(firstname)s, %(lastname)s, %(phone)s, %(email)s, %(username)s, %(password)s) RETURNING users.id]
+[parameters: {'firstname': 'test', 'lastname': 'user', 'phone': '9999999999', 'email': 'test5@test.com', 'username': 'test5', 'password': '$5$rounds=535000$KK2U6JE8sm4AuVJ3$ZEqg.c94B7KzdoksTnf3HGz2PZckW3G9WcoNqqkXas/'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    return render_template("register.html", form=form)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 17:07:52,579 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 17:07:52] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 17:07:53,051 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 17:07:53] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:07:55,882 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 17:07:55] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 17:07:55,930 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 17:07:55] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:07:55,932 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 17:07:55] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:07:55,936 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 17:07:55] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:07:55,937 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 17:07:55] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:07:56,349 INFO werkzeug Thread-22 : 127.0.0.1 - - [14/Oct/2021 17:07:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:08:11,729 INFO models Thread-23 : User test6 account was created.
+2021-10-14 17:08:11,729 ERROR models Thread-23 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 44, in register
+    return redirect(url_for('index'))
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    return render_template("register.html", form=form)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 17:08:11,731 INFO werkzeug Thread-23 : 127.0.0.1 - - [14/Oct/2021 17:08:11] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 17:08:12,168 INFO werkzeug Thread-24 : 127.0.0.1 - - [14/Oct/2021 17:08:12] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:09:58,420 INFO werkzeug Thread-25 : 127.0.0.1 - - [14/Oct/2021 17:09:58] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 17:09:58,462 INFO werkzeug Thread-26 : 127.0.0.1 - - [14/Oct/2021 17:09:58] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:09:58,463 INFO werkzeug Thread-27 : 127.0.0.1 - - [14/Oct/2021 17:09:58] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:09:58,467 INFO werkzeug Thread-28 : 127.0.0.1 - - [14/Oct/2021 17:09:58] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:09:58,469 INFO werkzeug Thread-29 : 127.0.0.1 - - [14/Oct/2021 17:09:58] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:09:58,982 INFO werkzeug Thread-30 : 127.0.0.1 - - [14/Oct/2021 17:09:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:10:14,900 INFO models Thread-31 : User test7 account was created.
+2021-10-14 17:10:14,900 ERROR models Thread-31 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 44, in register
+    #flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    #flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 17:10:14,904 INFO werkzeug Thread-31 : 127.0.0.1 - - [14/Oct/2021 17:10:14] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 17:10:15,301 INFO werkzeug Thread-32 : 127.0.0.1 - - [14/Oct/2021 17:10:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:12:31,544 INFO werkzeug Thread-33 : 127.0.0.1 - - [14/Oct/2021 17:12:31] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 17:12:31,602 INFO werkzeug Thread-34 : 127.0.0.1 - - [14/Oct/2021 17:12:31] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:12:31,606 INFO werkzeug Thread-35 : 127.0.0.1 - - [14/Oct/2021 17:12:31] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:12:31,607 INFO werkzeug Thread-36 : 127.0.0.1 - - [14/Oct/2021 17:12:31] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:12:31,609 INFO werkzeug Thread-37 : 127.0.0.1 - - [14/Oct/2021 17:12:31] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:12:32,024 INFO werkzeug Thread-38 : 127.0.0.1 - - [14/Oct/2021 17:12:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:12:48,110 INFO models Thread-39 : User test8 account was created.
+2021-10-14 17:12:48,110 ERROR models Thread-39 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 44, in register
+    #flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    #flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 17:12:48,123 INFO werkzeug Thread-39 : 127.0.0.1 - - [14/Oct/2021 17:12:48] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 17:12:48,595 INFO werkzeug Thread-40 : 127.0.0.1 - - [14/Oct/2021 17:12:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:17:43,697 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 17:18:09,301 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 17:18:09] "GET / HTTP/1.1" 200 -
+2021-10-14 17:18:10,246 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 17:18:10] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:18:10,260 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 17:18:10] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:10,261 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 17:18:10] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:10,262 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 17:18:10] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:10,268 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 17:18:10] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:10,270 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 17:18:10] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:18:19,031 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 17:18:19] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 17:18:19,068 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 17:18:19] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:19,071 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 17:18:19] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:19,074 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 17:18:19] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:19,075 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 17:18:19] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:40,513 INFO models Thread-13 : User test9 account was created.
+2021-10-14 17:18:40,514 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 17:18:40] "[32mPOST /register.html HTTP/1.1[0m" 302 -
+2021-10-14 17:18:40,521 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 17:18:40] "GET /index.html HTTP/1.1" 200 -
+2021-10-14 17:18:40,565 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 17:18:40] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:40,566 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 17:18:40] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:40,568 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 17:18:40] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:40,571 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 17:18:40] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:18:40,572 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 17:18:40] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:18:40,668 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 17:18:40] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:18:41,148 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 17:18:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
