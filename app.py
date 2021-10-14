@@ -4,6 +4,7 @@ from passlib.hash import sha256_crypt
 
 app = Flask(__name__)
 
+
 from models import *
 
 
@@ -36,8 +37,12 @@ def register():
 
         new_user = User(firstname = form.firstname.data,lastname = form.lastname.data, phone = form.phone.data, email = form.email.data, username = form.username.data, password = encryptpassword)
         
-        db.session.add(new_user)
-        db.session.commit()
+        try:
+            db.session.add(new_user)
+            db.session.commit()
+        except:
+            flash('Unable to make your account','failure')
+            return redirect(url_for('register'))
 
         flash('Your account has been created!', 'success')
         return redirect(url_for('index'))
