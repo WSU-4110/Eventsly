@@ -1,0 +1,6 @@
+Read this before merging / starting a pull request:
+
+Please make sure you have not edited / deleted the following files:
+Procfile
+requirements.txt
+If you have, please tell someone. We can revert changes if necessary, so don't sweat it.

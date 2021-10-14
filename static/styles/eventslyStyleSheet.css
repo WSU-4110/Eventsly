@@ -31,11 +31,11 @@ footer {
   flex: 0 1 auto;
 }
 
-form {
+/*form {
   float: right;
   background-color: #3A3E5E;
 }
-
+*/
 table, th, td {
   border: 3.5px solid white;
   border-collapse: collapse;
@@ -52,4 +52,16 @@ table, th, td {
 .responsive {
   width: 100%;
   height: auto;
+}
+
+.event-create {  
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 64px;
+  z-index: 2;
+  display: flex;
+}
+.event-create span {
+  margin: 0 auto;
 }

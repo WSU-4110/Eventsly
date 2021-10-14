@@ -34,7 +34,8 @@ def register():
     if request.method == 'POST' and form.validate():
         encryptpassword = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
 
-        new_user = User(firstname = form.firstname.data,lastname = form.lastname.data, phone = form.phone.data, email = form.email.data, username = form.username.data, password = encryptpassword)
+        new_user = User(firstname = form.firstname.data,lastname = form.lastname.data, phone = form.phone.data, 
+        email = form.email.data, username = form.username.data, password = encryptpassword)
         
         try:
             db.session.add(new_user)
@@ -49,7 +50,16 @@ def register():
 
 
     return render_template("register.html", form=form)
-    
+
+
+@app.route("/login.html")
+def login():
+    return render_template("login.html")
+
+@app.route("/createEvent.html")
+def createEvent():
+    return render_template("createEvent.html")
+
 
 if __name__ == "__main__":
     app.secret_key = 'wsu4110eventsly'
