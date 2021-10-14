@@ -66,6 +66,7 @@ a.nav-item:hover:not(.active) {
         color: white !important;
     }
     .nav-menu {
+        display: flex !important;
         justify-content: space-between !important;
         position: fixed !important;
         top: 4em !important;
@@ -103,12 +104,17 @@ a.nav-item:hover:not(.active) {
         flex-direction: row !important;
         width: 100% !important;
         height: 100% !important;
+
+
     }
     .logo {
         min-width: 221px !important;
+        
     }
     .spacer {
         margin-left: auto !important;
+        height: 55px !important;
+
     }
     .nav-item {
         display: flex !important;
@@ -118,7 +124,6 @@ a.nav-item:hover:not(.active) {
         border: 2px solid #3A3E5E !important;
         margin-left: -1px !important;
         height: 100% !important;
-        
     }
     .fa-map-marked {
         padding-right: 5px !important;
