@@ -1,6 +1,8 @@
 defaultLat = 42.3591;
 defaultLng = -83.0665;
 defaultZoom = 15;
+myLat = 0;
+myLong = 0;
 
 /*----zoom levels----*/
 /* 0:	 The Earth     */
@@ -56,9 +58,10 @@ function userTools() {
     }
     else {
       marker = new L.Marker(e.latlng, { draggable: true }).addTo(map);
+      myLat = e.latlng;
 
       // popup text
-      marker.bindPopup("test");
+      marker.bindPopup(myLat);
     }
   });
 
