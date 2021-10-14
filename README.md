@@ -30,7 +30,7 @@
 ### Back end
 ---
 - Python (Flask)
-- MySQL Database
+- PostgreSQL Database
 
 ### Hosting Service (Deployment)
 ---
