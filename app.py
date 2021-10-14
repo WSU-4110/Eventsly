@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request, redirect, flash, url_for, session, logging
 from passlib.hash import sha256_crypt
-
+from logger import *
 
 app = Flask(__name__)
-
 
 from models import *
 
@@ -40,12 +39,15 @@ def register():
         try:
             db.session.add(new_user)
             db.session.commit()
+            app.logger.info(f'User {form.username.data} account was created.')
+            flash('Your account has been created!', 'success')
+            return redirect(url_for('index'))
         except:
             flash('Unable to make your account','failure')
+            app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
             return redirect(url_for('register'))
 
-        flash('Your account has been created!', 'success')
-        return redirect(url_for('index'))
+
     return render_template("register.html", form=form)
     
 
