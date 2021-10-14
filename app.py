@@ -3,9 +3,6 @@ from passlib.hash import sha256_crypt
 from logger import *
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'splite:///apple.db' # the name is random. if you can think of a better one feel free to replace it.
-db = SQLAlchemy(app)
-
 from models import *
 
 
