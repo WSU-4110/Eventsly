@@ -1,34 +1,12 @@
 from flask import Flask, render_template, request, redirect, flash, url_for, session, logging
-from flask_mysqldb import MySQL
-from wtforms import Form, StringField, PasswordField, validators
 from passlib.hash import sha256_crypt
-from datetime import datetime
+
 
 app = Flask(__name__)
 
-#Configurate MySQL
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'kiddobean19'
-app.config['MYSQL_DB'] = 'eventsly'
-app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
-#initialize MYSQL
-mysql = MySQL(app)
+from models import *
 
-class RegisterForm(Form):
-    firstname = StringField('Firstname', [validators.Length(min = 1, max=50)])
-    lastname = StringField('Lastname', [validators.Length(min = 1, max=50)])    
-    phone = StringField('Phone', [validators.Length(min=9,max=10)])
-    username = StringField('Username', [validators.Length(min=4, max=30)])
-    email = StringField('Email', [validators.Length(min=6, max=50)])
-    password = PasswordField('Password', [
-        validators.DataRequired(),
-        validators.EqualTo('confirm', message='Passwords do not match.'),
-        validators.Regexp("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]", flags=0, 
-        message='Password must contain at least one uppercase, lowercase, special character, and number.'),
-        validators.Length(min=8)
-    ])
-    confirm = PasswordField('Confirm Password.')
+
 
 @app.route("/")
 def home():
@@ -54,31 +32,17 @@ def contact():
 def register():
     form = RegisterForm(request.form)
     if request.method == 'POST' and form.validate():
-        firstname = form.firstname.data
-        lastname = form.lastname.data
-        phone = form.phone.data
-        email = form.email.data
-        username = form.username.data
-        password = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
+        encryptpassword = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
 
-        #Create cursor
-        cur = mysql.connection.cursor() #used to execute commands
-
-        #Execute query
-        cur.execute("INSERT INTO users(firstname, lastname, phone, email, username, password) VALUES(%s, %s, %s, %s, %s, %s )", 
-        (firstname, lastname, phone, email, username, password))
-
-        #Commit to db
-        mysql.connection.commit()
-
-        #Close connection
-        cur.close()
+        new_user = User(firstname = form.firstname.data,lastname = form.lastname.data, phone = form.phone.data, email = form.email.data, username = form.username.data, password = encryptpassword)
+        
+        db.session.add(new_user)
+        db.session.commit()
 
         flash('Your account has been created!', 'success')
         return redirect(url_for('index'))
     return render_template("register.html", form=form)
     
-
 
 if __name__ == "__main__":
     app.secret_key = 'wsu4110eventsly'
