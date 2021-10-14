@@ -11,7 +11,7 @@ if ENV == 'dev':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:[password]@localhost/eventsly'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://tedlxxnccqarfg:c7a414983644bb4eca43b0d2465cb2b62d283433d18f097efd97f47b3788a275@ec2-44-198-29-193.compute-1.amazonaws.com:5432/db31eh5kiorqfk'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tedlxxnccqarfg:c7a414983644bb4eca43b0d2465cb2b62d283433d18f097efd97f47b3788a275@ec2-44-198-29-193.compute-1.amazonaws.com:5432/db31eh5kiorqfk'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
