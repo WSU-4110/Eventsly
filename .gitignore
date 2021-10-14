@@ -1,1 +1,8 @@
-.vscode
+.vscode/
+__pycache__/
+env
+/static/scripts/parsedLocationIQ.js
+
+# these two must be present in the repository! do not edit these!
+requirements.txt
+Procfile

@@ -1,0 +1,30 @@
+footer {
+    background-color: #3A3E5E;
+    z-index: 3;
+  }
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    color: white;
+}
+@media screen and (max-width: 1199px) {
+    footer {
+        display: none;
+    }
+}
+@media screen and (min-width: 1200px) {
+    footer {
+        height: 55px;
+    }
+    footer ul {
+        padding: 0 1.2em;
+        height: 100%;
+        margin: 0;
+        align-items: center;
+    }
+    footer li {
+        font-size: 0.9em;
+    }
+}
