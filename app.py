@@ -42,7 +42,7 @@ def register():
             db.session.commit()
             app.logger.info(f'User {form.username.data} account was created.')
             flash('Your account has been created!', 'success')
-            return redirect(url_for('/'))
+            return redirect(url_for('.index'))
         except:
             flash('Unable to make your account','failure')
             app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
