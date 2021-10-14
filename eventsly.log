@@ -43,3 +43,47 @@
 2021-10-14 15:35:37,266 WARNING werkzeug MainThread :  * Debugger is active!
 2021-10-14 15:35:37,307 INFO werkzeug MainThread :  * Debugger PIN: 205-523-811
 2021-10-14 15:35:38,594 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 16:12:59,570 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 16:13:03,302 WARNING werkzeug MainThread :  * Debugger is active!
+2021-10-14 16:13:03,335 INFO werkzeug MainThread :  * Debugger PIN: 205-523-811
+2021-10-14 16:13:04,097 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 16:19:45,558 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 16:19:45] "GET / HTTP/1.1" 200 -
+2021-10-14 16:19:48,019 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 16:19:48] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:19:48,019 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 16:19:48] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:19:48,115 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 16:19:48] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:19:48,131 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 16:19:48] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:19:48,155 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 16:19:48] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 16:19:48,163 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 16:19:48] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 16:19:50,083 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 16:19:50] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 16:19:50,195 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 16:19:50] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:19:50,203 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 16:19:50] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:19:50,211 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 16:19:50] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:19:50,219 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 16:19:50] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:20:06,515 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\models.py', reloading
+2021-10-14 16:20:06,708 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 16:20:56,726 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 16:20:58,636 WARNING werkzeug MainThread :  * Debugger is active!
+2021-10-14 16:20:58,652 INFO werkzeug MainThread :  * Debugger PIN: 205-523-811
+2021-10-14 16:20:59,350 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 16:21:03,328 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 16:21:03] "GET / HTTP/1.1" 200 -
+2021-10-14 16:21:04,959 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 16:21:04] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 16:21:04,959 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 16:21:04] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:04,959 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 16:21:04] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:04,970 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 16:21:04] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:04,970 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 16:21:04] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:04,986 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 16:21:04] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 16:21:17,583 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 16:21:17] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 16:21:17,655 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 16:21:17] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:17,671 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 16:21:17] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:17,679 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 16:21:17] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:17,679 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 16:21:17] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:29,349 INFO models Thread-14 : User cjfox1 account was created.
+2021-10-14 16:21:29,357 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 16:21:29] "[32mPOST /register.html HTTP/1.1[0m" 302 -
+2021-10-14 16:21:29,373 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 16:21:29] "GET /index.html HTTP/1.1" 200 -
+2021-10-14 16:21:29,461 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 16:21:29] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:29,477 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 16:21:29] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:29,485 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 16:21:29] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:29,493 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 16:21:29] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 16:21:29,493 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 16:21:29] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 16:21:29,648 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 16:21:29] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 16:21:30,607 INFO werkzeug Thread-22 : 127.0.0.1 - - [14/Oct/2021 16:21:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
