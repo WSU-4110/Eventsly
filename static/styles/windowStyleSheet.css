@@ -1,19 +1,7 @@
-.create-wrapper {
-    align-items: center;
-    justify-content: center;
-}
-
-
-.create-header h1 {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-
-
 
 /* inputs */
 
-.create-wrapper input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
     font-size: 0.75em;
     color: #999;
     top: -5px;
@@ -51,7 +39,7 @@
     max-width: 100%;
 }
 
-.create-wrapper input,
+input,
 textarea {
     padding: 30px;
     border: 0;
@@ -62,22 +50,22 @@ textarea {
     border-radius: 4px;
 }
 
-.create-wrapper input:focus,
+input:focus,
 textarea:focus { outline: 0; }
 
-.create-wrapper input:focus ~ span,
+input:focus ~ span,
 textarea:focus ~ span {
     width: 100%;
     -webkit-transition: all 0.075s ease;
     transition: all 0.075s ease;
 }
 
-.create-wrapper textarea {
+textarea {
     width: 100%;
-    min-height: 15em;
+    max-height: 15em;
 }
 
-.input-container {
+.container {
     width: 650px;
     max-width: 100%;
     margin: 20px auto 25px auto;

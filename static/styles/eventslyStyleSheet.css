@@ -19,7 +19,7 @@ h1 {
 
 /* Flexbox Styling */
 header {
-  flex: 0 1 auto;
+  flex: 0 1 auto  !important;
 }
 
 main {
@@ -50,8 +50,8 @@ table, th, td {
 }
 
 .responsive {
-  width: 100%;
-  height: auto;
+  width: 100%  !important;
+  height: auto  !important;
 }
 
 .event-create {  

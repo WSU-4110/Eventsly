@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <style type='text/css'>
     @import '/static/styles/eventslyStyleSheet.css';
-    @import '/static/styles/navbarStyleSheet.css';
+    @import '/static/styles/navbarNoBootstrap.css';
     @import '/static/styles/footerStyleSheet.css';
     @import '/static/styles/windowStyleSheet.css';
 
@@ -57,89 +57,97 @@
   </header>
 
   <main>
-    <!-- Create Event Overall Pane-->
-    <div class="create-wrapper">
+    <form>
 
       <!-- Create Event Header Window -->
-      <div class="create-header">
+      <div class="container">
+      <div class="row">
+        <div class="col-md">
         <h1>Create Event</h1>
-      </div>
 
       <!-- Create Event Form below header pane -->
-      <div class="create-form">
-        <form>
-          <div class="row input-container">
-            <div class="col-xs-12">
+          <div class="row">
+            <div class="col-md">
               <div class="styled-input wide">
           <label for="ev-title">Event Title</label><br>
           <input type="text" id="ev-title" name="ev-title" maxlength="25"><br>
               </div>
             </div>
+            </div>
 
-            <div class="col-md-6 col-sm-12">
-              <div class="styled-input">
+            
+            <div class="row">
+            <div class="col-md">
+              <div class="styled-input wide">
           <label for="ev-desc">Event Description</label><br>
           <textarea id="ev-desc" name="ev-desc" maxlength="2000"></textarea><br>
               </div>
             </div>
-
-            <div class="col-md-6 col-sm-12">
-              <div class="styled-input">
-          <label for="ev-loc">Event Location</label><br>
-              </div>
             </div>
 
-            <div class="col-md-6 col-sm-12">
-              <div class="styled-input">
-            <input id="autocomplete" placeholder="Enter your address" onFocus="geolocate()" type="text" class="form-control">
-            </div></div>
-               <br>
+            <div class="row">
+            <div class="col-sm">
+              <div class="styled-input wide">
+                  <label for="ev-loc">Event Location</label><br>
+                  <input id="autocomplete" onFocus="geolocate()" type="text" class="ev-loc">
+            </div></div></div>
 
-               <div class="col-md-6 col-sm-12">
+              <div class="row">
+                <div class="col-sm">
+                     <h6>Below fields will populate automatically</h6>
+              </div></div>
+
+              <div class="row">
+               <div class="col-sm">
                 <div class="styled-input">
-                     <label class="control-label">Address Number</label>
-                     <input class="form-control" id="street_number" disabled="true">
+                     <label for="street_number">Address Number</label>
+                     <input class="street_number" id="street_number" disabled="true">
                      </div></div>
 
-                     <div class="col-md-6 col-sm-12">
+                     <div class="col-sm">
                       <div class="styled-input">
-                     <label class="control-label">Street</label>
-                     <input class="form-control" id="street" disabled="true">
+                     <label for="street">Street</label>
+                     <input class="street" id="street" disabled="true">
+                     </div></div></div>
+
+                     <div class="row">
+                     <div class="col-sm">
+                      <div class="styled-input">
+                     <label for="city">City</label>
+                     <input class="city" id="city" disabled="true">
                      </div></div>
 
-                     <div class="col-md-6 col-sm-12">
+                     <div class="col-sm">
                       <div class="styled-input">
-                     <label class="control-label">City</label>
-                     <input class="form-control field" id="city" disabled="true">
-                     </div></div>
-
-                     <div class="col-md-6 col-sm-12">
-                      <div class="styled-input">
-                     <label class="control-label">State</label>
-                     <input class="form-control" id="state" disabled="true">
-                     </div></div>
+                     <label for="state">State</label>
+                     <input class="state" id="state" disabled="true">
+                     </div></div></div>
  
-                     <div class="col-md-6 col-sm-12">
+                     <div class="row">
+                     <div class="col-sm">
                       <div class="styled-input">
-                     <label class="control-label">Zip</label>
-                     <input class="form-control" id="zipcode" disabled="true">
-                     </div></div>
- 
-                     <div class="col-md-6 col-sm-12">
-                      <div class="styled-input">
-                     <label class="control-label">Country</label>
-                     <input class="form-control" id="country" disabled="true">
+                     <label for="zipcode">Zip</label>
+                     <input class="zipcode" id="zipcode" disabled="true">
                      </div></div>
 
-                     <div class="col-xs-12">
+                     <div class="col-sm">
+                      <div class="styled-input">
+                     <label for="country">Country</label>
+                     <input class="country" id="country" disabled="true">
+                     </div></div></div>
+
+                     <div class="row">
+                     <div class="col-sm">
                       <div class="btn-lrg submit-btn">
                         <input type="submit" value="Create!">
+                      </div>
                       </div>
                     </div>
                     </div>
         </form>
       </div>
     </div>
+  
 
     <!-- Autocomplete Maps API Key -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9zq1SP9zmZFXsHejsmRmABDNAb-rH2Tg&libraries=places&callback=initAutocomplete" async defer></script>  
