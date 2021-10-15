@@ -480,3 +480,850 @@ RuntimeError: The session is unavailable because no secret key was set.  Set the
 2021-10-14 17:18:40,572 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 17:18:40] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
 2021-10-14 17:18:40,668 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 17:18:40] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
 2021-10-14 17:18:41,148 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 17:18:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:22:07,297 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 17:22:17,617 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 17:22:17] "GET / HTTP/1.1" 200 -
+2021-10-14 17:22:18,538 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 17:22:18] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:18,539 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 17:22:18] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:22:18,541 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 17:22:18] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:18,544 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 17:22:18] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:18,548 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 17:22:18] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:18,552 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 17:22:18] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:22:24,858 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 17:22:24] "GET / HTTP/1.1" 200 -
+2021-10-14 17:22:24,891 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 17:22:24] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:24,897 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 17:22:24] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:24,898 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 17:22:24] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:24,902 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 17:22:24] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:24,905 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 17:22:24] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:22:25,050 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 17:22:25] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:22:33,083 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 17:22:33] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 17:22:33,122 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 17:22:33] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:33,123 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 17:22:33] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:33,126 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 17:22:33] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:33,127 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 17:22:33] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:22:57,725 INFO models Thread-20 : User test10 account was created.
+2021-10-14 17:22:57,726 ERROR models Thread-20 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 44, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 17:22:57,728 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 17:22:57] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 17:22:58,162 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 17:22:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 17:24:49,250 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 17:25:07,549 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 17:25:07] "GET / HTTP/1.1" 200 -
+2021-10-14 17:25:08,467 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 17:25:08] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:25:08,468 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 17:25:08] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:25:08,469 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 17:25:08] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:25:08,470 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 17:25:08] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:25:08,473 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 17:25:08] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:25:08,479 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 17:25:08] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 17:25:15,029 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 17:25:15] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 17:25:15,066 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 17:25:15] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:25:15,069 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 17:25:15] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:25:15,071 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 17:25:15] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:25:15,073 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 17:25:15] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 17:25:48,190 INFO models Thread-13 : User tesst11 account was created.
+2021-10-14 17:25:48,190 ERROR models Thread-13 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 45, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 48, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 17:25:48,192 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 17:25:48] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 17:25:48,550 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 17:25:48] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 18:59:04,727 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 18:59:51,497 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 18:59:51] "GET / HTTP/1.1" 200 -
+2021-10-14 18:59:52,982 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 18:59:52] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 18:59:53,000 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 18:59:53] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 18:59:53,000 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 18:59:53] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 18:59:53,008 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 18:59:53] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 18:59:53,008 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 18:59:53] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 18:59:53,024 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 18:59:53] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 18:59:55,320 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 18:59:55] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 18:59:55,392 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 18:59:55] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 18:59:55,400 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 18:59:55] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 18:59:55,408 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 18:59:55] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 18:59:55,408 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 18:59:55] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:01:56,290 INFO models Thread-14 : User test12 account was created.
+2021-10-14 19:01:56,290 ERROR models Thread-14 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 44, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 19:01:56,290 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 19:01:56] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 19:01:57,258 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 19:01:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 19:06:32,968 ERROR models Thread-16 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "constraint_name"
+DETAIL:  Key (email, username)=(test12@test.com, test12) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 42, in register
+    db.session.add(new_user)
+  File "<string>", line 2, in commit
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3339, in flush
+    self._flush(objects)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3479, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3439, in _flush
+    flush_context.execute()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\persistence.py", line 1219, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1611, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1478, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 2023, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "constraint_name"
+DETAIL:  Key (email, username)=(test12@test.com, test12) already exists.
+
+[SQL: INSERT INTO users (firstname, lastname, phone, email, username, password) VALUES (%(firstname)s, %(lastname)s, %(phone)s, %(email)s, %(username)s, %(password)s) RETURNING users.id]
+[parameters: {'firstname': 'test', 'lastname': 'user', 'phone': '9999999999', 'email': 'test12@test.com', 'username': 'test12', 'password': '$5$rounds=535000$hFIHjF8dpG0pu7gy$jEGsQaYk.5R8xg.rgrcEXESJWEASGwXw1Dm2M21m.hB'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    except:
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 19:06:33,008 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 19:06:33] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 19:06:33,984 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 19:06:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 19:06:43,089 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 19:06:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 19:06:51,799 ERROR models Thread-18 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "constraint_name"
+DETAIL:  Key (email, username)=(test12@test.com, test12) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 42, in register
+    db.session.add(new_user)
+  File "<string>", line 2, in commit
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3339, in flush
+    self._flush(objects)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3479, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3439, in _flush
+    flush_context.execute()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\persistence.py", line 1219, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1611, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1478, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 2023, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "constraint_name"
+DETAIL:  Key (email, username)=(test12@test.com, test12) already exists.
+
+[SQL: INSERT INTO users (firstname, lastname, phone, email, username, password) VALUES (%(firstname)s, %(lastname)s, %(phone)s, %(email)s, %(username)s, %(password)s) RETURNING users.id]
+[parameters: {'firstname': 'test', 'lastname': 'user', 'phone': '9999999999', 'email': 'test12@test.com', 'username': 'test12', 'password': '$5$rounds=535000$EjzrRUvBaWMNmGdD$DkY4LVkgYLbSacFf6Gl2PqWaJO/IayYyIRxyaAvjis0'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    except:
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 19:06:51,799 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 19:06:51] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 19:06:52,553 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 19:06:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 19:11:11,461 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 19:11:41,271 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 19:11:41] "GET / HTTP/1.1" 200 -
+2021-10-14 19:11:42,992 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 19:11:42] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:11:42,992 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 19:11:42] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:11:42,992 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 19:11:42] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:11:42,992 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 19:11:42] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:11:43,000 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 19:11:43] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:11:43,023 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 19:11:43] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:11:47,602 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 19:11:47] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 19:11:47,666 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 19:11:47] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:11:47,674 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 19:11:47] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:11:47,682 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 19:11:47] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:11:47,682 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 19:11:47] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:12:09,091 INFO models Thread-14 : User test13 account was created.
+2021-10-14 19:12:09,091 ERROR models Thread-14 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 44, in register
+    #flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    #flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 19:12:09,115 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 19:12:09] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 19:12:09,957 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 19:12:09] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 19:14:44,358 ERROR models Thread-16 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "constraint_name"
+DETAIL:  Key (email, username)=(test13@test.com, test13) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 42, in register
+    db.session.commit()
+  File "<string>", line 2, in commit
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 829, in commit
+    self._prepare_impl()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3339, in flush
+    self._flush(objects)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3479, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\session.py", line 3439, in _flush
+    flush_context.execute()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
+    rec.execute(self)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\persistence.py", line 242, in save_obj
+    _emit_insert_statements(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\orm\persistence.py", line 1219, in _emit_insert_statements
+    result = connection._execute_20(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1611, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1478, in _execute_clauseelement
+    ret = self._execute_context(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1842, in _execute_context
+    self._handle_dbapi_exception(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 2023, in _handle_dbapi_exception
+    util.raise_(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\util\compat.py", line 207, in raise_
+    raise exception
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\base.py", line 1799, in _execute_context
+    self.dialect.do_execute(
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "constraint_name"
+DETAIL:  Key (email, username)=(test13@test.com, test13) already exists.
+
+[SQL: INSERT INTO users (firstname, lastname, phone, email, username, password) VALUES (%(firstname)s, %(lastname)s, %(phone)s, %(email)s, %(username)s, %(password)s) RETURNING users.id]
+[parameters: {'firstname': 'test13', 'lastname': 'user', 'phone': '9999999999', 'email': 'test13@test.com', 'username': 'test13', 'password': '$5$rounds=535000$IpZusvhETYzH8BR7$Qa/lbbSJFqSzd8lNAtvGUxJErlBnzyLlDC6KMN.G.5C'}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    #flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 19:14:44,407 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 19:14:44] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 19:14:45,158 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 19:14:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 19:24:47,514 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 19:25:09,243 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 19:25:09] "GET / HTTP/1.1" 200 -
+2021-10-14 19:25:10,615 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 19:25:10] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:10,615 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 19:25:10] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:10,623 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 19:25:10] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:10,631 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 19:25:10] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:10,631 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 19:25:10] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:25:10,647 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 19:25:10] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:25:12,484 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 19:25:12] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 19:25:12,549 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 19:25:12] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:12,557 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 19:25:12] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:12,565 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 19:25:12] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:12,565 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 19:25:12] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:29,447 INFO models Thread-14 : User test14 account was created.
+2021-10-14 19:25:29,455 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 19:25:29] "[32mPOST /register.html HTTP/1.1[0m" 302 -
+2021-10-14 19:25:29,471 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 19:25:29] "GET /index.html HTTP/1.1" 200 -
+2021-10-14 19:25:29,575 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 19:25:29] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:29,575 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 19:25:29] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:29,583 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 19:25:29] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:29,591 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 19:25:29] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:25:29,599 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 19:25:29] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:25:29,759 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 19:25:29] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:25:30,662 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 19:25:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 19:26:05,530 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 19:26:26,236 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 19:26:26] "GET / HTTP/1.1" 200 -
+2021-10-14 19:26:27,648 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 19:26:27] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:26:27,648 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 19:26:27] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:26:27,672 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 19:26:27] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:26:27,672 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 19:26:27] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:26:27,680 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 19:26:27] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:26:27,704 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 19:26:27] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:26:31,954 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 19:26:31] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 19:26:32,034 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 19:26:32] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:26:32,050 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 19:26:32] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:26:32,050 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 19:26:32] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:26:32,050 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 19:26:32] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:26:59,428 INFO models Thread-13 : User test15 account was created.
+2021-10-14 19:26:59,428 ERROR models Thread-13 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 43, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 46, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 19:26:59,428 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 19:26:59] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 19:27:00,225 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 19:27:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 19:30:53,904 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 19:31:13,618 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 19:31:13] "GET / HTTP/1.1" 200 -
+2021-10-14 19:31:15,136 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 19:31:15] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:31:15,136 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 19:31:15] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:31:15,168 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 19:31:15] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:31:15,168 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 19:31:15] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:31:15,184 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 19:31:15] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:31:15,192 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 19:31:15] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:31:17,663 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 19:31:17] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 19:31:17,743 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 19:31:17] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:31:17,743 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 19:31:17] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:31:17,751 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 19:31:17] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:31:17,751 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 19:31:17] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:31:32,174 INFO models Thread-13 : User test account was created.
+2021-10-14 19:31:32,182 ERROR models Thread-13 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 44, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 47, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 19:31:32,182 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 19:31:32] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 19:31:32,982 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 19:31:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 19:35:54,511 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 19:36:09,796 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 19:36:09] "GET / HTTP/1.1" 200 -
+2021-10-14 19:36:11,417 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 19:36:11] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:11,417 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 19:36:11] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:11,433 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 19:36:11] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:36:11,433 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 19:36:11] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:11,441 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 19:36:11] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:11,449 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 19:36:11] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:36:15,615 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 19:36:15] "GET / HTTP/1.1" 200 -
+2021-10-14 19:36:15,663 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 19:36:15] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:15,671 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 19:36:15] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:15,679 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 19:36:15] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:15,679 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 19:36:15] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:15,695 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 19:36:15] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:36:16,018 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 19:36:16] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 19:36:18,837 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 19:36:18] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 19:36:18,941 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 19:36:18] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:18,941 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 19:36:18] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:18,949 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 19:36:18] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:18,957 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 19:36:18] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 19:36:33,195 INFO models Thread-20 : User test account was created.
+2021-10-14 19:36:33,195 ERROR models Thread-20 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 45, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 48, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 19:36:33,195 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 19:36:33] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 19:36:33,883 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 19:36:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 20:04:59,942 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 20:05:02,462 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:05:09,808 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 20:05:09] "GET / HTTP/1.1" 200 -
+2021-10-14 20:05:11,432 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 20:05:11] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 20:05:11,432 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 20:05:11] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:05:11,437 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 20:05:11] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:05:11,437 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 20:05:11] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:05:11,454 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 20:05:11] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 20:05:11,462 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 20:05:11] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:05:14,581 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 20:05:14] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 20:05:14,637 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 20:05:14] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:05:14,661 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 20:05:14] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:05:14,661 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 20:05:14] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:05:14,661 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 20:05:14] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:05:37,473 INFO models Thread-16 : User eefiw account was created.
+2021-10-14 20:05:37,570 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 20:05:37] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 20:05:37,810 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 20:05:37] "GET /register.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-14 20:05:37,898 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 20:05:37] "GET /register.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-14 20:05:37,930 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 20:05:37] "GET /register.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-14 20:05:38,098 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 20:05:38] "GET /register.html?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-14 20:05:38,588 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 20:05:38] "GET /register.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-14 20:05:38,680 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 20:05:38] "GET /register.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-14 20:32:11,908 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:32:37,366 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 20:32:37] "GET / HTTP/1.1" 200 -
+2021-10-14 20:32:39,346 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 20:32:39] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:32:39,346 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 20:32:39] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 20:32:39,362 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 20:32:39] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:32:39,378 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 20:32:39] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:32:39,386 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 20:32:39] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:32:39,394 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 20:32:39] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 20:32:46,920 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 20:32:46] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 20:32:47,000 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 20:32:47] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:32:47,008 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 20:32:47] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:32:47,016 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 20:32:47] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:32:47,016 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 20:32:47] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:33:06,104 INFO models Thread-13 : User test20 account was created.
+2021-10-14 20:33:06,112 ERROR models Thread-13 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 49, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 52, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 20:33:06,112 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 20:33:06] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 20:33:07,143 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 20:33:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 20:34:06,360 INFO models Thread-16 : User test20 account was created.
+2021-10-14 20:34:06,360 ERROR models Thread-16 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 49, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 52, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 20:34:06,360 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 20:34:06] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 20:34:07,196 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 20:34:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 20:35:52,087 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:36:11,859 INFO werkzeug Thread-1 : 127.0.0.1 - - [14/Oct/2021 20:36:11] "GET / HTTP/1.1" 200 -
+2021-10-14 20:36:13,288 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 20:36:13] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 20:36:13,288 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 20:36:13] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:36:13,288 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 20:36:13] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:36:13,297 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 20:36:13] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:36:13,298 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 20:36:13] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:36:13,306 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 20:36:13] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 20:36:16,641 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 20:36:16] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 20:36:16,713 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 20:36:16] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:36:16,713 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 20:36:16] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:36:16,721 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 20:36:16] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:36:16,721 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 20:36:16] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 20:36:34,194 INFO models Thread-14 : User test21 account was created.
+2021-10-14 20:36:34,194 ERROR models Thread-14 : Exception on /register.html [POST]
+Traceback (most recent call last):
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 49, in register
+    flash('Your account has been created!', 'success')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\cjfox\Documents\GitHub\Eventsly\app.py", line 52, in register
+    flash('Unable to make your account','failure')
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\helpers.py", line 391, in flash
+    session["_flashes"] = flashes
+  File "C:\Users\cjfox\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.9_qbz5n2kfra8p0\LocalCache\local-packages\Python39\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+2021-10-14 20:36:34,194 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 20:36:34] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 20:36:35,000 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 20:36:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 20:41:37,535 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:41:56,129 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:42:46,921 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 20:42:46,938 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:43:44,560 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 20:43:44,576 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:45:43,079 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 20:45:43,110 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:46:06,323 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 20:46:06,347 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:50:55,999 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 20:50:56,016 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:51:34,126 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 20:51:34,155 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:51:53,464 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 20:51:53,491 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 20:52:26,972 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 20:52:26,988 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:01:35,736 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:01:35,752 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:03:24,096 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:03:24,114 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:03:58,945 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:03:58,967 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:05:21,579 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:05:21,594 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:05:39,462 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:05:39,473 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:07:06,197 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:07:06,213 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:18:06,798 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:18:06,812 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:18:57,254 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:18:57,254 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:20:00,431 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:20:00,447 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:20:21,292 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:20:21,304 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:22:27,586 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:22:27,617 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 21:22:28,641 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:22:28,658 WARNING werkzeug MainThread :  * Debugger is active!
+2021-10-14 21:22:28,707 INFO werkzeug MainThread :  * Debugger PIN: 205-523-811
+2021-10-14 21:22:29,183 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:22:42,434 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 21:22:42] "GET / HTTP/1.1" 200 -
+2021-10-14 21:22:43,360 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 21:22:43] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:43,361 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 21:22:43] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:43,362 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 21:22:43] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:43,363 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 21:22:43] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 21:22:43,364 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 21:22:43] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:43,374 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 21:22:43] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 21:22:44,858 INFO werkzeug Thread-9 : 127.0.0.1 - - [14/Oct/2021 21:22:44] "GET / HTTP/1.1" 200 -
+2021-10-14 21:22:44,954 INFO werkzeug Thread-10 : 127.0.0.1 - - [14/Oct/2021 21:22:44] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:44,957 INFO werkzeug Thread-11 : 127.0.0.1 - - [14/Oct/2021 21:22:44] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:44,961 INFO werkzeug Thread-12 : 127.0.0.1 - - [14/Oct/2021 21:22:44] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:44,962 INFO werkzeug Thread-13 : 127.0.0.1 - - [14/Oct/2021 21:22:44] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:44,971 INFO werkzeug Thread-14 : 127.0.0.1 - - [14/Oct/2021 21:22:44] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 21:22:45,119 INFO werkzeug Thread-15 : 127.0.0.1 - - [14/Oct/2021 21:22:45] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-14 21:22:46,401 INFO werkzeug Thread-17 : 127.0.0.1 - - [14/Oct/2021 21:22:46] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 21:22:46,438 INFO werkzeug Thread-16 : 127.0.0.1 - - [14/Oct/2021 21:22:46] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:46,446 INFO werkzeug Thread-19 : 127.0.0.1 - - [14/Oct/2021 21:22:46] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:46,447 INFO werkzeug Thread-20 : 127.0.0.1 - - [14/Oct/2021 21:22:46] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:22:46,447 INFO werkzeug Thread-18 : 127.0.0.1 - - [14/Oct/2021 21:22:46] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:23:06,752 INFO models Thread-21 : User test19 account was created.
+2021-10-14 21:23:06,788 INFO werkzeug Thread-21 : 127.0.0.1 - - [14/Oct/2021 21:23:06] "[35m[1mPOST /register.html HTTP/1.1[0m" 500 -
+2021-10-14 21:23:06,826 INFO werkzeug Thread-22 : 127.0.0.1 - - [14/Oct/2021 21:23:06] "GET /register.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-14 21:23:06,828 INFO werkzeug Thread-23 : 127.0.0.1 - - [14/Oct/2021 21:23:06] "GET /register.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-14 21:23:06,914 INFO werkzeug Thread-24 : 127.0.0.1 - - [14/Oct/2021 21:23:06] "GET /register.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-14 21:23:06,982 INFO werkzeug Thread-25 : 127.0.0.1 - - [14/Oct/2021 21:23:06] "GET /register.html?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-14 21:23:07,016 INFO werkzeug Thread-26 : 127.0.0.1 - - [14/Oct/2021 21:23:07] "GET /register.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-14 21:23:07,370 INFO werkzeug Thread-27 : 127.0.0.1 - - [14/Oct/2021 21:23:07] "GET /register.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-14 21:23:54,886 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-14 21:23:55,070 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 21:23:56,008 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:23:56,023 WARNING werkzeug MainThread :  * Debugger is active!
+2021-10-14 21:23:56,033 INFO werkzeug MainThread :  * Debugger PIN: 205-523-811
+2021-10-14 21:23:56,332 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:23:57,578 WARNING models Thread-2 : User test19 account was unable to be created. Username or email already in use.
+2021-10-14 21:23:57,580 INFO werkzeug Thread-2 : 127.0.0.1 - - [14/Oct/2021 21:23:57] "[32mPOST /register.html HTTP/1.1[0m" 302 -
+2021-10-14 21:23:57,600 INFO werkzeug Thread-3 : 127.0.0.1 - - [14/Oct/2021 21:23:57] "GET /register.html HTTP/1.1" 200 -
+2021-10-14 21:23:58,407 INFO werkzeug Thread-7 : 127.0.0.1 - - [14/Oct/2021 21:23:58] "[36mGET /static/styles/signupStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:23:58,407 INFO werkzeug Thread-4 : 127.0.0.1 - - [14/Oct/2021 21:23:58] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:23:58,408 INFO werkzeug Thread-5 : 127.0.0.1 - - [14/Oct/2021 21:23:58] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:23:58,410 INFO werkzeug Thread-6 : 127.0.0.1 - - [14/Oct/2021 21:23:58] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-14 21:23:58,934 INFO werkzeug Thread-8 : 127.0.0.1 - - [14/Oct/2021 21:23:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-14 21:24:59,796 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-14 21:24:59,896 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 21:25:00,836 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:25:00,854 WARNING werkzeug MainThread :  * Debugger is active!
+2021-10-14 21:25:00,872 INFO werkzeug MainThread :  * Debugger PIN: 205-523-811
+2021-10-14 21:25:01,216 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:25:05,380 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-14 21:25:05,551 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 21:25:06,510 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': True, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': None, 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:25:06,528 WARNING werkzeug MainThread :  * Debugger is active!
+2021-10-14 21:25:06,541 INFO werkzeug MainThread :  * Debugger PIN: 205-523-811
+2021-10-14 21:25:06,908 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:51:09,880 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\models.py', reloading
+2021-10-14 21:51:10,005 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-14 21:51:11,256 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': False, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_DATABASE_URI': 'sqlite:///:memory:', 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:51:11,287 WARNING werkzeug MainThread :  * Debugger is active!
+2021-10-14 21:51:11,303 INFO werkzeug MainThread :  * Debugger PIN: 205-523-811
+2021-10-14 21:51:11,662 INFO werkzeug Thread-1 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:51:30,008 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': False, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_DATABASE_URI': 'sqlite:///:memory:', 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:51:30,019 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:52:27,690 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': False, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'secretkey', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:52:27,690 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:53:44,501 INFO models MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': False, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:53:44,511 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-14 21:54:48,984 INFO app MainThread : <Config {'ENV': 'config.DevelopmentConfig', 'DEBUG': False, 'TESTING': False, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False, 'SQLALCHEMY_BINDS': None, 'SQLALCHEMY_NATIVE_UNICODE': None, 'SQLALCHEMY_ECHO': False, 'SQLALCHEMY_RECORD_QUERIES': None, 'SQLALCHEMY_POOL_SIZE': None, 'SQLALCHEMY_POOL_TIMEOUT': None, 'SQLALCHEMY_POOL_RECYCLE': None, 'SQLALCHEMY_MAX_OVERFLOW': None, 'SQLALCHEMY_COMMIT_ON_TEARDOWN': False, 'SQLALCHEMY_ENGINE_OPTIONS': {}}>
+2021-10-14 21:54:48,994 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)

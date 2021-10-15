@@ -1,12 +1,22 @@
-from flask import Flask, render_template, request, redirect, flash, url_for, session, logging
+from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
 from passlib.hash import sha256_crypt
 from logger import *
+import os
+
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'wsu4110eventsly'
 from models import *
 
+if app.config['ENV'] == 'production':
+    app.config.from_object('config.ProductionConfig')
+if app.config['ENV'] == 'development':
+    app.config.from_object('config.DevelopmentConfig')
+else:
+    app.config.from_object('config.BaseConfig')
+    
 
+
+app.logger.info(app.config)
 
 @app.route("/")
 def home():
@@ -62,4 +72,5 @@ def createEvent():
 
 
 if __name__ == "__main__":
+    app.secret_key='wsu4110eventsly'
     app.run(debug=True)
