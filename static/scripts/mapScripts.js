@@ -44,6 +44,10 @@ function buildMap() {
 function userTools() {
   // placeholder for user placed pin
   var marker
+  var marker2 // static pin marking WSU
+
+  marker2 = new L.Marker([42.358768, -83.071228]).addTo(map);
+
 
   // on click, either remove existing pin from search or placement
   // or place a new pin if there are no existing pins
