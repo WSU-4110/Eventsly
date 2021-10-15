@@ -4,7 +4,7 @@ from os import environ, path
 class BaseConfig(object):
     DEBUG = False
     SECRET_KEY = 'wsu4110eventsly!!'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
