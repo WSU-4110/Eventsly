@@ -6,10 +6,10 @@ import os
 
 app = Flask(__name__)
 from models import *
-
-if app.config['ENV'] == 'production':
+environment = os.environ('ENV')
+if environment == 'production':
     app.config.from_object('config.ProductionConfig')
-if app.config['ENV'] == 'development':
+if environment == 'development':
     app.config.from_object('config.DevelopmentConfig')
 else:
     app.config.from_object('config.BaseConfig')
