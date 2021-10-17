@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type='text/css'>
+        @import '/static/styles/eventslyStyleSheet.css';
+        @import '/static/styles/navbarStyleSheet.css';
+        @import '/static/styles/footerStyleSheet.css';
+        {{ pageStyles }}
+    </style>
+    <!-- Eventsly Scripts -->
+    <script src='/static/scripts/navScripts.js' async></script>
+
+    <!-- Font Awesome JS load for Eventsly Logo -->
+    <script src="https://kit.fontawesome.com/3f6d9190cb.js" crossorigin="anonymous"></script>
+
+    <!-- Google Font API load for Eventsly Logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+    {% block head %} {% endblock %}
+</head>
+
+<body>
+    <header>
+        <nav role="navigation">
+            <a href="index.html" class="logo">
+                <i class="fas fa-map-marked" alt="Eventsly"></i>Eventsly
+            </a>
+            {% block nav %} {% endblock %}
+            <i class='fa fa-bars fa-inverse fa-2x' aria-hidden="true"></i>
+        </nav>
+    </header>
+
+    <main>
+        {% block main %} {% endblock %}
+    </main>
+
+    <footer>
+        <ul>
+            <li>Connect with your community</li>
+            <li>All content copyright &copy; 2021, Eventsly</li>
+        </ul>
+    </footer>
+</body>
+
+</html>

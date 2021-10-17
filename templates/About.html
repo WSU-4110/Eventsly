@@ -1,63 +1,27 @@
-<!doctype html>
-<html>
+{% extends 'base.html' %}
 
-<head>
-  <meta charset="UTF-8">
-  <title>About Us</title>
-  <meta name="viewport" content="width=device-width, initial-scale = 1">
-  <style type='text/css'>
-    @import '/static/styles/eventslyStyleSheet.css';
-    @import '/static/styles/navbarStyleSheet.css';
-    @import '/static/styles/footerStyleSheet.css';
-  </style>
-  <!-- Eventsly Scripts -->
-  <script src='/static/scripts/navScripts.js' async></script>
+{% block head %}
 
-  <!-- Font Awesome JS load for Eventsly Logo -->
-  <script src="https://kit.fontawesome.com/3f6d9190cb.js" crossorigin="anonymous"></script>
+{% endblock %}
 
-  <!-- Google Font API load for Eventsly Logo -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
-</head>
+{% block nav %}
+<div class='nav-menu'>
+  <a href="index.html" class="nav-item">Home</a>
+  <a href="Bookmarks.html" class="nav-item">Bookmarks</a>
+  <a href="About.html" class="nav-item active">About Us</a>
+  <a href="Contact.html" class="nav-item">Contact</a>
+  <div class="search nav-item">
+    <span class="fa-stack">
+      <i class="fas fa-circle fa-stack-2x" id='search-circle'></i>
+      <i class="fa fa-search fa-stack-1x" aria-hidden="true"></i>
+    </span>
+  </div>
+  <div class="spacer"></div>
+  <a href="login.html" class="nav-item">Log In</a>
+  <a href='register.html' class="nav-item">Sign Up</a>
+</div>
+{% endblock %}
 
-<body>
-  <header>
-    <nav role="navigation">
-      <a href="index.html" class="logo">
-        <i class="fas fa-map-marked" style="color:white" alt="Eventsly"></i>Eventsly
-      </a>
-      <div class='nav-menu'>
-        <a href="index.html" class="nav-item">Home</a>
-        <a href="Bookmarks.html" class="nav-item">Bookmarks</a>
-        <a href="About.html" class="nav-item active">About Us</a>
-        <a href="Contact.html" class="nav-item">Contact</a>
-        <div class="search nav-item">
-          <span class="fa-stack" style="vertical-align: top;">
-            <i class="fas fa-circle fa-stack-2x"></i>
-            <i class="fa fa-search fa-stack-1x" aria-hidden="true"></i>
-          </span>
-        </div>
-        <div class="spacer"></div>
-        <a href="#" class="nav-item">Log In</a>
-        <a href = 'register.html' class="nav-item">Sign Up</a>
-      </div>
-      <i class='fa fa-bars fa-inverse fa-2x' aria-hidden="true"></i>
-    </nav>
-  </header>
-
-  <main>
-    <h1><img src="/static/images/examplePic.png" width="50" height="40" alt="Eventsly">About Us</h1>
-  </main>
-
-  <footer>
-    <ul>
-      <li>Connect with your community</li>
-      <li>All content copyright &copy; 2021, Eventsly</li>
-    </ul>
-  </footer>
-</body>
-
-
-</html>
+{% block main %}
+<h1><img src="/static/images/examplePic.png" width="50" height="40" alt="Eventsly">About Us</h1>
+{% endblock %}

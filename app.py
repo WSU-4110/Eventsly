@@ -17,23 +17,23 @@ app.logger.info(app.config)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", title="Eventsly", pageStyles="main {padding: 0;}")
 
 @app.route("/index.html")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", title="Eventsly", pageStyles="main {padding: 0;}")
 
 @app.route("/Bookmarks.html")
 def bookmarks():
-    return render_template("Bookmarks.html")
+    return render_template("Bookmarks.html", title="Bookmarks")
 
 @app.route("/About.html")
 def about():
-    return render_template("About.html")
+    return render_template("About.html", title="About Us")
 
 @app.route("/Contact.html")
 def contact():
-    return render_template("Contact.html")
+    return render_template("Contact.html", title="Contact")
 
 @app.route("/register.html", methods=['POST','GET'])
 def register():
@@ -56,15 +56,15 @@ def register():
             return redirect(url_for('register'))
 
 
-    return render_template("register.html", form=form)
+    return render_template("register.html", form=form, title="Register")
 
 @app.route("/login.html")
 def login():
-    return render_template("login.html")
+    return render_template("login.html", title="Log In")
 
 @app.route("/createEvent.html")
 def createEvent():
-    return render_template("createEvent.html")
+    return render_template("createEvent.html", title="Create Event")
 
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
