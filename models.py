@@ -33,4 +33,11 @@ class User(db.Model):
     username = db.Column(db.String(30), unique=True)
     password = db.Column(db.String(100))
 
+class Event(db.Model):
+    __tablename__ = 'events'
+
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50))
+    description = db.Column(db.String(50))
+
 db.create_all()
