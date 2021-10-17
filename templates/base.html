@@ -24,11 +24,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+
+    <!-- block for page-specific head content (stylesheets, scripts, etc) -->
     {% block head %} {% endblock %}
 </head>
 
 <body>
     <header>
+        <!-- .active class is applied dynamically based title variable (specified in app.py render_tempate code) -->
         <nav role="navigation">
             <a href="index.html" class="logo">
                 <i class="fas fa-map-marked" alt="Eventsly"></i>Eventsly
@@ -53,6 +56,7 @@
     </header>
 
     <main>
+        <!-- block for page specific main content -->
         {% block main %} {% endblock %}
     </main>
 
