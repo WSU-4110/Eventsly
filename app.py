@@ -6,7 +6,6 @@ import os
 app = Flask(__name__)
 from models import *
 
-
 if app.config['ENV'] == 'production':
     app.config.from_object('config.ProductionConfig')
 elif app.config['ENV'] == 'development':
@@ -59,7 +58,6 @@ def register():
 
     return render_template("register.html", form=form)
 
-
 @app.route("/login.html")
 def login():
     return render_template("login.html")
@@ -67,7 +65,6 @@ def login():
 @app.route("/createEvent.html")
 def createEvent():
     return render_template("createEvent.html")
-
 
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'

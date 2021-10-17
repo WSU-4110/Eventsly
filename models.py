@@ -4,7 +4,6 @@ from wtforms import Form, StringField, PasswordField, validators
 from app import app
 
 db = SQLAlchemy(app)
-
 class RegisterForm(Form):
     firstname = StringField('Firstname', [validators.Length(min = 1, max=50)])
     lastname = StringField('Lastname', [validators.Length(min = 1, max=50)])    
