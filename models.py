@@ -22,6 +22,15 @@ class RegisterForm(Form):
     ])
     confirm = PasswordField('Confirm Password.')
 
+class EventForm(Form):
+    title = StringField('Title')
+    description = StringField('Description')
+    address = StringField('Address')
+    latitude = StringField('Latitude')
+    longitude = StringField('Longitude')
+    date = StringField('Date')
+
+
 class User(db.Model):
     __tablename__ = 'users'
 
