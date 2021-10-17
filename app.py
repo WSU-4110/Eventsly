@@ -3,18 +3,17 @@ from passlib.hash import sha256_crypt
 from logger import *
 import os
 
-
 app = Flask(__name__)
 from models import *
+
+
 if app.config['ENV'] == 'production':
     app.config.from_object('config.ProductionConfig')
-if app.config['ENV'] == 'development':
+elif app.config['ENV'] == 'development':
     app.config.from_object('config.DevelopmentConfig')
 else:
     app.config.from_object('config.BaseConfig')
     
-
-
 app.logger.info(app.config)
 
 @app.route("/")
@@ -43,7 +42,7 @@ def register():
     if request.method == 'POST' and form.validate():
         encryptpassword = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
 
-        new_user = User(firstname = form.firstname.data,lastname = form.lastname.data, phone = form.phone.data, 
+        new_user = Users(firstname = form.firstname.data,lastname = form.lastname.data, phone = form.phone.data, 
         email = form.email.data, username = form.username.data, password = encryptpassword)
         
         try:
