@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <title>{{ title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style type='text/css'>
-        @import '/static/styles/eventslyStyleSheet.css';
-        @import '/static/styles/navbarStyleSheet.css';
-        @import '/static/styles/footerStyleSheet.css';
-        {{ pageStyles }}
-    </style>
+
+    <!-- Genearl Stylesheets -->
+    <link rel="stylesheet" href="/static/styles/eventslyStyleSheet.css">
+    <link rel="stylesheet" href="/static/styles/navbarStyleSheet.css">
+    <link rel="stylesheet" href="/static/styles/footerStyleSheet.css">
+
+    <!-- Specific Styles NOTE: (variable shows as error, but it is not)-->
+    <style type="text/css">{{ pageStyles }}</style>
+
     <!-- Eventsly Scripts -->
     <script src='/static/scripts/navScripts.js' async></script>
 
