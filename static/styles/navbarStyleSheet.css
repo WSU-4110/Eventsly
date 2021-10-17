@@ -30,10 +30,10 @@ nav {
 a.nav-item:hover:not(.active) {
     background-color: #7b82b3;
 }
-.fa-circle {
+.fa-stack #search-circle {
     color: white;
 }
-.fa-search {
+.fa-stack .fa-search {
     color: #3A3E5E;
  }
 
@@ -64,6 +64,7 @@ a.nav-item:hover:not(.active) {
     }
     .fa-bars {
         color: white;
+        cursor: pointer;
     }
     .nav-menu {
         display: flex;
@@ -75,13 +76,12 @@ a.nav-item:hover:not(.active) {
         width: 100%;
         background-color: #3A3E5E;
         align-items: center;
-        z-index: 2;
+        z-index: 3;
         transition: 1s;
         height: calc(100% - 64px);
     }
     .dropdown {
         left: 0;
-
     }
 }
 
@@ -121,13 +121,11 @@ a.nav-item:hover:not(.active) {
         height: 100%;
         
     }
-    .fa-map-marked {
+    .logo .fa-map-marked {
         padding-right: 5px;
         min-width: 32px;
+        color: white;
       }
-    .fa-stack {
-        min-width: 5px;  
-    }
     .fa.fa-bars {
         display: none;
     }

@@ -31,11 +31,6 @@ footer {
   flex: 0 1 auto;
 }
 
-/*form {
-  float: right;
-  background-color: #3A3E5E;
-}
-*/
 table, th, td {
   border: 3.5px solid white;
   border-collapse: collapse;
@@ -54,9 +49,13 @@ table, th, td {
   height: auto  !important;
 }
 
-.event-create {  
-  position: absolute; 
+/* event create button */
+.event-create { 
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
   bottom: 64px;
+<<<<<<< HEAD
   width: 100%; /* Need a specific value to work */
   z-index: 2;
   display: flex;
@@ -69,3 +68,24 @@ table, th, td {
 .event-create:hover {
   transform: translateY(1px);
 }
+=======
+  z-index: 2;
+  display: flex;
+  transition-duration: 1s;
+}
+
+.event-create .fa-stack .fa-plus {
+  color: white;
+}
+.event-create .fa-stack {
+  transition-duration: 0.3s;
+}
+.event-create .fa-stack:hover {
+  transform: scale(1.15);
+  transition-duration: 0.3s;
+}
+.fas#event-circle {
+  color: #3A3E5E;
+  
+}
+>>>>>>> master
