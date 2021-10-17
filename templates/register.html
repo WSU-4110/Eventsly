@@ -4,24 +4,6 @@
 
 {% endblock %}
 
-{% block nav %}
-<div class='nav-menu'>
-  <a href="index.html" class="nav-item">Home</a>
-  <a href="Bookmarks.html" class="nav-item">Bookmarks</a>
-  <a href="About.html" class="nav-item">About Us</a>
-  <a href="Contact.html" class="nav-item">Contact</a>
-  <div class="search nav-item">
-    <span class="fa-stack">
-      <i class="fas fa-circle fa-stack-2x" id='search-circle'></i>
-      <i class="fa fa-search fa-stack-1x" aria-hidden="true"></i>
-    </span>
-  </div>
-  <div class="spacer"></div>
-  <a href="login.html" class="nav-item">Log In</a>
-  <a href='register.html' class="nav-item active">Sign Up</a>
-</div>
-{% endblock %}
-
 {% block main %}
 <h1>Eventsly Sign-Up</h1>
 <h2>Please fill out the information below.</h2>
@@ -49,6 +31,6 @@
     {{render_field(form.confirm, class_="form-control")}}
   </div>
 
-  <p><input type="submit" value="Sign Up!" class="formbtn"><input type="reset" class="formbtn" </p>
+  <p><input type="submit" value="Sign Up!" class="formbtn"><input type="reset" class="formbtn"></p>
 </form>
 {% endblock %}

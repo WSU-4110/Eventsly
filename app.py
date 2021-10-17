@@ -56,7 +56,7 @@ def register():
             return redirect(url_for('register'))
 
 
-    return render_template("register.html", form=form, title="Register")
+    return render_template("register.html", form=form, title="Sign Up")
 
 @app.route("/login.html")
 def login():
