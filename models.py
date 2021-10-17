@@ -39,5 +39,9 @@ class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(50))
     description = db.Column(db.String(50))
+    address = db.Column(db.String(50))
+    latitude = db.Column(db.String(50))
+    longitude = db.Column(db.String(50))
+    date = db.Column(db.Integer)
 
 db.create_all()
