@@ -41,7 +41,7 @@ def register():
     if request.method == 'POST' and form.validate():
         encryptpassword = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
 
-        new_user = Users(firstname = form.firstname.data,lastname = form.lastname.data, phone = form.phone.data, 
+        new_user = User(firstname = form.firstname.data,lastname = form.lastname.data, phone = form.phone.data, 
         email = form.email.data, username = form.username.data, password = encryptpassword)
         
         try:
