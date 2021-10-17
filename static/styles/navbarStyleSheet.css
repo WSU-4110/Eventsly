@@ -129,4 +129,8 @@ a.nav-item:hover:not(.active) {
     .fa.fa-bars {
         display: none;
     }
+    /* prevents icon from being in slightly different location on index.html - unsure why this happens */
+    #search_stack {
+        min-width: 48px; 
+    }
 }
