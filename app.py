@@ -1,9 +1,13 @@
+from datetime import datetime
+from logging import error
 from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
 from passlib.hash import sha256_crypt
 from logger import *
+import traceback
 import os
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1234@localhost/eventsly'
 from models import *
 
 if app.config['ENV'] == 'production':
@@ -41,10 +45,25 @@ def register():
     if request.method == 'POST' and form.validate():
         encryptpassword = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
 
-        new_user = User(firstname = form.firstname.data,lastname = form.lastname.data, phone = form.phone.data, 
-        email = form.email.data, username = form.username.data, password = encryptpassword)
-        
+        new_user = User(
+            firstname=form.firstname.data, 
+            lastname=form.lastname.data, 
+            phone=form.phone.data, 
+            email = form.email.data, 
+            username = form.username.data,
+            biography = form.biography.data,
+            password = encryptpassword,
+            register_date = datetime.now(),
+        )
+        bookmark_list = BookmarkList()
+        created_event_list = CreatedEventList()
         try:
+            db.session.add(bookmark_list)
+            db.session.flush()
+            new_user.bookmark_list_id = bookmark_list.id
+            db.session.add(created_event_list)
+            db.session.flush()
+            new_user.created_event_list_id = created_event_list.id
             db.session.add(new_user)
             db.session.commit()
             app.logger.info(f'User {form.username.data} account was created.')
@@ -52,9 +71,9 @@ def register():
             return redirect(url_for('index'))
         except:
             flash('Unable to make your account','failure')
-            app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
+            app.logger.warning(traceback.format_exc())
+            # app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
             return redirect(url_for('register'))
-
 
     return render_template("register.html", form=form, title="Sign Up")
 
