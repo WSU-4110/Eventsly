@@ -1,19 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from wtforms import Form, StringField, PasswordField, validators
-
-app = Flask(__name__)
-
-#ENV='dev'
-ENV = 'prod'
-if ENV == 'dev':
-    app.debug = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:[password]@localhost/eventsly'
-else:
-    app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://tedlxxnccqarfg:c7a414983644bb4eca43b0d2465cb2b62d283433d18f097efd97f47b3788a275@ec2-44-198-29-193.compute-1.amazonaws.com:5432/db31eh5kiorqfk'
-
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+from app import app
 
 db = SQLAlchemy(app)
 
