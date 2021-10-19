@@ -10,7 +10,7 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
     TESTING = True
     DEVELOPMENT=True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:[password]@localhost/eventsly'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:1234@localhost/eventsly'
 
 class ProductionConfig(BaseConfig):
     DEBUG = False
