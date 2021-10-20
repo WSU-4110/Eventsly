@@ -15,6 +15,10 @@ nav {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
 }
 
@@ -88,6 +92,10 @@ a.nav-item:hover:not(.active) {
         background-color: #3A3E5E;
         align-items: center;
         z-index: 3;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
         transition: 1s;
         height: calc(100% - 64px);
     }

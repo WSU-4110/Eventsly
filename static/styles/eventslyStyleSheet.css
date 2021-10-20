@@ -37,10 +37,18 @@ footer {
 .event-create { 
   position: absolute;
   left: 50%;
-  transform: translate(-50%);
   bottom: 64px;
   z-index: 2;
   display: flex;
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  transform: translate(-50%);
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -ms-transition-duration: 1s;
+  -o-transition-duration: 1s;
   transition-duration: 1s;
 }
 
@@ -49,11 +57,23 @@ footer {
 }
 
 .event-create .fa-stack {
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
 .event-create .fa-stack:hover {
+  -webkit-transform: scale(1.15);
+  -moz-transform: scale(1.15);
+  -ms-transform: scale(1.15);
+  -o-transform: scale(1.15);
   transform: scale(1.15);
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -ms-transition-duration: 0.3s;  
+  -o-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
 
