@@ -2,7 +2,7 @@ from wtforms import Form, StringField, PasswordField, validators
 from app import db
 
 class SignUpForm(Form):
-    '''Form for user sign up.'''
+    '''Form fields with validation for user sign up.'''
     firstname = StringField("Firstname", [validators.Length(min=1, max=50)])
     lastname = StringField("Lastname", [validators.Length(min=1, max=50)])
     biography = StringField("Biography", [validators.Length(max=255)])
@@ -46,10 +46,11 @@ class CreatedEvent(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
 
+    # foreign keys
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    user = db.relationship("User", backref=db.backref("created_events"))
+    user = db.relationship("User", backref=db.backref("created_events")) # many-to-one with users.id
     event_id = db.Column(db.Integer, db.ForeignKey("events.id"))
-    event = db.relationship("Event", backref="created_events")
+    event = db.relationship("Event", backref="created_events") # one-to-one with events.id
 
 class Bookmark(db.Model):
     '''Stores the event bookmarked and the user id of who bookmarked it.'''
@@ -58,10 +59,11 @@ class Bookmark(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
 
+    # foreign keys
     user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
-    user = db.relationship("User", backref=db.backref("bookmarks"))
+    user = db.relationship("User", backref=db.backref("bookmarks")) # optional many-to-optional many with users.id
     event_id = db.Column(db.Integer, db.ForeignKey("events.id"))
-    event = db.relationship("Event", backref="bookmarks")
+    event = db.relationship("Event", backref="bookmarks") # one-to-one with events.id
 
 class Role(db.Model):
     '''Stores privileges for account roles.'''
@@ -91,16 +93,8 @@ class User(db.Model):
     password = db.Column(db.String(100))
     biography = db.Column(db.String(255))
 
-    # unsure if necessary
-    # created_event_list_id = db.Column(db.Integer, db.ForeignKey("created_events.id"))
-    # created_event_list = db.relationship("CreatedEvent", backref=db.backref("users", uselist=False))
-
-    # # One user has one bookmark_list
-    # bookmark_list_id = db.Column(db.Integer, db.ForeignKey("bookmarks.id"))
-    # bookmark_list = db.relationship("Bookmark", backref=db.backref("users", uselist=False))
-
-    # One user has one role
+    # foreign key
     role_id = db.Column(db.Integer, db.ForeignKey("roles.id"))
-    role = db.relationship("Role", backref=db.backref("users", uselist=False))
+    role = db.relationship("Role", backref=db.backref("users", uselist=False)) # one-to-one with roles.id
 
 db.create_all()
