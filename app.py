@@ -22,11 +22,11 @@ import models
 
 @app.route("/")
 def home():
-    return render_template("index.html", title="Eventsly", pageStyles="main {padding: 0;}")
+    return render_template("index.html", title="Eventsly")
 
 @app.route("/index.html")
 def index():
-    return render_template("index.html", title="Eventsly", pageStyles="main {padding: 0;}")
+    return render_template("index.html", title="Eventsly")
 
 @app.route("/bookmarks.html")
 def bookmarks():
