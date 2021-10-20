@@ -8,12 +8,6 @@ import traceback
 import os
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1234@localhost/eventsly'
-
-db = SQLAlchemy(app)
-
-import models
 
 if app.config['ENV'] == 'production':
     app.config.from_object('config.ProductionConfig')
@@ -21,8 +15,10 @@ elif app.config['ENV'] == 'development':
     app.config.from_object('config.DevelopmentConfig')
 else:
     app.config.from_object('config.BaseConfig')
-    
-app.logger.info(app.config)
+
+db = SQLAlchemy(app)
+
+import models
 
 @app.route("/")
 def home():
@@ -84,4 +80,6 @@ def createEvent():
 
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
+      
+    app.logger.info(app.config)
     app.run(debug=True)

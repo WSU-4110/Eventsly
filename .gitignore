@@ -2,6 +2,7 @@
 __pycache__/
 env
 /static/scripts/parsedLocationIQ.js
+dbconfig.txt
 
 # these two must be present in the repository! do not edit these!
 requirements.txt
