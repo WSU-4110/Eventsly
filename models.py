@@ -96,5 +96,5 @@ class User(db.Model):
     # foreign key
     role_id = db.Column(db.Integer, db.ForeignKey("roles.id"))
     role = db.relationship("Role", backref=db.backref("users", uselist=False)) # one-to-one with roles.id
-
+    
 db.create_all()
