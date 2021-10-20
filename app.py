@@ -58,6 +58,7 @@ def signup():
         )
         try:
             db.session.add(new_user)
+            db.session.commit()
             app.logger.info(f'User {form.username.data} account was created.')
             flash('Your account has been created!', 'success')
             return redirect(url_for('index'))
@@ -65,7 +66,7 @@ def signup():
             flash('Unable to make your account','failure')
             # print call stack
             app.logger.warning(traceback.format_exc())
-            # app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
+            app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
             return redirect(url_for('signup'))
 
     return render_template("signup.html", form=form, title="Sign Up")
