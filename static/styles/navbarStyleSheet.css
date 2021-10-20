@@ -42,14 +42,46 @@ a.nav-item:hover:not(.active) {
     background-color: #7b82b3;
 }
 
-/* general font awesome nav styles */
-.fa-stack #search-circle {
-    color: white;
+/* searchbar styles */
+.searchbar {
+    display: flex;
+    align-items: center;
+    margin: auto 0;
+    height: 30px;
+    width: 100%;
+    max-width: 200px;
+    position: relative;
+    padding-left: 9px;
+    margin: 20px;
+    background:white;
+    border-radius: 15px;
 }
 
-.fa-stack .fa-search {
-    color: #3A3E5E;
+.searchbar input {
+    height: 20px;
+    width: 100%;
+    background: none;
+    border: none;
+    margin-right: 39px;
 }
+
+.searchbar:focus, input:focus { /* hide input outline on focus */
+    outline: none;
+}
+
+.searchbar a {
+    padding: 6px 12px;
+    position: absolute;
+    right: 0px;
+    margin: auto 0;
+    color: #3A3E5E;
+    transition: 0.3s;
+}
+
+.searchbar a:hover {
+    color: #7b82b3;
+}
+
 
 /*--------------------------*/
 /* styles for small screens */
@@ -65,7 +97,7 @@ a.nav-item:hover:not(.active) {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 1.5rem;
+        padding: 0 20px;
         border-bottom: 1px solid #3A3E5E;
     }
     
@@ -104,6 +136,10 @@ a.nav-item:hover:not(.active) {
         left: 0;
     }
 
+    .logo {
+        font-size: 1.5em;
+    }
+
     /* small screen font awesome nav styles */
     .fa-bars {
         color: white;
@@ -118,7 +154,7 @@ a.nav-item:hover:not(.active) {
 @media screen and (min-width: 1200px) {
     header {
         height: 55px;
-      }
+    }
     
     nav {
         display: flex;
@@ -135,7 +171,6 @@ a.nav-item:hover:not(.active) {
         border: 2px solid #3A3E5E;
         margin-left: -1px;
         height: 100%;
-        
     }
 
     .spacer {
