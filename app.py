@@ -1,49 +1,61 @@
-from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
+from datetime import datetime
+from logging import error
+from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, request, redirect, flash, url_for, session, logging
 from passlib.hash import sha256_crypt
-from logger import *
+import logger
+import traceback
 import os
 
-
 app = Flask(__name__)
-from models import *
+
 if app.config['ENV'] == 'production':
     app.config.from_object('config.ProductionConfig')
-if app.config['ENV'] == 'development':
+elif app.config['ENV'] == 'development':
     app.config.from_object('config.DevelopmentConfig')
 else:
     app.config.from_object('config.BaseConfig')
-    
-app.logger.info(app.config)
+
+db = SQLAlchemy(app)
+
+import models
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("index.html", title="Eventsly")
 
 @app.route("/index.html")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", title="Eventsly")
 
-@app.route("/Bookmarks.html")
+@app.route("/bookmarks.html")
 def bookmarks():
-    return render_template("Bookmarks.html")
+    return render_template("Bookmarks.html", title="Bookmarks")
 
-@app.route("/About.html")
+@app.route("/about.html")
 def about():
-    return render_template("About.html")
+    return render_template("About.html", title="About Us")
 
-@app.route("/Contact.html")
+@app.route("/contact.html")
 def contact():
-    return render_template("Contact.html")
+    return render_template("Contact.html", title="Contact")
 
-@app.route("/register.html", methods=['POST','GET'])
-def register():
-    form = RegisterForm(request.form)
+@app.route("/signup.html", methods=['POST','GET'])
+def signup():
+    form = models.SignUpForm(request.form)
     if request.method == 'POST' and form.validate():
         encryptpassword = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
 
-        new_user = User(firstname = form.firstname.data,lastname = form.lastname.data, phone = form.phone.data, 
-        email = form.email.data, username = form.username.data, password = encryptpassword)
-        
+        new_user = models.User(
+            firstname=form.firstname.data, 
+            lastname=form.lastname.data, 
+            phone=form.phone.data, 
+            email = form.email.data, 
+            username = form.username.data,
+            biography = form.biography.data,
+            password = encryptpassword,
+            signup_date = datetime.now(),
+        )
         try:
             db.session.add(new_user)
             db.session.commit()
@@ -52,22 +64,23 @@ def register():
             return redirect(url_for('index'))
         except:
             flash('Unable to make your account','failure')
+            # print call stack
+            app.logger.warning(traceback.format_exc())
             app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
-            return redirect(url_for('register'))
+            return redirect(url_for('signup'))
 
-
-    return render_template("register.html", form=form)
-
+    return render_template("signup.html", form=form, title="Sign Up")
 
 @app.route("/login.html")
 def login():
-    return render_template("login.html")
+    return render_template("login.html", title="Log In")
 
 @app.route("/createEvent.html")
 def createEvent():
-    return render_template("createEvent.html")
-
+    return render_template("createEvent.html", title="Create Event")
 
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
+      
+    app.logger.info(app.config)
     app.run(debug=True)
