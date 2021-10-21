@@ -3,8 +3,8 @@ __pycache__/
 env
 /static/scripts/parsedLocationIQ.js
 dbconfig.txt
+eventsly.log
 
 # these two must be present in the repository! do not edit these!
 requirements.txt
 Procfile
-eventsly.log
