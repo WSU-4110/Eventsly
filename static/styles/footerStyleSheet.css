@@ -14,7 +14,7 @@ footer ul {
 /* styles for small screens */
 /*--------------------------*/
 /* hide the footer */
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1163px) {
     footer {
         display: none;
     }
@@ -24,7 +24,7 @@ footer ul {
 /* styles for large screens */
 /*--------------------------*/
 /* fixed footer on bottom of page */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1164px) {
     footer {
         height: 55px;
     }

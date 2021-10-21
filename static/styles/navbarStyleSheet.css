@@ -15,11 +15,6 @@ nav {
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
-    -webkit-transition: all 0.5s ease 0s;
-    -moz-transition: all 0.5s ease 0s;
-    -ms-transition: all 0.5s ease 0s;
-    -o-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
 }
 
 .logo {
@@ -31,9 +26,20 @@ nav {
     display: flex;
     align-items: center;
     font-size: 1.8em;
-    margin: 0 20px;
+    padding: 0 20px;
+    height: 100%;
 }
 
+.logo .fa-map-marked {
+    padding-right: 5px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.logo .fa-map-marked::before {
+    height: 100%;
+}
 .active {
     background-color: white;
     color: #3A3E5E;
@@ -59,6 +65,7 @@ a.nav-item:hover:not(.active) {
 
 .searchbar input {
     height: 20px;
+    font-size: 12pt;
     width: 100%;
     background: none;
     border: none;
@@ -75,6 +82,10 @@ a.nav-item:hover:not(.active) {
     right: 0px;
     margin: auto 0;
     color: #3A3E5E;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s;
 }
 
@@ -86,7 +97,7 @@ a.nav-item:hover:not(.active) {
 /* styles for small screens */
 /*--------------------------*/
 /* hamburger/drop down menu */
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1163px) {
     header {
         z-index: 3;
     }
@@ -105,6 +116,11 @@ a.nav-item:hover:not(.active) {
         display: flex;
         align-items: center;
         justify-content: center;
+        -webkit-transition: 1s ease 0.5s;
+        -moz-transition: 1s ease 0.5s;
+        -ms-transition: 1s ease 0.5s;
+        -o-transition: 1s ease 0.5s;
+        transition: 1s ease 0.5s;
     }
     
     .spacer {
@@ -132,10 +148,6 @@ a.nav-item:hover:not(.active) {
     
     .dropdown {
         left: 0;
-    }
-
-    .logo {
-        font-size: 1.5em;
     }
 
     .searchbar {
@@ -181,7 +193,7 @@ a.nav-item:hover:not(.active) {
 /* styles for large screens */
 /*--------------------------*/
 /* fixed top bar */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1164px) {
     header {
         height: 55px;
     }
@@ -201,6 +213,7 @@ a.nav-item:hover:not(.active) {
         border: 2px solid #3A3E5E;
         margin-left: -1px;
         height: 100%;
+        white-space: nowrap;
     }
 
     .spacer {
@@ -215,17 +228,16 @@ a.nav-item:hover:not(.active) {
     }
     
     .logo {
-        min-width: 221px;
-    }
-
-    /* large screen font awesome nav styles */
-    .logo .fa-map-marked {
-        padding-right: 5px;
-        min-width: 32px;
-        color: white;
+        min-width: 160px;
     }
     
     .fa.fa-bars {
         display: none;
+    }
+
+    .searchbar {
+        max-width: 300px;
+        min-width: 100px;
+        flex-shrink: 1;
     }
 }
