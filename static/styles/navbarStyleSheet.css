@@ -31,6 +31,7 @@ nav {
     display: flex;
     align-items: center;
     font-size: 1.8em;
+    margin: 0 20px;
 }
 
 .active {
@@ -46,13 +47,12 @@ a.nav-item:hover:not(.active) {
 .searchbar {
     display: flex;
     align-items: center;
-    margin: auto 0;
+    margin: auto 20px;
     height: 30px;
     width: 100%;
     max-width: 200px;
     position: relative;
     padding-left: 9px;
-    margin: 20px;
     background:white;
     border-radius: 15px;
 }
@@ -82,7 +82,6 @@ a.nav-item:hover:not(.active) {
     color: #7b82b3;
 }
 
-
 /*--------------------------*/
 /* styles for small screens */
 /*--------------------------*/
@@ -97,7 +96,6 @@ a.nav-item:hover:not(.active) {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 20px;
         border-bottom: 1px solid #3A3E5E;
     }
     
@@ -140,10 +138,37 @@ a.nav-item:hover:not(.active) {
         font-size: 1.5em;
     }
 
+    .searchbar {
+        margin: 0 auto;
+    }
+
     /* small screen font awesome nav styles */
+    .hamburger {
+        display: flex;
+        width: 100px;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+    }
     .fa-bars {
+        display: relative;
         color: white;
         cursor: pointer;
+        line-height: 100%;
+        width: 100%;
+    }
+}
+
+/*-------------------------------*/
+/* styles for very small screens */
+/*-------------------------------*/
+@media screen and (max-width: 520px) {
+    .logo {
+        display: none;
+    }
+    .searchbar {
+        max-width: 100%;
+        margin-left: 20px;
     }
 }
 
