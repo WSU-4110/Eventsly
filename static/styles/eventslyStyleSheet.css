@@ -1,8 +1,10 @@
+/* general styles for all pages */
 html,
 body {
   height: 100%;
   margin: 0;
 }
+
 body {
     background-color: #F6F5F5;
     color: #3A3E5E;
@@ -17,7 +19,7 @@ h1 {
   margin: 0;
 }
 
-/* Flexbox Styling */
+/* flexbox styling */
 header {
   flex: 0 1 auto  !important;
 }
@@ -31,25 +33,7 @@ footer {
   flex: 0 1 auto;
 }
 
-table, th, td {
-  border: 3.5px solid white;
-  border-collapse: collapse;
-  background-color: cornflowerblue;
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
-.responsive {
-  width: 100%  !important;
-  height: auto  !important;
-}
-
-/* event create button */
+/* event create button on index.html */
 .event-create { 
   position: absolute;
   left: 50%;
@@ -60,10 +44,16 @@ table, th, td {
   display: flex;
   animation: fadein 1.5s;
 }
-.event-create span {
-  margin: 0 auto;
+
+.event-create .fa-stack {
+  transition-duration: 0.3s;
 }
 
-.event-create:hover {
-  transform: translateY(1px);
+.event-create .fa-stack:hover {
+  transform: scale(1.15);
+  transition-duration: 0.3s;
+}
+
+.fas#event-circle {
+  color: #3A3E5E;
 }

@@ -10,7 +10,14 @@ class DevelopmentConfig(BaseConfig):
     DEBUG = True
     TESTING = True
     DEVELOPMENT=True
-    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:[password]@localhost/eventsly'
+    localpass = ''
+
+    # set localdb password in dbconfig.txt
+    # dbconfig.txt is on .gitignore so that we can leave this file alone when we flask run
+    with open('dbconfig.txt') as f:
+        localpass = f.readline()
+    SQLALCHEMY_DATABASE_URI = f'postgresql://postgres:{localpass}@localhost/eventsly'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProductionConfig(BaseConfig):
     DEBUG = False

@@ -1,8 +1,0 @@
-form {
-    float: right;
-    background-color: #F6F5F5; /*override blue background with offwhite background for form*/
-  }
-
-  form ul{
-      list-style: none;/*remove bullets from list*/
-  }
