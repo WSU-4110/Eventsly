@@ -42,6 +42,10 @@ function buildMap() {
 function userTools() {
   // placeholder for user placed pin
   var marker
+  var chosenLocation = "";
+  var chosenLat = '';
+  var chosenLong = '';
+  var hold;
 
   // on click, either remove existing pin from search or placement
   // or place a new pin if there are no existing pins
@@ -53,9 +57,22 @@ function userTools() {
     else if (marker) {
       map.removeLayer(marker);
       marker = false;
+      // clear the latlng values from the form
+      document.getElementById('latitude').value = null;
+      document.getElementById('longitude').value = null;
+      chosenLocation = '';
+      chosenLat = '';
+      chosenLong = '';
     }
     else {
       marker = new L.Marker(e.latlng, { draggable: true }).addTo(map);
+      chosenLocation = chosenLocation + e.latlng; // output: LatLng(42.365188, -83.078285)
+      chosenLocation = chosenLocation.replace('LatLng', '');
+      chosenLocation = chosenLocation.replace('(', '');
+      chosenLocation = chosenLocation.replace(')', '');
+      hold = chosenLocation.split(', ')
+      document.getElementById('latitude').value = hold[0];
+      document.getElementById('longitude').value = hold[1];
 
       // popup text
       marker.bindPopup("Your event will take place here!");
