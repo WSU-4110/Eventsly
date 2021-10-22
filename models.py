@@ -26,6 +26,7 @@ class SignUpForm(Form):
     confirm = PasswordField("Confirm Password.")
 
 class EventForm(Form):
+    '''Form fields with validation for event creation.'''
     title = StringField("Title", [validators.Length(min=1, max=50)])
     description = StringField("Description", [validators.Length(min=1, max=500)])
     date = StringField("Date", [validators.Length(min=1, max=12)])
