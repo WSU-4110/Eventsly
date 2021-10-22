@@ -26,14 +26,14 @@ class SignUpForm(Form):
     confirm = PasswordField("Confirm Password.")
 
 class EventForm(Form):
-    title = StringField('Title')
-    description = StringField('Description')
-    date = DateField('Date')
-    latitude = FloatField('Latitude')
-    longitude = FloatField('Longitude')
-    street = StringField('Street')
-    city = StringField('City')
-    state = StringField('State')
+    title = StringField("Title")
+    description = StringField("Description")
+    date = DateField("Date")
+    latitude = FloatField("Latitude")
+    longitude = FloatField("Longitude")
+    street = StringField("Street")
+    city = StringField("City")
+    state = StringField("State")
 
 class Event(db.Model):
     '''Stores all events.'''

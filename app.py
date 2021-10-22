@@ -75,36 +75,35 @@ def signup():
 def login():
     return render_template("login.html", title="Log In")
 
-@app.route("/createEvent.html")
+@app.route("/createEvent.html", methods=['POST','GET'])
 def createEvent():
-    formEvent = models.EventForm(request.form)
-    if request.method == 'POST' and formEvent.validate():
-        encryptpassword = sha256_crypt.encrypt(str(formEvent.password.data)) #encrypt password
+    form = models.EventForm(request.form)
+    if request.method == 'POST' and form.validate():
+        ## encryptpassword = sha256_crypt.encrypt(str(formEvent.password.data)) #encrypt password
 
         new_event = models.Event(
-            title = formEvent.title.data, 
-            description = formEvent.description.data,
-            date = formEvent.date.data, 
-            latitude = formEvent.latitude.data, 
-            longitude = formEvent.longitude.data,
-            street = formEvent.street.data,
-            city = formEvent.city.data,
-            state = formEvent.state.data,
-            
+            title = form.title.data, 
+            description = form.description.data,
+            date = form.date.data, 
+            latitude = form.latitude.data, 
+            longitude = form.longitude.data,
+            street = form.street.data,
+            city = form.city.data,
+            state = form.state.data,
         )
         try:
             db.session.add(new_event)
             db.session.commit()
-            app.logger.info(f'Event {formEvent.title.data} was created.')
+            app.logger.info(f'Event {form.title.data} was created.')
             flash('Your event has been created!', 'success')
             return redirect(url_for('index'))
         except:
             flash('Unable to make your event','failure')
             # print call stack
             app.logger.warning(traceback.format_exc())
-            app.logger.warning(f"Event {formEvent.title.data} was unable to be created. Event Title already in use.")
+            app.logger.warning(f"Event {form.title.data} was unable to be created. Event Title already in use.")
             return redirect(url_for('createEvent'))
-    return render_template("createEvent.html", title="Create Event")
+    return render_template("createEvent.html",form = form, title="Create Event")
 
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'

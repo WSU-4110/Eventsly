@@ -1,134 +1,39 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<head>
-  <meta charset="UTF-8">
-  <title>Eventsly</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <style type='text/css'>
-    @import '/static/styles/eventslyStyleSheet.css';
-    @import '/static/styles/navbarNoBootstrap.css';
-    @import '/static/styles/footerStyleSheet.css';
-    @import '/static/styles/windowStyleSheet.css';
-
-    /* no padding on index */
-    main {
-      padding: 0;
-    }
-  </style>
-
-  <!-- Font Awesome JS load for Eventsly Logo -->
-  <script src="https://kit.fontawesome.com/3f6d9190cb.js" crossorigin="anonymous"></script>
-
-  <!-- Google Font API load for Eventsly Logo -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
-
-  <!-- Google Location API JS Load -->
-  <script src="auto-complete.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-</head>
 
 {% endblock %}
 
 {% block main %}
-<main>
-  <form>
 
-    <!-- Create Event Header Window -->
-    <div class="container">
-    <div class="row">
-      <div class="col-md">
-      <h1>Create Event</h1>
 
-    <!-- Create Event Form below header pane -->
-        <div class="row">
-          <div class="col-md">
-            <div class="styled-input wide">
-        <label for="ev-title">Event Title</label><br>
-        <input type="text" id="ev-title" name="ev-title" maxlength="25"><br>
-            </div>
-          </div>
-          </div>
-
-          
-          <div class="row">
-          <div class="col-md">
-            <div class="styled-input wide">
-        <label for="ev-desc">Event Description</label><br>
-        <textarea id="ev-desc" name="ev-desc" maxlength="2000"></textarea><br>
-            </div>
-          </div>
-          </div>
-
-          <div class="row">
-          <div class="col-sm">
-            <div class="styled-input wide">
-                <label for="ev-loc">Event Location</label><br>
-                <input id="autocomplete" onFocus="geolocate()" type="text" class="ev-loc">
-          </div></div></div>
-
-            <div class="row">
-              <div class="col-sm">
-                   <h6>Below fields will populate automatically</h6>
-            </div></div>
-
-            <div class="row">
-             <div class="col-sm">
-              <div class="styled-input">
-                   <label for="street_number">Address Number</label>
-                   <input class="street_number" id="street_number" disabled="true">
-                   </div></div>
-
-                   <div class="col-sm">
-                    <div class="styled-input">
-                   <label for="street">Street</label>
-                   <input class="street" id="street" disabled="true">
-                   </div></div></div>
-
-                   <div class="row">
-                   <div class="col-sm">
-                    <div class="styled-input">
-                   <label for="city">City</label>
-                   <input class="city" id="city" disabled="true">
-                   </div></div>
-
-                   <div class="col-sm">
-                    <div class="styled-input">
-                   <label for="state">State</label>
-                   <input class="state" id="state" disabled="true">
-                   </div></div></div>
-
-                   <div class="row">
-                   <div class="col-sm">
-                    <div class="styled-input">
-                   <label for="zipcode">Zip</label>
-                   <input class="zipcode" id="zipcode" disabled="true">
-                   </div></div>
-
-                   <div class="col-sm">
-                    <div class="styled-input">
-                   <label for="country">Country</label>
-                   <input class="country" id="country" disabled="true">
-                   </div></div></div>
-
-                   <div class="row">
-                   <div class="col-sm">
-                    <div class="btn-lrg submit-btn">
-                      <input type="submit" value="Create!">
-                    </div>
-                    </div>
-                  </div>
-                  </div>
-      </form>
-    </div>
+{% from "includes/_formhelpers.html" import render_field %}
+<form action="/createEvent.html" method="POST">
+  <div class='form-group'>
+    {{render_field(form.title, class_="form-control")}}
+  </div>
+  <div class='form-group'>
+    {{render_field(form.description, class_="form-control")}}
+  </div>
+  <div class='form-group'>
+    {{render_field(form.date, class_="form-control")}}
+  </div>
+  <div class='form-group'>
+    {{render_field(form.latitude, class_="form-control")}}
+  </div>
+  <div class='form-group'>
+    {{render_field(form.longitude, class_="form-control")}}
+  </div>
+  <div class='form-group'>
+    {{render_field(form.street, class_="form-control")}}
+  </div>
+  <div class='form-group'>
+    {{render_field(form.city, class_="form-control")}}
+  </div>
+  <div class='form-group'>
+    {{render_field(form.state, class_="form-control")}}
   </div>
 
-
-  <!-- Autocomplete Maps API Key -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9zq1SP9zmZFXsHejsmRmABDNAb-rH2Tg&libraries=places&callback=initAutocomplete" async defer></script>  
-</main>
-
+  <p><input type="submit" value="Create Event!" class="formbtn"><input type="reset" class="formbtn"></p>
+</form>
 {% endblock %}
