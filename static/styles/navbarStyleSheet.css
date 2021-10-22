@@ -48,6 +48,7 @@ nav {
 .logo .fa-map-marked::before {
     height: 100%;
 }
+
 .active {
     background-color: white;
     color: #3A3E5E;
@@ -241,11 +242,5 @@ a.nav-item:hover:not(.active) {
     
     .fa.fa-bars {
         display: none;
-    }
-
-    .searchbar {
-        max-width: 300px;
-        min-width: 100px;
-        flex-shrink: 1;
     }
 }
