@@ -101,7 +101,7 @@ def createEvent():
             flash('Unable to make your event','failure')
             # print call stack
             app.logger.warning(traceback.format_exc())
-            app.logger.warning(f"Event {form.title.data} was unable to be created. Event Title already in use.")
+            app.logger.warning(f"Event {form.title.data} was unable to be created. /////")
             return redirect(url_for('createEvent'))
     return render_template("createEvent.html",form = form, title="Create Event")
 
