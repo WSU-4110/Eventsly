@@ -1,4 +1,5 @@
 from wtforms import Form, StringField, PasswordField, validators
+from wtforms.fields.core import DateField, FloatField
 from app import db
 
 class SignUpForm(Form):
@@ -23,6 +24,16 @@ class SignUpForm(Form):
         ]
     )
     confirm = PasswordField("Confirm Password.")
+
+class EventForm(Form):
+    title = StringField('Title')
+    description = StringField('Description')
+    date = DateField('Date')
+    latitude = FloatField('Latitude')
+    longitude = FloatField('Longitude')
+    street = StringField('Street')
+    city = StringField('City')
+    state = StringField('State')
 
 class Event(db.Model):
     '''Stores all events.'''
@@ -77,15 +88,6 @@ class Role(db.Model):
     create_account = db.Column(db.Boolean)
     delete_account_self = db.Column(db.Boolean)
     delete_account_other = db.Column(db.Boolean)
-
-class EventForm(Form):
-    title = StringField('Title')
-    description = StringField('Description')
-    address = StringField('Address')
-    latitude = StringField('Latitude')
-    longitude = StringField('Longitude')
-    date = StringField('Date')
-
 
 class User(db.Model):
     '''Stores all users.'''
