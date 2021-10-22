@@ -34,6 +34,7 @@ class EventForm(Form):
     street = StringField("Street", [validators.Length(min=1, max=100)])
     city = StringField("City", [validators.Length(min=1, max=50)])
     state = StringField("State", [validators.Length(min=2, max=2)])
+    # For date: entering a value of 010203 stores it as 2001-02-03
 
 class Event(db.Model):
     '''Stores all events.'''
