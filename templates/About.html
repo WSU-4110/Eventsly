@@ -6,4 +6,38 @@
 
 {% block main %}
 <h1><img src="/static/images/examplePic.png" width="50" height="40" alt="Eventsly">About Us</h1>
+<style>
+ header {
+   color: white;
+ }
+ 
+ img{
+   border-radius: 50%;
+ }
+
+ .center{
+   margin-left: 0%;
+   margin-right: 0%;
+   margin-bottom: 0%;
+   margin-top: 0%;
+ }
+ .right{
+  margin-left: 5%;
+  margin-right: 15%;
+ }
+ .left{
+  margin-left: 15%;
+  margin-right: 5%;
+ }
+</style>
+<header><h1><center>We believe every community has something special to offer, our goal is to help you discover it.</center></h1></header>
+<br>
+<h1><center>Meet Our Team</center></h1>
+<br>
+<img src="/static/images/profile.jpg" width="300" height="300"alt="Picture" class="left">
+<img src="/static/images/profile.jpg" width="300" height="300" alt="Picture" class="center">
+<img src="/static/images/profile.jpg" width="300" height="300"alt="Picture" class="right">
+<img src="/static/images/profile.jpg" width="300" height="300"alt="Picture" class="left">
+<img src="/static/images/profile.jpg" width="300" height="300"alt="Picture" class="center">
+
 {% endblock %}
