@@ -3,8 +3,8 @@ from app import db
 
 class SignUpForm(Form):
     '''Form fields with validation for user sign up.'''
-    firstname = StringField("Firstname", [validators.Length(min=1, max=50)])
-    lastname = StringField("Lastname", [validators.Length(min=1, max=50)])
+    firstname = StringField("First Name", [validators.Length(min=1, max=50)])
+    lastname = StringField("Last Name", [validators.Length(min=1, max=50)])
     biography = StringField("Biography", [validators.Length(max=255)])
     phone = StringField("Phone", [validators.Length(min=9, max=10)])
     username = StringField("Username", [validators.Length(min=4, max=30)])
@@ -22,7 +22,7 @@ class SignUpForm(Form):
             validators.Length(min=8)
         ]
     )
-    confirm = PasswordField("Confirm Password.")
+    confirm = PasswordField("Confirm Password")
 
 class Event(db.Model):
     '''Stores all events.'''
