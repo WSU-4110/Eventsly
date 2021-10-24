@@ -1,8 +1,11 @@
 from datetime import datetime
 from logging import error
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, request, redirect, flash, url_for, session, logging
+from sqlalchemy import create_engine, select
+from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
 from passlib.hash import sha256_crypt
+from sqlalchemy.orm import query, Session
+from sqlalchemy.util.langhelpers import NoneType
 import logger
 import traceback
 import os
@@ -11,12 +14,14 @@ app = Flask(__name__)
 
 if app.config['ENV'] == 'production':
     app.config.from_object('config.ProductionConfig')
-elif app.config['ENV'] == 'development':
+if app.config['ENV'] == 'development':
     app.config.from_object('config.DevelopmentConfig')
+    app.logger.info(f'{app.config}')
 else:
     app.config.from_object('config.BaseConfig')
 
 db = SQLAlchemy(app)
+engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=True)
 
 import models
 
@@ -71,8 +76,37 @@ def signup():
 
     return render_template("signup.html", form=form, title="Sign Up")
 
-@app.route("/login.html")
+@app.route("/login.html", methods =['GET','POST'])
 def login():
+    if request.method == 'POST':
+        #Get Form Fields
+        username_input = request.form['username']
+        password_input = request.form['password']
+
+        #Get user by username
+        stmt = select(models.User.username, models.User.password).where(models.User.username == username_input)
+        with engine.connect() as conn:
+            result = conn.execute(stmt).first()
+
+        app.logger.info(f'Query result: {result}')
+        app.logger.info(f'SELECT user query executed.\n Query: {stmt}')
+
+        if result != None:
+            #Get stored hash
+            password_data = result.password
+        
+            #Compare passwords
+            if sha256_crypt.verify(password_input, password_data):
+                app.logger.info('Password input matched password stored in database')
+            else:
+                app.logger.info('Password input did not match password stored in database')
+                error = 'Invalid login'
+                return render_template('login.html', title = 'Log In',error=error)
+        else:
+            app.logger.info('No user found with that username')  
+            error = 'Username not found'
+            return render_template('login.html', title = 'Log In', error=error)
+
     return render_template("login.html", title="Log In")
 
 @app.route("/createEvent.html")

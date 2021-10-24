@@ -54,6 +54,8 @@
 
     <main>
         <!-- block for page specific main content -->
+        {% include 'includes/_messages.html' %}
+        {% from "includes/_formhelpers.html" import render_field %}
         {% block main %} {% endblock %}
     </main>
 

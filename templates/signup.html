@@ -7,7 +7,6 @@
 {% block main %}
 <h1>Eventsly Sign-Up</h1>
 <h2>Please fill out the information below.</h2>
-{% from "includes/_formhelpers.html" import render_field %}
 <form action="/signup.html" method="POST">
   <div class='form-group'>
     {{render_field(form.firstname, class_="form-control")}}
