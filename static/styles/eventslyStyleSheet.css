@@ -21,7 +21,7 @@ h1 {
 
 /* flexbox styling */
 header {
-  flex: 0 1 auto  !important;
+  flex: 0 1 auto;
 }
 
 main {
