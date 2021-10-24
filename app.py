@@ -83,7 +83,7 @@ def login():
         password_input = request.form['password']
 
         #Get user by username
-        stmt = select(models.User.username, models.User.password).where(models.User.username == username_input)
+        stmt = select(models.User).where(models.User.username == username_input)
         with engine.connect() as conn:
             result = conn.execute(stmt).first()
 
@@ -96,12 +96,14 @@ def login():
         
             #Compare passwords
             if sha256_crypt.verify(password_input, password_data):
-                session['Logged_in'] = True
-                session['username'] = username_input
+                session['logged_in'] = True
+                session['username'] = result.username
+                session['userid'] = result.id
+                session['name'] = f'{result.firstname} {result.lastname}'
 
                 flash('You are now logged in', 'success')
                 app.logger.info('Password input matched password stored in database')
-                return redirect(url_for('index.html'))
+                return redirect(url_for('dashboard'))
             else:
                 app.logger.info('Password input did not match password stored in database')
                 error = 'Invalid login'
@@ -116,9 +118,13 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
-    flash('You are now logged out')
-    return redirect(url_for('index.html'))
-    
+    flash('You are now logged out', 'success')
+    return redirect(url_for('login'))
+
+@app.route('/dashboard.html')
+def dashboard():
+    return render_template('dashboard.html', title="Dashboard")
+
 @app.route("/createEvent.html")
 def createEvent():
     return render_template("createEvent.html", title="Create Event")

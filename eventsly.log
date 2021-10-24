@@ -1005,3 +1005,367 @@ WHERE users.username = :username_1
 2021-10-23 12:15:09,156 INFO werkzeug Thread-49 : 127.0.0.1 - - [23/Oct/2021 12:15:09] "[36mGET /static/images/examplePic.png HTTP/1.1[0m" 304 -
 2021-10-23 12:15:36,697 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
 2021-10-23 12:15:36,954 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:18:29,111 INFO app MainThread : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:18:30,035 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:18:32,050 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:18:32,813 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:18:37,029 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:18:37] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-10-24 01:18:37,849 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:18:37] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-24 01:18:37,857 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:18:37] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-24 01:18:37,881 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:18:37] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:18:38,081 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:18:38] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-24 01:18:38,137 INFO werkzeug Thread-8 : 127.0.0.1 - - [24/Oct/2021 01:18:38] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:19:01,654 INFO werkzeug Thread-10 : 127.0.0.1 - - [24/Oct/2021 01:19:01] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2021-10-24 01:19:01,726 INFO werkzeug Thread-9 : 127.0.0.1 - - [24/Oct/2021 01:19:01] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-24 01:19:01,726 INFO werkzeug Thread-11 : 127.0.0.1 - - [24/Oct/2021 01:19:01] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-24 01:19:01,830 INFO werkzeug Thread-12 : 127.0.0.1 - - [24/Oct/2021 01:19:01] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:19:01,902 INFO werkzeug Thread-13 : 127.0.0.1 - - [24/Oct/2021 01:19:01] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-24 01:19:01,950 INFO werkzeug Thread-14 : 127.0.0.1 - - [24/Oct/2021 01:19:01] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:19:30,839 INFO werkzeug Thread-15 : 127.0.0.1 - - [24/Oct/2021 01:19:30] "GET / HTTP/1.1" 200 -
+2021-10-24 01:19:30,940 INFO werkzeug Thread-16 : 127.0.0.1 - - [24/Oct/2021 01:19:30] "GET /static/styles/eventslyStyleSheet.css HTTP/1.1" 200 -
+2021-10-24 01:19:30,972 INFO werkzeug Thread-17 : 127.0.0.1 - - [24/Oct/2021 01:19:30] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:19:30,988 INFO werkzeug Thread-18 : 127.0.0.1 - - [24/Oct/2021 01:19:30] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:19:30,988 INFO werkzeug Thread-19 : 127.0.0.1 - - [24/Oct/2021 01:19:30] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:19:31,004 INFO werkzeug Thread-20 : 127.0.0.1 - - [24/Oct/2021 01:19:31] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:19:31,374 INFO werkzeug Thread-21 : 127.0.0.1 - - [24/Oct/2021 01:19:31] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:19:32,054 INFO werkzeug Thread-22 : 127.0.0.1 - - [24/Oct/2021 01:19:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-24 01:19:33,708 INFO werkzeug Thread-23 : 127.0.0.1 - - [24/Oct/2021 01:19:33] "GET /login.html HTTP/1.1" 200 -
+2021-10-24 01:19:33,780 INFO werkzeug Thread-24 : 127.0.0.1 - - [24/Oct/2021 01:19:33] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:19:33,796 INFO werkzeug Thread-25 : 127.0.0.1 - - [24/Oct/2021 01:19:33] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:19:33,796 INFO werkzeug Thread-26 : 127.0.0.1 - - [24/Oct/2021 01:19:33] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:19:33,892 INFO werkzeug Thread-27 : 127.0.0.1 - - [24/Oct/2021 01:19:33] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:19:33,892 INFO werkzeug Thread-28 : 127.0.0.1 - - [24/Oct/2021 01:19:33] "[36mGET /static/images/examplePic.png HTTP/1.1[0m" 304 -
+2021-10-24 01:19:40,051 INFO sqlalchemy.engine.Engine Thread-29 : select pg_catalog.version()
+2021-10-24 01:19:40,051 INFO sqlalchemy.engine.Engine Thread-29 : [raw sql] {}
+2021-10-24 01:19:40,051 INFO sqlalchemy.engine.Engine Thread-29 : select current_schema()
+2021-10-24 01:19:40,051 INFO sqlalchemy.engine.Engine Thread-29 : [raw sql] {}
+2021-10-24 01:19:40,059 INFO sqlalchemy.engine.Engine Thread-29 : show standard_conforming_strings
+2021-10-24 01:19:40,059 INFO sqlalchemy.engine.Engine Thread-29 : [raw sql] {}
+2021-10-24 01:19:40,083 INFO sqlalchemy.engine.Engine Thread-29 : BEGIN (implicit)
+2021-10-24 01:19:40,091 INFO sqlalchemy.engine.Engine Thread-29 : SELECT users.username, users.password 
+FROM users 
+WHERE users.username = %(username_1)s
+2021-10-24 01:19:40,091 INFO sqlalchemy.engine.Engine Thread-29 : [generated in 0.00247s] {'username_1': 'cjfoxadmin'}
+2021-10-24 01:19:40,099 INFO sqlalchemy.engine.Engine Thread-29 : ROLLBACK
+2021-10-24 01:19:40,099 INFO app Thread-29 : Query result: ('cjfoxadmin', '$5$rounds=535000$GJxB4XBY6kIgYPHm$1JflyYlMXLnZSI7wGFhicSQk.bhpAXPJa4pC/5/caQC')
+2021-10-24 01:19:40,099 INFO app Thread-29 : SELECT user query executed.
+ Query: SELECT users.username, users.password 
+FROM users 
+WHERE users.username = :username_1
+2021-10-24 01:19:41,298 INFO app Thread-29 : Password input matched password stored in database
+2021-10-24 01:19:41,394 INFO werkzeug Thread-29 : 127.0.0.1 - - [24/Oct/2021 01:19:41] "[35m[1mPOST /login.html HTTP/1.1[0m" 500 -
+2021-10-24 01:19:41,474 INFO werkzeug Thread-30 : 127.0.0.1 - - [24/Oct/2021 01:19:41] "GET /login.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-24 01:19:41,474 INFO werkzeug Thread-31 : 127.0.0.1 - - [24/Oct/2021 01:19:41] "GET /login.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-24 01:19:41,554 INFO werkzeug Thread-32 : 127.0.0.1 - - [24/Oct/2021 01:19:41] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:19:41,626 INFO werkzeug Thread-33 : 127.0.0.1 - - [24/Oct/2021 01:19:41] "GET /login.html?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-24 01:19:41,666 INFO werkzeug Thread-34 : 127.0.0.1 - - [24/Oct/2021 01:19:41] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:20:03,803 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:20:04,119 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:20:06,359 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:20:06,936 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:20:09,659 INFO sqlalchemy.engine.Engine Thread-3 : select pg_catalog.version()
+2021-10-24 01:20:09,659 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:20:09,659 INFO sqlalchemy.engine.Engine Thread-3 : select current_schema()
+2021-10-24 01:20:09,659 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:20:09,659 INFO sqlalchemy.engine.Engine Thread-3 : show standard_conforming_strings
+2021-10-24 01:20:09,667 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:20:09,691 INFO sqlalchemy.engine.Engine Thread-3 : BEGIN (implicit)
+2021-10-24 01:20:09,691 INFO sqlalchemy.engine.Engine Thread-3 : SELECT users.username, users.password 
+FROM users 
+WHERE users.username = %(username_1)s
+2021-10-24 01:20:09,691 INFO sqlalchemy.engine.Engine Thread-3 : [generated in 0.00260s] {'username_1': 'cjfoxadmin'}
+2021-10-24 01:20:09,699 INFO sqlalchemy.engine.Engine Thread-3 : ROLLBACK
+2021-10-24 01:20:09,699 INFO app Thread-3 : Query result: ('cjfoxadmin', '$5$rounds=535000$GJxB4XBY6kIgYPHm$1JflyYlMXLnZSI7wGFhicSQk.bhpAXPJa4pC/5/caQC')
+2021-10-24 01:20:09,707 INFO app Thread-3 : SELECT user query executed.
+ Query: SELECT users.username, users.password 
+FROM users 
+WHERE users.username = :username_1
+2021-10-24 01:20:10,780 INFO app Thread-3 : Password input matched password stored in database
+2021-10-24 01:20:10,844 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:20:10] "[35m[1mPOST /login.html HTTP/1.1[0m" 500 -
+2021-10-24 01:20:11,646 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:20:11] "GET /login.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-24 01:20:11,646 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:20:11] "GET /login.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-24 01:20:11,670 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:20:11] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:20:11,726 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:20:11] "GET /login.html?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-24 01:20:11,774 INFO werkzeug Thread-8 : 127.0.0.1 - - [24/Oct/2021 01:20:11] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:20:56,427 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:20:56,689 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:20:58,930 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:20:59,555 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:20:59,743 INFO sqlalchemy.engine.Engine Thread-3 : select pg_catalog.version()
+2021-10-24 01:20:59,743 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:20:59,751 INFO sqlalchemy.engine.Engine Thread-3 : select current_schema()
+2021-10-24 01:20:59,751 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:20:59,751 INFO sqlalchemy.engine.Engine Thread-3 : show standard_conforming_strings
+2021-10-24 01:20:59,751 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:20:59,775 INFO sqlalchemy.engine.Engine Thread-3 : BEGIN (implicit)
+2021-10-24 01:20:59,775 INFO sqlalchemy.engine.Engine Thread-3 : SELECT users.username, users.password 
+FROM users 
+WHERE users.username = %(username_1)s
+2021-10-24 01:20:59,783 INFO sqlalchemy.engine.Engine Thread-3 : [generated in 0.00280s] {'username_1': 'cjfoxadmin'}
+2021-10-24 01:20:59,791 INFO sqlalchemy.engine.Engine Thread-3 : ROLLBACK
+2021-10-24 01:20:59,791 INFO app Thread-3 : Query result: ('cjfoxadmin', '$5$rounds=535000$GJxB4XBY6kIgYPHm$1JflyYlMXLnZSI7wGFhicSQk.bhpAXPJa4pC/5/caQC')
+2021-10-24 01:20:59,791 INFO app Thread-3 : SELECT user query executed.
+ Query: SELECT users.username, users.password 
+FROM users 
+WHERE users.username = :username_1
+2021-10-24 01:21:01,060 INFO app Thread-3 : Password input matched password stored in database
+2021-10-24 01:21:01,132 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:21:01] "[35m[1mPOST /login.html HTTP/1.1[0m" 500 -
+2021-10-24 01:21:01,877 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:21:01] "GET /login.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-24 01:21:01,877 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:21:01] "GET /login.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-24 01:21:01,893 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:21:01] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:21:01,957 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:21:01] "GET /login.html?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-24 01:21:02,005 INFO werkzeug Thread-8 : 127.0.0.1 - - [24/Oct/2021 01:21:01] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:21:43,869 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:21:44,153 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:21:46,402 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:21:47,044 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:21:48,218 INFO sqlalchemy.engine.Engine Thread-4 : select pg_catalog.version()
+2021-10-24 01:21:48,218 INFO sqlalchemy.engine.Engine Thread-4 : [raw sql] {}
+2021-10-24 01:21:48,218 INFO sqlalchemy.engine.Engine Thread-4 : select current_schema()
+2021-10-24 01:21:48,218 INFO sqlalchemy.engine.Engine Thread-4 : [raw sql] {}
+2021-10-24 01:21:48,226 INFO sqlalchemy.engine.Engine Thread-4 : show standard_conforming_strings
+2021-10-24 01:21:48,226 INFO sqlalchemy.engine.Engine Thread-4 : [raw sql] {}
+2021-10-24 01:21:48,250 INFO sqlalchemy.engine.Engine Thread-4 : BEGIN (implicit)
+2021-10-24 01:21:48,250 INFO sqlalchemy.engine.Engine Thread-4 : SELECT users.username, users.password 
+FROM users 
+WHERE users.username = %(username_1)s
+2021-10-24 01:21:48,250 INFO sqlalchemy.engine.Engine Thread-4 : [generated in 0.00305s] {'username_1': 'cjfoxadmin'}
+2021-10-24 01:21:48,258 INFO sqlalchemy.engine.Engine Thread-4 : ROLLBACK
+2021-10-24 01:21:48,266 INFO app Thread-4 : Query result: ('cjfoxadmin', '$5$rounds=535000$GJxB4XBY6kIgYPHm$1JflyYlMXLnZSI7wGFhicSQk.bhpAXPJa4pC/5/caQC')
+2021-10-24 01:21:48,266 INFO app Thread-4 : SELECT user query executed.
+ Query: SELECT users.username, users.password 
+FROM users 
+WHERE users.username = :username_1
+2021-10-24 01:21:49,210 INFO app Thread-4 : Password input matched password stored in database
+2021-10-24 01:21:49,274 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:21:49] "[35m[1mPOST /login.html HTTP/1.1[0m" 500 -
+2021-10-24 01:21:50,043 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:21:50] "GET /login.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-24 01:21:50,051 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:21:50] "GET /login.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-24 01:21:50,067 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:21:50] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:21:50,137 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:21:50] "GET /login.html?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-24 01:21:50,177 INFO werkzeug Thread-8 : 127.0.0.1 - - [24/Oct/2021 01:21:50] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:22:00,911 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:22:01,199 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:22:03,550 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:22:04,195 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:22:04,290 INFO sqlalchemy.engine.Engine Thread-3 : select pg_catalog.version()
+2021-10-24 01:22:04,290 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:22:04,290 INFO sqlalchemy.engine.Engine Thread-3 : select current_schema()
+2021-10-24 01:22:04,290 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:22:04,290 INFO sqlalchemy.engine.Engine Thread-3 : show standard_conforming_strings
+2021-10-24 01:22:04,290 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:22:04,322 INFO sqlalchemy.engine.Engine Thread-3 : BEGIN (implicit)
+2021-10-24 01:22:04,322 INFO sqlalchemy.engine.Engine Thread-3 : SELECT users.username, users.password 
+FROM users 
+WHERE users.username = %(username_1)s
+2021-10-24 01:22:04,322 INFO sqlalchemy.engine.Engine Thread-3 : [generated in 0.00278s] {'username_1': 'cjfoxadmin'}
+2021-10-24 01:22:04,330 INFO sqlalchemy.engine.Engine Thread-3 : ROLLBACK
+2021-10-24 01:22:04,330 INFO app Thread-3 : Query result: ('cjfoxadmin', '$5$rounds=535000$GJxB4XBY6kIgYPHm$1JflyYlMXLnZSI7wGFhicSQk.bhpAXPJa4pC/5/caQC')
+2021-10-24 01:22:04,330 INFO app Thread-3 : SELECT user query executed.
+ Query: SELECT users.username, users.password 
+FROM users 
+WHERE users.username = :username_1
+2021-10-24 01:22:05,591 INFO app Thread-3 : Password input matched password stored in database
+2021-10-24 01:22:05,687 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:22:05] "[35m[1mPOST /login.html HTTP/1.1[0m" 500 -
+2021-10-24 01:22:06,472 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:22:06] "GET /login.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-24 01:22:06,472 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:22:06] "GET /login.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-24 01:22:06,496 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:22:06] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:22:06,556 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:22:06] "GET /login.html?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-24 01:22:06,604 INFO werkzeug Thread-8 : 127.0.0.1 - - [24/Oct/2021 01:22:06] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:22:26,993 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:22:27,389 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:22:29,515 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:22:30,231 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:22:33,485 INFO sqlalchemy.engine.Engine Thread-3 : select pg_catalog.version()
+2021-10-24 01:22:33,485 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:22:33,493 INFO sqlalchemy.engine.Engine Thread-3 : select current_schema()
+2021-10-24 01:22:33,493 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:22:33,493 INFO sqlalchemy.engine.Engine Thread-3 : show standard_conforming_strings
+2021-10-24 01:22:33,493 INFO sqlalchemy.engine.Engine Thread-3 : [raw sql] {}
+2021-10-24 01:22:33,517 INFO sqlalchemy.engine.Engine Thread-3 : BEGIN (implicit)
+2021-10-24 01:22:33,517 INFO sqlalchemy.engine.Engine Thread-3 : SELECT users.username, users.password 
+FROM users 
+WHERE users.username = %(username_1)s
+2021-10-24 01:22:33,525 INFO sqlalchemy.engine.Engine Thread-3 : [generated in 0.00290s] {'username_1': 'cjfoxadmin'}
+2021-10-24 01:22:33,533 INFO sqlalchemy.engine.Engine Thread-3 : ROLLBACK
+2021-10-24 01:22:33,533 INFO app Thread-3 : Query result: ('cjfoxadmin', '$5$rounds=535000$GJxB4XBY6kIgYPHm$1JflyYlMXLnZSI7wGFhicSQk.bhpAXPJa4pC/5/caQC')
+2021-10-24 01:22:33,533 INFO app Thread-3 : SELECT user query executed.
+ Query: SELECT users.username, users.password 
+FROM users 
+WHERE users.username = :username_1
+2021-10-24 01:22:34,545 INFO app Thread-3 : Password input matched password stored in database
+2021-10-24 01:22:34,553 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:22:34] "[32mPOST /login.html HTTP/1.1[0m" 302 -
+2021-10-24 01:22:34,625 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:22:34] "GET /dashboard.html HTTP/1.1" 200 -
+2021-10-24 01:22:35,670 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:22:35] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:22:35,678 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:22:35] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:22:35,686 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:22:35] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:22:35,694 INFO werkzeug Thread-8 : 127.0.0.1 - - [24/Oct/2021 01:22:35] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:24:10,171 INFO app MainThread : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:24:10,388 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:24:12,335 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:24:12,846 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:29:48,898 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:29:49,202 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:29:51,665 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:29:52,260 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:29:58,647 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:29:58] "GET /dashboard.html HTTP/1.1" 200 -
+2021-10-24 01:29:59,696 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:29:59] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:29:59,696 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:29:59] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:29:59,696 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:29:59] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:29:59,728 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:29:59] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:30:20,553 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:30:20,903 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:30:22,877 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:30:23,446 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:30:23,702 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:30:23] "GET /dashboard.html HTTP/1.1" 200 -
+2021-10-24 01:30:24,627 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:30:24] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:30:24,627 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:30:24] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:30:24,643 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:30:24] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:30:24,691 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:30:24] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:30:26,762 INFO werkzeug Thread-8 : 127.0.0.1 - - [24/Oct/2021 01:30:26] "GET /login.html HTTP/1.1" 200 -
+2021-10-24 01:30:26,834 INFO werkzeug Thread-9 : 127.0.0.1 - - [24/Oct/2021 01:30:26] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:30:26,834 INFO werkzeug Thread-10 : 127.0.0.1 - - [24/Oct/2021 01:30:26] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:30:26,842 INFO werkzeug Thread-11 : 127.0.0.1 - - [24/Oct/2021 01:30:26] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:30:26,930 INFO werkzeug Thread-12 : 127.0.0.1 - - [24/Oct/2021 01:30:26] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:30:26,938 INFO werkzeug Thread-13 : 127.0.0.1 - - [24/Oct/2021 01:30:26] "[36mGET /static/images/examplePic.png HTTP/1.1[0m" 304 -
+2021-10-24 01:30:35,202 INFO sqlalchemy.engine.Engine Thread-15 : select pg_catalog.version()
+2021-10-24 01:30:35,202 INFO sqlalchemy.engine.Engine Thread-15 : [raw sql] {}
+2021-10-24 01:30:35,202 INFO sqlalchemy.engine.Engine Thread-15 : select current_schema()
+2021-10-24 01:30:35,202 INFO sqlalchemy.engine.Engine Thread-15 : [raw sql] {}
+2021-10-24 01:30:35,210 INFO sqlalchemy.engine.Engine Thread-15 : show standard_conforming_strings
+2021-10-24 01:30:35,210 INFO sqlalchemy.engine.Engine Thread-15 : [raw sql] {}
+2021-10-24 01:30:35,234 INFO sqlalchemy.engine.Engine Thread-15 : BEGIN (implicit)
+2021-10-24 01:30:35,234 INFO sqlalchemy.engine.Engine Thread-15 : SELECT users.username, users.password 
+FROM users 
+WHERE users.username = %(username_1)s
+2021-10-24 01:30:35,234 INFO sqlalchemy.engine.Engine Thread-15 : [generated in 0.00267s] {'username_1': 'cjfoxadmin'}
+2021-10-24 01:30:35,242 INFO sqlalchemy.engine.Engine Thread-15 : ROLLBACK
+2021-10-24 01:30:35,242 INFO app Thread-15 : Query result: ('cjfoxadmin', '$5$rounds=535000$GJxB4XBY6kIgYPHm$1JflyYlMXLnZSI7wGFhicSQk.bhpAXPJa4pC/5/caQC')
+2021-10-24 01:30:35,242 INFO app Thread-15 : SELECT user query executed.
+ Query: SELECT users.username, users.password 
+FROM users 
+WHERE users.username = :username_1
+2021-10-24 01:30:36,379 INFO werkzeug Thread-15 : 127.0.0.1 - - [24/Oct/2021 01:30:36] "[35m[1mPOST /login.html HTTP/1.1[0m" 500 -
+2021-10-24 01:30:36,466 INFO werkzeug Thread-14 : 127.0.0.1 - - [24/Oct/2021 01:30:36] "GET /login.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-24 01:30:36,466 INFO werkzeug Thread-16 : 127.0.0.1 - - [24/Oct/2021 01:30:36] "GET /login.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-24 01:30:36,546 INFO werkzeug Thread-17 : 127.0.0.1 - - [24/Oct/2021 01:30:36] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:30:36,666 INFO werkzeug Thread-18 : 127.0.0.1 - - [24/Oct/2021 01:30:36] "GET /login.html?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-24 01:30:36,714 INFO werkzeug Thread-19 : 127.0.0.1 - - [24/Oct/2021 01:30:36] "GET /login.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:31:16,292 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:31:16,598 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:31:19,109 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:31:19,663 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:31:20,385 INFO sqlalchemy.engine.Engine Thread-4 : select pg_catalog.version()
+2021-10-24 01:31:20,385 INFO sqlalchemy.engine.Engine Thread-4 : [raw sql] {}
+2021-10-24 01:31:20,385 INFO sqlalchemy.engine.Engine Thread-4 : select current_schema()
+2021-10-24 01:31:20,385 INFO sqlalchemy.engine.Engine Thread-4 : [raw sql] {}
+2021-10-24 01:31:20,393 INFO sqlalchemy.engine.Engine Thread-4 : show standard_conforming_strings
+2021-10-24 01:31:20,393 INFO sqlalchemy.engine.Engine Thread-4 : [raw sql] {}
+2021-10-24 01:31:20,425 INFO sqlalchemy.engine.Engine Thread-4 : BEGIN (implicit)
+2021-10-24 01:31:20,425 INFO sqlalchemy.engine.Engine Thread-4 : SELECT users.id, users.signup_date, users.firstname, users.lastname, users.phone, users.email, users.username, users.password, users.biography, users.role_id 
+FROM users 
+WHERE users.username = %(username_1)s
+2021-10-24 01:31:20,425 INFO sqlalchemy.engine.Engine Thread-4 : [generated in 0.00301s] {'username_1': 'cjfoxadmin'}
+2021-10-24 01:31:20,441 INFO sqlalchemy.engine.Engine Thread-4 : ROLLBACK
+2021-10-24 01:31:20,441 INFO app Thread-4 : Query result: (1, datetime.datetime(2021, 10, 23, 11, 18, 56, 4246), 'Connor', 'Fox', '5868723381', 'ge5315@wayne.edu', 'cjfoxadmin', '$5$rounds=535000$GJxB4XBY6kIgYPHm$1JflyYlMXLnZSI7wGFhicSQk.bhpAXPJa4pC/5/caQC', '', None)
+2021-10-24 01:31:20,441 INFO app Thread-4 : SELECT user query executed.
+ Query: SELECT users.id, users.signup_date, users.firstname, users.lastname, users.phone, users.email, users.username, users.password, users.biography, users.role_id 
+FROM users 
+WHERE users.username = :username_1
+2021-10-24 01:31:21,470 INFO app Thread-4 : Password input matched password stored in database
+2021-10-24 01:31:21,478 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:31:21] "[32mPOST /login.html HTTP/1.1[0m" 302 -
+2021-10-24 01:31:21,526 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:31:21] "GET /dashboard.html HTTP/1.1" 200 -
+2021-10-24 01:31:22,583 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:31:22] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:31:22,591 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:31:22] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:31:22,599 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:31:22] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:31:22,607 INFO werkzeug Thread-8 : 127.0.0.1 - - [24/Oct/2021 01:31:22] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:31:30,468 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:31:30,722 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:31:33,203 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:31:33,840 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:31:33,888 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:31:33] "GET /dashboard.html HTTP/1.1" 200 -
+2021-10-24 01:31:34,895 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:31:34] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:31:34,895 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:31:34] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:31:34,903 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:31:34] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:31:34,911 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:31:34] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:31:41,137 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:31:41,385 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:31:43,588 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:31:44,177 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:31:44,253 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:31:44] "GET /dashboard.html HTTP/1.1" 200 -
+2021-10-24 01:31:45,273 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:31:45] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:31:45,273 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:31:45] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:31:45,281 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:31:45] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:31:45,289 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:31:45] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:31:47,670 INFO werkzeug Thread-8 : 127.0.0.1 - - [24/Oct/2021 01:31:47] "[35m[1mGET /logout HTTP/1.1[0m" 500 -
+2021-10-24 01:31:47,742 INFO werkzeug Thread-9 : 127.0.0.1 - - [24/Oct/2021 01:31:47] "GET /logout?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-24 01:31:47,742 INFO werkzeug Thread-10 : 127.0.0.1 - - [24/Oct/2021 01:31:47] "GET /logout?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-24 01:31:47,822 INFO werkzeug Thread-11 : 127.0.0.1 - - [24/Oct/2021 01:31:47] "GET /logout?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:31:47,878 INFO werkzeug Thread-12 : 127.0.0.1 - - [24/Oct/2021 01:31:47] "GET /logout?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-24 01:31:47,934 INFO werkzeug Thread-13 : 127.0.0.1 - - [24/Oct/2021 01:31:47] "GET /logout?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:32:09,853 INFO werkzeug Thread-14 : 127.0.0.1 - - [24/Oct/2021 01:32:09] "[35m[1mGET /logout HTTP/1.1[0m" 500 -
+2021-10-24 01:32:09,917 INFO werkzeug Thread-15 : 127.0.0.1 - - [24/Oct/2021 01:32:09] "GET /logout?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-24 01:32:09,917 INFO werkzeug Thread-16 : 127.0.0.1 - - [24/Oct/2021 01:32:09] "GET /logout?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-24 01:32:10,093 INFO werkzeug Thread-17 : 127.0.0.1 - - [24/Oct/2021 01:32:10] "GET /logout?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:32:10,181 INFO werkzeug Thread-18 : 127.0.0.1 - - [24/Oct/2021 01:32:10] "GET /logout?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-24 01:32:10,229 INFO werkzeug Thread-19 : 127.0.0.1 - - [24/Oct/2021 01:32:10] "GET /logout?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-24 01:32:31,199 INFO werkzeug MainThread :  * Detected change in 'C:\\Users\\cjfox\\Documents\\GitHub\\Eventsly\\app.py', reloading
+2021-10-24 01:32:31,500 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-24 01:32:33,788 INFO app Thread-1 : <Config {'ENV': 'development', 'DEBUG': True, 'TESTING': True, 'PROPAGATE_EXCEPTIONS': None, 'PRESERVE_CONTEXT_ON_EXCEPTION': None, 'SECRET_KEY': 'wsu4110eventsly!!', 'PERMANENT_SESSION_LIFETIME': datetime.timedelta(days=31), 'USE_X_SENDFILE': False, 'SERVER_NAME': None, 'APPLICATION_ROOT': '/', 'SESSION_COOKIE_NAME': 'session', 'SESSION_COOKIE_DOMAIN': None, 'SESSION_COOKIE_PATH': None, 'SESSION_COOKIE_HTTPONLY': True, 'SESSION_COOKIE_SECURE': False, 'SESSION_COOKIE_SAMESITE': None, 'SESSION_REFRESH_EACH_REQUEST': True, 'MAX_CONTENT_LENGTH': None, 'SEND_FILE_MAX_AGE_DEFAULT': None, 'TRAP_BAD_REQUEST_ERRORS': None, 'TRAP_HTTP_EXCEPTIONS': False, 'EXPLAIN_TEMPLATE_LOADING': False, 'PREFERRED_URL_SCHEME': 'http', 'JSON_AS_ASCII': True, 'JSON_SORT_KEYS': True, 'JSONIFY_PRETTYPRINT_REGULAR': False, 'JSONIFY_MIMETYPE': 'application/json', 'TEMPLATES_AUTO_RELOAD': None, 'MAX_COOKIE_SIZE': 4093, 'DEVELOPMENT': True, 'SQLALCHEMY_DATABASE_URI': 'postgresql://postgres:kiddobean19@localhost/eventsly', 'SQLALCHEMY_TRACK_MODIFICATIONS': False}>
+2021-10-24 01:32:34,640 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-24 01:32:36,830 INFO werkzeug Thread-3 : 127.0.0.1 - - [24/Oct/2021 01:32:36] "GET / HTTP/1.1" 200 -
+2021-10-24 01:32:38,307 INFO werkzeug Thread-5 : 127.0.0.1 - - [24/Oct/2021 01:32:38] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:32:38,315 INFO werkzeug Thread-6 : 127.0.0.1 - - [24/Oct/2021 01:32:38] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:32:38,315 INFO werkzeug Thread-8 : 127.0.0.1 - - [24/Oct/2021 01:32:38] "[36mGET /static/scripts/mapScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:32:38,331 INFO werkzeug Thread-4 : 127.0.0.1 - - [24/Oct/2021 01:32:38] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:32:38,339 INFO werkzeug Thread-7 : 127.0.0.1 - - [24/Oct/2021 01:32:38] "[36mGET /static/styles/mapStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:32:38,355 INFO werkzeug Thread-9 : 127.0.0.1 - - [24/Oct/2021 01:32:38] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:32:40,706 INFO werkzeug Thread-10 : 127.0.0.1 - - [24/Oct/2021 01:32:40] "[32mGET /logout HTTP/1.1[0m" 302 -
+2021-10-24 01:32:40,730 INFO werkzeug Thread-11 : 127.0.0.1 - - [24/Oct/2021 01:32:40] "GET /login.html HTTP/1.1" 200 -
+2021-10-24 01:32:40,802 INFO werkzeug Thread-13 : 127.0.0.1 - - [24/Oct/2021 01:32:40] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:32:40,802 INFO werkzeug Thread-12 : 127.0.0.1 - - [24/Oct/2021 01:32:40] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:32:40,802 INFO werkzeug Thread-14 : 127.0.0.1 - - [24/Oct/2021 01:32:40] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:32:40,898 INFO werkzeug Thread-15 : 127.0.0.1 - - [24/Oct/2021 01:32:40] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:32:40,898 INFO werkzeug Thread-16 : 127.0.0.1 - - [24/Oct/2021 01:32:40] "[36mGET /static/images/examplePic.png HTTP/1.1[0m" 304 -
+2021-10-24 01:32:45,973 INFO werkzeug Thread-17 : 127.0.0.1 - - [24/Oct/2021 01:32:45] "GET /login.html HTTP/1.1" 200 -
+2021-10-24 01:32:46,045 INFO werkzeug Thread-18 : 127.0.0.1 - - [24/Oct/2021 01:32:46] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:32:46,045 INFO werkzeug Thread-19 : 127.0.0.1 - - [24/Oct/2021 01:32:46] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:32:46,045 INFO werkzeug Thread-20 : 127.0.0.1 - - [24/Oct/2021 01:32:46] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:32:46,149 INFO werkzeug Thread-21 : 127.0.0.1 - - [24/Oct/2021 01:32:46] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:32:46,149 INFO werkzeug Thread-22 : 127.0.0.1 - - [24/Oct/2021 01:32:46] "[36mGET /static/images/examplePic.png HTTP/1.1[0m" 304 -
+2021-10-24 01:33:54,460 INFO werkzeug Thread-24 : 127.0.0.1 - - [24/Oct/2021 01:33:54] "GET /login.html HTTP/1.1" 200 -
+2021-10-24 01:33:54,524 INFO werkzeug Thread-23 : 127.0.0.1 - - [24/Oct/2021 01:33:54] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:33:54,524 INFO werkzeug Thread-25 : 127.0.0.1 - - [24/Oct/2021 01:33:54] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:33:54,532 INFO werkzeug Thread-26 : 127.0.0.1 - - [24/Oct/2021 01:33:54] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:33:54,668 INFO werkzeug Thread-27 : 127.0.0.1 - - [24/Oct/2021 01:33:54] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:33:54,684 INFO werkzeug Thread-28 : 127.0.0.1 - - [24/Oct/2021 01:33:54] "[36mGET /static/images/examplePic.png HTTP/1.1[0m" 304 -
+2021-10-24 01:34:02,339 INFO sqlalchemy.engine.Engine Thread-29 : select pg_catalog.version()
+2021-10-24 01:34:02,339 INFO sqlalchemy.engine.Engine Thread-29 : [raw sql] {}
+2021-10-24 01:34:02,339 INFO sqlalchemy.engine.Engine Thread-29 : select current_schema()
+2021-10-24 01:34:02,339 INFO sqlalchemy.engine.Engine Thread-29 : [raw sql] {}
+2021-10-24 01:34:02,347 INFO sqlalchemy.engine.Engine Thread-29 : show standard_conforming_strings
+2021-10-24 01:34:02,347 INFO sqlalchemy.engine.Engine Thread-29 : [raw sql] {}
+2021-10-24 01:34:02,371 INFO sqlalchemy.engine.Engine Thread-29 : BEGIN (implicit)
+2021-10-24 01:34:02,371 INFO sqlalchemy.engine.Engine Thread-29 : SELECT users.id, users.signup_date, users.firstname, users.lastname, users.phone, users.email, users.username, users.password, users.biography, users.role_id 
+FROM users 
+WHERE users.username = %(username_1)s
+2021-10-24 01:34:02,379 INFO sqlalchemy.engine.Engine Thread-29 : [generated in 0.00329s] {'username_1': 'cjfoxadmin'}
+2021-10-24 01:34:02,387 INFO sqlalchemy.engine.Engine Thread-29 : ROLLBACK
+2021-10-24 01:34:02,387 INFO app Thread-29 : Query result: (1, datetime.datetime(2021, 10, 23, 11, 18, 56, 4246), 'Connor', 'Fox', '5868723381', 'ge5315@wayne.edu', 'cjfoxadmin', '$5$rounds=535000$GJxB4XBY6kIgYPHm$1JflyYlMXLnZSI7wGFhicSQk.bhpAXPJa4pC/5/caQC', '', None)
+2021-10-24 01:34:02,387 INFO app Thread-29 : SELECT user query executed.
+ Query: SELECT users.id, users.signup_date, users.firstname, users.lastname, users.phone, users.email, users.username, users.password, users.biography, users.role_id 
+FROM users 
+WHERE users.username = :username_1
+2021-10-24 01:34:03,419 INFO app Thread-29 : Password input matched password stored in database
+2021-10-24 01:34:03,419 INFO werkzeug Thread-29 : 127.0.0.1 - - [24/Oct/2021 01:34:03] "[32mPOST /login.html HTTP/1.1[0m" 302 -
+2021-10-24 01:34:03,435 INFO werkzeug Thread-30 : 127.0.0.1 - - [24/Oct/2021 01:34:03] "GET /dashboard.html HTTP/1.1" 200 -
+2021-10-24 01:34:03,523 INFO werkzeug Thread-32 : 127.0.0.1 - - [24/Oct/2021 01:34:03] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:34:03,523 INFO werkzeug Thread-31 : 127.0.0.1 - - [24/Oct/2021 01:34:03] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:34:03,523 INFO werkzeug Thread-33 : 127.0.0.1 - - [24/Oct/2021 01:34:03] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:34:03,603 INFO werkzeug Thread-34 : 127.0.0.1 - - [24/Oct/2021 01:34:03] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:34:08,781 INFO werkzeug Thread-35 : 127.0.0.1 - - [24/Oct/2021 01:34:08] "[32mGET /logout HTTP/1.1[0m" 302 -
+2021-10-24 01:34:08,797 INFO werkzeug Thread-36 : 127.0.0.1 - - [24/Oct/2021 01:34:08] "GET /login.html HTTP/1.1" 200 -
+2021-10-24 01:34:08,869 INFO werkzeug Thread-37 : 127.0.0.1 - - [24/Oct/2021 01:34:08] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:34:08,869 INFO werkzeug Thread-39 : 127.0.0.1 - - [24/Oct/2021 01:34:08] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:34:08,869 INFO werkzeug Thread-38 : 127.0.0.1 - - [24/Oct/2021 01:34:08] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-24 01:34:09,005 INFO werkzeug Thread-40 : 127.0.0.1 - - [24/Oct/2021 01:34:09] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-24 01:34:09,013 INFO werkzeug Thread-41 : 127.0.0.1 - - [24/Oct/2021 01:34:09] "[36mGET /static/images/examplePic.png HTTP/1.1[0m" 304 -

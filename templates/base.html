@@ -45,8 +45,13 @@
                     </span>
                 </div>
                 <div class="spacer"></div>
+                {% if session.logged_in %}
+                <a href="/logout" class="nav-item">Logout</a>
+                <a href="dashboard.html" class="nav-item {{'active' if title == 'Dashboard'}}">Dashboard</a>
+                {% else %}
                 <a href="login.html" class="nav-item {{'active' if title == 'Log In'}}">Log In</a>
                 <a href='signup.html' class="nav-item {{'active' if title == 'Sign Up'}}">Sign Up</a>
+                {% endif %}
             </div>
             <i class='fa fa-bars fa-inverse fa-2x' aria-hidden="true"></i>
         </nav>
