@@ -1,4 +1,5 @@
 from wtforms import Form, StringField, PasswordField, validators
+from wtforms.fields.simple import TextAreaField
 from app import db
 
 class SignUpForm(Form):
