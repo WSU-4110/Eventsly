@@ -1,4 +1,5 @@
 from datetime import datetime
+from functools import wraps
 from logging import error
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, select
@@ -115,19 +116,34 @@ def login():
 
     return render_template("login.html", title="Log In")
 
+@app.route("/createEvent.html")
+def createEvent():
+    return render_template("createEvent.html", title="Create Event")
+
+#Check if user logged in to access logout and dashboard
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('Unauthorized, please login.','danger')
+            return redirect(url_for('login'))
+    return wrap
+
 @app.route('/logout')
+@is_logged_in #uses is_logged_in wrapper for this URL
 def logout():
     session.clear()
     flash('You are now logged out', 'success')
     return redirect(url_for('login'))
 
 @app.route('/dashboard.html')
+@is_logged_in
 def dashboard():
     return render_template('dashboard.html', title="Dashboard")
 
-@app.route("/createEvent.html")
-def createEvent():
-    return render_template("createEvent.html", title="Create Event")
+
 
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
