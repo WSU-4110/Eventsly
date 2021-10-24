@@ -4,7 +4,6 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, select
 from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
 from passlib.hash import sha256_crypt
-from sqlalchemy.orm import query, Session
 from sqlalchemy.util.langhelpers import NoneType
 import logger
 import traceback
@@ -97,7 +96,12 @@ def login():
         
             #Compare passwords
             if sha256_crypt.verify(password_input, password_data):
+                session['Logged_in'] = True
+                session['username'] = username_input
+
+                flash('You are now logged in', 'success')
                 app.logger.info('Password input matched password stored in database')
+                return redirect(url_for('index.html'))
             else:
                 app.logger.info('Password input did not match password stored in database')
                 error = 'Invalid login'
@@ -109,6 +113,12 @@ def login():
 
     return render_template("login.html", title="Log In")
 
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash('You are now logged out')
+    return redirect(url_for('index.html'))
+    
 @app.route("/createEvent.html")
 def createEvent():
     return render_template("createEvent.html", title="Create Event")
