@@ -39,13 +39,10 @@ footer {
   left: 50%;
   transform: translate(-50%);
   bottom: 64px;
+  width: 100%; /* Need a specific value to work */
   z-index: 2;
   display: flex;
-  transition-duration: 1s;
-}
-
-.event-create .fa-stack .fa-plus {
-  color: white;
+  animation: fadein 1.5s;
 }
 
 .event-create .fa-stack {
