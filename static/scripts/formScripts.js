@@ -8,7 +8,8 @@ window.onload = function () {
             var label = formItems[i].getElementsByTagName('LABEL')[0];
             var input = formItems[i].getElementsByClassName('form-input')[0];
             var span = formItems[i].getElementsByClassName('counter')[0];
-            if (label && input && span) {
+            if (label && input) {
+                console.log(label + ' ' + input.id + ' ' + span);
                 initLabelPos(input, label)
                 countChars(input, span); // initialize counters to 0
                 bindInputEvents(input, span, label);

@@ -11,6 +11,9 @@
     justify-content: center;
     padding: 0;
   }
+  body {
+    overflow-y: auto;
+  }
 </style>
 <link rel="stylesheet" href="/static/styles/formStyles.css">
 <script src='/static/scripts/formScripts.js'></script>
@@ -51,9 +54,8 @@
   </div>
   <div class='form-item'>
     {{render_field(form.confirm, class_="form-input")}}
+    <span class='counter' style='display: none;'></span>
   </div>
-  <div class='form-item'>
     <input type="submit" value="Sign Up">
-  </div>
 </form>
 {% endblock %}

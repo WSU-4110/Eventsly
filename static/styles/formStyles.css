@@ -1,3 +1,8 @@
+header {
+    position: fixed;
+    min-width: 100%;
+}
+
 form.signup {
     background: rgba(255, 255, 255, 0.5);
     width: 90%;
@@ -12,6 +17,7 @@ form.signup {
     font-weight: 500;
     border-radius: 80px;
     backdrop-filter: blur(5px);
+    margin-top: 50px;
 }
 
 form.signup h1, form.signup h2 {
@@ -22,6 +28,7 @@ form.signup h1, form.signup h2 {
 }
 
 form.signup .form-item {
+    min-height: 70px;
     flex: 1 1 220px;
     margin: 0 30px;
     position: relative;
@@ -36,6 +43,10 @@ form.signup label {
     color:rgb(167, 167, 167);
     margin: 0;
     padding: 0;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
 }
 
@@ -75,21 +86,49 @@ form.signup input[type='text'], form.signup input[type='password'] {
     border-style: none;
 }
 
-form.signup input[type='submit'] {
-    background-color: #3A3E5E;
-    color: white;
-}
-
-form.signup input[type='submit'].disabled {
-    opacity: 0.5;
+form.signup input[type='text']:focus, form.signup input[type='password']:focus {
+    outline: 2px solid #3A3E5E;
 }
 
 form.signup input[type='text'].invalid {
     outline: 2px solid red;
 }
 
+/* submit button styles */
+form.signup input[type='submit'] {
+    height: 40px;
+    background-color: #3A3E5E;
+    color: white;
+    max-width: 200px;
+    border-radius: 5px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+form.signup input[type='submit']:hover {
+    background-color: #7b82b3;
+}
+
+form.signup input[type='submit'].disabled {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+/* error message style - INCOMPLETE */
+form.signup span.help-inline {
+    position: absolute;
+    pointer-events: none;
+    font-size: 12px;
+    left: 6px;
+    bottom: -10px;
+    color: red;
+}
+
 /* small screen styles */
-@media screen and (max-width: 570px) {
+@media screen and (max-width: 650px), screen and (max-height: 700px) {
     form.signup {
         width: 100%;
         max-height: 100%;
@@ -97,14 +136,25 @@ form.signup input[type='text'].invalid {
     }
     
     form.signup h1 {
-        font-size: 2rem;
+        font-size: 18pt;
+        margin-top: 10px;
+        margin-bottom: 25px;
     }
 
     form.signup h2 {
-        font-size: 1rem;
+        display: none;
+        font-size: 12pt;
     }
-    
-    body {
-        overflow-y: visible;
-    };
+
+    form.signup input {
+        min-width: 90%;
+    }
+
+    form.signup label {
+        top: -20px;
+        left: 5px;
+        font-size: 10pt;
+        color: #3A3E5E;
+        font-weight: bold;
+    }
 }

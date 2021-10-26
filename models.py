@@ -25,7 +25,7 @@ class SignUpForm(Form):
         id='password',
         render_kw={'minlength': 8, 'maxlength': 120, 'required': True}
     )
-    confirm = PasswordField("Confirm Password", id='confirm_password')
+    confirm = PasswordField("Confirm Password", id='confirm')
 
 class Event(db.Model):
     '''Stores all events.'''

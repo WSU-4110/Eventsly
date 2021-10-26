@@ -112,7 +112,7 @@ a.nav-item:hover:not(.active) {
     }
     
     nav {
-        height: 4em;
+        height: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -140,7 +140,7 @@ a.nav-item:hover:not(.active) {
         display: flex;
         justify-content: space-between;
         position: fixed;
-        top: 4em;
+        top: 50px;
         left: -100%;
         flex-direction: column;
         width: 100%;
@@ -152,7 +152,7 @@ a.nav-item:hover:not(.active) {
         -ms-transition: 1s;
         -o-transition: 1s;
         transition: 1s;
-        height: calc(100% - 64px);
+        height: calc(100% - 50px);
     }
     
     .dropdown {
