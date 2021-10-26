@@ -41,7 +41,7 @@ def contact():
     return render_template("Contact.html", title="Contact")
 
 @app.route("/search.html")
-def about():
+def search():
     return render_template("search.html", title="Search Events")
 
 @app.route("/signup.html", methods=['POST','GET'])
