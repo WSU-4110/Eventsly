@@ -36,10 +36,6 @@ def bookmarks():
 def about():
     return render_template("About.html", title="About Us")
 
-# @app.route("/contact.html")
-# def contact():
-#   return render_template("Contact.html", title="Contact")
-
 @app.route("/signup.html", methods=['POST','GET'])
 def signup():
     form = models.SignUpForm(request.form)
