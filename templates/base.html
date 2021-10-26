@@ -38,8 +38,13 @@
                 <a href="bookmarks.html" class="nav-item {{'active' if title == 'Bookmarks'}}">Bookmarks</a>
                 <a href="about.html" class="nav-item {{'active' if title == 'About Us'}}">About Us</a>
                 <div class="spacer"></div>
+                {% if session.logged_in %}
+                <a href="/logout" class="nav-item">Logout</a>
+                <a href="dashboard.html" class="nav-item {{'active' if title == 'Dashboard'}}">Dashboard</a>
+                {% else %}
                 <a href="login.html" class="nav-item {{'active' if title == 'Log In'}}">Log In</a>
                 <a href='signup.html' class="nav-item {{'active' if title == 'Sign Up'}}">Sign Up</a>
+                {% endif %}
             </div>
             <div class="searchbar">
                 <label for="search"></label>
@@ -56,12 +61,14 @@
 
     <main>
         <!-- block for page specific main content -->
+        {% include 'includes/_messages.html' %}
+        {% from "includes/_formhelpers.html" import render_field %}
         {% block main %} {% endblock %}
     </main>
 
     <footer>
         <ul>
-            <li>Connect with your community</li>
+            <li><a href="mailto:eventslygroup@gmail.com" class="footer-contact"><i class="fas fa-mail-bulk"></i> Contact Us!</a></li>
             <li>All content copyright &copy; 2021, Eventsly</li>
         </ul>
     </footer>

@@ -8,15 +8,16 @@
   <h1><img src="/static/images/examplePic.png" width="50" height="40" alt="Eventsly">Login to your Eventsly account
     below</h1>
   <br>
-  <form action=" " method=" ">
+  <form action="/login.html" method="POST">
 
     <div class="container">
       <label for="username"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="Username" required> <br> <br>
+      <input type="text" placeholder="Enter Username" name="username" value = '{{request.form.username}}' required> 
+      <br> <br>
 
       <label for="password"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required> <br> <br>
-
+      <input type="password" placeholder="Enter Password" name="password" value = '{{request.form.password}}' required>
+      <br> <br>
       <button type="submit">Login</button>
     </div> <br>
 

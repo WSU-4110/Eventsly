@@ -1,4 +1,5 @@
 from wtforms import Form, StringField, PasswordField, validators
+from wtforms.fields.core import DateField, FloatField
 from app import db
 
 class SignUpForm(Form):
@@ -26,6 +27,18 @@ class SignUpForm(Form):
         render_kw={'minlength': 8, 'maxlength': 120, 'required': True}
     )
     confirm = PasswordField("Confirm Password", id='confirm')
+
+class EventForm(Form):
+    '''Form fields with validation for event creation.'''
+    title = StringField("Title", [validators.Length(min=1, max=50)])
+    description = StringField("Description", [validators.Length(min=1, max=500)])
+    date = StringField("Date", [validators.Length(min=1, max=12)])
+    latitude = FloatField("Latitude")
+    longitude = FloatField("Longitude")
+    street = StringField("Street", [validators.Length(min=1, max=100)])
+    city = StringField("City", [validators.Length(min=1, max=50)])
+    state = StringField("State", [validators.Length(min=2, max=2)])
+    # For date: entering a value of 010203 stores it as 2001-02-03
 
 class Event(db.Model):
     '''Stores all events.'''
