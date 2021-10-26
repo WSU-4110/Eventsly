@@ -14,10 +14,20 @@
 - Mark Slattery
 - CJ Fox
 
-## Running the Eventsly Application
+## Running the Eventsly Application Locally
 
-###### To run the Eventsly app, simply use "git clone" in a CLI with the project link: https://github.com/WSU-4110/Eventsly
-###### Open the git project in VSCode or the directory in a CLI and type "flask run" into the terminal without quotes. 
+1. run the command `git clone https://github.com/WSU-4110/Eventsly` in a bash terminal to clone the Eventsly repo
+2. install Postgresql from https://www.postgresql.org/download/
+3. Set up Postgresql with default settings (Postgresql Stack Builder is not necessary)
+4. launch pgAdmin4 and create a database on the server named `eventsly`
+5. take note of the password you set for the database, create a file named 'dbconfig.txt' in the Eventsly repo with the only line in that file being the password you set
+6. install virtualenv `pip install virtualenv`
+7. install the other dependencies by navigating to the Eventsly repo top level in a bash terminal and running the command `pip install -r requirements.txt`
+8. add a new environment variable to your system's environment variables: variable name: `FLASK_ENV` value: `development`
+###### At this point, your environment is set up to run the application locally - the following commands describe what you should do each coding session
+7. navigate to the Eventsly repo top level in a bash terminal and run the command `source env/Scripts/activate` to create a virtual environment
+8. run the command `flask run` to launch the app on localhost
+
 
 ## Technology Stack
 
