@@ -1,8 +1,11 @@
 from datetime import datetime
+from functools import wraps
 from logging import error
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, request, redirect, flash, url_for, session, logging
+from sqlalchemy import create_engine, select
+from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
 from passlib.hash import sha256_crypt
+from sqlalchemy.util.langhelpers import NoneType
 import logger
 import traceback
 import os
@@ -11,12 +14,14 @@ app = Flask(__name__)
 
 if app.config['ENV'] == 'production':
     app.config.from_object('config.ProductionConfig')
-elif app.config['ENV'] == 'development':
+if app.config['ENV'] == 'development':
     app.config.from_object('config.DevelopmentConfig')
+    app.logger.info(f'{app.config}')
 else:
     app.config.from_object('config.BaseConfig')
 
 db = SQLAlchemy(app)
+engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=True)
 
 import models
 
@@ -67,8 +72,44 @@ def signup():
 
     return render_template("signup.html", form=form, title="Sign Up")
 
-@app.route("/login.html")
+@app.route("/login.html", methods =['GET','POST'])
 def login():
+    if request.method == 'POST':
+        #Get Form Fields
+        username_input = request.form['username']
+        password_input = request.form['password']
+
+        #Get user by username
+        stmt = select(models.User).where(models.User.username == username_input)
+        with engine.connect() as conn:
+            result = conn.execute(stmt).first()
+
+        app.logger.info(f'Query result: {result}')
+        app.logger.info(f'SELECT user query executed.\n Query: {stmt}')
+
+        if result != None:
+            #Get stored hash
+            password_data = result.password
+        
+            #Compare passwords
+            if sha256_crypt.verify(password_input, password_data):
+                session['logged_in'] = True
+                session['username'] = result.username
+                session['userid'] = result.id
+                session['name'] = f'{result.firstname} {result.lastname}'
+
+                flash('You are now logged in', 'success')
+                app.logger.info('Password input matched password stored in database')
+                return redirect(url_for('dashboard'))
+            else:
+                app.logger.info('Password input did not match password stored in database')
+                error = 'Invalid login'
+                return render_template('login.html', title = 'Log In',error=error)
+        else:
+            app.logger.info('No user found with that username')  
+            error = 'Username not found'
+            return render_template('login.html', title = 'Log In', error=error)
+
     return render_template("login.html", title="Log In")
 
 @app.route("/createEvent.html", methods=['POST','GET'])
@@ -100,6 +141,31 @@ def createEvent():
             app.logger.warning(f"Event {form.title.data} was unable to be created. /////")
             return redirect(url_for('createEvent'))
     return render_template("createEvent.html",form = form, title="Create Event")
+
+#Check if user logged in to access logout and dashboard
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('Unauthorized, please login.','danger')
+            return redirect(url_for('login'))
+    return wrap
+
+@app.route('/logout')
+@is_logged_in #uses is_logged_in wrapper for this URL
+def logout():
+    session.clear()
+    flash('You are now logged out', 'success')
+    return redirect(url_for('login'))
+
+@app.route('/dashboard.html')
+@is_logged_in
+def dashboard():
+    return render_template('dashboard.html', title="Dashboard")
+
+
 
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
