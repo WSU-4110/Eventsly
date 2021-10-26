@@ -41,25 +41,6 @@ def bookmarks():
 def about():
     return render_template("About.html", title="About Us")
 
-<<<<<<< HEAD
-@app.route("/contact.html")
-def contact():
-    return render_template("Contact.html", title="Contact")
-
-@app.route("/search.html", methods =['GET','POST'])
-def search():
-    if request.method == 'POST':
-        #Get Form Fields
-        search_input = request.form['title']
-
-    #Get user by username
-        stmt = select(models.Event).where(models.Event.title == search_input)
-        with engine.connect() as conn:
-            result = conn.execute(stmt).first()
-    return render_template("search.html", title="Search Events")
-
-=======
->>>>>>> feature/login
 @app.route("/signup.html", methods=['POST','GET'])
 def signup():
     form = models.SignUpForm(request.form)
