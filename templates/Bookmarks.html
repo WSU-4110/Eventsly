@@ -5,5 +5,31 @@
 {% endblock %}
 
 {% block main %}
-<h1><img src="/static/images/examplePic.png" width="50" height="40" alt="Eventsly">Bookmarks</h1>
+<h1><i class="fas fa-bookmark"></i> Bookmarks</h1>
+
+<table class="bm-table">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">Event Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Date</th>
+        <th scope="col">Location</th>
+      </tr>
+    </thead>
+      {% for bookmark in bookmarkpull %}
+      <tr>
+      <th scope="row">{{bookmarkpull.event_id}}</th>
+      <td>{{bookmarkpull.title}}
+      </td>
+      <td>{{bookmarkpull.description}}
+      </td>
+      <td>{{bookmarkpull.date}}
+      </td>
+      <td>{{bookmarkpull.city}}, {{bookmarkpull.state}}
+      </td>
+      </tr>
+      {% endfor %}
+  </table>
+
 {% endblock %}

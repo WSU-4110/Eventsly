@@ -30,7 +30,8 @@ def index():
 
 @app.route("/bookmarks.html")
 def bookmarks():
-    return render_template("Bookmarks.html", title="Bookmarks")
+    bookmarkpull=db.engine.execute("SELECT * FROM bookmarks, users, events WHERE bookmarks.user_id = users.id AND events.id = bookmarks.id order by bookmarks.id")
+    return render_template("Bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
 @app.route("/about.html")
 def about():
