@@ -6,16 +6,23 @@ header {
 }
 
 nav {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     align-items: center;
 }
 
 .nav-item {
-    font-weight: bold;
     text-decoration: none;
     color: white;
     font-size: 1.2rem;
-    transition: all 0.5s ease 0s;
+    font-weight: 500;
+}
+
+.nav-menu a {
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
 }
 
 .logo {
@@ -27,6 +34,19 @@ nav {
     display: flex;
     align-items: center;
     font-size: 1.8em;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.logo .fa-map-marked {
+    padding-right: 5px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+}
+
+.logo .fa-map-marked::before {
+    height: 100%;
 }
 
 .active {
@@ -38,30 +58,64 @@ a.nav-item:hover:not(.active) {
     background-color: #7b82b3;
 }
 
-/* general font awesome nav styles */
-.fa-stack #search-circle {
-    color: white;
+/* searchbar styles */
+.searchbar {
+    display: flex;
+    align-items: center;
+    margin: auto 20px;
+    height: 30px;
+    width: 100%;
+    max-width: 300px;
+    position: relative;
+    background:white;
+    border-radius: 15px;
 }
 
-.fa-stack .fa-search {
+.searchbar input {
+    height: 20px;
+    font-size: 12pt;
+    width: 100%;
+    background: none;
+    border: none;
+    margin-right: 39px;
+    padding-left: 12px;
+}
+
+.searchbar:focus, input:focus { /* hide input outline on focus */
+    outline: none;
+}
+
+.searchbar a {
+    padding: 6px 12px;
+    position: absolute;
+    right: 0px;
+    margin: auto 0;
     color: #3A3E5E;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.searchbar a:hover {
+    color: #7b82b3;
 }
 
 /*--------------------------*/
 /* styles for small screens */
 /*--------------------------*/
 /* hamburger/drop down menu */
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1123px) {
     header {
         z-index: 3;
     }
     
     nav {
-        height: 4em;
+        height: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 1.5rem;
         border-bottom: 1px solid #3A3E5E;
     }
     
@@ -71,6 +125,11 @@ a.nav-item:hover:not(.active) {
         display: flex;
         align-items: center;
         justify-content: center;
+        -webkit-transition: 1s ease 0.5s;
+        -moz-transition: 1s ease 0.5s;
+        -ms-transition: 1s ease 0.5s;
+        -o-transition: 1s ease 0.5s;
+        transition: 1s ease 0.5s;
     }
     
     .spacer {
@@ -81,25 +140,61 @@ a.nav-item:hover:not(.active) {
         display: flex;
         justify-content: space-between;
         position: fixed;
-        top: 4em;
+        top: 50px;
         left: -100%;
         flex-direction: column;
         width: 100%;
         background-color: #3A3E5E;
         align-items: center;
         z-index: 3;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
         transition: 1s;
-        height: calc(100% - 64px);
+        height: calc(100% - 50px);
     }
     
     .dropdown {
         left: 0;
     }
 
+    .searchbar {
+        margin: 0 auto;
+    }
+
     /* small screen font awesome nav styles */
-    .fa-bars {
+    .hamburger {
+        display: flex;
+        width: 100px;
+        height: 100%;
+        text-align: center;
+        align-items: center;
+    }
+    
+    i.fa.fa-bars {
         color: white;
         cursor: pointer;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    i.fa.fa-bars::before {
+        width: 100%;
+    }
+}
+
+/*-------------------------------*/
+/* styles for very small screens */
+/*-------------------------------*/
+@media screen and (max-width: 570px) {
+    .logo {
+        display: none;
+    }
+    .searchbar {
+        max-width: 100%;
+        margin-left: 20px;
     }
 }
 
@@ -107,10 +202,10 @@ a.nav-item:hover:not(.active) {
 /* styles for large screens */
 /*--------------------------*/
 /* fixed top bar */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1124px) {
     header {
         height: 55px;
-      }
+    }
     
     nav {
         display: flex;
@@ -122,12 +217,12 @@ a.nav-item:hover:not(.active) {
     .nav-item {
         display: flex;
         align-items: center;
-        padding: 0 20px;
+        padding: 0 14px;
         box-sizing: border-box;;
         border: 2px solid #3A3E5E;
         margin-left: -1px;
         height: 100%;
-        
+        white-space: nowrap;
     }
 
     .spacer {
@@ -142,14 +237,7 @@ a.nav-item:hover:not(.active) {
     }
     
     .logo {
-        min-width: 221px;
-    }
-
-    /* large screen font awesome nav styles */
-    .logo .fa-map-marked {
-        padding-right: 5px;
-        min-width: 32px;
-        color: white;
+        min-width: 160px;
     }
     
     .fa.fa-bars {
