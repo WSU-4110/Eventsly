@@ -6,7 +6,7 @@
 ###### Events in your area will be shown and you can feel free to coordinate your own events, all for others to find places to be, and the hot spots around their area. 
 ###### Concerts, games, get-togethers, you name it! It can be done with Eventsly.
 
-###### You can find the current version of Eventsly on https://www.eventsly.herokuapp.com/
+###### You can find the current version of Eventsly on https://eventsly.herokuapp.com/
 
 ## Group Members
 
