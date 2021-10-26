@@ -6,9 +6,9 @@ header {
 form.signup {
     background: rgba(255, 255, 255, 0.5);
     width: 90%;
-    max-height: 650px;
-    height: 100%;
-    max-width: 700px;
+    max-height: 700px;
+    height: 90%;
+    max-width: 800px;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -27,8 +27,18 @@ form.signup h1, form.signup h2 {
     text-align: center;
 }
 
+form.signup h1 {
+    font-size: 18pt;
+}
+
+form.signup h2 {
+    font-size: 16pt;
+    margin-bottom: 8px;
+}
+
 form.signup .form-item {
-    min-height: 70px;
+    min-height: 90px;
+    min-width: 250px;
     flex: 1 1 220px;
     margin: 0 30px;
     position: relative;
@@ -73,18 +83,18 @@ form.signup input {
     font-size: 12pt;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    padding-left: 6px;
-    padding-top: 3px;
-    padding-right: 25px;
     height: 26px;
     border-style: none;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 form.signup input[type='text'], form.signup input[type='password'] {
     outline: 2px solid rgb(167, 167, 167);
     border-style: none;
+    padding-left: 6px;
+    padding-top: 3px;
+    padding-right: 25px;
 }
 
 form.signup input[type='text']:focus, form.signup input[type='password']:focus {
@@ -102,6 +112,7 @@ form.signup input[type='submit'] {
     color: white;
     max-width: 200px;
     border-radius: 5px;
+    margin-bottom: 20px;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
@@ -118,21 +129,21 @@ form.signup input[type='submit'].disabled {
     cursor: pointer;
 }
 
-/* error message style - INCOMPLETE */
 form.signup span.help-inline {
-    position: absolute;
+    vertical-align: text-top;
     pointer-events: none;
-    font-size: 12px;
+    font-size: 9pt;
     left: 6px;
-    bottom: -10px;
+    bottom: -8px;
     color: red;
 }
 
 /* small screen styles */
-@media screen and (max-width: 650px), screen and (max-height: 700px) {
+@media screen and (max-width: 800px), screen and (max-height: 700px) {
     form.signup {
         width: 100%;
         max-height: 100%;
+        height: 100%;
         border-radius: 0;
     }
     
@@ -148,7 +159,7 @@ form.signup span.help-inline {
     }
 
     form.signup input {
-        min-width: 90%;
+        height: 35px;
     }
 
     form.signup label {
@@ -157,5 +168,16 @@ form.signup span.help-inline {
         font-size: 10pt;
         color: #3A3E5E;
         font-weight: bold;
+    }
+
+    form.signup .form-item {
+        min-height: 120px;
+        min-width: 85%;
+        max-width: 85%;
+    }
+
+    form.signup input[type='submit'] {
+        margin-bottom: 30px;
+        min-width: 85%;
     }
 }
