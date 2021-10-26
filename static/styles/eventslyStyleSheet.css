@@ -57,3 +57,17 @@ footer {
 .fas#event-circle {
   color: #3A3E5E;
 }
+
+
+.errormsg{
+  color: #D8000C;
+  background-color: #FFD2D2;
+  margin: 10px 0px;
+  padding:12px;
+}
+.successmsg{
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  margin: 10px 0px;
+  padding:12px;
+}
