@@ -1,15 +1,15 @@
 from wtforms import Form, StringField, PasswordField, validators
-from wtforms.fields.simple import TextAreaField
 from app import db
 
 class SignUpForm(Form):
     '''Form fields with validation for user sign up.'''
-    firstname = StringField("First Name", [validators.Length(min=1, max=50)])
-    lastname = StringField("Last Name", [validators.Length(min=1, max=50)])
-    biography = StringField("Biography", [validators.Length(max=255)])
-    phone = StringField("Phone", [validators.Length(min=9, max=10)])
-    username = StringField("Username", [validators.Length(min=4, max=30)])
-    email = StringField("Email", [validators.Length(min=6, max=50)])
+    
+    firstname = StringField("First Name", [validators.Length(min=1, max=50)], id='firstname', render_kw={'minlength': 1, 'maxlength': 50, 'required': True})
+    lastname = StringField("Last Name", [validators.Length(min=1, max=50)], id='lastname', render_kw={'minlength': 1, 'maxlength': 50, 'required': True })
+    biography = StringField("Biography", [validators.Length(max=100)], id='biography', render_kw={'maxlength': 100})
+    phone = StringField("Phone", [validators.Length(min=9, max=10)], id='phone', render_kw={'minlength': 9, 'maxlength': 10, 'required': True})
+    username = StringField("Username", [validators.Length(min=4, max=30)], id='username', render_kw={'minlength': 4, 'maxlength': 30, 'required': True})
+    email = StringField("Email", [validators.Length(min=6, max=50)], id='email', render_kw={'minlength': 6, 'maxlength': 50, 'required': True})
     password = PasswordField(
         "Password", 
         [ 
@@ -18,12 +18,14 @@ class SignUpForm(Form):
             validators.Regexp(
                 "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]", 
                 flags=0, 
-                message="Password must contain at least one uppercase, lowercase, special character, and number."
+                message="Must contain at least one uppercase, lowercase, special character, and number."
             ),
-            validators.Length(min=8)
-        ]
+            validators.Length(min=8, max=128)
+        ],
+        id='password',
+        render_kw={'minlength': 8, 'maxlength': 120, 'required': True}
     )
-    confirm = PasswordField("Confirm Password")
+    confirm = PasswordField("Confirm Password", id='confirm_password')
 
 class Event(db.Model):
     '''Stores all events.'''

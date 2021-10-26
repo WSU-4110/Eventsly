@@ -13,6 +13,7 @@
   }
 </style>
 <link rel="stylesheet" href="/static/styles/formStyles.css">
+<script src='/static/scripts/formScripts.js'></script>
 {% endblock %}
 
 {% block main %}
@@ -20,44 +21,39 @@
 <form class="signup" action="/signup.html" method="POST">
   <h1>Sign-Up</h1>
   <h2>Please fill out the information below</h2>
-  <div class='form-row'>
-    <div class='form-col'>
-      {{render_field(form.firstname, class_="form-control")}}
-    </div>
-    <div class='form-col'>
-      {{render_field(form.lastname, class_="form-control")}}
-    </div>
+  <div class='form-item'>
+    {{render_field(form.firstname, class_="form-input")}}
+    <span class='counter'></span>
   </div>
-  <div class='form-row'>
-    <div class='form-col'>
-      {{render_field(form.email, class_="form-control")}}
-    </div>
-    <div class='form-col'>
-      {{render_field(form.phone, class_="form-control")}}
-    </div>
+  <div class='form-item'>
+    {{render_field(form.lastname, class_="form-input")}}
+    <span class='counter'></span>
   </div>
-  <div class='form-row'>
-    <div class='form-col'>
-      {{render_field(form.username, class_="form-control")}}
-    </div>
+  <div class='form-item'>
+    {{render_field(form.email, class_="form-input")}}
+    <span class='counter'></span>
   </div>
-  <div class='form-row'>
-    <div class='form-col'>
-      {{render_field(form.biography, class_="form-control")}}
-    </div>
+  <div class='form-item'>
+    {{render_field(form.phone, class_="form-input")}}
+    <span class='counter'></span>
   </div>
-  <div class='form-row'>
-    <div class='form-col'>
-      {{render_field(form.password, class_="form-control")}}
-    </div>
-    <div class='form-col'>
-      {{render_field(form.confirm, class_="form-control")}}
-    </div>
+  <div class='form-item'>
+    {{render_field(form.username, class_="form-input")}}
+    <span class='counter'></span>
   </div>
-  <div class='form-row'>
-    <div class='form-col'>
-      <input type="submit" value="Sign Up" class="formbtn">
-    </div>
+  <div class='form-item'>
+    {{render_field(form.biography, class_="form-input")}}
+    <span class='counter'></span>
+  </div>
+  <div class='form-item'>
+    {{render_field(form.password, class_="form-input")}}
+    <span class='counter'></span>
+  </div>
+  <div class='form-item'>
+    {{render_field(form.confirm, class_="form-input")}}
+  </div>
+  <div class='form-item'>
+    <input type="submit" value="Sign Up">
   </div>
 </form>
 {% endblock %}
