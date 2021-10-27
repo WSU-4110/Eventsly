@@ -130,6 +130,9 @@ form.signup input[type='submit'].disabled {
 }
 
 form.signup span.help-inline {
+    display: none;
+}
+form.signup span.validation-error {
     vertical-align: text-top;
     pointer-events: none;
     font-size: 9pt;

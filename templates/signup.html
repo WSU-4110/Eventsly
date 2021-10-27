@@ -16,7 +16,7 @@
   }
 </style>
 <link rel="stylesheet" href="/static/styles/formStyles.css">
-<script src='/static/scripts/formScripts.js'></script>
+<script src='/static/scripts/FormValidator.js'></script>
 {% endblock %}
 
 {% block main %}
@@ -27,34 +27,42 @@
   <div class='form-item'>
     {{render_field(form.firstname, class_="form-input")}}
     <span class='counter'></span>
+    <span id="firstname-error" class='validation-error'></span>
   </div>
   <div class='form-item'>
     {{render_field(form.lastname, class_="form-input")}}
     <span class='counter'></span>
+    <span id="lastname-error" class='validation-error'></span>
   </div>
   <div class='form-item'>
     {{render_field(form.email, class_="form-input")}}
     <span class='counter'></span>
+    <span id="email-error" class='validation-error'></span>
   </div>
   <div class='form-item'>
     {{render_field(form.phone, class_="form-input")}}
     <span class='counter'></span>
+    <span id="phone-error" class='validation-error'></span>
   </div>
   <div class='form-item'>
     {{render_field(form.username, class_="form-input")}}
     <span class='counter'></span>
+    <span id="username-error" class='validation-error'></span>
   </div>
   <div class='form-item'>
     {{render_field(form.biography, class_="form-input")}}
     <span class='counter'></span>
+    <span id="biography-error" class='validation-error'></span>
   </div>
   <div class='form-item'>
     {{render_field(form.password, class_="form-input")}}
     <span class='counter'></span>
+    <span id="password-error" class='validation-error'></span>
   </div>
   <div class='form-item'>
     {{render_field(form.confirm, class_="form-input")}}
     <span class='counter' style='display: none;'></span>
+    <span id="confirm-error" class='validation-error'></span>
   </div>
     <input type="submit" value="Sign Up">
 </form>
