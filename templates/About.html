@@ -49,7 +49,18 @@
   /*For scroll bar*/
   body {
     overflow-y: auto;
+    overflow-x: auto;
   }
+/*Added from previous about_us branch*/
+  img{
+    border-radius: 48%;
+    border-collapse: separate;
+  }
+  .container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   </style>
 <!--Move content from top of page-->
   <br>
@@ -79,5 +90,26 @@
         <p>info here</p>
       </div>
     </div>
+  </div>
+
+  <!--About the authors section-->
+
+  <h2><center>Who We Are</center></h2>
+  <p><center>some info here................</center></p>
+  <h2><center>Meet Our Team</center></h2>
+  <div class="container">
+    <img src="" width="200" height="200"alt="Greg Flores"  style="box-shadow: 10px 10px 5px grey;" />
+    <img src="" width="200" height="200" alt="CJ Fox"  style="box-shadow: 10px 10px 5px grey;" />
+    <img src="/static/images/profile.jpg" width="200" height="200"alt="Racquel Martens"  style="box-shadow: 10px 10px 5px grey;" />
+    <img src="" width="200" height="200"alt="Mark Slattery"  style="box-shadow: 10px 10px 5px grey;"/>
+    <img src="/static/images/devin.jpg" width="200" height="200"alt="Devin Stawicki"  style="box-shadow: 10px 10px 5px grey;"/>
+  </div>
+   
+  <div class="container">
+    <P><b>Greg Flores</b></P>
+    <P><b>CJ Fox</b></P>
+    <P><b>Racquel Martens</b></P>
+    <P><b>Mark Slattery</b></P>
+    <P><b>Devin Stawicki</b></P>
   </div>
 {% endblock %}
