@@ -41,6 +41,29 @@ def bookmarks():
 def about():
     return render_template("About.html", title="About Us")
 
+@app.route("/search.html", methods =['GET','POST'])
+def search():
+    if request.method == 'POST':
+        #Get Form Fields
+        search_input = request.form['findEvent']
+
+        stmt = select(models.Event).where(models.Event.title == search_input)
+        with engine.connect() as conn:
+            result = conn.execute(stmt).first()
+
+        app.logger.info(f'Query result: {result}')
+        app.logger.info(f'SELECT user query executed.\n Query: {stmt}')
+
+        if result != None:
+            session['title'] = result.title
+            return redirect(url_for('search'))
+        else:
+            app.logger.info('No event found with that title')  
+            error = 'Event title not found'
+            return render_template('search.html', title = 'Howdy!', error=error)
+
+    return render_template("search.html", title="Find Events")
+
 @app.route("/signup.html", methods=['POST','GET'])
 def signup():
     form = models.SignUpForm(request.form)

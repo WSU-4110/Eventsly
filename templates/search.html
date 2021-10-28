@@ -6,20 +6,15 @@
 
 {% block main %}
 <h1><img src="/static/images/examplePic.png" width="50" height="40" alt="Eventsly">About Us</h1>
-<form action="/search.html">
-    <label for="findTitle">Search by Title:</label>
-    <input type="text" id="findTitle" name="findTitle"><br><br>
-    <input type="submit" value="Submit">
-</form>
+
 <script src="/static/scripts/searchEvent.js"></script>
 
-<form action="/search.html" method="POST">
-    <div class="container">
-        <label for="title"><b>Event Title</b></label>
-        <input type="text" placeholder="Event Title" name="Title" value = '{{request.form.title}}'> 
-        <br> <br>
-
-        <button type="submit">Search</button>
-    </div>
+<form action="/search.php?searching=true" method="POST">
+    <label for="findEvent"><b>Event Title</b></label>
+    <input type="text" placeholder="Event Title" name="findEvent" value = '{{request.form.findEvent}}'> 
+    <br> <br>
+    <input type="submit">Search</input>
 </form>
+
+<p id="results">lol</p>
 {% endblock %}
