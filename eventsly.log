@@ -239,3 +239,38 @@
 2021-10-25 02:31:13,549 INFO werkzeug Thread-41 : 127.0.0.1 - - [25/Oct/2021 02:31:13] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
 2021-10-25 02:31:42,594 INFO werkzeug MainThread :  * Restarting with stat
 2021-10-25 02:31:43,470 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-26 16:26:47,635 INFO werkzeug MainThread :  * Restarting with stat
+2021-10-26 16:26:48,525 INFO werkzeug Thread-2 :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2021-10-26 16:26:50,681 INFO werkzeug Thread-3 : 127.0.0.1 - - [26/Oct/2021 16:26:50] "GET / HTTP/1.1" 200 -
+2021-10-26 16:26:50,789 INFO werkzeug Thread-4 : 127.0.0.1 - - [26/Oct/2021 16:26:50] "GET /static/styles/eventslyStyleSheet.css HTTP/1.1" 200 -
+2021-10-26 16:26:50,797 INFO werkzeug Thread-5 : 127.0.0.1 - - [26/Oct/2021 16:26:50] "GET /static/styles/navbarStyleSheet.css HTTP/1.1" 200 -
+2021-10-26 16:26:50,801 INFO werkzeug Thread-6 : 127.0.0.1 - - [26/Oct/2021 16:26:50] "GET /static/styles/footerStyleSheet.css HTTP/1.1" 200 -
+2021-10-26 16:26:50,805 INFO werkzeug Thread-7 : 127.0.0.1 - - [26/Oct/2021 16:26:50] "GET /static/scripts/navScripts.js HTTP/1.1" 200 -
+2021-10-26 16:26:50,808 INFO werkzeug Thread-8 : 127.0.0.1 - - [26/Oct/2021 16:26:50] "GET /static/styles/mapStyleSheet.css HTTP/1.1" 200 -
+2021-10-26 16:26:50,812 INFO werkzeug Thread-9 : 127.0.0.1 - - [26/Oct/2021 16:26:50] "GET /static/scripts/mapScripts.js HTTP/1.1" 200 -
+2021-10-26 16:26:52,356 INFO werkzeug Thread-10 : 127.0.0.1 - - [26/Oct/2021 16:26:52] "[35m[1mGET /bookmarks.html HTTP/1.1[0m" 500 -
+2021-10-26 16:26:52,396 INFO werkzeug Thread-11 : 127.0.0.1 - - [26/Oct/2021 16:26:52] "GET /bookmarks.html?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2021-10-26 16:26:52,396 INFO werkzeug Thread-12 : 127.0.0.1 - - [26/Oct/2021 16:26:52] "GET /bookmarks.html?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2021-10-26 16:26:52,446 INFO werkzeug Thread-13 : 127.0.0.1 - - [26/Oct/2021 16:26:52] "GET /bookmarks.html?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 -
+2021-10-26 16:26:52,459 INFO werkzeug Thread-14 : 127.0.0.1 - - [26/Oct/2021 16:26:52] "GET /bookmarks.html?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2021-10-26 16:27:01,117 INFO werkzeug Thread-15 : 127.0.0.1 - - [26/Oct/2021 16:27:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-26 16:27:02,455 INFO werkzeug Thread-16 : 127.0.0.1 - - [26/Oct/2021 16:27:02] "GET /login.html HTTP/1.1" 200 -
+2021-10-26 16:27:02,490 INFO werkzeug Thread-17 : 127.0.0.1 - - [26/Oct/2021 16:27:02] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-26 16:27:02,498 INFO werkzeug Thread-18 : 127.0.0.1 - - [26/Oct/2021 16:27:02] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-26 16:27:02,498 INFO werkzeug Thread-19 : 127.0.0.1 - - [26/Oct/2021 16:27:02] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-26 16:27:02,505 INFO werkzeug Thread-20 : 127.0.0.1 - - [26/Oct/2021 16:27:02] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-26 16:27:02,512 INFO werkzeug Thread-21 : 127.0.0.1 - - [26/Oct/2021 16:27:02] "GET /static/images/examplePic.png HTTP/1.1" 200 -
+2021-10-26 16:27:02,633 INFO werkzeug Thread-22 : 127.0.0.1 - - [26/Oct/2021 16:27:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2021-10-26 16:27:26,543 INFO werkzeug Thread-24 : 127.0.0.1 - - [26/Oct/2021 16:27:26] "GET /login.html?Username=devinstawicki%40gmail.com&password=Puppy22. HTTP/1.1" 200 -
+2021-10-26 16:27:26,568 INFO werkzeug Thread-25 : 127.0.0.1 - - [26/Oct/2021 16:27:26] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-26 16:27:26,568 INFO werkzeug Thread-26 : 127.0.0.1 - - [26/Oct/2021 16:27:26] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-26 16:27:26,583 INFO werkzeug Thread-27 : 127.0.0.1 - - [26/Oct/2021 16:27:26] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-26 16:27:26,584 INFO werkzeug Thread-28 : 127.0.0.1 - - [26/Oct/2021 16:27:26] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-26 16:27:26,610 INFO werkzeug Thread-29 : 127.0.0.1 - - [26/Oct/2021 16:27:26] "[36mGET /static/images/examplePic.png HTTP/1.1[0m" 304 -
+2021-10-26 16:27:30,495 INFO werkzeug Thread-30 : 127.0.0.1 - - [26/Oct/2021 16:27:30] "GET /index.html HTTP/1.1" 200 -
+2021-10-26 16:27:30,520 INFO werkzeug Thread-31 : 127.0.0.1 - - [26/Oct/2021 16:27:30] "[36mGET /static/styles/eventslyStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-26 16:27:30,520 INFO werkzeug Thread-32 : 127.0.0.1 - - [26/Oct/2021 16:27:30] "[36mGET /static/styles/navbarStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-26 16:27:30,535 INFO werkzeug Thread-33 : 127.0.0.1 - - [26/Oct/2021 16:27:30] "[36mGET /static/styles/footerStyleSheet.css HTTP/1.1[0m" 304 -
+2021-10-26 16:27:30,537 INFO werkzeug Thread-34 : 127.0.0.1 - - [26/Oct/2021 16:27:30] "[36mGET /static/scripts/navScripts.js HTTP/1.1[0m" 304 -
+2021-10-26 16:27:30,540 INFO werkzeug Thread-35 : 127.0.0.1 - - [26/Oct/2021 16:27:30] "GET /static/styles/mapStyleSheet.css HTTP/1.1" 200 -
+2021-10-26 16:27:30,542 INFO werkzeug Thread-36 : 127.0.0.1 - - [26/Oct/2021 16:27:30] "GET /static/scripts/mapScripts.js HTTP/1.1" 200 -
