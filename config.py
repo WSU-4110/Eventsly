@@ -14,10 +14,13 @@ class DevelopmentConfig(BaseConfig):
 
     # set localdb password in dbconfig.txt
     # dbconfig.txt is on .gitignore so that we can leave this file alone when we flask run
-    with open('dbconfig.txt') as f:
-        localpass = f.readline()
+    try:
+        with open('dbconfig.txt') as f:
+            localpass = f.readline()
+    except FileNotFoundError:
+        pass
+
     SQLALCHEMY_DATABASE_URI = f'postgresql://postgres:{localpass}@localhost/eventsly'
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 class ProductionConfig(BaseConfig):
     DEBUG = False
