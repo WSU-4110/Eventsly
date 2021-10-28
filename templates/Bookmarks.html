@@ -19,14 +19,14 @@
     </thead>
       {% for bookmark in bookmarkpull %}
       <tr>
-      <th scope="row">{{bookmarkpull.event_id}}</th>
-      <td>{{bookmarkpull.title}}
+      <th scope="row">{{bookmark['id']}}</th>
+      <td>{{bookmark['title']}}
       </td>
-      <td>{{bookmarkpull.description}}
+      <td>{{bookmark['description']}}
       </td>
-      <td>{{bookmarkpull.date}}
+      <td>{{bookmark['date']}}
       </td>
-      <td>{{bookmarkpull.city}}, {{bookmarkpull.state}}
+      <td>{{bookmark['city']}}, {{bookmark['state']}}
       </td>
       </tr>
       {% endfor %}
