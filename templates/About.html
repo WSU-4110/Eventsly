@@ -49,7 +49,6 @@
   /*For scroll bar*/
   body {
     overflow-y: auto;
-    overflow-x: auto;
   }
 /*Added from previous about_us branch*/
   img{
@@ -57,7 +56,8 @@
     border-collapse: separate;
   }
   .container {
-    display: flex;
+    float: left;
+    width: 20%;
     justify-content: space-evenly;
   }
 
@@ -93,6 +93,39 @@
   </div>
 
   <!--About the authors section-->
-<h3><center>Meet Our Team</center></h3>
+<h2><center>Meet Our Team</center></h2>
+<div class="container">
+  <figure>
+    <img src="" width="200" height="200"alt="Greg"  style="box-shadow: 10px 10px 5px grey;">
+    <figcaption><center><b>Greg Flores</b></center>.</figcaption>
+  </figure>
+</div>
 
+<div class="container">
+  <figure>
+    <img src="" width="200" height="200"alt="CJ"  style="box-shadow: 10px 10px 5px grey;">
+    <figcaption><center><b>CJ Fox</b></center>.</figcaption>
+  </figure>
+</div>
+
+<div class="container">
+  <figure>
+    <img src="/static/images/profile.jpg" width="200" height="200"alt="Racquel"  style="box-shadow: 10px 10px 5px grey;">
+    <figcaption><center><b>Racquel Martens</b></center>.</figcaption>
+  </figure>
+</div>
+
+<div class="container">
+  <figure>
+    <img src="" width="200" height="200"alt="Mark"  style="box-shadow: 10px 10px 5px grey;">
+    <figcaption><center><b>Mark Slattery</b></center>.</figcaption>
+  </figure>
+</div>
+
+<div class="container">
+  <figure>
+    <img src="/static/images/devin.jpg" width="200" height="200"alt="Devin"  style="box-shadow: 10px 10px 5px grey;">
+    <figcaption><center><b>Devin Stawicki</b></center>.</figcaption>
+  </figure>
+</div>
 {% endblock %}
