@@ -9,6 +9,15 @@ from sqlalchemy.util.langhelpers import NoneType
 import logger
 import traceback
 import os
+import psycopg2
+
+try: 
+    conn = psycopg2.connect(database="eventsly", user="postgres",  
+    password="password", host="localhost")
+    print("connected")
+except:
+    print ("I am unable to connect to the database")
+mycursor =conn.cursor()
 
 app = Flask(__name__)
 
@@ -43,26 +52,14 @@ def about():
 
 @app.route("/search.html", methods =['GET','POST'])
 def search():
+    hereValue = 'lol'
     if request.method == 'POST':
-        #Get Form Fields
-        search_input = request.form['findEvent']
-
-        stmt = select(models.Event).where(models.Event.title == search_input)
-        with engine.connect() as conn:
-            result = conn.execute(stmt).first()
-
-        app.logger.info(f'Query result: {result}')
-        app.logger.info(f'SELECT user query executed.\n Query: {stmt}')
-
-        if result != None:
-            session['title'] = result.title
-            return redirect(url_for('search'))
-        else:
-            app.logger.info('No event found with that title')  
-            error = 'Event title not found'
-            return render_template('search.html', title = 'Howdy!', error=error)
-
-    return render_template("search.html", title="Find Events")
+        # Get data from form
+        hereValue = request.form['findEvent']
+    mycursor.execute("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
+    
+    dataHere = mycursor.fetchall()
+    return render_template("search.html", title="Find Events", data = dataHere)
 
 @app.route("/signup.html", methods=['POST','GET'])
 def signup():

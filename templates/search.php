@@ -1,5 +1,0 @@
-<table>
-<?php
-
-?>
-</table>

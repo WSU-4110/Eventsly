@@ -9,12 +9,31 @@
 
 <script src="/static/scripts/searchEvent.js"></script>
 
-<form action="/search.php?searching=true" method="POST">
+<form action="/search.html" method="POST">
     <label for="findEvent"><b>Event Title</b></label>
-    <input type="text" placeholder="Event Title" name="findEvent" value = '{{request.form.findEvent}}'> 
+    <input type="text" placeholder="Event Title" name="findEvent"> 
     <br> <br>
     <input type="submit">Search</input>
 </form>
+
+<table>
+    <thead>
+      <tr>
+          <th>Event Title</th>
+          <!--<th>current timestamp</th>-->
+          <!--<th>expiry timestamp</th>-->
+      </tr>
+      </thead>    
+      <tbody>
+       {% for row in data %}    
+              <tr>
+                  <td>{{row[0]}}</td>
+                  <!--<td>{{row[1]}}</td>-->
+                  <!--<td>{{row[2]}}</td>-->
+              </tr>
+          {% endfor %}
+      </tbody>
+  </table>
 
 <p id="results">lol</p>
 {% endblock %}
