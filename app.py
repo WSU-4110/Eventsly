@@ -5,23 +5,11 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, select
 from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
 from passlib.hash import sha256_crypt
+import sqlalchemy
 from sqlalchemy.util.langhelpers import NoneType
 import logger
 import traceback
 import os
-
-from sqlalchemy import text
-"""
-import psycopg2
-
-try: 
-    conn = psycopg2.connect(database="eventsly", user="postgres",  
-    password="password", host="localhost")
-    print("connected")
-except:
-    print ("I am unable to connect to the database")
-mycursor =conn.cursor()
-"""
 
 app = Flask(__name__)
 
@@ -56,24 +44,22 @@ def about():
 
 @app.route("/search.html", methods =['GET','POST'])
 def search():
-    hereValue = 'lol'
+    hereValue = 'default value'
     if request.method == 'POST':
         # Get data from form
         hereValue = request.form['findEvent']
-    #mycursor.execute("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
 
-    sql = text("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
+    # old method of displaying events to page
+    #sql = sqlalchemy.text("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
+    #dataHere = db.engine.execute(sql)
 
-    #dataHere = db.engine.execute("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
-    dataHere = db.engine.execute(sql)
-    #dataHere = db.engine.execute("SELECT title FROM events WHERE title = :hereValue'", {'hereValue': 5})
-    """
-    stmt = select(models.Event).where(models.Event.title).like(hereValue)
-    with engine.connect() as conn:
-        dataHere = conn.execute(stmt).first()
+    with engine.begin() as conn:
+        query = sqlalchemy.text("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
+        rows = conn.execute(query)
+        dataHere = rows.mappings().all()
 
-    #dataHere = mycursor.fetchall()
-    """
+    app.logger.info(f"data is {dataHere}")
+    
     return render_template("search.html", title="Find Events", data = dataHere)
 
 @app.route("/signup.html", methods=['POST','GET'])
