@@ -9,6 +9,7 @@ from sqlalchemy.util.langhelpers import NoneType
 import logger
 import traceback
 import os
+"""
 import psycopg2
 
 try: 
@@ -18,6 +19,7 @@ try:
 except:
     print ("I am unable to connect to the database")
 mycursor =conn.cursor()
+"""
 
 app = Flask(__name__)
 
@@ -56,9 +58,14 @@ def search():
     if request.method == 'POST':
         # Get data from form
         hereValue = request.form['findEvent']
-    mycursor.execute("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
-    
-    dataHere = mycursor.fetchall()
+    #mycursor.execute("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
+
+    #dataHere = db.engine.execute("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
+    stmt = select(models.Event).where(models.Event.title).like(hereValue)
+    with engine.connect() as conn:
+        dataHere = conn.execute(stmt).first()
+
+    #dataHere = mycursor.fetchall()
     return render_template("search.html", title="Find Events", data = dataHere)
 
 @app.route("/signup.html", methods=['POST','GET'])
