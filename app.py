@@ -54,13 +54,13 @@ def search():
     #dataHere = db.engine.execute(sql)
 
     with engine.begin() as conn:
-        query = sqlalchemy.text("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
+        query = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
         rows = conn.execute(query)
-        dataHere = rows.mappings().all()
+        hereData = rows.mappings().all()
 
-    app.logger.info(f"data is {dataHere}")
+    app.logger.info(f"data is {hereData}")
     
-    return render_template("search.html", title="Find Events", data = dataHere)
+    return render_template("search.html", title="Find Events", data = hereData)
 
 @app.route("/signup.html", methods=['POST','GET'])
 def signup():
