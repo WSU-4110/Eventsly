@@ -20,7 +20,7 @@
     <!-- Google Font API load for Eventsly Logo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap" rel="stylesheet">
 
     <!-- block for page-specific head content (stylesheets, scripts, etc) -->
     {% block head %} {% endblock %}
@@ -37,12 +37,6 @@
                 <a href="index.html" class="nav-item {{'active' if title == 'Eventsly'}}">Home</a>
                 <a href="bookmarks.html" class="nav-item {{'active' if title == 'Bookmarks'}}">Bookmarks</a>
                 <a href="about.html" class="nav-item {{'active' if title == 'About Us'}}">About Us</a>
-                <div class="search nav-item">
-                    <span class="fa-stack">
-                        <i class="fas fa-circle fa-stack-2x" id='search-circle'></i>
-                        <i class="fa fa-search fa-stack-1x" aria-hidden="true"></i>
-                    </span>
-                </div>
                 <div class="spacer"></div>
                 {% if session.logged_in %}
                 <a href="/logout" class="nav-item">Logout</a>
@@ -52,7 +46,16 @@
                 <a href='signup.html' class="nav-item {{'active' if title == 'Sign Up'}}">Sign Up</a>
                 {% endif %}
             </div>
-            <i class='fa fa-bars fa-inverse fa-2x' aria-hidden="true"></i>
+            <div class="searchbar">
+                <label for="search"></label>
+                <input type="text" id="search">
+                <a href="#" aria-label="search bar">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class='hamburger'>
+                <i class='fa fa-bars fa-inverse fa-2x' alt="dropdown menu"></i>
+            </div>
         </nav>
     </header>
 
