@@ -47,8 +47,10 @@
                 {% endif %}
             </div>
             <div class="searchbar">
-                <label for="search"></label>
-                <input type="text" id="search">
+                <form action="/search.html" method="POST">
+                    <label for="search"></label>
+                    <input type="text" id="search" name="findEvent">
+                </form>
                 <a href="#" aria-label="search bar">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </a>
