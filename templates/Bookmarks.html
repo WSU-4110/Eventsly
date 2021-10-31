@@ -1,35 +1,83 @@
 {% extends 'base.html' %}
 
 {% block head %}
+<style>
+  main {
+    background-image: url(/static/images/signup-background2.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
 
+  body {
+    overflow-y: auto;
+  }
+
+  .bm-table {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .bm-table td, .bm-table th {
+    text-align: center;
+    padding: 8px;
+  }
+
+  .bm-table td, .bm-table th, .bm-table tcol {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+  }
+
+  .bm-table thead th {
+    color: #ffffff;
+    background: #69779C;
+  }
+
+  .bm-table thead th:nth-child(odd) {
+    background: #3A3E5E;
+    color: #ffffff;
+  }
+
+  .bm-table tr:nth-child(even) {
+    background: #69779C;
+    color: #ffffff;
+  }
+
+  .bm-table tr:nth-child(odd) {
+    background: #F8F8F8;
+  }
+</style>
+<link rel="stylesheet" href="/static/styles/formStyles.css">
 {% endblock %}
 
 {% block main %}
+<form class="signup">
 <h1><i class="fas fa-bookmark"></i> Bookmarks</h1>
 
 <table class="bm-table">
     <thead>
       <tr>
-        <th scope="col"></th>
-        <th scope="col">Event Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">Date</th>
+        <th scope="col">Event</th>
         <th scope="col">Location</th>
+        <th scope="col">Date & Time</th>
       </tr>
     </thead>
       {% for bookmark in bookmarkpull %}
       <tr>
-      <th scope="row">{{bookmark['id']}}</th>
-      <td>{{bookmark['title']}}
-      </td>
-      <td>{{bookmark['description']}}
+      <td>{{bookmark['title']}}</th>
+      <td>{{bookmark['city']}}, {{bookmark['state']}}
       </td>
       <td>{{bookmark['date']}}
-      </td>
-      <td>{{bookmark['city']}}, {{bookmark['state']}}
       </td>
       </tr>
       {% endfor %}
   </table>
+</form>
 
 {% endblock %}
