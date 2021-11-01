@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, select
 from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
 from passlib.hash import sha256_crypt
+import sqlalchemy
 from sqlalchemy.util.langhelpers import NoneType
 import logger
 import traceback
@@ -27,11 +28,17 @@ import models
 
 @app.route("/")
 def home():
-    return render_template("index.html", title="Eventsly")
+    return redirect(url_for('index'))
 
 @app.route("/index.html")
 def index():
-    return render_template("index.html", title="Eventsly")
+
+    with engine.begin() as conn:
+        query = sqlalchemy.text('SELECT * FROM events WHERE date > CURRENT_TIMESTAMP')
+        rows = conn.execute(query)
+        pins = rows.mappings().all()
+
+    return render_template("index.html", title="Eventsly", pins = pins)
 
 @app.route("/bookmarks.html")
 def bookmarks():

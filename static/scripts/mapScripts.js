@@ -37,6 +37,9 @@ function buildMap() {
       enableHighAccuracy: true
     }
   }));
+  var pins = document.querySelector('#pins').value;
+  alert(pins)
+
 }
 
 function userTools() {
