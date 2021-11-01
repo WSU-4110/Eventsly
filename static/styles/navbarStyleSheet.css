@@ -2,12 +2,19 @@
 /* general styles */
 /*----------------*/
 header {
+    position: fixed;
+    width: 100%;
     background-color: #3A3E5E;
+}
+
+main {
+    margin-top: 55px;
 }
 
 nav {
     font-family: 'Montserrat', sans-serif;
     align-items: center;
+    height: 55px;
 }
 
 .nav-item {
@@ -112,7 +119,6 @@ a.nav-item:hover:not(.active) {
     }
     
     nav {
-        height: 50px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -140,8 +146,9 @@ a.nav-item:hover:not(.active) {
         display: flex;
         justify-content: space-between;
         position: fixed;
-        top: 50px;
+        top: 55px;
         left: -100%;
+        height: calc(100% - 55px);
         flex-direction: column;
         width: 100%;
         background-color: #3A3E5E;
@@ -152,7 +159,6 @@ a.nav-item:hover:not(.active) {
         -ms-transition: 1s;
         -o-transition: 1s;
         transition: 1s;
-        height: calc(100% - 50px);
     }
     
     .dropdown {
@@ -203,10 +209,6 @@ a.nav-item:hover:not(.active) {
 /*--------------------------*/
 /* fixed top bar */
 @media screen and (min-width: 1124px) {
-    header {
-        height: 55px;
-    }
-    
     nav {
         display: flex;
         flex-direction: row;
