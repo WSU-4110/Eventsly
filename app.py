@@ -38,12 +38,6 @@ def index():
 
 @app.route("/bookmarks.html")
 def bookmarks():
-    # stmt = select(models.Event).where(
-    #     and_(
-    #         models.Event.id == models.Bookmark.event_id,
-    #         models.Bookmark.event_id == session['userid']
-    # ))
-
     with engine.begin() as conn:
         query = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
         rows = conn.execute(query)
