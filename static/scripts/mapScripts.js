@@ -37,8 +37,21 @@ function buildMap() {
       enableHighAccuracy: true
     }
   }));
+
+  
 }
 
+function loadPins(pins){
+ var marker
+  for(let pin of pins){
+    marker = new L.Marker([pin.latitude,pin.longitude]).addTo(map);
+    marker.bindPopup(`<strong> ${pin.title}</strong><br>
+    ${pin.city},${pin.state} <br>
+    ${pin.date}<br>
+    <a href=eventdetails.html>View Details</a>`)
+  }
+ 
+}
 function userTools() {
   // placeholder for user placed pin
   var marker
