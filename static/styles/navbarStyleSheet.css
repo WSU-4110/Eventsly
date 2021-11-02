@@ -1,28 +1,27 @@
-/*----------------*/
-/* general styles */
-/*----------------*/
+/*----------------------*/
+/*    general styles    */
+/*----------------------*/
+/*#region#*/
+
 header {
-    position: fixed;
-    width: 100%;
     background-color: #3A3E5E;
     height: 55px;
+    position: fixed;
+    width: 100%; 
 }
-
 main {
     margin-top: 55px;
 }
 
+/* 
+* navbar 
+*/
 nav {
-    font-family: 'Montserrat', sans-serif;
     align-items: center;
+    display: flex; 
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     height: 55px;
-}
-
-.nav-item {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: 500;
 }
 
 .nav-menu a {
@@ -31,19 +30,33 @@ nav {
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+}    
+
+.nav-menu a:hover:not(.active) {
+    background-color: #7b82b3;
 }
 
-.logo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    justify-content: center;
-    display: flex;
+.nav-item {
     align-items: center;
-    font-size: 1.8em;
-    padding: 0 20px;
+    color: white;
+    display: flex; 
+    font-size: 1.2rem;
     height: 100%;
+    text-decoration: none;
+}
+
+/*
+* logo 
+*/
+.logo {
+    align-items: center;
+    color: white;
+    display: flex;
+    font-size: 1.8em;
+    height: 100%;
+    justify-content: center;
+    padding: 0 20px;
+    text-decoration: none;
 }
 
 .logo .fa-map-marked {
@@ -62,43 +75,28 @@ nav {
     color: #3A3E5E;
 }
 
-a.nav-item:hover:not(.active) {
-    background-color: #7b82b3;
-}
 
-/* searchbar styles */
+
+/*
+* searchbar
+*/
 .searchbar {
-    display: flex;
     align-items: center;
-    margin: auto 20px;
-    height: 30px;
-    width: 100%;
-    max-width: 300px;
-    position: relative;
     background:white;
     border-radius: 15px;
-}
-
-.searchbar input {
-    height: 20px;
-    font-size: 12pt;
+    display: flex;
+    height: 30px;
+    max-width: 300px;
+    position: relative;
     width: 100%;
-    background: none;
-    border: none;
-    margin-right: 39px;
-    padding-left: 12px;
-}
-
-.searchbar:focus, input:focus { /* hide input outline on focus */
-    outline: none;
 }
 
 .searchbar a {
+    color: #3A3E5E;
+    margin: auto 0;
     padding: 6px 12px;
     position: absolute;
     right: 0px;
-    margin: auto 0;
-    color: #3A3E5E;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
@@ -110,121 +108,159 @@ a.nav-item:hover:not(.active) {
     color: #7b82b3;
 }
 
-/*--------------------------*/
-/* styles for small screens */
-/*--------------------------*/
-/* hamburger/drop down menu */
+.searchbar:focus, input:focus {
+    outline: none;
+}
+
+.searchbar input {
+    background: none;
+    border: none;
+    font-size: 12pt;
+    height: 20px;
+    margin-right: 39px;
+    padding-left: 12px;
+    width: 100%;
+}
+
+/*#endregion#*/
+/*--------------*/
+/*    mobile    */
+/*--------------*/
+/*#region#*/
 @media screen and (max-width: 1123px) {
+    /*
+    * general 
+    */
     header {
         z-index: 3;
     }
     
+    /*
+    * navbar
+    */
     nav {
-        display: flex;
-        justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid #3A3E5E;
+        justify-content: space-between;
     }
-    
-    .nav-item {
-        width: 100%;
-        height: 100%;
-        display: flex;
+
+    .nav-menu {
         align-items: center;
+        background-color: #3A3E5E;
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 55px);
+        justify-content: space-between;
+        left: -100%;
+        position: fixed;
+        top: 55px;
+        -webkit-transition: 1s;
+        -moz-transition: 1s;
+        -ms-transition: 1s;
+        -o-transition: 1s;
+        transition: 1s;
+        width: 100%;
+        z-index: 3;
+    }
+
+    .nav-item {
         justify-content: center;
         -webkit-transition: 1s ease 0.5s;
         -moz-transition: 1s ease 0.5s;
         -ms-transition: 1s ease 0.5s;
         -o-transition: 1s ease 0.5s;
         transition: 1s ease 0.5s;
+        width: 100%;
     }
     
     .spacer {
-        display: none;
-    }
-    
-    .nav-menu {
-        display: flex;
-        justify-content: space-between;
-        position: fixed;
-        top: 55px;
-        left: -100%;
-        height: calc(100% - 55px);
-        flex-direction: column;
-        width: 100%;
-        background-color: #3A3E5E;
-        align-items: center;
-        z-index: 3;
-        -webkit-transition: 1s;
-        -moz-transition: 1s;
-        -ms-transition: 1s;
-        -o-transition: 1s;
-        transition: 1s;
-    }
-    
-    .dropdown {
-        left: 0;
+        display: none; /* remove spacer between left & right side of navbar */
     }
 
+    /*
+    * searchbar 
+    */
     .searchbar {
         margin: 0 auto;
     }
 
-    /* small screen font awesome nav styles */
+    /* 
+    * hamburger menu 
+    */
     .hamburger {
+        align-items: center;
         display: flex;
-        width: 100px;
         height: 100%;
         text-align: center;
-        align-items: center;
+        width: 100px;
     }
-    
+
     i.fa.fa-bars {
+        align-items: center;
         color: white;
         cursor: pointer;
+        display: flex;
         height: 100%;
         width: 100%;
-        display: flex;
-        align-items: center;
     }
+
     i.fa.fa-bars::before {
         width: 100%;
     }
-}
 
-/*-------------------------------*/
-/* styles for very small screens */
-/*-------------------------------*/
+    .dropdown { 
+        left: 0; /* move navmenu into view on hamburger button press */
+    }
+}
+/*#endregion#*/
+/*--------------------*/
+/*    small mobile    */
+/*--------------------*/
+/*#region#*/
 @media screen and (max-width: 570px) {
+    /*
+    * logo
+    */
     .logo {
         display: none;
     }
+
+    /*
+    * logo
+    */
     .searchbar {
-        max-width: 100%;
         margin-left: 20px;
+        max-width: 100%;
     }
 }
-
-/*--------------------------*/
-/* styles for large screens */
-/*--------------------------*/
-/* fixed top bar */
+/*#endregion#*/
+/*---------------*/
+/*    desktop    */
+/*---------------*/
+/*#region#*/
 @media screen and (min-width: 1124px) {
+    /*
+    * navbar
+    */
     nav {
-        display: flex;
         flex-direction: row;
         width: 100%; 
         height: 100%;
     }
+
+    .nav-menu {
+        display: flex;
+        height: 100%;
+        flex-direction: row;
+        width: 100%;
+    }
     
     .nav-item {
-        display: flex;
-        align-items: center;
-        padding: 0 14px;
-        box-sizing: border-box;;
         border: 2px solid #3A3E5E;
-        margin-left: -1px;
+        box-sizing: border-box;;
         height: 100%;
+        margin-left: -1px;
+        padding: 0 14px;
         white-space: nowrap;
     }
 
@@ -232,18 +268,25 @@ a.nav-item:hover:not(.active) {
         margin-left: auto;
     }
 
-    .nav-menu {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        height: 100%;
-    }
-    
+    /*
+    * logo
+    */
     .logo {
         min-width: 160px;
     }
+
+    /*
+    * searchbar
+    */
+    .searchbar {
+        margin: auto 20px;
+    }
     
+    /*
+    * hamburger menu
+    */
     .fa.fa-bars {
         display: none;
     }
 }
+/*#endregion#*/
