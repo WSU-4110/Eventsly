@@ -1,57 +1,64 @@
-header {
-    position: fixed;
-    min-width: 100%;
-}
-
-form.signup {
+/*----------------------*/
+/*    general styles    */
+/*----------------------*/
+/*#region#*/
+/*
+* signup form
+*/
+#signup {
+    align-items: center;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     background: rgba(255, 255, 255, 0.5);
-    width: 90%;
-    max-height: 700px;
-    height: 90%;
-    max-width: 800px;
+    border-radius: 80px;
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    border-radius: 80px;
-    backdrop-filter: blur(5px);
+    height: 90%;
+    max-height: 700px;
+    max-width: 800px;
+    width: 90%;
+    z-index: 1;
 }
 
-form.signup h1, form.signup h2 {
-    width: 100%;
+#signup h1, 
+#signup h2 {
     margin: 0;
     padding: 0;
     text-align: center;
+    width: 100%;
 }
 
-form.signup h1 {
+#signup h1 {
     font-size: 18pt;
+    margin-top: 20px;
 }
 
-form.signup h2 {
+#signup h2 {
     font-size: 16pt;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
-form.signup .form-item {
-    min-height: 90px;
-    min-width: 250px;
+#signup .form-item {
     flex: 1 1 220px;
     margin: 0 30px;
+    min-height: 90px;
+    min-width: 250px;
     position: relative;
 }
 
-/* label styles */
-form.signup label {
-    position: absolute;
-    top: 4px;
-    left: 8px;
-    pointer-events: none;
+/* 
+* labels
+*/
+#signup label {
     color:rgb(167, 167, 167);
+    left: 8px;
     margin: 0;
     padding: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 4px;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
@@ -59,124 +66,156 @@ form.signup label {
     transition: 0.5s;
 }
 
-form.signup .move-label {
-    top: -20px;
-    left: 5px;
-    font-size: 10pt;
+#signup .move-label {
     color: #3A3E5E;
+    font-size: 10pt;
     font-weight: bold;
+    left: 5px;
+    top: -20px;
 }
 
-/* form counter styles */
-form.signup span.counter {
+/* 
+* character counters 
+*/
+#signup span.counter {
+    color:#3A3E5E;
+    font-size: 10pt;
     position: absolute;
     right: 8px;
     top: -20px;
-    font-size: 10pt;
-    color:#3A3E5E;
 }
 
-/* form input styles */
-form.signup input {
-    width: 100%;
-    font-size: 12pt;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    height: 26px;
+/* 
+* all inputs 
+*/
+#signup input {
     border-style: none;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12pt;
+    font-weight: 500;
+    height: 26px;
     margin-bottom: 5px;
+    width: 100%;
 }
 
-form.signup input[type='text'], form.signup input[type='password'] {
-    outline: 2px solid rgb(167, 167, 167);
+/*
+* text inputs
+*/
+#signup input[type='text'], 
+#signup input[type='password'] {
     border-style: none;
-    padding-left: 6px;
-    padding-top: 3px;
-    padding-right: 25px;
+    outline: 2px solid rgb(167, 167, 167);
+    padding: 3px 25px 0 6px;
 }
 
-form.signup input[type='text']:focus, form.signup input[type='password']:focus {
+#signup input[type='text']:focus, #signup input[type='password']:focus {
     outline: 2px solid #3A3E5E;
 }
 
-form.signup input[type='text'].invalid {
+#signup input[type='text'].invalid {
     outline: 2px solid red;
 }
 
-/* submit button styles */
-form.signup input[type='submit'] {
-    height: 40px;
+/*
+* submit button 
+*/
+#signup input[type='submit'] {
     background-color: #3A3E5E;
-    color: white;
-    max-width: 200px;
     border-radius: 5px;
+    color: white;
+    height: 40px;
     margin-bottom: 20px;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    width: 100%;
 }
 
-form.signup input[type='submit']:hover {
+#signup input[type='submit']:hover {
     background-color: #7b82b3;
 }
 
-form.signup input[type='submit'].disabled {
-    opacity: 0.5;
+#signup input[type='submit'].disable-submit {
     cursor: pointer;
+    opacity: 0.5;
 }
 
-form.signup span.help-inline {
-    vertical-align: text-top;
-    pointer-events: none;
-    font-size: 9pt;
-    left: 6px;
+/*
+* invalid (error) messages on submit
+*/
+#signup span.help-inline {
     bottom: -8px;
     color: red;
+    font-size: 9pt;
+    left: 6px;
+    pointer-events: none;
+    vertical-align: text-top;
 }
 
-/* small screen styles */
-@media screen and (max-width: 800px), screen and (max-height: 700px) {
-    form.signup {
-        width: 100%;
-        max-height: 100%;
-        height: 100%;
+/*#endregion#*/
+/*--------------*/
+/*    mobile    */
+/*--------------*/
+/*#region#*/
+@media screen and (max-width: 800px), 
+        screen and (max-height: 700px) {
+    #signup {
         border-radius: 0;
+        height: 100%;
+        justify-content: center;
+        max-height: 100%;
+        width: 100%;
     }
     
-    form.signup h1 {
+    #signup h1 {
         font-size: 18pt;
-        margin-top: 10px;
         margin-bottom: 25px;
+        margin-top: 10px;
     }
 
-    form.signup h2 {
+    #signup h2 {
         display: none;
         font-size: 12pt;
     }
 
-    form.signup input {
+    #signup input {
         height: 35px;
     }
 
-    form.signup label {
-        top: -20px;
-        left: 5px;
-        font-size: 10pt;
+    #signup label {
         color: #3A3E5E;
+        font-size: 10pt;
         font-weight: bold;
+        left: 5px;
+        top: -20px;
     }
 
-    form.signup .form-item {
+    #signup .form-item {
         min-height: 120px;
         min-width: 85%;
         max-width: 85%;
     }
 
-    form.signup input[type='submit'] {
+    #signup input[type='submit'] {
         margin-bottom: 30px;
         min-width: 85%;
     }
 }
+/*#endregion#*/
+/*---------------*/
+/*    Desktop    */
+/*---------------*/
+/*#region#*/
+@media screen and (min-width: 801px) and (min-height: 701px) {
+    #signup {
+        text-align: center;
+    }
+    #signup input[type='submit'] {
+        margin-bottom: 30px;
+        max-width: 200px;
+    }
+}
+/*#endregion#*/
