@@ -71,10 +71,6 @@ def search():
         # Get data from form
         hereValue = request.form['findEvent']
 
-    # old method of displaying events to page
-    #sql = sqlalchemy.text("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
-    #dataHere = db.engine.execute(sql)
-
     with engine.begin() as conn:
         query = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
         rows = conn.execute(query)
@@ -159,7 +155,6 @@ def login():
 def createEvent():
     form = models.EventForm(request.form)
     if request.method == 'POST' and form.validate():
-        ## encryptpassword = sha256_crypt.encrypt(str(formEvent.password.data)) #encrypt password
 
         new_event = models.Event(
             title = form.title.data, 
