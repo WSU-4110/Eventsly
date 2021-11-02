@@ -8,6 +8,7 @@ header {
     height: 55px;
     position: fixed;
     width: 100%; 
+    z-index: 99;
 }
 main {
     margin-top: 55px;
@@ -20,8 +21,9 @@ nav {
     align-items: center;
     display: flex; 
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-weight: 500;
     height: 55px;
+
 }
 
 .nav-menu a {
@@ -96,7 +98,7 @@ nav {
     margin: auto 0;
     padding: 6px 12px;
     position: absolute;
-    right: 0px;
+    right: 0;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
@@ -128,13 +130,6 @@ nav {
 /*--------------*/
 /*#region#*/
 @media screen and (max-width: 1123px) {
-    /*
-    * general 
-    */
-    header {
-        z-index: 3;
-    }
-    
     /*
     * navbar
     */
@@ -258,7 +253,6 @@ nav {
     .nav-item {
         border: 2px solid #3A3E5E;
         box-sizing: border-box;;
-        height: 100%;
         margin-left: -1px;
         padding: 0 14px;
         white-space: nowrap;
