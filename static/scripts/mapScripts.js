@@ -37,11 +37,23 @@ function buildMap() {
       enableHighAccuracy: true
     }
   }));
-  var pins = document.querySelector('#pins').value;
-  alert(pins)
 
+  
 }
 
+function loadPins(pins){
+ var marker
+  console.log(pins)
+  for(let pin of pins){
+    console.log(pin)
+    marker = new L.Marker([pin.latitude,pin.longitude]).addTo(map);
+    marker.bindPopup(`<strong> ${pin.title}</strong><br>
+    ${pin.city},${pin.state} <br>
+    ${pin.date}<br>
+    <a href=eventdetails.html>View Details</a>`)
+  }
+ 
+}
 function userTools() {
   // placeholder for user placed pin
   var marker
