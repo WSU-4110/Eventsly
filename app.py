@@ -8,6 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, select
 from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
 from passlib.hash import sha256_crypt
+import sqlalchemy
 from sqlalchemy.util.langhelpers import NoneType
 import logger
 import traceback
@@ -48,6 +49,26 @@ def bookmarks():
 @app.route("/about.html")
 def about():
     return render_template("About.html", title="About Us")
+
+@app.route("/search.html", methods =['GET','POST'])
+def search():
+    hereValue = 'default value'
+    if request.method == 'POST':
+        # Get data from form
+        hereValue = request.form['findEvent']
+
+    # old method of displaying events to page
+    #sql = sqlalchemy.text("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
+    #dataHere = db.engine.execute(sql)
+
+    with engine.begin() as conn:
+        query = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
+        rows = conn.execute(query)
+        hereData = rows.mappings().all()
+
+    app.logger.info(f"data is {hereData}")
+    
+    return render_template("search.html", title="Find Events", data = hereData)
 
 @app.route("/signup.html", methods=['POST','GET'])
 def signup():

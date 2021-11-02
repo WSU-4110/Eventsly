@@ -48,13 +48,11 @@
                 <a href='signup.html' class="nav-item {{'active' if title == 'Sign Up'}}">Sign Up</a>
                 {% endif %}
             </div>
-            <div class="searchbar">
-                <label for="search"></label>
-                <input type="text" id="search">
-                <a href="#" aria-label="search bar">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </a>
-            </div>
+            <form class='searchbar' action="/search.html" method="POST">
+                <label for="searchbox"></label>
+                <input type="text" id="searchbox" name="findEvent">
+                <input type='submit' class='input-append fa-1x' style="font-family: FontAwesome" value="&#xf002;" />
+            </form>
             <div class='hamburger'>
                 <i class='fa fa-bars fa-inverse fa-2x' alt="dropdown menu"></i>
             </div>
@@ -70,7 +68,8 @@
 
     <footer>
         <ul>
-            <li><a href="mailto:eventslygroup@gmail.com" class="footer-contact"><i class="fas fa-mail-bulk"></i> Contact Us!</a></li>
+            <li><a href="mailto:eventslygroup@gmail.com" class="footer-contact"><i class="fas fa-mail-bulk"></i> Contact
+                    Us!</a></li>
             <li>All content copyright &copy; 2021, Eventsly</li>
         </ul>
     </footer>
