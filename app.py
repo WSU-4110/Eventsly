@@ -154,6 +154,7 @@ def login():
     return render_template("login.html", title="Log In")
 
 @app.route("/createEvent.html", methods=['POST','GET'])
+@is_logged_in
 def createEvent():
     form = models.EventForm(request.form)
     if request.method == 'POST' and form.validate():
