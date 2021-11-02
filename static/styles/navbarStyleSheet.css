@@ -71,13 +71,12 @@ a.nav-item:hover:not(.active) {
     border-radius: 15px;
 }
 
-.searchbar input {
+.searchbar #searchbox {
     height: 20px;
     font-size: 12pt;
     width: 100%;
     background: none;
     border: none;
-    margin-right: 39px;
     padding-left: 12px;
 }
 
@@ -85,11 +84,13 @@ a.nav-item:hover:not(.active) {
     outline: none;
 }
 
-.searchbar a {
-    padding: 6px 12px;
-    position: absolute;
-    right: 0px;
-    margin: auto 0;
+.searchbar input[type='submit'] {
+    background: none;
+    border: none;
+    height: 100%;
+    width: 20%;
+    cursor: pointer;
+    padding: 0;
     color: #3A3E5E;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
@@ -98,7 +99,7 @@ a.nav-item:hover:not(.active) {
     transition: 0.3s;
 }
 
-.searchbar a:hover {
+.searchbar input[type='submit']:hover {
     color: #7b82b3;
 }
 
