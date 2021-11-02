@@ -60,13 +60,14 @@ def index():
     return render_template("index.html", title="Eventsly", pins=pins)
 
 @app.route("/bookmarks.html")
+@is_logged_in
 def bookmarks():
     with engine.begin() as conn:
         query = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
         rows = conn.execute(query)
         bookmarkpull = rows.mappings().all()
 
-    return render_template("Bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
+    return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
 @app.route("/about.html")
 def about():
