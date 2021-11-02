@@ -36,6 +36,7 @@ footer {
 @media screen and (min-width: 1124px) {
     footer {
         height: 55px;
+        min-height: 55px;
     }
 
     footer ul {
