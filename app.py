@@ -1,6 +1,9 @@
 from datetime import datetime
 from functools import wraps
 from logging import error
+import sqlalchemy
+
+from sqlalchemy.sql.elements import and_
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, select
 from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
@@ -35,7 +38,12 @@ def index():
 
 @app.route("/bookmarks.html")
 def bookmarks():
-    return render_template("Bookmarks.html", title="Bookmarks")
+    with engine.begin() as conn:
+        query = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
+        rows = conn.execute(query)
+        bookmarkpull = rows.mappings().all()
+
+    return render_template("Bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
 @app.route("/about.html")
 def about():
