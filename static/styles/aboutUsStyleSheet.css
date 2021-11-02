@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* For 2 equal columns */
+  .column {
+    float:left;
+    width: 50%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -20px;}
+  
+
+  
+  /* For responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 5px;
+    }
+  }
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 10px 10px 5px grey;
+    border-radius: 25px;
+    padding: 16px;
+    text-align: center;
+    background-color: #3A3E5E;
+    color: white
+  }
+  /*For scroll bar*/
+  body {
+    overflow-y: auto;
+  }
+  
+/*Added from previous about_us branch*/
+  img{
+    border-radius: 48%;
+    border-collapse: separate;
+  }
+  .container {
+    float: left;
+    width: 20%;
+    justify-content: space-evenly;
+  }
+/* For responsive containers */
+  @media screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  
