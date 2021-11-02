@@ -201,5 +201,4 @@ def dashboard():
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
       
-    app.logger.info(app.config)
-    app.run(debug=True)
+    app.run()
