@@ -43,9 +43,7 @@ function buildMap() {
 
 function loadPins(pins){
  var marker
-  console.log(pins)
   for(let pin of pins){
-    console.log(pin)
     marker = new L.Marker([pin.latitude,pin.longitude]).addTo(map);
     marker.bindPopup(`<strong> ${pin.title}</strong><br>
     ${pin.city},${pin.state} <br>

@@ -44,7 +44,6 @@
 <script src="/static/scripts/mapScripts.js"></script>
 <script>
   var pins = JSON.parse('{{pins | tojson | safe}}')
-  console.log(pins)
   loadPins(pins)
  </script>
 {% endblock %}
