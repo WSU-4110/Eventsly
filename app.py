@@ -1,14 +1,12 @@
 from datetime import datetime
 from functools import wraps
-from logging import error
+import sqlalchemy
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, select
-from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
+from flask import Flask, render_template, request, redirect, flash, url_for, session
 from passlib.hash import sha256_crypt
-from sqlalchemy.util.langhelpers import NoneType
-import logger
+import sqlalchemy
 import traceback
-import os
 
 app = Flask(__name__)
 
@@ -25,21 +23,70 @@ engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=T
 
 import models
 
+#Check if user logged in to access logout and dashboard
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('Unauthorized, please login.','danger')
+            return redirect(url_for('login'))
+    return wrap
+
 @app.route("/")
 def home():
-    return render_template("index.html", title="Eventsly")
+    return redirect(url_for('index'))
 
 @app.route("/index.html")
 def index():
-    return render_template("index.html", title="Eventsly")
+    pins = []
+    with engine.begin() as conn:
+        query = sqlalchemy.text('SELECT * FROM events WHERE date > CURRENT_TIMESTAMP')
+        rows = conn.execute(query)
+        for row in rows:
+            pin = {
+                "id": row.id,
+                "latitude" : row.latitude,
+                "longitude" : row.longitude,
+                "date": row.date,
+                "street" : row.street,
+                "city" : row.city,
+                "state" : row.state,
+                "title" : row.title,
+                "description" : row.description
+            }
+            pins.append(pin)
+    return render_template("index.html", title="Eventsly", pins=pins)
 
 @app.route("/bookmarks.html")
 def bookmarks():
-    return render_template("Bookmarks.html", title="Bookmarks")
+    with engine.begin() as conn:
+        query = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
+        rows = conn.execute(query)
+        bookmarkpull = rows.mappings().all()
+
+    return render_template("Bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
 @app.route("/about.html")
 def about():
     return render_template("About.html", title="About Us")
+
+@app.route("/search.html", methods =['GET','POST'])
+def search():
+    hereValue = 'default value'
+    if request.method == 'POST':
+        # Get data from form
+        hereValue = request.form['findEvent']
+
+    with engine.begin() as conn:
+        query = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
+        rows = conn.execute(query)
+        hereData = rows.mappings().all()
+
+    app.logger.info(f"data is {hereData}")
+    
+    return render_template("search.html", title="Find Events", data = hereData)
 
 @app.route("/signup.html", methods=['POST','GET'])
 def signup():
@@ -116,7 +163,6 @@ def login():
 def createEvent():
     form = models.EventForm(request.form)
     if request.method == 'POST' and form.validate():
-        ## encryptpassword = sha256_crypt.encrypt(str(formEvent.password.data)) #encrypt password
 
         new_event = models.Event(
             title = form.title.data, 
@@ -141,17 +187,6 @@ def createEvent():
             app.logger.warning(f"Event {form.title.data} was unable to be created. /////")
             return redirect(url_for('createEvent'))
     return render_template("createEvent.html",form = form, title="Create Event")
-
-#Check if user logged in to access logout and dashboard
-def is_logged_in(f):
-    @wraps(f)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return f(*args, **kwargs)
-        else:
-            flash('Unauthorized, please login.','danger')
-            return redirect(url_for('login'))
-    return wrap
 
 @app.route('/logout')
 @is_logged_in #uses is_logged_in wrapper for this URL

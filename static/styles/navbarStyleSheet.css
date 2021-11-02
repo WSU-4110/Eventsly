@@ -88,41 +88,44 @@ nav {
     border-radius: 15px;
     display: flex;
     height: 30px;
+    margin: auto 20px;
     max-width: 300px;
     position: relative;
     width: 100%;
 }
 
-.searchbar a {
+.searchbar #searchbox {
+    background: none;
+    border: none;
+    font-size: 12pt;
+    height: 20px;
+    padding-left: 12px;
+    width: 100%;
+}
+
+.searchbar:focus, input:focus { /* hide input outline on focus */
+    outline: none;
+}
+
+.searchbar input[type='submit'] {
+    background: none;
+    border: none;
     color: #3A3E5E;
-    margin: auto 0;
-    padding: 6px 12px;
-    position: absolute;
-    right: 0;
+    cursor: pointer;
+    height: 100%;
+    padding: 0;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
+    width: 20%;
 }
 
-.searchbar a:hover {
+.searchbar input[type='submit']:hover {
     color: #7b82b3;
 }
 
-.searchbar:focus, input:focus {
-    outline: none;
-}
-
-.searchbar input {
-    background: none;
-    border: none;
-    font-size: 12pt;
-    height: 20px;
-    margin-right: 39px;
-    padding-left: 12px;
-    width: 100%;
-}
 
 /*#endregion#*/
 /*--------------*/

@@ -25,6 +25,7 @@
 {% endblock %}
 
 {% block main %}
+{% if session.logged_in %}
 <div class="event-create">
   <span class="fa-stack fa-2x">
     <a href="createEvent.html" aria-label="create event">
@@ -33,6 +34,7 @@
     </a>
   </span>
 </div>
+{% endif %}
 <!-- Leaflet Map & plugins -->
 <div id="mapid"></div>
 <div id="search-box"></div>
@@ -40,4 +42,8 @@
 <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
   charset="utf-8"></script>
 <script src="/static/scripts/mapScripts.js"></script>
+<script>
+  var pins = JSON.parse('{{pins | tojson | safe}}')
+  loadPins(pins)
+ </script>
 {% endblock %}
