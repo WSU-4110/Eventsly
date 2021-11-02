@@ -1,18 +1,12 @@
 from datetime import datetime
 from functools import wraps
-from logging import error
 import sqlalchemy
-from sqlalchemy.sql.elements import and_
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, select
-from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
+from flask import Flask, render_template, request, redirect, flash, url_for, session
 from passlib.hash import sha256_crypt
 import sqlalchemy
-from sqlalchemy.util.langhelpers import NoneType
-import logger
 import traceback
-import os
-import collections
 
 app = Flask(__name__)
 
