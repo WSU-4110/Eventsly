@@ -1,18 +1,12 @@
 from datetime import datetime
 from functools import wraps
-from logging import error
 import sqlalchemy
-
-from sqlalchemy.sql.elements import and_
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, select
-from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
+from flask import Flask, render_template, request, redirect, flash, url_for, session
 from passlib.hash import sha256_crypt
 import sqlalchemy
-from sqlalchemy.util.langhelpers import NoneType
-import logger
 import traceback
-import os
 
 app = Flask(__name__)
 
@@ -29,22 +23,51 @@ engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=T
 
 import models
 
+#Check if user logged in to access logout and dashboard
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('Unauthorized, please login.','danger')
+            return redirect(url_for('login'))
+    return wrap
+
 @app.route("/")
 def home():
-    return render_template("index.html", title="Eventsly")
+    return redirect(url_for('index'))
 
 @app.route("/index.html")
 def index():
-    return render_template("index.html", title="Eventsly")
+    pins = []
+    with engine.begin() as conn:
+        query = sqlalchemy.text('SELECT * FROM events WHERE date > CURRENT_TIMESTAMP')
+        rows = conn.execute(query)
+        for row in rows:
+            pin = {
+                "id": row.id,
+                "latitude" : row.latitude,
+                "longitude" : row.longitude,
+                "date": row.date,
+                "street" : row.street,
+                "city" : row.city,
+                "state" : row.state,
+                "title" : row.title,
+                "description" : row.description
+            }
+            pins.append(pin)
+    return render_template("index.html", title="Eventsly", pins=pins)
 
 @app.route("/bookmarks.html")
+@is_logged_in
 def bookmarks():
     with engine.begin() as conn:
         query = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
         rows = conn.execute(query)
         bookmarkpull = rows.mappings().all()
 
-    return render_template("Bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
+    return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
 @app.route("/about.html")
 def about():
@@ -56,10 +79,6 @@ def search():
     if request.method == 'POST':
         # Get data from form
         hereValue = request.form['findEvent']
-
-    # old method of displaying events to page
-    #sql = sqlalchemy.text("SELECT title FROM events WHERE title LIKE '%" + hereValue + "%'")
-    #dataHere = db.engine.execute(sql)
 
     with engine.begin() as conn:
         query = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
@@ -142,10 +161,10 @@ def login():
     return render_template("login.html", title="Log In")
 
 @app.route("/createEvent.html", methods=['POST','GET'])
+@is_logged_in
 def createEvent():
     form = models.EventForm(request.form)
     if request.method == 'POST' and form.validate():
-        ## encryptpassword = sha256_crypt.encrypt(str(formEvent.password.data)) #encrypt password
 
         new_event = models.Event(
             title = form.title.data, 
@@ -171,17 +190,6 @@ def createEvent():
             return redirect(url_for('createEvent'))
     return render_template("createEvent.html",form = form, title="Create Event")
 
-#Check if user logged in to access logout and dashboard
-def is_logged_in(f):
-    @wraps(f)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return f(*args, **kwargs)
-        else:
-            flash('Unauthorized, please login.','danger')
-            return redirect(url_for('login'))
-    return wrap
-
 @app.route('/logout')
 @is_logged_in #uses is_logged_in wrapper for this URL
 def logout():
@@ -199,5 +207,4 @@ def dashboard():
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
       
-    app.logger.info(app.config)
-    app.run(debug=True)
+    app.run()
