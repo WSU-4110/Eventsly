@@ -23,6 +23,17 @@ engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=T
 
 import models
 
+#Check if user logged in to access logout and dashboard
+def is_logged_in(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('Unauthorized, please login.','danger')
+            return redirect(url_for('login'))
+    return wrap
+
 @app.route("/")
 def home():
     return redirect(url_for('index'))
@@ -46,9 +57,6 @@ def index():
                 "description" : row.description
             }
             pins.append(pin)
-
-
-
     return render_template("index.html", title="Eventsly", pins=pins)
 
 @app.route("/bookmarks.html")
@@ -179,17 +187,6 @@ def createEvent():
             app.logger.warning(f"Event {form.title.data} was unable to be created. /////")
             return redirect(url_for('createEvent'))
     return render_template("createEvent.html",form = form, title="Create Event")
-
-#Check if user logged in to access logout and dashboard
-def is_logged_in(f):
-    @wraps(f)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return f(*args, **kwargs)
-        else:
-            flash('Unauthorized, please login.','danger')
-            return redirect(url_for('login'))
-    return wrap
 
 @app.route('/logout')
 @is_logged_in #uses is_logged_in wrapper for this URL
