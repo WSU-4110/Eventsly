@@ -1,15 +1,20 @@
 from datetime import datetime
 from functools import wraps
 from logging import error
+import flask
+from flask.json.tag import JSONTag
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine, select
 from flask import Flask, render_template, request, redirect, flash, sessions, url_for, session, logging
 from passlib.hash import sha256_crypt
 import sqlalchemy
+from sqlalchemy.sql.elements import CollectionAggregate
+from sqlalchemy.sql.operators import json_getitem_op
 from sqlalchemy.util.langhelpers import NoneType
 import logger
 import traceback
 import os
+import collections
 
 app = Flask(__name__)
 
@@ -32,13 +37,27 @@ def home():
 
 @app.route("/index.html")
 def index():
-
+    pins = []
     with engine.begin() as conn:
         query = sqlalchemy.text('SELECT * FROM events WHERE date > CURRENT_TIMESTAMP')
         rows = conn.execute(query)
-        pins = rows.mappings().all()
+        for row in rows:
+            pin = {
+                "id": row.id,
+                "latitude" : row.latitude,
+                "longitude" : row.longitude,
+                "date": row.date,
+                "street" : row.street,
+                "city" : row.city,
+                "state" : row.state,
+                "title" : row.title,
+                "description" : row.description
+            }
+            pins.append(pin)
 
-    return render_template("index.html", title="Eventsly", pins = pins)
+
+
+    return render_template("index.html", title="Eventsly", pins=pins)
 
 @app.route("/bookmarks.html")
 def bookmarks():
