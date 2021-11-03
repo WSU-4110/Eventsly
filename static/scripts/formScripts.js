@@ -1,7 +1,7 @@
 window.onload = function () {
     var formItems = document.getElementsByClassName('form-item');
     var submit = null;
-    var formValidator = new InputValidatorService();
+    var formValidator = new FormValidator();
 
     for (let i = 0; i < formItems.length; i++) {
         {
