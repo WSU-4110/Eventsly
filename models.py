@@ -1,7 +1,17 @@
+from flask import app
+from sqlalchemy.engine import create_engine
 from wtforms import Form, StringField, PasswordField, validators
 from wtforms.fields.core import DateField, FloatField
 from app import db
 
+class Database():
+    connection =None
+    def connect(self):
+        if self.connection is None:
+            engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
+            self.connection = engine.connect()
+            app.logger.info(f'Connection: {self.connection}')
+        return self.connection
 class SignUpForm(Form):
     '''Form fields with validation for user sign up.'''
     
