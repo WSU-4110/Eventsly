@@ -64,9 +64,7 @@ window.onload = function () {
             else {
                 submit.classList.remove('disable-submit');
                 submit.disabled = false;
-                console.log('valid');
             }
-
         });
     }
 
