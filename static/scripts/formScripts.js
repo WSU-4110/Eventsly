@@ -31,17 +31,30 @@ window.onload = function () {
         submit.disabled = true;
         signup.addEventListener('keyup', function () {
             let results = formValidator.testValidity();
-            console.log(results);
             let validInputs = results[0];
             let invalidInputs = results[1];
             if (validInputs.length > 0) {
                 for (let i = 0; i < validInputs.length; i++) {
-                    // do something - outline red?
+                    if ((validInputs[i]).value.length > 0) {
+                        validInputs[i].classList.remove('invalid-field');
+                        validInputs[i].classList.add('valid-field');
+                    }
+                    else {
+                        validInputs[i].classList.remove('valid-field')
+                        validInputs[i].classList.remove('invalid-field');
+                    }
                 }
             }
             if (invalidInputs.length > 0) {
                 for (let i = 0; i < invalidInputs.length; i++) {
-                    // do something - outline green?
+                    if ((invalidInputs[i]).value.length > 0) {
+                        invalidInputs[i].classList.remove('valid-field');
+                        invalidInputs[i].classList.add('invalid-field');
+                    }
+                    else {
+                        invalidInputs[i].classList.remove('valid-field')
+                        invalidInputs[i].classList.remove('invalid-field');
+                    }
                 }
                 if (!submit.classList.contains('disable-submit')) {
                     submit.classList.add('disable-submit');
@@ -51,6 +64,7 @@ window.onload = function () {
             else {
                 submit.classList.remove('disable-submit');
                 submit.disabled = false;
+                console.log('valid');
             }
 
         });

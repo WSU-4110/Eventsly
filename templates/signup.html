@@ -23,28 +23,34 @@
 
 {% block main %}
 {% from "includes/_formhelpers.html" import render_field %}
-<form id="signup" action="/signup.html" method="POST">
+<form id="signup" class="user-form" action="/signup.html" method="POST">
   <h1>Sign-Up</h1>
   <h2>Please fill out the information below</h2>
   <div class='form-item'>
     {{render_field(form.firstname, class_="form-input")}}
     <span class='counter'></span>
+    <span class='requirement'>{{ requirement_messages['firstname'] }}</span>
   </div>
   <div class='form-item'>
     {{render_field(form.lastname, class_="form-input")}}
     <span class='counter'></span>
+    <span class='requirement'>{{ requirement_messages['lastname'] }}</span>
   </div>
   <div class='form-item'>
     {{render_field(form.email, class_="form-input")}}
     <span class='counter'></span>
+    <span class='requirement'></span>
+    <span class='requirement'>{{ requirement_messages['email'] }}</span>
   </div>
   <div class='form-item'>
     {{render_field(form.phone, class_="form-input")}}
     <span class='counter'></span>
+    <span class='requirement'>{{ requirement_messages['phone'] }}</span>
   </div>
   <div class='form-item'>
     {{render_field(form.username, class_="form-input")}}
     <span class='counter'></span>
+    <span class='requirement'>{{ requirement_messages['username'] }}</span>
   </div>
   <div class='form-item'>
     {{render_field(form.biography, class_="form-input")}}
@@ -53,6 +59,7 @@
   <div class='form-item'>
     {{render_field(form.password, class_="form-input")}}
     <span class='counter'></span>
+    <span class='requirement'>{{ requirement_messages['password'] }}</span>
   </div>
   <div class='form-item'>
     {{render_field(form.confirm, class_="form-input")}}

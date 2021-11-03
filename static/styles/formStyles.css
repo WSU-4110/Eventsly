@@ -3,9 +3,9 @@
 /*----------------------*/
 /*#region#*/
 /*
-* signup form
+* signup form.user-form
 */
-#signup {
+form.user-form {
     align-items: center;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
@@ -22,25 +22,25 @@
     z-index: 1;
 }
 
-#signup h1, 
-#signup h2 {
+form.user-form h1, 
+form.user-form h2 {
     margin: 0;
     padding: 0;
     text-align: center;
     width: 100%;
 }
 
-#signup h1 {
+form.user-form h1 {
     font-size: 18pt;
     margin-top: 20px;
 }
 
-#signup h2 {
+form.user-form h2 {
     font-size: 16pt;
     margin-bottom: 15px;
 }
 
-#signup .form-item {
+form.user-form .form-item {
     flex: 1 1 220px;
     margin: 0 30px;
     min-height: 90px;
@@ -51,8 +51,8 @@
 /* 
 * labels
 */
-#signup label {
-    color:rgb(167, 167, 167);
+form.user-form label {
+    color:#a7a7a7;
     left: 8px;
     margin: 0;
     padding: 0;
@@ -66,7 +66,7 @@
     transition: 0.5s;
 }
 
-#signup .move-label {
+form.user-form .move-label {
     color: #3A3E5E;
     font-size: 10pt;
     font-weight: bold;
@@ -77,7 +77,7 @@
 /* 
 * character counters 
 */
-#signup span.counter {
+form#signup.user-form span.counter {
     color:#3A3E5E;
     font-size: 10pt;
     position: absolute;
@@ -88,7 +88,7 @@
 /* 
 * all inputs 
 */
-#signup input {
+form.user-form input {
     border-style: none;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
@@ -102,25 +102,32 @@
 /*
 * text inputs
 */
-#signup input[type='text'], 
-#signup input[type='password'] {
+form.user-form input[type='text'], 
+form.user-form input[type='password'] {
     border-style: none;
-    outline: 2px solid rgb(167, 167, 167);
+    outline: 2px solid #a7a7a7;
     padding: 3px 25px 0 6px;
 }
 
-#signup input[type='text']:focus, #signup input[type='password']:focus {
-    outline: 2px solid #3A3E5E;
+form.user-form input[type='text']:focus, 
+form.user-form input[type='password']:focus {
+    outline: 2px solid #a7a7a7;
 }
 
-#signup input[type='text'].invalid {
+form.user-form input[type='text'].invalid-field,
+form.user-form input[type='password'].invalid-field {
     outline: 2px solid red;
+}
+
+form.user-form input[type='text'].valid-field, 
+form.user-form input[type='password'].valid-field{
+    outline: 2px solid #7b82b3;
 }
 
 /*
 * submit button 
 */
-#signup input[type='submit'] {
+form.user-form input[type='submit'] {
     background-color: #3A3E5E;
     border-radius: 5px;
     color: white;
@@ -134,25 +141,35 @@
     width: 100%;
 }
 
-#signup input[type='submit']:hover {
+form.user-form input[type='submit']:hover:not(.disable-submit) {
     background-color: #7b82b3;
+    cursor: pointer;
 }
 
-#signup input[type='submit'].disable-submit {
-    cursor: pointer;
+form.user-form input[type='submit'].disable-submit {
     opacity: 0.5;
 }
 
 /*
 * invalid (error) messages on submit
 */
-#signup span.help-inline {
+form.user-form span.help-inline {
     bottom: -8px;
     color: red;
     font-size: 9pt;
     left: 6px;
     pointer-events: none;
     vertical-align: text-top;
+}
+
+/*
+* requirement messages
+*/
+form.user-form span.requirement {
+    display: block;
+    font-size: 9pt;
+    pointer-events: none;
+    text-align: left;
 }
 
 /*#endregion#*/
@@ -162,7 +179,7 @@
 /*#region#*/
 @media screen and (max-width: 800px), 
         screen and (max-height: 700px) {
-    #signup {
+    form.user-form {
         border-radius: 0;
         height: 100%;
         justify-content: center;
@@ -170,22 +187,22 @@
         width: 100%;
     }
     
-    #signup h1 {
+    form.user-form h1 {
         font-size: 18pt;
         margin-bottom: 25px;
         margin-top: 10px;
     }
 
-    #signup h2 {
+    form.user-form h2 {
         display: none;
         font-size: 12pt;
     }
 
-    #signup input {
+    form.user-form input {
         height: 35px;
     }
 
-    #signup label {
+    form.user-form label {
         color: #3A3E5E;
         font-size: 10pt;
         font-weight: bold;
@@ -193,13 +210,13 @@
         top: -20px;
     }
 
-    #signup .form-item {
+    form.user-form .form-item {
         min-height: 120px;
         min-width: 85%;
         max-width: 85%;
     }
 
-    #signup input[type='submit'] {
+    form.user-form input[type='submit'] {
         margin-bottom: 30px;
         min-width: 85%;
     }
@@ -210,10 +227,10 @@
 /*---------------*/
 /*#region#*/
 @media screen and (min-width: 801px) and (min-height: 701px) {
-    #signup {
+    form.user-form {
         text-align: center;
     }
-    #signup input[type='submit'] {
+    form.user-form input[type='submit'] {
         margin-bottom: 30px;
         max-width: 200px;
     }
