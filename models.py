@@ -24,7 +24,7 @@ class SignUpForm(Form):
             validators.Length(min=8, max=128)
         ],
         id='password',
-        render_kw={'minlength': 8, 'maxlength': 120, 'required': True}
+        render_kw={'minlength': 8, 'maxlength': 120, 'pattern': '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]', 'required': True}
     )
     confirm = PasswordField("Confirm Password", id='confirm')
 
