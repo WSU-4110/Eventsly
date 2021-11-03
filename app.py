@@ -126,6 +126,7 @@ def signup():
         'password' : form.password.description,
         'username' : form.username.description,
     }
+    
     return render_template("signup.html", form=form, title="Sign Up", requirement_messages=requirement_messages)
 
 @app.route("/login.html", methods =['GET','POST'])
