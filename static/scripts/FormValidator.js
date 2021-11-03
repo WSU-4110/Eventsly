@@ -1,6 +1,6 @@
 // Service class which provides methods to initiate form validation given validators
-var InputValidatorService = /** @class */ (function () {
-    class InputValidatorService {
+var FormValidator = /** @class */ (function () {
+    class FormValidator {
         constructor() {
             this.chain = Array();
         }
@@ -27,7 +27,7 @@ var InputValidatorService = /** @class */ (function () {
         }
     }
 
-    return InputValidatorService;
+    return FormValidator;
 }());
 
 var Validator = /** @class */ (function () {
