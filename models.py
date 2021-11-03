@@ -1,16 +1,17 @@
-from flask import app
 from sqlalchemy.engine import create_engine
+from sqlalchemy.orm.scoping import scoped_session
+from sqlalchemy.orm.session import sessionmaker
 from wtforms import Form, StringField, PasswordField, validators
 from wtforms.fields.core import DateField, FloatField
 from app import db
+from flask import current_app
 
 class Database():
     connection =None
     def connect(self):
         if self.connection is None:
-            engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
-            self.connection = engine.connect()
-            app.logger.info(f'Connection: {self.connection}')
+            engine = create_engine(current_app.config['SQLALCHEMY_DATABASE_URI'])
+            self.connection = scoped_session(sessionmaker(autocommit=False,autoflush=False,bind=engine))
         return self.connection
 class SignUpForm(Form):
     '''Form fields with validation for user sign up.'''

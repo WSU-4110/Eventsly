@@ -2,11 +2,14 @@ from datetime import datetime
 from functools import wraps
 import sqlalchemy
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.engine.base import Connection
+from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy import create_engine, select
 from flask import Flask, render_template, request, redirect, flash, url_for, session
 from passlib.hash import sha256_crypt
 import sqlalchemy
 import traceback
+import logger
 
 app = Flask(__name__)
 
@@ -19,7 +22,7 @@ else:
     app.config.from_object('config.BaseConfig')
 
 db = SQLAlchemy(app)
-engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=True)
+engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'])
 
 import models
 
