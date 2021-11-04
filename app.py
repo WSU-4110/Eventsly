@@ -7,6 +7,7 @@ from flask import Flask, render_template, request, redirect, flash, url_for, ses
 from passlib.hash import sha256_crypt
 import sqlalchemy
 import traceback
+import logger
 
 app = Flask(__name__)
 
