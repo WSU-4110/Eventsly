@@ -31,16 +31,13 @@ Events in your area will be shown and you can feel free to coordinate your own e
 
 ## Technology Stack
 ### Front end
----
 - HTML
 - CSS
 - Javascript
 
 ### Back end
----
 - Python (Flask)
 - PostgreSQL Database
 
 ### Hosting Service (Deployment)
----
 - Heroku
