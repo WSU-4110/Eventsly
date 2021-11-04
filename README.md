@@ -8,31 +8,28 @@
 * Mark Slattery
 * CJ Fox
 
+## What is Eventsly?
+
+Eventsly is the one-stop solution to finding events in your area. Simply open the web application, search your location, and go. 
+Events in your area will be shown and you can feel free to coordinate your own events, all for others to find places to be, and the hot spots around their area. Concerts, games, get-togethers, you name it! It can be done with Eventsly.
+
 ## Functionalities
 ### Central Functionalities
 * Navigation bar
 * Integrated map
 * Loads pins on to the map indicating locations where there are upcoming events
 
-## Account Functionalities
+### Account Functionalities
 * Account sign up
 * Account login/logout
 
-## Event Functionalities
+### Event Functionalities
 * Clicking pins for event information preview
 * Creating an event
 * Searching for events by event title
 * Viewing bookmarks
 
-## What is Eventsly?
-
-Eventsly is the one-stop solution to finding events in your area. Simply open the web application, search your location, and go. 
-Events in your area will be shown and you can feel free to coordinate your own events, all for others to find places to be, and the hot spots around their area. Concerts, games, get-togethers, you name it! It can be done with Eventsly.
-
-###### You can find the current version of Eventsly on https://eventsly.herokuapp.com/
-
 ## Technology Stack
-
 ### Front end
 ---
 - HTML
