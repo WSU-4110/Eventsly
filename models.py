@@ -7,12 +7,12 @@ from app import db
 from flask import current_app
 
 class Database():
-    connection =None
+    __connection =None
     def connect(self):
-        if self.connection is None:
+        if self.__connection is None:
             engine = create_engine(current_app.config['SQLALCHEMY_DATABASE_URI'])
-            self.connection = scoped_session(sessionmaker(autocommit=False,autoflush=False,bind=engine))
-        return self.connection
+            self.__connection = scoped_session(sessionmaker(autocommit=False,autoflush=False,bind=engine))
+        return self.__connection
 class SignUpForm(Form):
     '''Form fields with validation for user sign up.'''
     
