@@ -1,0 +1,50 @@
+main {
+    background-image: url(/static/images/signup-background2.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  body {
+    overflow-y: auto;
+  }
+
+  .dash-table {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .dash-table td, .dash-table th {
+    text-align: center;
+    padding: 8px;
+  }
+
+  .dash-table td, .dash-table th, .dash-table tcol {
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+  }
+
+  .dash-table thead th {
+    color: #ffffff;
+    background: #69779C;
+  }
+
+  .dash-table thead th:nth-child(odd) {
+    background: #3A3E5E;
+    color: #ffffff;
+  }
+
+  .dash-table tr:nth-child(even) {
+    background: #69779C;
+    color: #ffffff;
+  }
+
+  .dash-table tr:nth-child(odd) {
+    background: #F8F8F8;
+  }
