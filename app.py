@@ -7,6 +7,7 @@ from flask import Flask, render_template, request, redirect, flash, url_for, ses
 from passlib.hash import sha256_crypt
 import sqlalchemy
 import traceback
+import logger
 
 app = Flask(__name__)
 
@@ -180,6 +181,23 @@ def createEvent():
             db.session.add(new_event)
             db.session.commit()
             app.logger.info(f'Event {form.title.data} was created.')
+
+                    #After inserting event, get event id and add to created_events table
+            stmt = select(models.Event).order_by(models.Event.id.desc())
+            with engine.begin() as conn:
+                result = conn.execute(stmt).first()
+                
+            app.logger.info(f"Most recent event: {result}")
+
+            newCreatedEvent = models.CreatedEvent(
+                event_id = result.id,
+                user_id = session['userid']
+            )
+
+            db.session.add(newCreatedEvent)
+            db.session.commit()
+            app.logger.info(f"New Created Event: {newCreatedEvent}")
+
             flash('Your event has been created!', 'success')
             return redirect(url_for('index'))
         except:
@@ -188,6 +206,9 @@ def createEvent():
             app.logger.warning(traceback.format_exc())
             app.logger.warning(f"Event {form.title.data} was unable to be created. /////")
             return redirect(url_for('createEvent'))
+
+
+
     return render_template("createEvent.html",form = form, title="Create Event")
 
 @app.route('/logout')
@@ -205,6 +226,7 @@ def dashboard():
         rows = conn.execute(query)
         myEvents = rows.mappings().all()
 
+    app.logger.info(f'User events: {myEvents}')
     return render_template('dashboard.html', title="Dashboard", myEvents=myEvents)
 
 
