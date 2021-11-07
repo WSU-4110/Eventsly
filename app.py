@@ -9,6 +9,7 @@ import sqlalchemy
 import traceback
 import logger
 
+#region App Initialization
 app = Flask(__name__)
 
 if app.config['ENV'] == 'production':
@@ -33,6 +34,7 @@ def is_logged_in(f):
             flash('Unauthorized, please login.','danger')
             return redirect(url_for('login'))
     return wrap
+#endregion
 
 #region Basic Functionalities
 @app.route("/")
@@ -171,6 +173,87 @@ def deleteAccount():
     return redirect(url_for('index'))
 
 #endregion
+
+#region Bookmark Functionalities
+@app.route("/bookmarks.html")
+@is_logged_in
+def bookmarks():
+    with engine.begin() as conn:
+        query = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
+        rows = conn.execute(query)
+        bookmarkpull = rows.mappings().all()
+
+    return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
+#endregion
+
+#region Event Functionalities
+@app.route("/search.html", methods =['GET','POST'])
+def search():
+    hereValue = 'default value'
+    if request.method == 'POST':
+        # Get data from form
+        hereValue = request.form['findEvent']
+
+    with engine.begin() as conn:
+        query = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
+        rows = conn.execute(query)
+        hereData = rows.mappings().all()
+
+    app.logger.info(f"data is {hereData}")
+    
+    return render_template("search.html", title="Find Events", data = hereData)
+
+@app.route("/createEvent.html", methods=['POST','GET'])
+@is_logged_in
+def createEvent():
+    form = models.EventForm(request.form)
+    if request.method == 'POST' and form.validate():
+
+        new_event = models.Event(
+            title = form.title.data, 
+            description = form.description.data,
+            date = form.date.data, 
+            latitude = form.latitude.data, 
+            longitude = form.longitude.data,
+            street = form.street.data,
+            city = form.city.data,
+            state = form.state.data,
+        )
+        try:
+            db.session.add(new_event)
+            db.session.commit()
+            app.logger.info(f'Event {form.title.data} was created.')
+
+                    #After inserting event, get event id and add to created_events table
+            stmt = select(models.Event).order_by(models.Event.id.desc())
+            with engine.begin() as conn:
+                result = conn.execute(stmt).first()
+                
+            app.logger.info(f"Most recent event: {result}")
+
+            newCreatedEvent = models.CreatedEvent(
+                event_id = result.id,
+                user_id = session['userid']
+            )
+
+            db.session.add(newCreatedEvent)
+            db.session.commit()
+            app.logger.info(f"New Created Event: {newCreatedEvent}")
+
+            flash('Your event has been created!', 'success')
+            return redirect(url_for('index'))
+        except:
+            flash('Unable to make your event','failure')
+            # print call stack
+            app.logger.warning(traceback.format_exc())
+            app.logger.warning(f"Event {form.title.data} was unable to be created. /////")
+            return redirect(url_for('createEvent'))
+
+
+
+    return render_template("createEvent.html",form = form, title="Create Event")
+#endregion
+
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
       
