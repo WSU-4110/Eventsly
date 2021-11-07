@@ -1,5 +1,38 @@
 {% extends 'base.html' %}
 
+{% block head %}
+<link rel="stylesheet" href="/static/styles/formStyles.css">
+<link rel="stylesheet" href="/static/styles/dashboardStyleSheet.css">
+{% endblock %}
+
 {% block main %}
-<h1>Dashboard <small>Welcome {{session.name}}</small></h1>
+<h1>Dashboard</h1>
+<h2>Welcome {{session.name}}</h2>
+
+<form id="myEvents">
+    <h3><i class="far fa-user-circle"></i> My Events</h3>
+    
+    <table class="dash-table">
+        <thead>
+          <tr>
+            <th scope="col">Event</th>
+            <th scope="col">Location</th>
+            <th scope="col">Date & Time</th>
+            <th></th>
+          </tr>
+        </thead>
+          {% for event in myEvents %}
+          <tr>
+          <td>{{event['title']}}</td>
+          <td>{{event['city']}}, {{event['state']}}
+          </td>
+          <td>{{event['date']}}
+          </td>
+          <td><a href="/deleteEvent"><i class="fas fa-trash"></i></a></td>
+          </tr>
+          {% endfor %}
+      </table>
+    </form>
+
+    <a href="/deleteAccount" id="deleteAccount">Delete Account</a>
 {% endblock %}
