@@ -28,7 +28,7 @@
           </td>
           <td>{{event['date']}}
           </td>
-          <td><a href="/deleteEvent" name="eventid" value="{{event['id']}}"><i class="fas fa-trash"></i></a></td>
+          <td><a href="/deleteEvent/{{event['event_id']}}" name="eventid" value="{{event['event_id']}}"><i class="fas fa-trash"></i></a></td>
           </tr>
           {% endfor %}
       </table>

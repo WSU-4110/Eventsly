@@ -172,6 +172,15 @@ def deleteAccount():
     flash('Your account has been deleted.', 'success')
     return redirect(url_for('index'))
 
+@app.route('/deleteEvent/<int:id>', methods = ['POST','GET'])
+@is_logged_in
+def deleteEvent(id):
+    app.logger.warning(f'Deleting event with event ID: {id}')
+    eventid = id
+    #with engine.begin() as conn:
+       #query1 = sqlalchemy.txt(f'DELETE FROM events WHERE events.id = {eventid}')
+    flash('Event deleted.', 'success')
+    return redirect(url_for('dashboard'))
 #endregion
 
 #region Bookmark Functionalities
