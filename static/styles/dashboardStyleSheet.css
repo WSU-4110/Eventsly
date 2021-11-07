@@ -48,8 +48,43 @@ body {
   background: #F8F8F8;
 }
 
+/*Styling for odd row View Details links*/
+.dash-table tr:nth-child(odd) a#viewdetails:link {
+  color: #3A3E5E;
+  background-color: transparent;
+  text-decoration: none;
+}
+.dash-table tr:nth-child(odd) a#viewdetails:hover:not(.active) {
+  color: #7b82b3;
+  text-decoration: none;
+}
+
+/*Styling for even row View Details links*/
+.dash-table tr:nth-child(even) a#viewdetails:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+.dash-table tr:nth-child(even) a#viewdetails:hover:not(.active) {
+  color: black;
+  text-decoration: none;
+}
+
+a#viewdetails{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  height: 2%;
+  display:block;
+  text-align:center;
+  text-decoration: none;
+  
+
+  padding: 0%;
+  margin: 0%;
+}
 
 
+/*Styles for Delete Account link*/
 a#deleteAccount:link {
   color: white;
   background-color: #3A3E5E;
