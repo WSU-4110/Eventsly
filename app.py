@@ -162,9 +162,9 @@ def dashboard():
 @is_logged_in
 def deleteAccount():
     with engine.begin() as conn:
-        query1 = sqlalchemy.txt(f'DELETE FROM events WHERE events.id = created_events.eventid AND created_events.userid = {session["userid"]}')
-        query2 = sqlalchemy.txt(f'DELETE FROM created_events WHERE created_events.user_id = {session["userid"]}')
-        query3 = sqlalchemy.txt(f'DELETE FROM users WHERE users.id = {session["userid"]}')
+        query1 = sqlalchemy.text(f'DELETE FROM events WHERE events.id = created_events.eventid AND created_events.userid = {session["userid"]}')
+        query2 = sqlalchemy.text(f'DELETE FROM created_events WHERE created_events.user_id = {session["userid"]}')
+        query3 = sqlalchemy.text(f'DELETE FROM users WHERE users.id = {session["userid"]}')
         conn.execute(query1)
         conn.execute(query2)
         conn.execute(query3)
@@ -178,11 +178,12 @@ def deleteEvent(id):
     app.logger.warning(f'Deleting event with event ID: {id}')
     eventid = id
     with engine.begin() as conn:
-       query1 = sqlalchemy.txt(f'DELETE FROM events WHERE events.id = {eventid}')
-       query2 = sqlalchemy.txt(f'DELETE FROM created_events where created_events.event_id = {eventid}')
+       query1 = sqlalchemy.text(f'DELETE FROM created_events where created_events.event_id = {eventid}')
+       query2 = sqlalchemy.text(f'DELETE FROM bookmarks WHERE bookmarks.event_id = {eventid}')
+       query3 = sqlalchemy.text(f'DELETE FROM events WHERE events.id = {eventid}')
        conn.execute(query1)
        conn.execute(query2)
-       
+
     flash('Event deleted.', 'success')
     return redirect(url_for('dashboard'))
 #endregion
