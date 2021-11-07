@@ -45,8 +45,8 @@ def home():
 def index():
     pins = []
     with engine.begin() as conn:
-        query = sqlalchemy.text('SELECT * FROM events WHERE date > CURRENT_TIMESTAMP')
-        rows = conn.execute(query)
+        queryGetPins = sqlalchemy.text('SELECT * FROM events WHERE date > CURRENT_TIMESTAMP')
+        rows = conn.execute(queryGetPins)
         for row in rows:
             pin = {
                 "id": row.id,
@@ -151,8 +151,8 @@ def logout():
 @is_logged_in
 def dashboard():
     with engine.begin() as conn:
-        query = sqlalchemy.text(f'SELECT * FROM events, created_events WHERE created_events.user_id = {session["userid"]} AND events.id = created_events.event_id ORDER BY created_events.id')
-        rows = conn.execute(query)
+        queryGetMyEvents = sqlalchemy.text(f'SELECT * FROM events, created_events WHERE created_events.user_id = {session["userid"]} AND events.id = created_events.event_id ORDER BY created_events.id')
+        rows = conn.execute(queryGetMyEvents)
         myEvents = rows.mappings().all()
 
     app.logger.info(f'User events: {myEvents}')
@@ -184,12 +184,12 @@ def deleteEvent(id):
     app.logger.warning(f'Deleting event with event ID: {id}')
     eventid = id
     with engine.begin() as conn:
-       query1 = sqlalchemy.text(f'DELETE FROM created_events where created_events.event_id = {eventid}')
-       query2 = sqlalchemy.text(f'DELETE FROM bookmarks WHERE bookmarks.event_id = {eventid}')
-       query3 = sqlalchemy.text(f'DELETE FROM events WHERE events.id = {eventid}')
-       conn.execute(query1)
-       conn.execute(query2)
-       conn.execute(query3)
+       queryDeleteEventFromCreatedEvents = sqlalchemy.text(f'DELETE FROM created_events where created_events.event_id = {eventid}')
+       queryDeleteEventFromBookmarks = sqlalchemy.text(f'DELETE FROM bookmarks WHERE bookmarks.event_id = {eventid}')
+       queryDeleteEventFromEvents = sqlalchemy.text(f'DELETE FROM events WHERE events.id = {eventid}')
+       conn.execute(queryDeleteEventFromCreatedEvents)
+       conn.execute(queryDeleteEventFromBookmarks)
+       conn.execute(queryDeleteEventFromEvents)
 
     flash('Event deleted.', 'success')
     return redirect(url_for('dashboard'))
@@ -200,8 +200,8 @@ def deleteEvent(id):
 @is_logged_in
 def bookmarks():
     with engine.begin() as conn:
-        query = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
-        rows = conn.execute(query)
+        queryGetBookmarks = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
+        rows = conn.execute(queryGetBookmarks)
         bookmarkpull = rows.mappings().all()
 
     return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
@@ -216,8 +216,8 @@ def search():
         hereValue = request.form['findEvent']
 
     with engine.begin() as conn:
-        query = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
-        rows = conn.execute(query)
+        querySearchTitle = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
+        rows = conn.execute(querySearchTitle)
         hereData = rows.mappings().all()
 
     app.logger.info(f"data is {hereData}")
