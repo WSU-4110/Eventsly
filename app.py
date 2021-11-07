@@ -200,7 +200,12 @@ def logout():
 @app.route('/dashboard.html')
 @is_logged_in
 def dashboard():
-    return render_template('dashboard.html', title="Dashboard")
+    with engine.begin() as conn:
+        query = sqlalchemy.text(f'SELECT * FROM events, created_events WHERE created_events.user_id = {session["userid"]} AND events.id = created_events.event_id ORDER BY created_events.id')
+        rows = conn.execute(query)
+        myEvents = rows.mappings().all()
+
+    return render_template('dashboard.html', title="Dashboard", events=myEvents)
 
 
 
