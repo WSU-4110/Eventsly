@@ -177,8 +177,12 @@ def deleteAccount():
 def deleteEvent(id):
     app.logger.warning(f'Deleting event with event ID: {id}')
     eventid = id
-    #with engine.begin() as conn:
-       #query1 = sqlalchemy.txt(f'DELETE FROM events WHERE events.id = {eventid}')
+    with engine.begin() as conn:
+       query1 = sqlalchemy.txt(f'DELETE FROM events WHERE events.id = {eventid}')
+       query2 = sqlalchemy.txt(f'DELETE FROM created_events where created_events.event_id = {eventid}')
+       conn.execute(query1)
+       conn.execute(query2)
+       
     flash('Event deleted.', 'success')
     return redirect(url_for('dashboard'))
 #endregion
