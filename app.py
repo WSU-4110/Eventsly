@@ -21,6 +21,7 @@ else:
 
 db = SQLAlchemy(app)
 engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=True)
+import models
 
 #Check if user logged in to access logout and dashboard
 def is_logged_in(f):
@@ -33,6 +34,7 @@ def is_logged_in(f):
             return redirect(url_for('login'))
     return wrap
 
+#region Basic Functionalities
 @app.route("/")
 def home():
     return redirect(url_for('index'))
@@ -61,7 +63,114 @@ def index():
 @app.route("/about.html")
 def about():
     return render_template("About.html", title="About Us")
+#endregion
 
+#region Account Functionalities
+@app.route("/signup.html", methods=['POST','GET'])
+def signup():
+    form = models.SignUpForm(request.form)
+    if request.method == 'POST' and form.validate():
+        encryptpassword = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
+
+        new_user = models.User(
+            firstname=form.firstname.data, 
+            lastname=form.lastname.data, 
+            phone=form.phone.data, 
+            email = form.email.data, 
+            username = form.username.data,
+            biography = form.biography.data,
+            password = encryptpassword,
+            signup_date = datetime.now(),
+        )
+        try:
+            db.session.add(new_user)
+            db.session.commit()
+            app.logger.info(f'User {form.username.data} account was created.')
+            flash('Your account has been created!', 'success')
+            return redirect(url_for('index'))
+        except:
+            flash('Unable to make your account','failure')
+            # print call stack
+            app.logger.warning(traceback.format_exc())
+            app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
+            return redirect(url_for('signup'))
+
+    return render_template("signup.html", form=form, title="Sign Up")
+
+@app.route("/login.html", methods =['GET','POST'])
+def login():
+    if request.method == 'POST':
+        #Get Form Fields
+        username_input = request.form['username']
+        password_input = request.form['password']
+
+        #Get user by username
+        stmt = select(models.User).where(models.User.username == username_input)
+        with engine.connect() as conn:
+            result = conn.execute(stmt).first()
+
+        app.logger.info(f'Query result: {result}')
+        app.logger.info(f'SELECT user query executed.\n Query: {stmt}')
+
+        if result != None:
+            #Get stored hash
+            password_data = result.password
+        
+            #Compare passwords
+            if sha256_crypt.verify(password_input, password_data):
+                session['logged_in'] = True
+                session['username'] = result.username
+                session['userid'] = result.id
+                session['name'] = f'{result.firstname} {result.lastname}'
+
+                flash('You are now logged in', 'success')
+                app.logger.info('Password input matched password stored in database')
+                return redirect(url_for('dashboard'))
+            else:
+                app.logger.info('Password input did not match password stored in database')
+                error = 'Invalid login'
+                return render_template('login.html', title = 'Log In',error=error)
+        else:
+            app.logger.info('No user found with that username')  
+            error = 'Username not found'
+            return render_template('login.html', title = 'Log In', error=error)
+
+    return render_template("login.html", title="Log In")
+
+
+@app.route('/logout')
+@is_logged_in #uses is_logged_in wrapper for this URL
+def logout():
+    session.clear()
+    flash('You are now logged out', 'success')
+    return redirect(url_for('login'))
+
+@app.route('/dashboard.html')
+@is_logged_in
+def dashboard():
+    with engine.begin() as conn:
+        query = sqlalchemy.text(f'SELECT * FROM events, created_events WHERE created_events.user_id = {session["userid"]} AND events.id = created_events.event_id ORDER BY created_events.id')
+        rows = conn.execute(query)
+        myEvents = rows.mappings().all()
+
+    app.logger.info(f'User events: {myEvents}')
+    return render_template('dashboard.html', title="Dashboard", myEvents=myEvents)
+
+@app.route('/deleteAccount')
+@is_logged_in
+def deleteAccount():
+    with engine.begin() as conn:
+        query1 = sqlalchemy.txt(f'DELETE FROM events WHERE events.id = created_events.eventid AND created_events.userid = {session["userid"]}')
+        query2 = sqlalchemy.txt(f'DELETE FROM created_events WHERE created_events.user_id = {session["userid"]}')
+        query3 = sqlalchemy.txt(f'DELETE FROM users WHERE users.id = {session["userid"]}')
+        conn.execute(query1)
+        conn.execute(query2)
+        conn.execute(query3)
+    
+    flash('Your account has been deleted.', 'success')
+    return redirect(url_for('index'))
+
+#endregion
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
       
