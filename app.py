@@ -162,12 +162,16 @@ def dashboard():
 @is_logged_in
 def deleteAccount():
     with engine.begin() as conn:
-        query1 = sqlalchemy.text(f'DELETE FROM events WHERE events.id = created_events.eventid AND created_events.userid = {session["userid"]}')
-        query2 = sqlalchemy.text(f'DELETE FROM created_events WHERE created_events.user_id = {session["userid"]}')
-        query3 = sqlalchemy.text(f'DELETE FROM users WHERE users.id = {session["userid"]}')
-        conn.execute(query1)
-        conn.execute(query2)
-        conn.execute(query3)
+        queryGetEvents = sqlalchemy.text(f'SELECT event_id FROM created_events WHERE created_events.user_id= {session["userid"]}')
+        rows = conn.execute(queryGetEvents)
+        queryDeleteFromCreatedEvents = sqlalchemy.text(f'DELETE FROM created_events WHERE created_events.user_id = {session["userid"]}')
+        conn.execute(queryDeleteFromCreatedEvents)
+        for row in rows:
+            queryDeleteFromEvents = sqlalchemy.text(f'DELETE FROM events WHERE events.id = {row.event_id}')
+            conn.execute(queryDeleteFromEvents)
+            app.logger.info(f'Deleted event with ID: {row.event_id}')
+        queryDeleteUser= sqlalchemy.text(f'DELETE FROM users WHERE users.id = {session["userid"]}')
+        conn.execute(queryDeleteUser)
     
     flash('Your account has been deleted.', 'success')
     return redirect(url_for('index'))
@@ -183,6 +187,7 @@ def deleteEvent(id):
        query3 = sqlalchemy.text(f'DELETE FROM events WHERE events.id = {eventid}')
        conn.execute(query1)
        conn.execute(query2)
+       conn.execute(query3)
 
     flash('Event deleted.', 'success')
     return redirect(url_for('dashboard'))
