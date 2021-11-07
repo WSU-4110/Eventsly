@@ -205,7 +205,7 @@ def dashboard():
         rows = conn.execute(query)
         myEvents = rows.mappings().all()
 
-    return render_template('dashboard.html', title="Dashboard", events=myEvents)
+    return render_template('dashboard.html', title="Dashboard", myEvents=myEvents)
 
 
 
