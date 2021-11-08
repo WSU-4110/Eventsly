@@ -167,6 +167,9 @@ form.user-form span.help-inline {
         border-radius: 80px;
         flex-flow: row wrap;
         justify-content: space-between;
+    }
+
+    form.user-form#signup {
         height: 85%;
         max-height: 600px;
         max-width: 700px;
