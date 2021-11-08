@@ -118,16 +118,7 @@ def signup():
             app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
             return redirect(url_for('signup'))
 
-    requirement_messages = {
-        'firstname' : form.firstname.description,
-        'lastname' : form.lastname.description,
-        'email' : form.email.description,
-        'phone' : form.phone.description,
-        'password' : form.password.description,
-        'username' : form.username.description,
-    }
-    
-    return render_template("signup.html", form=form, title="Sign Up", requirement_messages=requirement_messages)
+    return render_template("signup.html", form=form, title="Sign Up")
 
 @app.route("/login.html", methods =['GET','POST'])
 def login():

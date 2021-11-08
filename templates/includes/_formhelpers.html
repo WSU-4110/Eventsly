@@ -2,6 +2,7 @@
 {% macro render_field(field) %}
     {{ field.label }}
     {{ field(**kwargs)|safe }}
+    <span class='input-description'>{{ field.description }}</span>
     {% if field.errors %}
         {% for error in field.errors %}
             <span class='help-inline'>{{ error }}</span>

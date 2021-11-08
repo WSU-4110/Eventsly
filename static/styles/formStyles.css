@@ -2,87 +2,37 @@
 /*    general styles    */
 /*----------------------*/
 /*#region#*/
+main {
+  background-image: url(/static/images/signup-background2.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+body {
+  overflow-y: auto;
+}
+
 /*
-* signup form.user-form
+* general user form styles
 */
 form.user-form {
     align-items: center;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     background: rgba(255, 255, 255, 0.5);
-    border-radius: 80px;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    height: 90%;
-    max-height: 700px;
-    max-width: 800px;
-    width: 90%;
-    z-index: 1;
-}
-
-form.user-form h1, 
-form.user-form h2 {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    width: 100%;
+    padding: 30px;
 }
 
 form.user-form h1 {
-    font-size: 18pt;
-    margin-top: 20px;
-}
-
-form.user-form h2 {
-    font-size: 16pt;
-    margin-bottom: 15px;
-}
-
-form.user-form .form-item {
-    flex: 1 1 220px;
-    margin: 0 30px;
-    min-height: 90px;
-    min-width: 250px;
-    position: relative;
-}
-
-/* 
-* labels
-*/
-form.user-form label {
-    color:#a7a7a7;
-    left: 8px;
-    margin: 0;
-    padding: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 4px;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s;
-}
-
-form.user-form .move-label {
-    color: #3A3E5E;
-    font-size: 10pt;
-    font-weight: bold;
-    left: 5px;
-    top: -20px;
-}
-
-/* 
-* character counters 
-*/
-form#signup.user-form span.counter {
-    color:#3A3E5E;
-    font-size: 10pt;
-    position: absolute;
-    right: 8px;
-    top: -20px;
+    font-size: 20pt;
 }
 
 /* 
@@ -92,21 +42,21 @@ form.user-form input {
     border-style: none;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
-    font-size: 12pt;
+    font-size: 14pt;
     font-weight: 500;
-    height: 26px;
-    margin-bottom: 5px;
+    height: 30px;
+    margin: 5px 0 4px;
     width: 100%;
 }
 
 /*
-* text inputs
+* text/password inputs
 */
 form.user-form input[type='text'], 
 form.user-form input[type='password'] {
     border-style: none;
     outline: 2px solid #a7a7a7;
-    padding: 3px 25px 0 6px;
+    padding: 0 26px 0 4px;
 }
 
 form.user-form input[type='text']:focus, 
@@ -125,20 +75,28 @@ form.user-form input[type='password'].valid-field{
 }
 
 /*
+* form items
+*/ 
+form.user-form .form-item {
+    /* height: 120px; */
+    position: relative;
+    width: 100%;
+    margin-top: 35px;
+}
+
+/*
 * submit button 
 */
 form.user-form input[type='submit'] {
     background-color: #3A3E5E;
     border-radius: 5px;
     color: white;
-    height: 40px;
-    margin-bottom: 20px;
+    height: 50px;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
-    width: 100%;
 }
 
 form.user-form input[type='submit']:hover:not(.disable-submit) {
@@ -151,88 +109,127 @@ form.user-form input[type='submit'].disable-submit {
 }
 
 /*
-* invalid (error) messages on submit
+* labels/counters/requirement text
 */
-form.user-form span.help-inline {
-    bottom: -8px;
-    color: red;
-    font-size: 9pt;
-    left: 6px;
+form.user-form label {
+    color:#a7a7a7;
+    font-size: 14pt;
+    left: 2px;
+    margin: 0;
+    padding: 0;
     pointer-events: none;
-    vertical-align: text-top;
+    position: absolute;
+    top: 28px;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
 }
 
-/*
-* requirement messages
-*/
-form.user-form span.requirement {
+form.user-form .move-label {
+    color: #3A3E5E;
+    font-size: 12pt;
+    font-weight: bold;
+    top: 0;
+}
+
+form.user-form span {
     display: block;
-    font-size: 9pt;
     pointer-events: none;
+}
+
+form.user-form span.counter {
+    color:#3A3E5E;
+    font-size: 12pt;
+    float: right;
+}
+
+form.user-form span.input-description {
+    /* display: block; */
+    font-size: 12pt;
     text-align: left;
 }
 
-/*#endregion#*/
-/*--------------*/
-/*    mobile    */
-/*--------------*/
-/*#region#*/
-@media screen and (max-width: 800px), 
-        screen and (max-height: 700px) {
-    form.user-form {
-        border-radius: 0;
-        height: 100%;
-        justify-content: center;
-        max-height: 100%;
-        width: 100%;
-    }
-    
-    form.user-form h1 {
-        font-size: 18pt;
-        margin-bottom: 25px;
-        margin-top: 10px;
-    }
-
-    form.user-form h2 {
-        display: none;
-        font-size: 12pt;
-    }
-
-    form.user-form input {
-        height: 35px;
-    }
-
-    form.user-form label {
-        color: #3A3E5E;
-        font-size: 10pt;
-        font-weight: bold;
-        left: 5px;
-        top: -20px;
-    }
-
-    form.user-form .form-item {
-        min-height: 120px;
-        min-width: 85%;
-        max-width: 85%;
-    }
-
-    form.user-form input[type='submit'] {
-        margin-bottom: 30px;
-        min-width: 85%;
-    }
+form.user-form span.help-inline {
+    color: red;
+    /* display: block; */
+    font-size: 12pt;
+    text-align: left;
 }
 /*#endregion#*/
 /*---------------*/
 /*    Desktop    */
 /*---------------*/
 /*#region#*/
-@media screen and (min-width: 801px) and (min-height: 701px) {
+@media screen and (min-width: 700px) and (min-height: 700px) {
     form.user-form {
-        text-align: center;
+        border-radius: 80px;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        height: 85%;
+        max-height: 600px;
+        max-width: 700px;
+        width: 85%;
     }
+    
+    form.user-form h1 {
+        text-align: center;
+        width: 100%;
+    }
+
+    /*
+    * form items
+    */ 
+    form.user-form .form-item {
+        width: 48%;
+    }
+
+    /*
+    * all inputs
+    */ 
+    form.user-form input[type='text'],
+    form.user-form input[type='password'] {
+        height: 24px;
+        font-size: 12pt;
+    }
+
+    /*
+    * submit button 
+    */
     form.user-form input[type='submit'] {
-        margin-bottom: 30px;
-        max-width: 200px;
+        text-align: center;
+        height: 40px;
+        width: 180px;
+
+    }
+
+    form.user-form .form-item:last-of-type {
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    /*
+    * labels/counters/requirement text
+    */
+    form.user-form label {
+        font-size: 12pt;
+        left: 3px;
+        top: 24px;
+    }
+    
+    form.user-form .move-label,
+    form.user-form span.counter,
+    form.user-form span.input-description,
+    form.user-form span.help-inline {
+        font-size: 10pt;
+    }
+
+    form.user-form span.input-description,
+    form.user-form span.help-inline {
+        font-size: 10pt;
+        margin-left: 2px;
     }
 }
 /*#endregion#*/

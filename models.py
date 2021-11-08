@@ -7,7 +7,7 @@ class SignUpForm(Form):
     
     firstname = StringField("First Name", [validators.Length(min=1, max=50)], description='Must be between 1 and 50 characters', id='firstname', render_kw={'minlength': 1, 'maxlength': 50, 'required': True})
     lastname = StringField("Last Name", [validators.Length(min=1, max=50)], description='Must be between 1 and 50 characters', id='lastname', render_kw={'minlength': 1, 'maxlength': 50, 'required': True })
-    biography = StringField("Biography", [validators.Length(max=100)], id='biography', render_kw={'maxlength': 100})
+    biography = StringField("Biography", [validators.Length(max=100)], description='Brief description of yourself (optional)', id='biography', render_kw={'maxlength': 100})
     phone = StringField("Phone", [validators.Length(min=9, max=10)], description='Must be between 9 and 10 digits', id='phone', render_kw={'minlength': 9, 'maxlength': 10, 'required': True})
     username = StringField("Username", [validators.Length(min=4, max=30)], description='Must be between 4 and 30 characters', id='username', render_kw={'minlength': 4, 'maxlength': 30, 'required': True})
     email = StringField("Email", [validators.Length(min=6, max=50)], description='Must be between 6 and 50 characters', id='email', render_kw={'minlength': 6, 'maxlength': 50, 'required': True})
@@ -26,7 +26,7 @@ class SignUpForm(Form):
         id='password',
         render_kw={'minlength': 8, 'maxlength': 120, 'pattern': '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$', 'required': True}
     )
-    confirm = PasswordField("Confirm Password", validators=[validators.EqualTo("password", message="Passwords do not match.")], id='confirm')
+    confirm = PasswordField("Confirm Password", validators=[validators.EqualTo("password", message="Passwords do not match")], description='Must match password', id='confirm')
     
 
 class EventForm(Form):
