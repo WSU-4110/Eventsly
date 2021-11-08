@@ -25,7 +25,6 @@
 {% from "includes/_formhelpers.html" import render_field %}
 <form id="signup" class="user-form" action="/signup.html" method="POST">
   <h1>Sign-Up</h1>
-  <h2>Please fill out the information below</h2>
   <div class='form-item'>
     {{render_field(form.firstname, class_="form-input")}}
     <span class='counter'></span>
