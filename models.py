@@ -28,32 +28,40 @@ class SignUpForm(Form):
     )
     confirm = PasswordField("Confirm Password", id='confirm')
 
-class EventForm(Form):
-    '''Form fields with validation for event creation.'''
+# EventForm class, Builder Pattern implementation
+class EventFormBase(Form):
+    # Form fields with validation for event creation.
     title = StringField("Title", [validators.Length(min=1, max=50)])
-    description = StringField("Description", [validators.Length(min=1, max=500)])
     date = StringField("Date", [validators.Length(min=1, max=12)])
     latitude = FloatField("Latitude")
     longitude = FloatField("Longitude")
+    # For date: entering a value of 010203 stores it as 2001-02-03
+
+class EventFormFull(EventFormBase):
+    # Form fields for all possible fields that we save.
+    description = StringField("Description", [validators.Length(min=1, max=500)])
     street = StringField("Street", [validators.Length(min=1, max=100)])
     city = StringField("City", [validators.Length(min=1, max=50)])
     state = StringField("State", [validators.Length(min=2, max=2)])
-    # For date: entering a value of 010203 stores it as 2001-02-03
 
-class Event(db.Model):
-    '''Stores all events.'''
+# Event class, Builder Pattern implementation
+class EventBase(db.Model):
 
-    __tablename__ = "events"
+    __tablename__ = "events" # connects to events table in our database.
 
-    id = db.Column(db.Integer, primary_key=True)
+    # list of required attributes for an event.
+    id = db.Column(db.Integer, primary_key = True)
+    title = db.Column(db.String(100))
+    date = db.Column(db.DateTime)
     latitude = db.Column(db.Float)
     longitude = db.Column(db.Float)
+
+class EventFull(EventBase):
+    # full list of details that can be saved into the database
+    description = db.Column(db.Text)
     street = db.Column(db.String(100))
     city = db.Column(db.String(50))
     state = db.Column(db.String(2))
-    date = db.Column(db.DateTime)
-    description = db.Column(db.Text)
-    title = db.Column(db.String(100))
 
 class CreatedEvent(db.Model):
     '''Stores the event created and the user id of who created it.'''

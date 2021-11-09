@@ -163,10 +163,10 @@ def login():
 @app.route("/createEvent.html", methods=['POST','GET'])
 @is_logged_in
 def createEvent():
-    form = models.EventForm(request.form)
+    form = models.EventFormFull(request.form)
     if request.method == 'POST' and form.validate():
 
-        new_event = models.Event(
+        new_event = models.EventFull(
             title = form.title.data, 
             description = form.description.data,
             date = form.date.data, 
