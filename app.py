@@ -232,9 +232,10 @@ def search():
 @is_logged_in
 def createEvent():
     with engine.begin() as conn:
-        queryGetMyEvents = sqlalchemy.text(f'SELECT COUNT (*) FROM events, created_events WHERE created_events.user_id = {session["userid"]} AND events.id = created_events.event_id AND CURRENT_TIMESTAMP<events.date')
+        queryGetMyEvents = sqlalchemy.text(f'SELECT COUNT (*) FROM events, created_events WHERE created_events.user_id = {session["userid"]} AND events.id = created_events.event_id AND CURRENT_TIMESTAMP < events.date')
         result = conn.execute(queryGetMyEvents).first()
-        app.logger.info(f'Result: {result}')
+        answer = result[0]
+        app.logger.info(f'events this user has created: {answer}')
     
     form = models.EventForm(request.form)
     if request.method == 'POST' and form.validate():
@@ -249,7 +250,7 @@ def createEvent():
             city = form.city.data,
             state = form.state.data,
         )
-        if (result >= 15):
+        if (answer >= 15):
             
             # print call stack
             app.logger.warning(traceback.format_exc())
