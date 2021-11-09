@@ -36,17 +36,26 @@
             <div class='nav-menu'>
                 <a href="index.html" class="nav-item {{'active' if title == 'Eventsly'}}">Home</a>
                 {% if session.logged_in %}
+				return
+                {
                 <a href="bookmarks.html" class="nav-item {{'active' if title == 'Bookmarks'}}">Bookmarks</a>
                 {% endif %}
+                }
                 <a href="about.html" class="nav-item {{'active' if title == 'About Us'}}">About Us</a>
                 <div class="spacer"></div>
                 {% if session.logged_in %}
+				return
+                {
                 <a href="/logout" class="nav-item">Logout</a>
                 <a href="dashboard.html" class="nav-item {{'active' if title == 'Dashboard'}}">Dashboard</a>
+                }
                 {% else %}
+				return
+                {
                 <a href="login.html" class="nav-item {{'active' if title == 'Log In'}}">Log In</a>
                 <a href='signup.html' class="nav-item {{'active' if title == 'Sign Up'}}">Sign Up</a>
                 {% endif %}
+                }
             </div>
             <form class='searchbar' action="/search.html" method="POST">
                 <label for="searchbox"></label>
