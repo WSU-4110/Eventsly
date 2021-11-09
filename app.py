@@ -78,13 +78,13 @@ def bookmarks():
 
         elif sort == 'orderBookmarks':
             query1 = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
-            rows1 = conn.execute(query1)
-            bookmarkpull = rows1.mappings().all()
+            rows = conn.execute(query1)
+            bookmarkpull = rows.mappings().all()
 
         else:
             query1 = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
-            rows1 = conn.execute(query1)
-            bookmarkpull = rows1.mappings().all()
+            rows = conn.execute(query1)
+            bookmarkpull = rows.mappings().all()
 
     return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
