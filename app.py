@@ -175,6 +175,7 @@ def deleteAccount():
         conn.execute(queryDeleteBookmarks)
         conn.execute(queryDeleteUser)
     
+    session.clear()
     flash('Your account has been deleted.', 'success')
     return redirect(url_for('index'))
 
