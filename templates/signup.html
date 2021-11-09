@@ -8,39 +8,39 @@
 
 {% block main %}
 {% from "includes/_formhelpers.html" import render_field %}
-<form id="signup" class="user-form" action="/signup.html" method="POST">
+<form id="signup" class="frosted-glass" action="/signup.html" method="POST">
   <h1>Sign-Up</h1>
   <div class='form-item'>
     <span class='counter'></span>
-    {{render_field(form.firstname, class_="form-input")}}
+    {{render_field(form.firstname)}}
   </div>
   <div class='form-item'>
     <span class='counter'></span>
-    {{render_field(form.lastname, class_="form-input")}}
+    {{render_field(form.lastname)}}
   </div>
   <div class='form-item'>
     <span class='counter'></span>
-    {{render_field(form.email, class_="form-input")}}
+    {{render_field(form.email)}}
   </div>
   <div class='form-item'>
     <span class='counter'></span>
-    {{render_field(form.phone, class_="form-input")}}
+    {{render_field(form.phone)}}
   </div>
   <div class='form-item'>
     <span class='counter'></span>
-    {{render_field(form.username, class_="form-input")}}
+    {{render_field(form.username)}}
   </div>
   <div class='form-item'>
     <span class='counter'></span>
-    {{render_field(form.biography, class_="form-input")}}
+    {{render_field(form.biography)}}
   </div>
   <div class='form-item'>
     <span class='counter'></span>
-    {{render_field(form.password, class_="form-input")}}
+    {{render_field(form.password)}}
   </div>
   <div class='form-item'>
     <span class='counter' style="visibility: hidden;"></span>
-    {{render_field(form.confirm, class_="form-input")}}
+    {{render_field(form.confirm)}}
   </div>
   <div class='form-item'>
     <input type="submit" value="Sign Up">

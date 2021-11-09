@@ -19,26 +19,39 @@ body {
 /*
 * general user form styles
 */
-form.user-form {
+.frosted-glass {
     align-items: center;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     background: rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
     display: flex;
     flex-flow: column;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
+    height: 100%;
     padding: 30px;
+    width: 100%;
 }
 
-form.user-form h1 {
+.frosted-glass h1 {
     font-size: 20pt;
 }
 
+
+/*
+* form items
+*/ 
+.frosted-glass .form-item {
+    /* height: 120px; */
+    position: relative;
+    width: 100%;
+    margin-top: 35px;
+}
 /* 
 * all inputs 
 */
-form.user-form input {
+.frosted-glass input {
     border-style: none;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
@@ -52,42 +65,32 @@ form.user-form input {
 /*
 * text/password inputs
 */
-form.user-form input[type='text'], 
-form.user-form input[type='password'] {
+.frosted-glass input[type='text'], 
+.frosted-glass input[type='password'] {
     border-style: none;
     outline: 2px solid #a7a7a7;
     padding: 0 26px 0 4px;
 }
 
-form.user-form input[type='text']:focus, 
-form.user-form input[type='password']:focus {
-    outline: 2px solid #a7a7a7;
+.frosted-glass input[type='text']:focus, 
+.frosted-glass input[type='password']:focus {
+    outline: 2px solid #cfcfcf;
 }
 
-form.user-form input[type='text'].invalid-field,
-form.user-form input[type='password'].invalid-field {
+.frosted-glass input[type='text'].invalid-field,
+.frosted-glass input[type='password'].invalid-field {
     outline: 2px solid red;
 }
 
-form.user-form input[type='text'].valid-field, 
-form.user-form input[type='password'].valid-field{
+.frosted-glass input[type='text'].valid-field, 
+.frosted-glass input[type='password'].valid-field{
     outline: 2px solid #7b82b3;
-}
-
-/*
-* form items
-*/ 
-form.user-form .form-item {
-    /* height: 120px; */
-    position: relative;
-    width: 100%;
-    margin-top: 35px;
 }
 
 /*
 * submit button 
 */
-form.user-form input[type='submit'] {
+.frosted-glass input[type='submit'] {
     background-color: #3A3E5E;
     border-radius: 5px;
     color: white;
@@ -99,27 +102,25 @@ form.user-form input[type='submit'] {
     transition: 0.3s;
 }
 
-form.user-form input[type='submit']:hover:not(.disable-submit) {
+.frosted-glass input[type='submit']:hover:not(.disable-submit) {
     background-color: #7b82b3;
     cursor: pointer;
 }
 
-form.user-form input[type='submit'].disable-submit {
+.frosted-glass input[type='submit'].disable-submit {
     opacity: 0.5;
 }
 
 /*
 * labels/counters/requirement text
 */
-form.user-form label {
+.frosted-glass label {
     color:#a7a7a7;
     font-size: 14pt;
-    left: 2px;
     margin: 0;
     padding: 0;
     pointer-events: none;
     position: absolute;
-    top: 28px;
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -ms-transition: 0.5s;
@@ -127,31 +128,48 @@ form.user-form label {
     transition: 0.5s;
 }
 
-form.user-form .move-label {
+#signup label {
+    left: 2px;
+    top: 28px;
+}
+
+#login label {
+    left: 2px;
+    top: 9px;
+}
+
+.frosted-glass .move-label {
     color: #3A3E5E;
     font-size: 12pt;
     font-weight: bold;
+}
+
+#signup .move-label {
     top: 0;
 }
 
-form.user-form span {
+#login .move-label {
+    top: -20px;
+}
+
+.frosted-glass span {
     display: block;
     pointer-events: none;
 }
 
-form.user-form span.counter {
+.frosted-glass span.counter {
     color:#3A3E5E;
     font-size: 12pt;
     float: right;
 }
 
-form.user-form span.input-description {
+.frosted-glass span.input-description {
     /* display: block; */
     font-size: 12pt;
     text-align: left;
 }
 
-form.user-form span.help-inline {
+.frosted-glass span.help-inline {
     color: red;
     /* display: block; */
     font-size: 12pt;
@@ -163,20 +181,28 @@ form.user-form span.help-inline {
 /*---------------*/
 /*#region#*/
 @media screen and (min-width: 700px) and (min-height: 700px) {
-    form.user-form {
+    .frosted-glass {
+        box-sizing: initial;
         border-radius: 80px;
         flex-flow: row wrap;
         justify-content: space-between;
     }
 
-    form.user-form#signup {
+    .frosted-glass#signup {
         height: 85%;
         max-height: 600px;
         max-width: 700px;
         width: 85%;
     }
+
+    .frosted-glass#login {
+        height: 85%;
+        max-height: 300px;
+        max-width: 600px;
+        width: 85%;
+    }
     
-    form.user-form h1 {
+    .frosted-glass h1 {
         text-align: center;
         width: 100%;
     }
@@ -184,15 +210,15 @@ form.user-form span.help-inline {
     /*
     * form items
     */ 
-    form.user-form .form-item {
+    .frosted-glass .form-item {
         width: 48%;
     }
 
     /*
     * all inputs
     */ 
-    form.user-form input[type='text'],
-    form.user-form input[type='password'] {
+    .frosted-glass input[type='text'],
+    .frosted-glass input[type='password'] {
         height: 24px;
         font-size: 12pt;
     }
@@ -200,14 +226,13 @@ form.user-form span.help-inline {
     /*
     * submit button 
     */
-    form.user-form input[type='submit'] {
+    .frosted-glass input[type='submit'] {
         text-align: center;
         height: 40px;
         width: 180px;
-
     }
 
-    form.user-form .form-item:last-of-type {
+    .frosted-glass .form-item:last-of-type {
         margin-top: 10px;
         text-align: center;
         width: 100%;
@@ -216,21 +241,36 @@ form.user-form span.help-inline {
     /*
     * labels/counters/requirement text
     */
-    form.user-form label {
+    .frosted-glass label {
         font-size: 12pt;
+    }
+
+    #signup label {
         left: 3px;
         top: 24px;
     }
-    
-    form.user-form .move-label,
-    form.user-form span.counter,
-    form.user-form span.input-description,
-    form.user-form span.help-inline {
+
+    #login label {
+        top: 8px;
+    }
+
+    .frosted-glass .move-label {
         font-size: 10pt;
     }
 
-    form.user-form span.input-description,
-    form.user-form span.help-inline {
+    #login .move-label {
+        top: -17px;
+    }
+
+    
+    .frosted-glass span.counter,
+    .frosted-glass span.input-description,
+    .frosted-glass span.help-inline {
+        font-size: 10pt;
+    }
+
+    .frosted-glass span.input-description,
+    .frosted-glass span.help-inline {
         font-size: 10pt;
         margin-left: 2px;
     }
