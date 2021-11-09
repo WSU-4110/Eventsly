@@ -168,9 +168,12 @@ def deleteAccount():
         conn.execute(queryDeleteFromCreatedEvents)
         for row in rows:
             queryDeleteFromEvents = sqlalchemy.text(f'DELETE FROM events WHERE events.id = {row.event_id}')
+            queryDeleteEventsFromBookmarks = sqlalchemy.text(f'DELETE FROM bookmarks where bookmarks.event_id = {row.event_id}')
             conn.execute(queryDeleteFromEvents)
+            conn.execute(queryDeleteEventsFromBookmarks)
             app.logger.info(f'Deleted event with ID: {row.event_id}')
         queryDeleteBookmarks = sqlalchemy.text(f'DELETE FROM bookmarks where bookmarks.user_id = {session["userid"]}')
+        queryDeleteEventsFromBookmarks = sqlalchemy.text(f'DELETE FROM bookmarks where')
         queryDeleteUser= sqlalchemy.text(f'DELETE FROM users WHERE users.id = {session["userid"]}')
         conn.execute(queryDeleteBookmarks)
         conn.execute(queryDeleteUser)
