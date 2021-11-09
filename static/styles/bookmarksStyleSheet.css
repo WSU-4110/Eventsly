@@ -13,8 +13,7 @@ main {
   }
 
   .bm-table {
-    width: 100%;
-    max-width: 100%;
+    
     margin-left: 1rem;
     margin-right: 1rem;
   }
@@ -22,6 +21,7 @@ main {
   .bm-table td, .bm-table th {
     text-align: center;
     padding: 8px;
+    font-size: 0.75rem;
   }
 
   .bm-table td, .bm-table th, .bm-table tcol {
@@ -33,6 +33,7 @@ main {
   .bm-table thead th {
     color: #ffffff;
     background: #69779C;
+    font-size: 0.75rem;
   }
 
   .bm-table thead th:nth-child(odd) {
