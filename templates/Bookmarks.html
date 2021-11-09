@@ -23,8 +23,14 @@
 {% block main %}
 <form class="signup">
 <h1><i class="fas fa-bookmark"></i> Bookmarks</h1>
+  <h3>Sort bookmarks by:</h3>
+  <form action="{{ url_for('bookmarks') }}" name="sort" method="POST">
+  <button type="submit" name="orderTime" value="orderTime"> Time </button>
+  <button type="submit" name="orderCity" value="orderCity"> City </button>
+  <button type="submit" name="orderBookmarks" value="orderBookmarks"> Bookmark Order </button>
+  </form>
 
-{% if bookmarkpull|length > 0 %}
+{% if bookmarkpull %}
 <table class="bm-table">
     <thead>
       <tr>

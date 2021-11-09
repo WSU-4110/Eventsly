@@ -61,11 +61,30 @@ def index():
 
 @app.route("/bookmarks.html")
 @is_logged_in
+
 def bookmarks():
+    sort = request.form.get("sort")
     with engine.begin() as conn:
-        query = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
-        rows = conn.execute(query)
-        bookmarkpull = rows.mappings().all()
+    
+        if sort == 'orderCity':
+            query3 = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY events.city')
+            rows = conn.execute(query3)
+            bookmarkpull = rows.mappings().all()
+
+        elif sort == 'orderTime':
+            query2 = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY events.date')
+            rows = conn.execute(query2)
+            bookmarkpull = rows.mappings().all()
+
+        elif sort == 'orderBookmarks':
+            query1 = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
+            rows1 = conn.execute(query1)
+            bookmarkpull = rows1.mappings().all()
+
+        else:
+            query1 = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
+            rows1 = conn.execute(query1)
+            bookmarkpull = rows1.mappings().all()
 
     return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
