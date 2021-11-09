@@ -271,8 +271,11 @@ body {
 
     .frosted-glass span.input-description,
     .frosted-glass span.help-inline {
-        font-size: 10pt;
         margin-left: 2px;
+    }
+
+    .frosted-glass span.input-description {
+        position: absolute;
     }
 }
 /*#endregion#*/
