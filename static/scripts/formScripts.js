@@ -1,5 +1,5 @@
 window.onload = function () {
-    var formItems = document.getElementsByClassName('form-item');
+    var formItems = document.getElementsByClassName('content-box');
     var submit = null;
     var formValidator = new FormValidator();
 
