@@ -2,8 +2,8 @@
 
 {% block head %}
 <style type="text/css">
-  main { 
-    padding: 0; 
+  main {
+    padding: 0;
   }
 </style>
 <!-- Required for Leaflet map -->
@@ -39,11 +39,23 @@
 <div id="mapid"></div>
 <div id="search-box"></div>
 <div id="result"></div>
+{% endblock %}
+
+{% block extraScripts %}
 <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
   charset="utf-8"></script>
 <script src="/static/scripts/mapScripts.js"></script>
 <script>
+  initialLat = 42.3591;
+  initialLng = -83.0665;
+  initialZoom = 15;
+  let map =
+    new PinPlacing(
+      new Geocoding(
+        new BaseMap('mapid', initialLat, initialLng, initialZoom)
+      )
+    );
   var pins = JSON.parse('{{pins | tojson | safe}}')
-  loadPins(pins)
- </script>
+  map = new PinLoading(map, pins);
+</script>
 {% endblock %}
