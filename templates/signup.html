@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="/static/styles/formStyles.css">
+<link rel="stylesheet" href="/static/styles/frostedStyles.css">
 <script src='/static/scripts/FormValidator.js'></script>
 <script src='/static/scripts/formScripts.js'></script>
 {% endblock %}
@@ -10,39 +10,39 @@
 {% from "includes/_formhelpers.html" import render_field %}
 <form id="signup" class="frosted-glass" action="/signup.html" method="POST">
   <h1>Sign-Up</h1>
-  <div class='form-item'>
+  <div class='content-box'>
     <span class='counter'></span>
     {{render_field(form.firstname)}}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     <span class='counter'></span>
     {{render_field(form.lastname)}}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     <span class='counter'></span>
     {{render_field(form.email)}}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     <span class='counter'></span>
     {{render_field(form.phone)}}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     <span class='counter'></span>
     {{render_field(form.username)}}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     <span class='counter'></span>
     {{render_field(form.biography)}}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     <span class='counter'></span>
     {{render_field(form.password)}}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     <span class='counter' style="visibility: hidden;"></span>
     {{render_field(form.confirm)}}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     <input type="submit" value="Sign Up">
   </div>
 </form>
