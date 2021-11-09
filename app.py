@@ -231,6 +231,11 @@ def search():
 @app.route("/createEvent.html", methods=['POST','GET'])
 @is_logged_in
 def createEvent():
+    with engine.begin() as conn:
+        queryGetMyEvents = sqlalchemy.text(f'SELECT COUNT (*) FROM events, created_events WHERE created_events.user_id = {session["userid"]} AND events.id = created_events.event_id AND CURRENT_TIMESTAMP<events.date')
+        result = conn.execute(queryGetMyEvents).first()
+        app.logger.info(f'Result: {result}')
+    
     form = models.EventForm(request.form)
     if request.method == 'POST' and form.validate():
 
@@ -244,35 +249,43 @@ def createEvent():
             city = form.city.data,
             state = form.state.data,
         )
-        try:
-            db.session.add(new_event)
-            db.session.commit()
-            app.logger.info(f'Event {form.title.data} was created.')
-
-                    #After inserting event, get event id and add to created_events table
-            stmt = select(models.Event).order_by(models.Event.id.desc())
-            with engine.begin() as conn:
-                result = conn.execute(stmt).first()
-                
-            app.logger.info(f"Most recent event: {result}")
-
-            newCreatedEvent = models.CreatedEvent(
-                event_id = result.id,
-                user_id = session['userid']
-            )
-
-            db.session.add(newCreatedEvent)
-            db.session.commit()
-            app.logger.info(f"New Created Event: {newCreatedEvent}")
-
-            flash('Your event has been created!', 'success')
-            return redirect(url_for('index'))
-        except:
-            flash('Unable to make your event','failure')
+        if (result >= 15):
+            
             # print call stack
             app.logger.warning(traceback.format_exc())
             app.logger.warning(f"Event {form.title.data} was unable to be created. /////")
+            flash('Unable to make your event. You have hit the event creation limit.','failure')
             return redirect(url_for('createEvent'))
+        else:
+            try:
+                db.session.add(new_event)
+                db.session.commit()
+                app.logger.info(f'Event {form.title.data} was created.')
+
+                        #After inserting event, get event id and add to created_events table
+                stmt = select(models.Event).order_by(models.Event.id.desc())
+                with engine.begin() as conn:
+                    result = conn.execute(stmt).first()
+                    
+                app.logger.info(f"Most recent event: {result}")
+
+                newCreatedEvent = models.CreatedEvent(
+                    event_id = result.id,
+                    user_id = session['userid']
+                )
+
+                db.session.add(newCreatedEvent)
+                db.session.commit()
+                app.logger.info(f"New Created Event: {newCreatedEvent}")
+
+                flash('Your event has been created!', 'success')
+                return redirect(url_for('index'))
+            except:
+                flash('Unable to make your event','failure')
+                # print call stack
+                app.logger.warning(traceback.format_exc())
+                app.logger.warning(f"Event {form.title.data} was unable to be created. /////")
+                return redirect(url_for('createEvent'))
 
 
 
