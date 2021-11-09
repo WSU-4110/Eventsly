@@ -1,27 +1,13 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<style>
-  main {
-    background-image: url(/static/images/signup-background2.png);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-
-  body {
-    overflow-y: auto;
-  }
-</style>
+<link rel="stylesheet" href="/static/styles/bookmarksStyleSheet.css">
 <link rel="stylesheet" href="/static/styles/formStyles.css">
 <link rel="stylesheet" href="/static/styles/bookmarkStyleSheet.css">
 {% endblock %}
 
 {% block main %}
-<form class="signup">
+<form class="user-form">
 <h1><i class="fas fa-bookmark"></i> Bookmarks</h1>
 
 {% if bookmarkpull|length > 0 %}

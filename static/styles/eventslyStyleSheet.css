@@ -1,4 +1,7 @@
-/* general styles for all pages */
+/*----------------*/
+/* general styles */
+/*----------------*/
+/*#region#*/
 html,
 body {
   height: 100%;
@@ -8,8 +11,8 @@ body {
 body {
     background-color: #F6F5F5;
     color: #3A3E5E;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     flex-flow: column;
     height: 100%;
     overflow: hidden;
@@ -19,7 +22,9 @@ h1 {
   margin: 0;
 }
 
-/* flexbox styling */
+/*
+* 3 row flexbox 
+*/
 header {
   flex: 0 1 auto;
 }
@@ -33,13 +38,15 @@ footer {
   flex: 0 1 auto;
 }
 
-/* event create button on index.html */
+/* 
+* event create button on index.html 
+*/
 .event-create { 
-  position: absolute;
-  left: 50%;
   bottom: 64px;
-  z-index: 2;
   display: flex;
+  left: 50%;
+  position: absolute;
+  z-index: 2;
   -webkit-transform: translate(-50%);
   -moz-transform: translate(-50%);
   -ms-transform: translate(-50%);
@@ -50,10 +57,6 @@ footer {
   -ms-transition-duration: 1s;
   -o-transition-duration: 1s;
   transition-duration: 1s;
-}
-
-.event-create .fa-stack .fa-plus {
-  color: white;
 }
 
 .event-create .fa-stack {
@@ -77,20 +80,28 @@ footer {
   transition-duration: 0.3s;
 }
 
-.fas#event-circle {
+.event-create .fa-plus {
+  color: white;
+}
+
+.event-create #event-circle {
   color: #3A3E5E;
 }
 
-
-.errormsg{
-  color: #D8000C;
+/*
+* error messages - TODO: VERIFY USE?
+*/
+.errormsg {
   background-color: #FFD2D2;
+  color: #D8000C;
   margin: 10px 0px;
   padding:12px;
 }
-.successmsg{
-  color: #4F8A10;
+
+.successmsg {
   background-color: #DFF2BF;
+  color: #4F8A10;
   margin: 10px 0px;
   padding:12px;
 }
+/*#endregion#*/
