@@ -263,7 +263,7 @@ def createEvent():
                 db.session.commit()
                 app.logger.info(f'Event {form.title.data} was created.')
 
-                        #After inserting event, get event id and add to created_events table
+                # After inserting event, get event id and add to created_events table
                 stmt = select(models.Event).order_by(models.Event.id.desc())
                 with engine.begin() as conn:
                     result = conn.execute(stmt).first()
