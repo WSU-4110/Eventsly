@@ -12,8 +12,12 @@ window.onload = function () {
             if (label && input) {
                 // set up label positions and counters
                 initLabelPos(input, label);
-                countChars(input, span); // initialize counters to 0
-                bindInputEvents(input, span, label);
+                bindInputEvents(input, label);
+
+                if (span) {
+                    countChars(input, span); // initialize counters to 0
+                    input.addEventListener('input', function () { countChars(input, span); });
+                }
 
                 // add a validator for this input
                 formValidator.addValidator(input);
@@ -70,10 +74,9 @@ window.onload = function () {
 
 }
 
-function bindInputEvents(input, span, label) {
+function bindInputEvents(input, label) {
     input.addEventListener('focusin', function () { moveLabelPos(label); });
     input.addEventListener('focusout', function () { defaultLabelPos(input, label); });
-    input.addEventListener('input', function () { countChars(input, span); });
 }
 
 /* count the number of chars in the given input field */
