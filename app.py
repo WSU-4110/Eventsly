@@ -202,6 +202,10 @@ def logout():
 def dashboard():
     return render_template('dashboard.html', title="Dashboard")
 
+@app.route('/event-details.html')
+def eventDetails():
+    return render_template('event-details.html', title="Event Details")
+
 
 
 if __name__ == "__main__":
