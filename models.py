@@ -1,5 +1,5 @@
 from wtforms import Form, StringField, PasswordField, validators
-from wtforms.fields.core import DateField, FloatField
+from wtforms.fields.core import DateField, DecimalField, FloatField
 from app import db
 
 class SignUpForm(Form):
@@ -34,8 +34,8 @@ class EventForm(Form):
     title = StringField("Title", [validators.Length(min=1, max=50)], description='Must be between 1 and 50 characters', id='title', render_kw={'minlength': 1, 'maxlength': 50, 'required': True})
     description = StringField("Description", [validators.Length(min=1, max=500)], description='Must be between 1 and 500 characters', id='description', render_kw={'minlength': 1, 'maxlength': 500, 'required': True})
     date = StringField("Date", [validators.Length(min=1, max=12)], description='Must be between 1 and 12 characters', id='date', render_kw={'minlength': 1, 'maxlength': 12, 'required': True})
-    latitude = FloatField("Latitude", [validators.Length(min=1)], description='Latitude of event', id='latitude', render_kw={'minlength': 1, 'required': True})
-    longitude = FloatField("Longitude", [validators.Length(min=1)], description='Longitude of event', id='longitude', render_kw={'minlength': 1, 'required': True})
+    latitude = StringField("Latitude", [validators.Length(min=1)], description='Latitude of event', id='latitude', render_kw={'minlength': 1, 'required': True})
+    longitude = StringField("Longitude", [validators.Length(min=1)], description='Longitude of event', id='longitude', render_kw={'minlength': 1, 'required': True})
     street = StringField("Street", [validators.Length(min=1, max=100)], description='Must be between 1 and 100 characters', id='street', render_kw={'minlength': 1, 'maxlength': 100, 'required': True})
     city = StringField("City", [validators.Length(min=1, max=50)], description='Must be between 1 and 50 characters', id='city', render_kw={'minlength': 1, 'maxlength': 50, 'required': True})
     state = StringField("State", [validators.Length(min=2, max=2)], description='Must be 2 characters', id='state', render_kw={'minlength': 2, 'maxlength': 2, 'required': True})
