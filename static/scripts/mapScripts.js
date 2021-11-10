@@ -108,9 +108,17 @@ class PinPlacing extends BaseMapDecorator {
       else {
         marker = new L.Marker(e.latlng, { draggable: true }).addTo(this);
         marker.bindPopup('Your event will take place here!');
+
         if (retriveLatLng) {
-          document.getElementById('latitude').value = e.latlng['lat'];
-          document.getElementById('longitude').value = e.latlng['lng'];
+          let lat = document.getElementById('latitude');
+          let lng = document.getElementById('longitude');
+
+          lat.value = e.latlng['lat']
+          lng.value = e.latlng['lng'];
+
+          // move the label out of the input on map click
+          lat.previousElementSibling.classList.add('move-label');
+          lng.previousElementSibling.classList.add('move-label');
         }
       }
     });

@@ -128,12 +128,12 @@ body {
     transition: 0.5s;
 }
 
-#signup label {
+#signup-form label {
     left: 2px;
     top: 28px;
 }
 
-#login label {
+#login-form label {
     left: 2px;
     top: 9px;
 }
@@ -144,11 +144,11 @@ body {
     font-weight: bold;
 }
 
-#signup .move-label {
+#signup-form .move-label {
     top: 0;
 }
 
-#login .move-label {
+#login-form .move-label {
     top: -20px;
 }
 
@@ -188,14 +188,14 @@ body {
         justify-content: space-between;
     }
 
-    .frosted-glass#signup {
+    .frosted-glass#signup-form {
         height: 85%;
         max-height: 600px;
         max-width: 700px;
         width: 85%;
     }
 
-    .frosted-glass#login {
+    .frosted-glass#login-form {
         height: 85%;
         max-height: 300px;
         max-width: 600px;
@@ -264,12 +264,12 @@ body {
         font-size: 12pt;
     }
 
-    #signup label {
+    #signup-form label {
         left: 3px;
         top: 24px;
     }
 
-    #login label {
+    #login-form label {
         top: 8px;
     }
 
@@ -277,7 +277,7 @@ body {
         font-size: 10pt;
     }
 
-    #login .move-label {
+    #login-form .move-label {
         top: -17px;
     }
 

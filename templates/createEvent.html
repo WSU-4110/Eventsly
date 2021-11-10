@@ -4,6 +4,8 @@
 <!-- Our Imports -->
 <link rel="stylesheet" href="/static/styles/mapStyleSheet.css">
 <link rel="stylesheet" href="/static/styles/createEventStyleSheet.css">
+<script src="/static/scripts/FormValidator.js"></script>
+<script src="/static/scripts/formScripts.js"></script>
 
 
 <!-- Required for Leaflet map -->
@@ -21,54 +23,51 @@
 <link rel="stylesheet"
   href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
 <script src="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.js"></script>
-
-<style>
-  main {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0;
-  }
-
-  body {
-    overflow-y: auto;
-  }
-</style>
 {% endblock %}
 
 {% block main %}
 {% from "includes/_formhelpers.html" import render_field %}
-<form class='create-event' action="/createEvent.html" method="POST">
+<form class='create-event validated-form' id='create-event-form' action="/createEvent.html" method="POST">
+  <h1>Event Details</h1>
   <div class='content-box'>
+    <span class='counter'></span>
     {{ render_field(form.title) }}
   </div>
   <div class='content-box'>
+    <span class='counter'></span>
     {{ render_field(form.description) }}
   </div>
   <div class='content-box'>
+    <span class='counter'></span>
     {{ render_field(form.date) }}
   </div>
   <div class='content-box'>
-    {{ render_field(form.latitude) }}
-  </div>
-  <div class='content-box'>
-    {{ render_field(form.longitude) }}
-  </div>
-  <div class='content-box'>
+    <span class='counter'></span>
     {{ render_field(form.street) }}
   </div>
   <div class='content-box'>
+    <span class='counter'></span>
     {{ render_field(form.city) }}
   </div>
   <div class='content-box'>
+    <span class='counter'></span>
     {{ render_field(form.state) }}
   </div>
   <div class='content-box'>
-    <input type="submit" value="Create Event!" class="formbtn">
+    <span class='counter' style="visibility: hidden;"></span>
+    {{ render_field(form.latitude) }}
+  </div>
+  <div class='content-box'>
+    <span class='counter' style="visibility: hidden;"></span>
+    {{ render_field(form.longitude) }}
+  </div>
+  <div class='content-box'>
+    <input type="submit" value="Create Event!" id="create-event">
   </div>
 </form>
 
 <!-- Leaflet Map & plugins -->
+<div id="create-event-spacer"></div>
 <div id="create-event-map" class="map"></div>
 <div id="search-box"></div>
 <div id="result"></div>

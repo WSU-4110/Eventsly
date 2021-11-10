@@ -6,40 +6,39 @@
 * general user form styles
 */
 main {
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     padding: 0;
 }
-  
-body {
-  overflow-y: auto;
-}
-
 
 .create-event {
-    align-items: center;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
     background: white;
-    box-sizing: border-box;
+    border-right: 2px solid #3A3E5E;
     display: flex;
     flex-flow: column;
-    flex: 1 2 auto;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     height: 100%;
-    padding: 30px;
-    width: 100%;
-    min-width: 200px;
-    max-width: 350px;
+    left: 0;
+    overflow-y: auto;
+    padding: 0 10px;
+    position: absolute;
+    top: 0;
+    width: 200px;
+    z-index: 2;
+}
+#create-event-spacer {
+    height: 100%;
+    width: 222px;
 }
 
 .create-event h1 {
     font-size: 20pt;
+    text-align: center;
+    margin-top: 70px;
 }
-
 
 /*
 * form items
@@ -48,7 +47,7 @@ body {
     /* height: 120px; */
     position: relative;
     width: 100%;
-    margin-top: 35px;
+    margin-top: 30px;
 }
 /* 
 * all inputs 
@@ -97,6 +96,7 @@ body {
     border-radius: 5px;
     color: white;
     height: 50px;
+    margin-bottom: 80px;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -ms-transition: 0.3s;
@@ -120,6 +120,7 @@ body {
 .create-event label {
     color:#a7a7a7;
     font-size: 14pt;
+    left: 3px;
     margin: 0;
     padding: 0;
     pointer-events: none;
@@ -129,13 +130,14 @@ body {
     -ms-transition: 0.5s;
     -o-transition: 0.5s;
     transition: 0.5s;
+    top: 27px;
 }
 
 .create-event .move-label {
     color: #3A3E5E;
     font-size: 12pt;
     font-weight: bold;
-    top: -16px;
+    top: 0;
 }
 
 .create-event span {
@@ -167,9 +169,13 @@ body {
 /*---------------*/
 /*#region#*/
 @media screen and (min-width: 700px) and (min-height: 700px) {
-    .create-event h1 {
-        text-align: center;
-        width: 100%;
+    .create-event {
+        padding: 0 20px;
+        width: 300px;
+    }
+
+    #create-event-spacer {
+        min-width: 342px;
     }
 
     /*
@@ -194,7 +200,7 @@ body {
     .create-event label {
         font-size: 12pt;
         left: 3px;
-        top: 8px;
+        top: 24px;
     }
 
     .create-event .move-label {
