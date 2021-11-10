@@ -1,18 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<style>
-  main {
-    background-image: url(/static/images/signup-background2.png);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-</style>
-<link rel="stylesheet" href="/static/styles/formStyles.css">
+<link rel="stylesheet" href="/static/styles/frostedStyles.css">
 <script src='/static/scripts/FormValidator.js'></script>
 <script src='/static/scripts/formScripts.js'></script>
 {% endblock %}
@@ -20,15 +9,15 @@
 {% block main %}
 <form class="frosted-glass" id='login' action="/login.html" method="POST">
   <h1>Log In</h1>
-  <div class='form-item'>
+  <div class='content-box'>
     <label for='username'>Username</label>
     <input type="text" name="username" value='{{request.form.username}}' required>
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     <label for='username'>Password</label>
     <input type="password" name="password" value='{{request.form.password}}' required>
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     <input type="submit" value="Login">
   </div>
 </form>
