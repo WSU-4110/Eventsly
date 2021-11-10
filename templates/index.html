@@ -55,7 +55,8 @@
         new BaseMap('mapid', initialLat, initialLng, initialZoom)
       )
     );
-  var pins = JSON.parse('{{pins | tojson | safe}}')
+  var pins = JSON.parse('{{pins | tojson | safe}}');
+  console.log(pins);
   map = new PinLoading(map, pins);
 </script>
 {% endblock %}
