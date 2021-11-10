@@ -2,18 +2,24 @@
 /*    general styles    */
 /*----------------------*/
 /*#region#*/
-#mapid {
+.map {
   height: 100%;
   position: relative;
   z-index: 1;
 }
+#index-map {
+
+}
+#create-event-map {
+
+}
 /*#endregion#*/
-/*--------------*/
-/*    mobile    */
-/*--------------*/
+/*---------------*/
+/*    Desktop    */
+/*---------------*/
 /*#region#*/
 @media screen and (min-width: 1124px) {
-  #mapid {
+  #index-map {
     /* fade in on page load */
     -webkit-animation: fadein 1.5s;
     -moz-animation: fadein 1.5s;

@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
 <!-- Required for Leaflet map -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -18,11 +17,9 @@
 <link rel="stylesheet"
   href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
 <script src="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.js"></script>
-
 {% endblock %}
 
 {% block main %}
-
 {% from "includes/_formhelpers.html" import render_field %}
 <form class='frosted-glass' action="/createEvent.html" method="POST">
   <div class='form-item'>
@@ -55,10 +52,25 @@
 </form>
 
 <!-- Leaflet Map & plugins -->
-<div id="mapid"></div>
+<div id="create-event-map" class="map"></div>
 <div id="search-box"></div>
 <div id="result"></div>
+{% endblock %}
+
+{% block extraScripts %}
 <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
   charset="utf-8"></script>
-<script src="/static/scripts/createEventMap.js"></script>
+<script src='/static/scripts/mapScripts.js'></script>
+<!-- Map Decorator -->
+<script>
+  initialLat = 42.3591;
+  initialLng = -83.0665;
+  initialZoom = 15;
+  let map =
+      new Geocoding(
+        new BaseMap('create-event-map', initialLat, initialLng, initialZoom)
+      );
+  let retriveLatLng = true;
+  map = new PinPlacing(map, retriveLatLng)
+</script>
 {% endblock %}

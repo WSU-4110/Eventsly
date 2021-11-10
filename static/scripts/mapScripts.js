@@ -84,28 +84,35 @@ class PinLoading extends BaseMapDecorator {
 
 class PinPlacing extends BaseMapDecorator {
   // adds the ability for the user to place pins on the map
-  static marker;
-  constructor(baseMap) {
+  constructor(baseMap, retriveLatLng) {
     super(baseMap);
-    this.map.addEventListener('click', this.placePin);
+    this.placePin(retriveLatLng)
   }
 
-  placePin(e) {
-    // on click, either remove existing pin from search or placement
-    // or place a new pin if there are no existing pins
-    let marker = null;
+  placePin(retriveLatLng) {
+    // on click, either remove placed pin from search or placement
+    // or place a new pin if there are no placed pins
+    // can retrieve the latitude and longitude of the placed pin if desired
+    this.map.addEventListener('click', function(e) {
+      let marker = null;
 
-    this.eachLayer(function (layer) {
-      if (layer instanceof L.Marker) {
-        marker = layer;
+      this.eachLayer(function (layer) {
+        if (layer instanceof L.Marker) {
+          marker = layer;
+        }
+      });
+  
+      if (marker) {
+        this.removeLayer(marker);
+      }
+      else {
+        marker = new L.Marker(e.latlng, { draggable: true }).addTo(this);
+        marker.bindPopup('Your event will take place here!');
+        if (retriveLatLng) {
+          document.getElementById('latitude').value = e.latlng['lat'];
+          document.getElementById('longitude').value = e.latlng['lng'];
+        }
       }
     });
-
-    if (marker) {
-      this.removeLayer(marker);
-    }
-    else {
-      new L.Marker(e.latlng, { draggable: true }).addTo(this);
-    }
   }
 }
