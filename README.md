@@ -22,6 +22,9 @@ Events in your area will be shown and you can feel free to coordinate your own e
 ### Account Functionalities
 * Account sign up
 * Account login/logout
+* User dashboard to view events you created
+* Delete events you have created
+* Delete account
 
 ### Event Functionalities
 * Clicking pins for event information preview
