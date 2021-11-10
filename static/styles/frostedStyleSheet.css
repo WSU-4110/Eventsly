@@ -2,23 +2,23 @@
 /*    general styles    */
 /*----------------------*/
 /*#region#*/
+/*
+* general user form styles
+*/
 main {
-  background-image: url(/static/images/signup-background2.png);
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
+    background-image: url(/static/images/signup-background2.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
-
+  
 body {
   overflow-y: auto;
 }
 
-/*
-* general user form styles
-*/
 .frosted-glass {
     align-items: center;
     -webkit-backdrop-filter: blur(5px);
@@ -208,6 +208,17 @@ body {
         flex-direction: column;
         max-width: 700px;
         width: 85%;
+    }
+
+    .frosted-glass#create-event {
+        border-radius: 0;
+        background-color: #7b82b3;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
+        width: 30%;
     }
     
     .frosted-glass h1 {

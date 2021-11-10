@@ -7,11 +7,15 @@
   position: relative;
   z-index: 1;
 }
-#index-map {
 
-}
+/* #index-map {
+
+} */
+
 #create-event-map {
-
+  position: static;
+  flex: 2 1 auto;
+  width: 100%;
 }
 /*#endregion#*/
 /*---------------*/

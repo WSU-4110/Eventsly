@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 
 {% block head %}
+<!-- Our Imports -->
+<link rel="stylesheet" href="/static/styles/mapStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/createEventStyleSheet.css">
+
+
 <!-- Required for Leaflet map -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
@@ -8,7 +13,6 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
-<link rel="stylesheet" href="/static/styles/mapStyleSheet.css">
 
 <!-- Leaflet User Location plugin: https://github.com/domoritz/leaflet-locatecontrol -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.css" />
@@ -17,37 +21,50 @@
 <link rel="stylesheet"
   href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
 <script src="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.js"></script>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+  }
+
+  body {
+    overflow-y: auto;
+  }
+</style>
 {% endblock %}
 
 {% block main %}
 {% from "includes/_formhelpers.html" import render_field %}
-<form class='frosted-glass' action="/createEvent.html" method="POST">
-  <div class='form-item'>
+<form class='create-event' action="/createEvent.html" method="POST">
+  <div class='content-box'>
     {{ render_field(form.title) }}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     {{ render_field(form.description) }}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     {{ render_field(form.date) }}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     {{ render_field(form.latitude) }}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     {{ render_field(form.longitude) }}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     {{ render_field(form.street) }}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     {{ render_field(form.city) }}
   </div>
-  <div class='form-item'>
+  <div class='content-box'>
     {{ render_field(form.state) }}
   </div>
-  <div class-'form-item'>
-    <input type="submit" value="Create Event!" class="formbtn"><input type="reset" class="formbtn">
+  <div class='content-box'>
+    <input type="submit" value="Create Event!" class="formbtn">
   </div>
 </form>
 
@@ -67,9 +84,9 @@
   initialLng = -83.0665;
   initialZoom = 15;
   let map =
-      new Geocoding(
-        new BaseMap('create-event-map', initialLat, initialLng, initialZoom)
-      );
+    new Geocoding(
+      new BaseMap('create-event-map', initialLat, initialLng, initialZoom)
+    );
   let retriveLatLng = true;
   map = new PinPlacing(map, retriveLatLng)
 </script>
