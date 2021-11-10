@@ -62,34 +62,29 @@ class PinLoading extends BaseMapDecorator {
   }
 }
 
-//TODO: FIX THIS FUNCTION
 class PinPlacing extends BaseMapDecorator {
   static marker;
   constructor(baseMap) {
     super(baseMap);
-    // this.map.addEventListener('click', this.placePin);
+    this.map.addEventListener('click', this.placePin);
   }
-//   placePin(e) {
-//     // on click, either remove existing pin from search or placement
-//     // or place a new pin if there are no existing pins
-//     console.log(e.latlng)
-//     marker = new L.Marker(e.latlng, { draggable: true }).addTo(this);
-//     console.log(this.tileLayer.maxZoom)
-//     if (geocoder.markers.length == 1) {
-//       geocoder.reset();
-//       geocoder.collapse();
-//     }
-//     else if (marker) {
-//       this.removeLayer(marker);
-//       marker = false;
-//     }
-//     else {
-      
 
-//       // popup text
-//       marker.bindPopup("test");
-//     }
-//   }
+  placePin(e) {
+    // on click, either remove existing pin from search or placement
+    // or place a new pin if there are no existing pins
+    let marker = null;
+    this.eachLayer(function(layer) {
+        if (layer instanceof L.Marker) {
+          marker = layer;
+        }
+    });
+    if (marker) {
+      this.removeLayer(marker);
+    }
+    else {
+      marker = new L.Marker(e.latlng, { draggable: true }).addTo(this);
+    }
+  }
 }
 
 
