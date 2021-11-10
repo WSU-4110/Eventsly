@@ -19,7 +19,8 @@ class BaseMap {
 }
 
 class BaseMapDecorator {
-  // should be of type BaseMap, no way to enforce in JS
+  // constructor should take a parameter of type BaseMap 
+  // but there is no way to enforce interfaces in JS
   constructor(baseMap) {
     console.log(baseMap);
     if (baseMap instanceof BaseMap || baseMap instanceof BaseMapDecorator) {
@@ -33,7 +34,7 @@ class Geocoding extends BaseMapDecorator {
   constructor(baseMap) {
     super(baseMap);
     // search map feature
-    this.map.addControl(L.control.geocoder('pk.7963fb77afa804ed20fabb795cc1295d'));
+    const geocoder = L.control.geocoder('pk.7963fb77afa804ed20fabb795cc1295d').addTo(this.map);
 
     // find user location option
     this.map.addControl(L.control.locate({
@@ -41,6 +42,12 @@ class Geocoding extends BaseMapDecorator {
         enableHighAccuracy: true
       }
     }));
+
+    // collapse search bar on click
+    this.map.addEventListener('click', function () {
+      geocoder.reset();
+      geocoder.collapse();
+    });
   }
 }
 
@@ -73,16 +80,18 @@ class PinPlacing extends BaseMapDecorator {
     // on click, either remove existing pin from search or placement
     // or place a new pin if there are no existing pins
     let marker = null;
-    this.eachLayer(function(layer) {
-        if (layer instanceof L.Marker) {
-          marker = layer;
-        }
+
+    this.eachLayer(function (layer) {
+      if (layer instanceof L.Marker) {
+        marker = layer;
+      }
     });
+
     if (marker) {
       this.removeLayer(marker);
     }
     else {
-      marker = new L.Marker(e.latlng, { draggable: true }).addTo(this);
+      new L.Marker(e.latlng, { draggable: true }).addTo(this);
     }
   }
 }
