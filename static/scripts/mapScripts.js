@@ -74,10 +74,13 @@ class PinLoading extends BaseMapDecorator {
     var marker
     for (let pin of pins) {
       marker = new L.Marker([pin.latitude, pin.longitude]).addTo(this.map);
-      marker.bindPopup(`<strong> ${pin.title}</strong><br>
-      ${pin.city},${pin.state} <br>
-      ${pin.date}<br>
-      <a href=eventdetails.html>View Details</a>`)
+      let form =
+        '<form id="view-details" action="/event-details.html" method="POST">' +
+          '<a href="javascript:;" onclick="document.getElementById(' + "'view-details'" + ').submit();">View Details</a>' +
+          '<input type="hidden" name="eventid" value=' + pin.id + '>' +
+        '</form>'
+      marker.bindPopup(
+        '<strong>' + pin.title + '</strong><br>' + pin.city + ', ' + pin.state + '<br>' + pin.date + '<br>' + form)
     }
   }
 }
@@ -93,7 +96,7 @@ class PinPlacing extends BaseMapDecorator {
     // on click, either remove placed pin from search or placement
     // or place a new pin if there are no placed pins
     // can retrieve the latitude and longitude of the placed pin if desired
-    this.map.addEventListener('click', function(e) {
+    this.map.addEventListener('click', function (e) {
       let marker = null;
 
       this.eachLayer(function (layer) {
@@ -101,7 +104,7 @@ class PinPlacing extends BaseMapDecorator {
           marker = layer;
         }
       });
-  
+
       if (marker) {
         this.removeLayer(marker);
       }

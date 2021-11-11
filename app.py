@@ -286,14 +286,17 @@ def createEvent():
                 app.logger.warning(traceback.format_exc())
                 app.logger.warning(f"Event {form.title.data} was unable to be created. /////")
                 return redirect(url_for('createEvent'))
-
-
-@app.route('/event-details.html')
-def eventDetails():
-    return render_template('event-details.html', title="Event Details")
-
-
+            
     return render_template("createEvent.html",form = form, title="Create Event")
+
+@app.route('/event-details.html', methods=['POST','GET'])
+def eventDetails():
+    if request.method == 'POST':
+        eventid = request.form['eventid']
+        return render_template('event-details.html', title="Event Details", eventid=eventid)
+
+
+
 #endregion
 
 if __name__ == "__main__":
