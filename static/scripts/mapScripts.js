@@ -75,10 +75,10 @@ class PinLoading extends BaseMapDecorator {
     for (let pin of pins) {
       marker = new L.Marker([pin.latitude, pin.longitude]).addTo(this.map);
       let form =
-        '<form id="view-details" action="/event-details.html" method="POST">' +
-          '<a href="javascript:;" onclick="document.getElementById(' + "'view-details'" + ').submit();">View Details</a>' +
-          '<input type="hidden" name="eventid" value=' + pin.id + '>' +
-        '</form>'
+        `<form id="view-details" method="POST">` +
+          `<a href="/event-details/${pin.id}" name="id" value="${pin.id}">View Details</a>` +
+          `<input type="hidden" name="eventid" value=${pin.id}>` +
+        `</form>`
       marker.bindPopup(
         '<strong>' + pin.title + '</strong><br>' + pin.city + ', ' + pin.state + '<br>' + pin.date + '<br>' + form)
     }
