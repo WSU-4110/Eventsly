@@ -12,10 +12,9 @@ def test_HomeRedirectsToIndex(app,client):
 #region SignUp Tests
 def test_SignUpIsFound(app,client):
     res=client.get('/signup.html')
-    assert res.status_code == 200
+    assert res.status_code == 200 #assert OK HTTP status code
 
 def test_SignUpValid(app,client,session):
-    app.logger.info(app)
     res = client.post('/signup.html', data=dict(
         firstname="Test",
         lastname="User",
@@ -28,11 +27,11 @@ def test_SignUpValid(app,client,session):
     
     result = [r for r in session.query(models.User)][0]
 
-    assert result.username == "testusername"
-    assert result.email == "testuseremail@test.com"
-    assert res.status_code == 302
+    assert result.username == "testusername" #assert actual equals expected username
+    assert result.email == "testuseremail@test.com" #assert actual equals expected email
+    assert res.status_code == 302 #assert that it follows redirect
 
-def test_SignUpInvalidPassword(app,client):
+def test_SignUpInvalidPassword(app,client, session):
     res = client.post('/signup.html', data=dict(
         firstname="Test",
         lastname="User",
@@ -42,8 +41,10 @@ def test_SignUpInvalidPassword(app,client):
         password="invalid",
         confirm ="invalid"
     ))
-    
-    assert res.status_code == 400
+
+    result = [r for r in session.query(models.User)]
+    assert len(result) == 0 #assert list from query is empty
+    assert res.status_code == 400 #assert BAD REQUEST
     
 #endregion
 
