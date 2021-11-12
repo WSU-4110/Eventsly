@@ -2,8 +2,10 @@ import pytest
 import sqlalchemy
 from flask import session
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy import create_engine
 from app import app as flask_app
+from app import db as _db
 from app import session, logger
 
 @pytest.fixture(autouse=True)
@@ -25,3 +27,28 @@ def app(request):
 def client(app):
     with app.test_client() as client:
         yield client
+
+@pytest.fixture(autouse=True)
+def db(app, request):
+    with app.app_context():
+        _db.create_all()
+        yield _db
+
+        _db.drop_all
+
+@pytest.fixture(scope="function")
+def session(app, db, request):
+
+    connection = _db.engine.connect()
+    transaction = connection.begin()
+
+    options = dict(bind=connection, binds={})
+    session = _db.create_scoped_session(options=options)
+
+    _db.session=session
+
+    yield session
+
+    transaction.rollback()
+    connection.close()
+    session.remove()
