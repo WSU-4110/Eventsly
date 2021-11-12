@@ -27,9 +27,21 @@
   }
   
 /*Added from previous about_us branch*/
-  img{
+
+/*Styling for profile pictures on page*/
+  .image1{ 
     border-radius: 48%;
     border-collapse: separate;
+    height: 150px;
+    width: 150px;
+    box-shadow: 10px 10px 5px grey;
+  }
+
+  /*styling for Eventsly logo on page*/
+  .image2
+  {
+    width: 50px;
+    height: 40px;
   }
   .container {
     float: left;
