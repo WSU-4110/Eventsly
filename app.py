@@ -14,9 +14,8 @@ app = Flask(__name__)
 
 if app.config['ENV'] == 'production':
     app.config.from_object('config.ProductionConfig')
-if app.config['ENV'] == 'development':
+if app.config['ENV'] == 'development' and app.config['TESTING'] == False:
     app.config.from_object('config.DevelopmentConfig')
-    app.logger.info(f'{app.config}')
 else:
     app.config.from_object('config.BaseConfig')
 
@@ -71,8 +70,13 @@ def about():
 @app.route("/signup.html", methods=['POST','GET'])
 def signup():
     form = models.SignUpForm(request.form)
+
+    app.logger.info(request.form)
+    app.logger.info(form.firstname.data)
+    app.logger.info(form.password.data)
+    app.logger.info(f'valid? :{form.validate()}')
     if request.method == 'POST' and form.validate():
-        encryptpassword = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
+        encryptpassword = sha256_crypt.hash(str(form.password.data)) #encrypt password
 
         new_user = models.User(
             firstname=form.firstname.data, 
@@ -84,20 +88,22 @@ def signup():
             password = encryptpassword,
             signup_date = datetime.now(),
         )
+        app.logger.info
         try:
             db.session.add(new_user)
             db.session.commit()
             app.logger.info(f'User {form.username.data} account was created.')
             flash('Your account has been created!', 'success')
-            return redirect(url_for('index'))
+            return redirect(url_for('index'), code=302)
         except:
             flash('Unable to make your account','failure')
             # print call stack
             app.logger.warning(traceback.format_exc())
             app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
             return redirect(url_for('signup'))
-
-    return render_template("signup.html", form=form, title="Sign Up")
+    if request.method == 'POST' and not form.validate():
+        return render_template("signup.html", form=form, title="Sign Up"), 400
+    return render_template("signup.html", form=form, title="Sign Up"), 200
 
 @app.route("/login.html", methods =['GET','POST'])
 def login():
@@ -278,6 +284,10 @@ def createEvent():
 
     return render_template("createEvent.html",form = form, title="Create Event")
 #endregion
+
+@app.route('/session')
+def session():
+    return session;
 
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
