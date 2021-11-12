@@ -7,7 +7,9 @@ from flask import Flask, render_template, request, redirect, flash, url_for, ses
 from passlib.hash import sha256_crypt
 import sqlalchemy
 import traceback
+import logger
 
+#region App Initialization
 app = Flask(__name__)
 
 if app.config['ENV'] == 'production':
@@ -20,7 +22,6 @@ else:
 
 db = SQLAlchemy(app)
 engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=True)
-
 import models
 
 #Check if user logged in to access logout and dashboard
@@ -33,7 +34,9 @@ def is_logged_in(f):
             flash('Unauthorized, please login.','danger')
             return redirect(url_for('login'))
     return wrap
+#endregion
 
+#region Basic Functionalities
 @app.route("/")
 def home():
     return redirect(url_for('index'))
@@ -42,8 +45,8 @@ def home():
 def index():
     pins = []
     with engine.begin() as conn:
-        query = sqlalchemy.text('SELECT * FROM events WHERE date > CURRENT_TIMESTAMP')
-        rows = conn.execute(query)
+        queryGetPins = sqlalchemy.text('SELECT * FROM events WHERE date > CURRENT_TIMESTAMP')
+        rows = conn.execute(queryGetPins)
         for row in rows:
             pin = {
                 "id": row.id,
@@ -59,36 +62,12 @@ def index():
             pins.append(pin)
     return render_template("index.html", title="Eventsly", pins=pins)
 
-@app.route("/bookmarks.html")
-@is_logged_in
-def bookmarks():
-    with engine.begin() as conn:
-        query = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
-        rows = conn.execute(query)
-        bookmarkpull = rows.mappings().all()
-
-    return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
-
 @app.route("/about.html")
 def about():
     return render_template("About.html", title="About Us")
+#endregion
 
-@app.route("/search.html", methods =['GET','POST'])
-def search():
-    hereValue = 'default value'
-    if request.method == 'POST':
-        # Get data from form
-        hereValue = request.form['findEvent']
-
-    with engine.begin() as conn:
-        query = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
-        rows = conn.execute(query)
-        hereData = rows.mappings().all()
-
-    app.logger.info(f"data is {hereData}")
-    
-    return render_template("search.html", title="Find Events", data = hereData)
-
+#region Account Functionalities
 @app.route("/signup.html", methods=['POST','GET'])
 def signup():
     form = models.SignUpForm(request.form)
@@ -160,6 +139,95 @@ def login():
 
     return render_template("login.html", title="Log In")
 
+
+@app.route('/logout')
+@is_logged_in #uses is_logged_in wrapper for this URL
+def logout():
+    session.clear()
+    flash('You are now logged out', 'success')
+    return redirect(url_for('login'))
+
+@app.route('/dashboard.html')
+@is_logged_in
+def dashboard():
+    with engine.begin() as conn:
+        queryGetMyEvents = sqlalchemy.text(f'SELECT * FROM events, created_events WHERE created_events.user_id = {session["userid"]} AND events.id = created_events.event_id ORDER BY created_events.id')
+        rows = conn.execute(queryGetMyEvents)
+        myEvents = rows.mappings().all()
+
+    app.logger.info(f'User events: {myEvents}')
+    return render_template('dashboard.html', title="Dashboard", myEvents=myEvents)
+
+@app.route('/deleteAccount')
+@is_logged_in
+def deleteAccount():
+    with engine.begin() as conn:
+        queryGetEvents = sqlalchemy.text(f'SELECT event_id FROM created_events WHERE created_events.user_id= {session["userid"]}')
+        rows = conn.execute(queryGetEvents)
+        queryDeleteFromCreatedEvents = sqlalchemy.text(f'DELETE FROM created_events WHERE created_events.user_id = {session["userid"]}')
+        conn.execute(queryDeleteFromCreatedEvents)
+        for row in rows:
+            queryDeleteFromEvents = sqlalchemy.text(f'DELETE FROM events WHERE events.id = {row.event_id}')
+            queryDeleteEventsFromBookmarks = sqlalchemy.text(f'DELETE FROM bookmarks where bookmarks.event_id = {row.event_id}')
+            conn.execute(queryDeleteFromEvents)
+            conn.execute(queryDeleteEventsFromBookmarks)
+            app.logger.info(f'Deleted event with ID: {row.event_id}')
+        queryDeleteBookmarks = sqlalchemy.text(f'DELETE FROM bookmarks where bookmarks.user_id = {session["userid"]}')
+        queryDeleteEventsFromBookmarks = sqlalchemy.text(f'DELETE FROM bookmarks where')
+        queryDeleteUser= sqlalchemy.text(f'DELETE FROM users WHERE users.id = {session["userid"]}')
+        conn.execute(queryDeleteBookmarks)
+        conn.execute(queryDeleteUser)
+    
+    session.clear()
+    flash('Your account has been deleted.', 'success')
+    return redirect(url_for('index'))
+
+@app.route('/deleteEvent/<int:id>', methods = ['POST','GET'])
+@is_logged_in
+def deleteEvent(id):
+    app.logger.warning(f'Deleting event with event ID: {id}')
+    eventid = id
+    with engine.begin() as conn:
+       queryDeleteEventFromCreatedEvents = sqlalchemy.text(f'DELETE FROM created_events where created_events.event_id = {eventid}')
+       queryDeleteEventFromBookmarks = sqlalchemy.text(f'DELETE FROM bookmarks WHERE bookmarks.event_id = {eventid}')
+       queryDeleteEventFromEvents = sqlalchemy.text(f'DELETE FROM events WHERE events.id = {eventid}')
+       conn.execute(queryDeleteEventFromCreatedEvents)
+       conn.execute(queryDeleteEventFromBookmarks)
+       conn.execute(queryDeleteEventFromEvents)
+
+    flash('Event deleted.', 'success')
+    return redirect(url_for('dashboard'))
+#endregion
+
+#region Bookmark Functionalities
+@app.route("/bookmarks.html")
+@is_logged_in
+def bookmarks():
+    with engine.begin() as conn:
+        queryGetBookmarks = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
+        rows = conn.execute(queryGetBookmarks)
+        bookmarkpull = rows.mappings().all()
+
+    return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
+#endregion
+
+#region Event Functionalities
+@app.route("/search.html", methods =['GET','POST'])
+def search():
+    hereValue = 'default value'
+    if request.method == 'POST':
+        # Get data from form
+        hereValue = request.form['findEvent']
+
+    with engine.begin() as conn:
+        querySearchTitle = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
+        rows = conn.execute(querySearchTitle)
+        hereData = rows.mappings().all()
+
+    app.logger.info(f"data is {hereData}")
+    
+    return render_template("search.html", title="Find Events", data = hereData)
+
 @app.route("/createEvent.html", methods=['POST','GET'])
 @is_logged_in
 def createEvent():
@@ -180,6 +248,23 @@ def createEvent():
             db.session.add(new_event)
             db.session.commit()
             app.logger.info(f'Event {form.title.data} was created.')
+
+                    #After inserting event, get event id and add to created_events table
+            stmt = select(models.Event).order_by(models.Event.id.desc())
+            with engine.begin() as conn:
+                result = conn.execute(stmt).first()
+                
+            app.logger.info(f"Most recent event: {result}")
+
+            newCreatedEvent = models.CreatedEvent(
+                event_id = result.id,
+                user_id = session['userid']
+            )
+
+            db.session.add(newCreatedEvent)
+            db.session.commit()
+            app.logger.info(f"New Created Event: {newCreatedEvent}")
+
             flash('Your event has been created!', 'success')
             return redirect(url_for('index'))
         except:
@@ -188,21 +273,11 @@ def createEvent():
             app.logger.warning(traceback.format_exc())
             app.logger.warning(f"Event {form.title.data} was unable to be created. /////")
             return redirect(url_for('createEvent'))
+
+
+
     return render_template("createEvent.html",form = form, title="Create Event")
-
-@app.route('/logout')
-@is_logged_in #uses is_logged_in wrapper for this URL
-def logout():
-    session.clear()
-    flash('You are now logged out', 'success')
-    return redirect(url_for('login'))
-
-@app.route('/dashboard.html')
-@is_logged_in
-def dashboard():
-    return render_template('dashboard.html', title="Dashboard")
-
-
+#endregion
 
 if __name__ == "__main__":
     app.secret_key='wsu4110eventsly'
