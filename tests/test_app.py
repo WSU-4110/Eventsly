@@ -1,4 +1,9 @@
 from flask import session
+import sqlalchemy
+from sqlalchemy.sql.expression import select
+from werkzeug.wrappers import request
+import logger
+import models
 
 def test_HomeRedirectsToIndex(app,client):
     res = client.get('/')
@@ -9,7 +14,8 @@ def test_SignUpIsFound(app,client):
     res=client.get('/signup.html')
     assert res.status_code == 200
 
-def test_SignUpValid(app,client):
+def test_SignUpValid(app,client,session):
+    app.logger.info(app)
     res = client.post('/signup.html', data=dict(
         firstname="Test",
         lastname="User",
@@ -19,7 +25,11 @@ def test_SignUpValid(app,client):
         password="Password!1",
         confirm="Password!1"
     ))
-    app.logger.info(res)
+    
+    result = [r for r in session.query(models.User)][0]
+
+    assert result.username == "testusername"
+    assert result.email == "testuseremail@test.com"
     assert res.status_code == 302
 
 def test_SignUpInvalidPassword(app,client):
@@ -32,7 +42,7 @@ def test_SignUpInvalidPassword(app,client):
         password="invalid",
         confirm ="invalid"
     ))
-    app.logger.warning(res)
+    
     assert res.status_code == 400
     
 #endregion
