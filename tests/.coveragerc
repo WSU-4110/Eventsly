@@ -1,0 +1,4 @@
+[report]
+exclude_lines =
+    app.logger
+    def is_logged_in(f):
