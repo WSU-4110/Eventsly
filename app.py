@@ -23,7 +23,7 @@ db = SQLAlchemy(app)
 engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=True)
 import models
 
-#Check if user logged in to access logout and dashboard
+#Helpers
 def is_logged_in(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -32,7 +32,11 @@ def is_logged_in(f):
         else:
             flash('Unauthorized, please login.','danger')
             return redirect(url_for('login'))
+    app.logger.info(f"WRAP: {wrap}")
     return wrap
+
+def session_clear():
+    session.clear()
 #endregion
 
 #region Basic Functionalities
@@ -112,6 +116,8 @@ def login():
         username_input = request.form['username']
         password_input = request.form['password']
 
+        app.logger.info(f"USERNAME INPUT: {username_input}")
+
         #Get user by username
         stmt = select(models.User).where(models.User.username == username_input)
         with engine.connect() as conn:
@@ -133,7 +139,7 @@ def login():
 
                 flash('You are now logged in', 'success')
                 app.logger.info('Password input matched password stored in database')
-                return redirect(url_for('dashboard'))
+                return redirect(url_for('dashboard'), code = 302)
             else:
                 app.logger.info('Password input did not match password stored in database')
                 error = 'Invalid login'
@@ -149,9 +155,9 @@ def login():
 @app.route('/logout')
 @is_logged_in #uses is_logged_in wrapper for this URL
 def logout():
-    session.clear()
+    session_clear()
     flash('You are now logged out', 'success')
-    return redirect(url_for('login'))
+    return redirect(url_for('login'), code=302)
 
 @app.route('/dashboard.html')
 @is_logged_in
@@ -184,7 +190,7 @@ def deleteAccount():
         conn.execute(queryDeleteBookmarks)
         conn.execute(queryDeleteUser)
     
-    session.clear()
+    session_clear()
     flash('Your account has been deleted.', 'success')
     return redirect(url_for('index'))
 
