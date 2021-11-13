@@ -26,8 +26,6 @@
     overflow-y: auto;
   }
   
-/*Added from previous about_us branch*/
-
 /*Styling for profile pictures on page*/
   .image1{ 
     border-radius: 48%;
@@ -52,7 +50,7 @@
   @media screen and (max-width: 600px) {
     .container {
       width: 100%;
-      display: block;
+      display: flex;
       margin-bottom: 20px;
     }
 
@@ -60,7 +58,7 @@
   @media screen and (max-width: 600px) {
     .column {
       width: 100%;
-      display: block;
+      display: flex;
       margin-bottom: 5px;
     }
   }
