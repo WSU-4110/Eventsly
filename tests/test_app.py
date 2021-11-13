@@ -1,13 +1,15 @@
+from datetime import datetime
+from unittest import mock
 from flask import session
+from unittest.mock import MagicMock, Mock, patch
 import sqlalchemy
-from sqlalchemy.sql.expression import select
+from sqlalchemy.engine import create_engine
+from sqlalchemy.sql.expression import false, select, true
 from werkzeug.wrappers import request
+from passlib.hash import sha256_crypt
 import logger
 import models
 
-def test_HomeRedirectsToIndex(app,client):
-    res = client.get('/')
-    assert res.status_code ==302 #assert redirect to index
 
 #region SignUp Tests
 def test_SignUpIsFound(app,client):
@@ -49,8 +51,95 @@ def test_SignUpInvalidPassword(app,client, session):
 #endregion
 
 #region Login Tests
-# def test_LoginValid(app,client):
-#     res = client.post('/login.html', data = dict(
+@patch('app.engine')
+@patch('app.sha256_crypt.verify', return_value=True)
+@patch('app.session_login')
+def test_LoginValid(app,client,session):
+    #Mocking database connection, encryption library, session login method
+    mock1 = Mock('app.engine')
+    mock2 = Mock('app.sha256_crypt.verify', return_value=True)
+    mock3 = Mock('app.session_login')
 
-#     ))
+    #assert that POST request to login follows the redirect
+    assert client.post('/login.html', data = dict(
+        username = "testusername",
+        password="Password!1",
+    ), follows_redirects=True)
+    
+    mock1.assert_any_call #assert that the database connection was called
+    mock2.assert_any_call #assert that password verification was called
+    mock3.assert_any_call #assert that app session was called
+    mock3.assert_called_once #assert that login method was called once
+
+def test_LoginInvalid(app,client,session):
+    #Mock database connection, encryption library, session login method
+    mock1 = Mock('app.engine')
+    mock2 = Mock('app.sha256_crypt.verify', return_value=False)
+    mock3 = Mock('app.session_login')
+    
+    #assert that invalid login doesn't follow redirect
+    assert client.post('/login.html', data = dict(
+        username = "testusername",
+        password="Password!1",
+    ))
+
+    mock1.assert_any_call #assert database connection was used
+    mock2.assert_any_call #assert password verification was called
+    mock3.assert_not_called #assert that session login method was not called
+
+
 #endregion
+
+#Logout Test
+@patch('app.is_logged_in', return_value=True)
+@patch('app.session_clear')
+def test_Logout(app,client):
+    #Mock login verification and session clear methods
+    mock1 = Mock('app.is_logged_in')
+    mock2 = Mock('app.session_clear')
+
+    assert client.get('/logout', follows_redirects=True) #assert logout method redirects
+
+    mock1.assert_called_once #assert login verification method called once
+    mock2.assert_called_once #assert session clear method called once
+
+#Dashboard Test
+@patch('app.engine')
+@patch('app.is_logged_in')
+def test_Dashboard(app,client):
+    #Mock database connection and login verification method
+    mock1 = Mock('app.engine')
+    mock2 = Mock('app.is_logged_in')
+
+    res = client.get('/dashboard.html')
+    
+    mock1.assert_any_call #assert database connection used to get user events
+    mock2.assert_called_once #assert login verification is called once
+
+#Delete Event Test
+@patch('app.is_logged_in')
+@patch('app.engine')
+def test_DeleteEvent(app,client):
+    #Mock database connection and login verification method
+    mock1 = Mock('app.engine')
+    mock2 = Mock('app.is_logged_in')
+
+    assert client.post('/deleteEvent', follows_redirects=True) #assert deleteEvent POST request follows redirect
+
+    mock1.assert_any_call #assert database connection is used to delete event info
+    mock2.assert_called_once #assert login verification is called once
+
+#Delete Account Test
+@patch('app.is_logged_in')
+@patch('app.engine')
+def test_DeleteAccount(app,client):
+    #Mock database connection and login verification method
+    mock1 = Mock('app.engine')
+    mock2 = Mock('app.is_logged_in')
+    mock3 = Mock('app.session_clear')
+
+    assert client.post('/deleteAccount',follows_redirects=True) #assert POST request to deleteAccount follows redirect
+    
+    mock1.assert_any_call #assert database connection is used to delete account invo
+    mock2.assert_called_once #assert login verification is called once
+    mock3.assert_called_once #assert session clear method is called

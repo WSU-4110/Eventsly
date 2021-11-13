@@ -1,4 +1,6 @@
 [report]
 exclude_lines =
     app.logger
-    def is_logged_in(f):
+    def is_logged_in(f)
+    def session_clear
+    app.config

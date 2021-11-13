@@ -105,13 +105,13 @@ def signup():
             db.session.commit()
             app.logger.info(f'User {form.username.data} account was created.')
             flash('Your account has been created!', 'success')
-            return redirect(url_for('index'), code=302)
+            return redirect(url_for('index'))
         except:
             flash('Unable to make your account','failure')
             # print call stack
             app.logger.warning(traceback.format_exc())
             app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
-            return redirect(url_for('signup'))
+            return redirect(url_for('signup'), 302)
     if request.method == 'POST' and not form.validate():
         return render_template("signup.html", form=form, title="Sign Up"), 400
     return render_template("signup.html", form=form, title="Sign Up"), 200

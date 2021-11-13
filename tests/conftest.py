@@ -1,6 +1,6 @@
+from flask import sessions
 import pytest
 import sqlalchemy
-from flask import session
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy import create_engine
@@ -19,7 +19,6 @@ def app(request):
     dropQueries = [sqlalchemy.text(f"DROP TABLE IF EXISTS users CASCADE"), sqlalchemy.text(f"DROP TABLE IF EXISTS events CASCADE"), sqlalchemy.text(f"DROP TABLE IF EXISTS created_events CASCADE"), sqlalchemy.text(f"DROP TABLE IF EXISTS bookmarks CASCADE"), sqlalchemy.text(f"DROP TABLE IF EXISTS roles CASCADE")]
     with engine.begin() as conn:
         for query in dropQueries:
-            flask_app.logger.info(f"Drop Query: {query}")
             conn.execute(query)
 
 
