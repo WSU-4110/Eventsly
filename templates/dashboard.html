@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="/static/styles/formStyles.css">
+<link rel="stylesheet" href="/static/styles/frostedStyleSheet.css">
 <link rel="stylesheet" href="/static/styles/dashboardStyleSheet.css">
 {% endblock %}
 
@@ -9,7 +9,7 @@
 <h1>Dashboard</h1>
 <h2>Welcome {{session.name}}</h2>
 
-<form id="myEvents">
+<form id="myEvents" class='frosted-glass'>
     <h3><i class="far fa-user-circle"></i> My Events</h3>
     
     <table class="dash-table">

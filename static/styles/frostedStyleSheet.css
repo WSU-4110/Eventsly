@@ -1,0 +1,300 @@
+/*----------------------*/
+/*    general styles    */
+/*----------------------*/
+/*#region#*/
+/*
+* general user form styles
+*/
+main {
+    background-image: url(/static/images/signup-background2.png);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+  
+body {
+  overflow-y: auto;
+}
+
+.frosted-glass {
+    align-items: center;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.5);
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    height: 100%;
+    padding: 30px;
+    width: 100%;
+}
+
+.frosted-glass h1 {
+    font-size: 20pt;
+}
+
+
+/*
+* form items
+*/ 
+.frosted-glass .content-box {
+    /* height: 120px; */
+    position: relative;
+    width: 100%;
+    margin-top: 35px;
+}
+/* 
+* all inputs 
+*/
+.frosted-glass input {
+    border-style: none;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14pt;
+    font-weight: 500;
+    height: 30px;
+    margin: 5px 0 4px;
+    width: 100%;
+}
+
+/*
+* text/password inputs
+*/
+.frosted-glass input[type='text'], 
+.frosted-glass input[type='password'] {
+    border-style: none;
+    outline: 2px solid #a7a7a7;
+    padding: 0 26px 0 4px;
+}
+
+.frosted-glass input[type='text']:focus, 
+.frosted-glass input[type='password']:focus {
+    outline: 2px solid #cfcfcf;
+}
+
+.frosted-glass input[type='text'].invalid-field,
+.frosted-glass input[type='password'].invalid-field {
+    outline: 2px solid red;
+}
+
+.frosted-glass input[type='text'].valid-field, 
+.frosted-glass input[type='password'].valid-field{
+    outline: 2px solid #7b82b3;
+}
+
+/*
+* submit button 
+*/
+.frosted-glass input[type='submit'] {
+    background-color: #3A3E5E;
+    border-radius: 5px;
+    color: white;
+    height: 50px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.frosted-glass input[type='submit']:hover:not(.disable-submit) {
+    background-color: #7b82b3;
+    cursor: pointer;
+}
+
+.frosted-glass input[type='submit'].disable-submit {
+    opacity: 0.5;
+}
+
+/*
+* labels/counters/requirement text
+*/
+.frosted-glass label {
+    color:#a7a7a7;
+    font-size: 14pt;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+    position: absolute;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+#signup-form label {
+    left: 2px;
+    top: 28px;
+}
+
+#login-form label {
+    left: 2px;
+    top: 9px;
+}
+
+.frosted-glass .move-label {
+    color: #3A3E5E;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+#signup-form .move-label {
+    top: 0;
+}
+
+#login-form .move-label {
+    top: -20px;
+}
+
+.frosted-glass span {
+    display: block;
+    pointer-events: none;
+}
+
+.frosted-glass span.counter {
+    color:#3A3E5E;
+    font-size: 12pt;
+    float: right;
+}
+
+.frosted-glass span.input-description {
+    /* display: block; */
+    font-size: 12pt;
+    text-align: left;
+}
+
+.frosted-glass span.help-inline {
+    color: red;
+    /* display: block; */
+    font-size: 12pt;
+    text-align: left;
+}
+/*#endregion#*/
+/*---------------*/
+/*    Desktop    */
+/*---------------*/
+/*#region#*/
+@media screen and (min-width: 700px) and (min-height: 700px) {
+    .frosted-glass {
+        box-sizing: initial;
+        border-radius: 80px;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .frosted-glass#signup-form {
+        height: 85%;
+        max-height: 600px;
+        max-width: 700px;
+        width: 85%;
+    }
+
+    .frosted-glass#login-form {
+        height: 85%;
+        max-height: 300px;
+        max-width: 600px;
+        width: 85%;
+    }
+
+    .frosted-glass#bookmarks {
+        height: 85%;
+        justify-content: flex-start;
+        flex-direction: column;
+        max-width: 700px;
+        width: 85%;
+    }
+
+    .frosted-glass#create-event {
+        border-radius: 0;
+        background-color: #7b82b3;
+        flex-direction: column;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100%;
+        width: 30%;
+    }
+    
+    .frosted-glass h1 {
+        text-align: center;
+        width: 100%;
+    }
+
+    /*
+    * form items
+    */ 
+    .frosted-glass .content-box {
+        width: 48%;
+    }
+
+    /*
+    * all inputs
+    */ 
+    .frosted-glass input[type='text'],
+    .frosted-glass input[type='password'] {
+        height: 24px;
+        font-size: 12pt;
+    }
+
+    /*
+    * submit button 
+    */
+    .frosted-glass input[type='submit'] {
+        text-align: center;
+        height: 40px;
+        width: 180px;
+    }
+
+    .frosted-glass .content-box:last-of-type {
+        margin-top: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    /*
+    * labels/counters/requirement text
+    */
+    .frosted-glass label {
+        font-size: 12pt;
+    }
+
+    #signup-form label {
+        left: 3px;
+        top: 24px;
+    }
+
+    #login-form label {
+        top: 8px;
+    }
+
+    .frosted-glass .move-label {
+        font-size: 10pt;
+    }
+
+    #login-form .move-label {
+        top: -17px;
+    }
+
+    
+    .frosted-glass span.counter,
+    .frosted-glass span.input-description,
+    .frosted-glass span.help-inline {
+        font-size: 10pt;
+    }
+
+    .frosted-glass span.input-description,
+    .frosted-glass span.help-inline {
+        margin-left: 2px;
+    }
+
+    .frosted-glass span.input-description {
+        position: absolute;
+    }
+}
+/*#endregion#*/

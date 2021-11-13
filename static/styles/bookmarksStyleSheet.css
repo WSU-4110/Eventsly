@@ -1,22 +1,7 @@
-main {
-    background-image: url(/static/images/signup-background2.png);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-  }
-
-  body {
-    overflow-y: auto;
-  }
-
   .bm-table {
-    width: 100%;
+    margin-top: 1rem;
     max-width: 100%;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    width: 100%;
   }
 
   .bm-table td, .bm-table th {
@@ -24,7 +9,7 @@ main {
     padding: 8px;
   }
 
-  .bm-table td, .bm-table th, .bm-table tcol {
+  .bm-table td, .bm-table th, .bm-table col {
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;

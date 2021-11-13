@@ -1,6 +1,12 @@
 {% extends 'base.html' %}
 
 {% block head %}
+<!-- Our Imports -->
+<link rel="stylesheet" href="/static/styles/mapStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/createEventStyleSheet.css">
+<script src="/static/scripts/FormValidator.js"></script>
+<script src="/static/scripts/formScripts.js"></script>
+
 
 <!-- Required for Leaflet map -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -9,7 +15,6 @@
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
-<link rel="stylesheet" href="/static/styles/mapStyleSheet.css">
 
 <!-- Leaflet User Location plugin: https://github.com/domoritz/leaflet-locatecontrol -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.css" />
@@ -18,46 +23,70 @@
 <link rel="stylesheet"
   href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
 <script src="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.js"></script>
-
 {% endblock %}
 
 {% block main %}
-
 {% from "includes/_formhelpers.html" import render_field %}
-<form action="/createEvent.html" method="POST">
-  <div class='form-group'>
-    {{render_field(form.title, class_="form-control")}}
+<form class='create-event validated-form' id='create-event-form' action="/createEvent.html" method="POST">
+  <h1>Event Details</h1>
+  <div class='content-box'>
+    <span class='counter'></span>
+    {{ render_field(form.title) }}
   </div>
-  <div class='form-group'>
-    {{render_field(form.description, class_="form-control")}}
+  <div class='content-box'>
+    <span class='counter'></span>
+    {{ render_field(form.description) }}
   </div>
-  <div class='form-group'>
-    {{render_field(form.date, class_="form-control")}}
+  <div class='content-box'>
+    <span class='counter'></span>
+    {{ render_field(form.date) }}
   </div>
-  <div class='form-group'>
-    {{render_field(form.latitude, class_="form-control")}}
+  <div class='content-box'>
+    <span class='counter'></span>
+    {{ render_field(form.street) }}
   </div>
-  <div class='form-group'>
-    {{render_field(form.longitude, class_="form-control")}}
+  <div class='content-box'>
+    <span class='counter'></span>
+    {{ render_field(form.city) }}
   </div>
-  <div class='form-group'>
-    {{render_field(form.street, class_="form-control")}}
+  <div class='content-box'>
+    <span class='counter'></span>
+    {{ render_field(form.state) }}
   </div>
-  <div class='form-group'>
-    {{render_field(form.city, class_="form-control")}}
+  <div class='content-box'>
+    <span class='counter' style="visibility: hidden;"></span>
+    {{ render_field(form.latitude) }}
   </div>
-  <div class='form-group'>
-    {{render_field(form.state, class_="form-control")}}
+  <div class='content-box'>
+    <span class='counter' style="visibility: hidden;"></span>
+    {{ render_field(form.longitude) }}
   </div>
-
-  <p><input type="submit" value="Create Event!" class="formbtn"></p>
+  <div class='content-box'>
+    <input type="submit" value="Create Event!" id="create-event">
+  </div>
 </form>
 
 <!-- Leaflet Map & plugins -->
-<div id="mapid"></div>
+<div id="create-event-spacer"></div>
+<div id="create-event-map" class="map"></div>
 <div id="search-box"></div>
 <div id="result"></div>
+{% endblock %}
+
+{% block extraScripts %}
 <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
   charset="utf-8"></script>
-<script src="/static/scripts/createEventMap.js"></script>
+<script src='/static/scripts/mapScripts.js'></script>
+<!-- Map Decorator -->
+<script>
+  initialLat = 42.3591;
+  initialLng = -83.0665;
+  initialZoom = 15;
+  let map =
+    new Geocoding(
+      new BaseMap('create-event-map', initialLat, initialLng, initialZoom)
+    );
+  let retriveLatLng = true;
+  map = new PinPlacing(map, retriveLatLng)
+</script>
 {% endblock %}

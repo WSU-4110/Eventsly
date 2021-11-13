@@ -1,15 +1,14 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="/static/styles/bookmarksStyleSheet.css"
-<link rel="stylesheet" href="/static/styles/formStyles.css">
+<link rel="stylesheet" href="/static/styles/bookmarksStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/frostedStyleSheet.css">
 {% endblock %}
 
 {% block main %}
-<form class="user-form">
-<h1><i class="fas fa-bookmark"></i> Bookmarks</h1>
-
-<table class="bm-table">
+<div class="frosted-glass" id="bookmarks">
+  <h1><i class="fas fa-bookmark"></i>Bookmarks</h1>
+  <table class="bm-table">
     <thead>
       <tr>
         <th scope="col">Event</th>
@@ -17,16 +16,15 @@
         <th scope="col">Date & Time</th>
       </tr>
     </thead>
-      {% for bookmark in bookmarkpull %}
-      <tr>
+    {% for bookmark in bookmarkpull %}
+    <tr>
       <td>{{bookmark['title']}}</th>
       <td>{{bookmark['city']}}, {{bookmark['state']}}
       </td>
       <td>{{bookmark['date']}}
       </td>
-      </tr>
-      {% endfor %}
+    </tr>
+    {% endfor %}
   </table>
-</form>
-
+</div>
 {% endblock %}
