@@ -37,6 +37,13 @@ def is_logged_in(f):
 
 def session_clear():
     session.clear()
+
+def session_login(user):
+    session['logged_in'] = True
+    session['username'] = user.username
+    session['userid'] = user.id
+    session['name'] = f'{user.firstname} {user.lastname}'
+
 #endregion
 
 #region Basic Functionalities
@@ -132,10 +139,7 @@ def login():
         
             #Compare passwords
             if sha256_crypt.verify(password_input, password_data):
-                session['logged_in'] = True
-                session['username'] = result.username
-                session['userid'] = result.id
-                session['name'] = f'{result.firstname} {result.lastname}'
+                session_login(result)
 
                 flash('You are now logged in', 'success')
                 app.logger.info('Password input matched password stored in database')
