@@ -18,6 +18,7 @@ Events in your area will be shown and you can feel free to coordinate your own e
 * Navigation bar
 * Integrated map
 * Loads pins on to the map indicating locations where there are upcoming events
+* About Us page
 
 ### Account Functionalities
 * Account sign up
@@ -30,7 +31,8 @@ Events in your area will be shown and you can feel free to coordinate your own e
 * Clicking pins for event information preview
 * Creating an event
 * Searching for events by event title
-* Viewing bookmarks
+* Bookmark Events
+* Viewing Bookmarks
 
 ## Technology Stack
 ### Front end
