@@ -1,9 +1,60 @@
 {% extends 'base.html' %}
 
 {% block head %}
-
+<link rel="stylesheet" href="/static/styles/aboutUsStyleSheet.css">
 {% endblock %}
 
 {% block main %}
-<h1><img src="/static/images/examplePic.png" width="50" height="40" alt="Eventsly">About Us</h1>
+<h1><img src="/static/images/examplePic.png"  alt="Eventsly" class="image2">About Us</h1>
+  <div class="row">
+    <div class="column">
+      <div class="card">
+        <h3>Our Story</h3>
+        <p>Our team created Eventsly because in the past, there was no easy way for you to search for and locate events in your community. We know every community has something unique and special to offer. And we know that there are exciting events happening all around you. However, in the past, learning about and locationing these events was challenging and seemingly impossible. Existing apps would only highlight popular attractions and tourist destinations. They didn’t provide information about events happening in local communities, or how to locate them. This void has motivated us to create a simple solution making discovering and locating events in your community as easy as possible. Our ultimate goal is to help you connect with your community, one event at a time.</p>
+      </div>
+    </div>
+  
+    <div class="column">
+      <div class="card">
+        <h3>What is Eventsly?</h3>
+        <p>Eventsly is the one-step solution to finding events in your area. To use, simply open the web application, search your location and go! Events taking place in your area will appear on the map where you can click on any that interest you to learn more. There’s no limit to the types of events you can find on Eventsly, concerts, cook-outs, get-togethers, fundraisers, and so much more! Creating an account is fast and free. Simply navigate to the sign up option located in the upper right hand corner of each page and enter the requested information. After creating an account you will have the option to create and coordinate your own events. To create an event simply click the create an event (plus icon) at the center of the home page. If you see any upcoming events you’d like to attend you can bookmark them to locate them faster at a later date.</p>
+      </div>
+    </div> 
+ <br>
+<h1><center>Meet Our Team</center></h1>
+
+<div class="container">
+  <figure>
+    <img src="/static/images/gregory.jpg" alt="Greg" class="image1">
+    <figcaption><center><b>Greg Flores</b></center>.</figcaption>
+  </figure>
+</div>
+
+<div class="container">
+  <figure>
+    <img src="/static/images/CJ_Fox.JPG" alt="CJ" class="image1">
+    <figcaption><center><b>CJ Fox</b></center>.</figcaption>
+  </figure>
+</div>
+
+<div class="container">
+  <figure>
+    <img src="/static/images/profile.jpg" alt="Racquel" class="image1">
+    <figcaption><center><b>Racquel Martens</b></center>.</figcaption>
+  </figure>
+</div>
+
+<div class="container">
+  <figure>
+    <img src="/static/images/Mark_Slattery.png" alt="Mark" class="image1">
+    <figcaption><center><b>Mark Slattery</b></center>.</figcaption>
+  </figure>
+</div>
+
+<div class="container">
+  <figure>
+    <img src="/static/images/devin.jpg" alt="Devin" class="image1">
+    <figcaption><center><b>Devin Stawicki</b></center>.</figcaption>
+  </figure>
+</div> 
 {% endblock %}
