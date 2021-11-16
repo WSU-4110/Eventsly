@@ -34,18 +34,18 @@
                 <i class="fas fa-map-marked" alt="Eventsly"></i>Eventsly
             </a>
             <div class='nav-menu'>
-                <a href="index.html" class="nav-item {{'active' if title == 'Eventsly'}}">Home</a>
+                <a href="/index.html" class="nav-item {{'active' if title == 'Eventsly'}}">Home</a>
                 {% if session.logged_in %}
-                <a href="bookmarks.html" class="nav-item {{'active' if title == 'Bookmarks'}}">Bookmarks</a>
+                <a href="/bookmarks.html" class="nav-item {{'active' if title == 'Bookmarks'}}">Bookmarks</a>
                 {% endif %}
-                <a href="about.html" class="nav-item {{'active' if title == 'About Us'}}">About Us</a>
+                <a href="/about.html" class="nav-item {{'active' if title == 'About Us'}}">About Us</a>
                 <div class="spacer"></div>
                 {% if session.logged_in %}
                 <a href="/logout" class="nav-item">Logout</a>
-                <a href="dashboard.html" class="nav-item {{'active' if title == 'Dashboard'}}">Dashboard</a>
+                <a href="/dashboard.html" class="nav-item {{'active' if title == 'Dashboard'}}">Dashboard</a>
                 {% else %}
-                <a href="login.html" class="nav-item {{'active' if title == 'Log In'}}">Log In</a>
-                <a href='signup.html' class="nav-item {{'active' if title == 'Sign Up'}}">Sign Up</a>
+                <a href="/login.html" class="nav-item {{'active' if title == 'Log In'}}">Log In</a>
+                <a href='/signup.html' class="nav-item {{'active' if title == 'Sign Up'}}">Sign Up</a>
                 {% endif %}
             </div>
             <form id='searchbar' action="/search.html" method="POST">
