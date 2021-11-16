@@ -17,6 +17,14 @@
   flex: 2 1 auto;
   width: 100%;
 }
+
+.buttoncontainer {
+  display: inline-block;
+  position: absolute;
+  text-align: left;
+  padding-left: 4rem;
+
+}
 /*#endregion#*/
 /*---------------*/
 /*    Desktop    */

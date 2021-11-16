@@ -204,18 +204,53 @@ def deleteEvent(id):
 @is_logged_in
 def bookmarks():
     with engine.begin() as conn:
-        queryGetBookmarks = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id ORDER BY bookmarks.id')
+        queryGetBookmarks = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id AND date > CURRENT_TIMESTAMP ORDER BY bookmarks.id')
         rows = conn.execute(queryGetBookmarks)
         bookmarkpull = rows.mappings().all()
 
     return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
-@app.route('/addBookmark/<id>', methods=['POST'])
+@app.route('/addBookmark/<int:id>', methods=['POST', 'GET'])
+@is_logged_in
 def addBookmark(id):
     with engine.begin() as conn:
-        query = sqlalchemy.text(f'INSERT INTO bookmarks (user_id, event_id) VALUES({session["userid"]}, (SELECT events.id FROM events WHERE {id} = events.id))')
-        result = conn.execute(query)
-        app.logger.info(f'Bookmarked: {result}')
+        query = sqlalchemy.text(f'SELECT COUNT(*) FROM bookmarks, events WHERE bookmarks.user_id = {session["userid"]} AND bookmarks.event_id = events.id AND CURRENT_TIMESTAMP < events.date')
+        result = conn.execute(query).first()[0]
+        app.logger.info(f"RESULT: {result}")
+        
+        if (result >= 15):
+            # print call stack
+            app.logger.warning(traceback.format_exc())
+            flash('Unable to bookmark your event. You have hit the bookmark limit.','failure')
+        else:
+            with engine.begin() as conn:   
+                queryExists = sqlalchemy.text(f'SELECT COUNT(*) FROM bookmarks, events WHERE bookmarks.user_id = {session["userid"]} AND bookmarks.event_id = {id}')
+                resultCount = conn.execute(queryExists).first()[0]
+                app.logger.info(f"RESULT COUNT: {resultCount}")
+                if (resultCount != 0):
+                    # print call stack
+                    app.logger.warning(traceback.format_exc())
+                    flash('Unable to bookmark your event. You have already bookmarked this.','failure')
+                else:
+                    with engine.begin() as conn:
+                        queryInsert = sqlalchemy.text(f'INSERT INTO bookmarks (user_id, event_id) VALUES({session["userid"]}, {id})')
+                        resultInsert = conn.execute(queryInsert)
+                        app.logger.info(f'Bookmarked: {resultInsert}')
+                    flash('Event bookmarked!', 'success')
+                    
+
+    return redirect(url_for('index'))
+
+
+@app.route('/deleteBookmark/<int:id>', methods = ['POST','GET'])
+@is_logged_in
+def deleteBookmark(id):
+    with engine.begin() as conn:
+        queryDeleteEventFromBookmarks = sqlalchemy.text(f'DELETE FROM bookmarks WHERE bookmarks.event_id = {id} AND user_id = {session["userid"]}')
+        result = conn.execute(queryDeleteEventFromBookmarks)
+        app.logger.info(f'Bookmark Deleted: {result}')
+    
+    flash('Bookmark Removed!', 'success')
     return redirect(url_for('index'))
 #endregion
 

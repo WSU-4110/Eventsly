@@ -80,14 +80,16 @@ class PinLoading extends BaseMapDecorator {
       `</form>`
 
       let bookmarkBtn = 
+      `<div class="buttoncontainer">` +
       `<form id="addBookmark" action="/addBookmark/${pin.id}" method="POST">` + 
       `<input type="hidden" name="eventid" value="${pin.id}">` +
       `</form>` +
-      `<button type='submit' id="bmbutton" form="addBookmark"><i class="fa fa-bookmark"></i></button>`
+      `<button type='submit' id="bmbutton" form="addBookmark"><i class="far fa-bookmark"></i></button>` +
+      `</div>`
       
       marker = new L.Marker([pin.latitude, pin.longitude]).addTo(this.map);
       marker.bindPopup(
-        `<strong>${pin.title}</strong><br>` + 
+        `<strong>${pin.title}</strong>` + 
         bookmarkBtn + `<br>` +
         `${pin.city}, ${pin.state}<br>` + 
         `${pin.date}<br>` +
