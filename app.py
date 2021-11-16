@@ -290,8 +290,7 @@ def createEvent():
     return render_template("createEvent.html",form = form, title="Create Event")
 
 @app.route('/event-details/<id>', methods=['POST','GET'])
-def eventDetails(id):
-    eventid = id    
+def eventDetails(eventid):  
     return render_template('event-details.html', title="Event Details", eventid=eventid)
 
 
