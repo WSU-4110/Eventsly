@@ -210,12 +210,13 @@ def bookmarks():
 
     return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
-@app.route('/addBookmark', methods=['POST'])
+@app.route('/addBookmark/<id>', methods=['POST'])
 def addBookmark(id):
     with engine.begin() as conn:
         query = sqlalchemy.text(f'INSERT INTO bookmarks (user_id, event_id) VALUES({session["userid"]}, (SELECT events.id FROM events WHERE {id} = events.id))')
         result = conn.execute(query)
         app.logger.info(f'Bookmarked: {result}')
+    return redirect(url_for('index'))
 #endregion
 
 #region Event Functionalities
