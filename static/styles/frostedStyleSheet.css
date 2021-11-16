@@ -202,11 +202,10 @@ body {
         width: 85%;
     }
 
-    .frosted-glass#bookmarks {
+    .frosted-glass#myBookmarks {
         height: 85%;
         justify-content: flex-start;
         flex-direction: column;
-        max-width: 700px;
         width: 85%;
     }
 

@@ -1,4 +1,4 @@
-main {
+/* main {
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -6,10 +6,15 @@ main {
 
 body {
   overflow-y: auto;
-}
+} */
 
-#myEvents{
+#myEvents {
   margin:5%;
+  justify-content: center;
+}
+#myEvents h1, h2, h3 {
+  text-align: center;
+  width: 100%;
 }
 
 .dash-table {
@@ -96,12 +101,9 @@ a#viewdetails{
   display:block;
   text-align:center;
   text-decoration: none;
-  
-
   padding: 0%;
   margin: 0%;
 }
-
 
 /*Styles for Delete Account link*/
 a#deleteAccount:link {
@@ -118,12 +120,11 @@ a#deleteAccount:hover:not(.active) {
 #deleteAccount{
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  height: 2%;
   display:block;
   text-align:center;
   text-decoration: none;
   color:white;
 
-  padding: 0.5%;
+  padding: 10px;
   margin: 5%;
 }
