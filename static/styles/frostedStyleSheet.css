@@ -211,14 +211,26 @@ body {
     }
 
     .frosted-glass#create-event {
+        align-items: center;
         border-radius: 0;
         background-color: #7b82b3;
-        flex-direction: column;
         box-sizing: border-box;
-        align-items: center;
-        justify-content: space-evenly;
         height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
         width: 30%;
+    }
+
+    .frosted-glass#event-details {
+        height: 85%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 85%;
+    }
+
+    .frosted-glass#myEvents {
+        height: 85%;
+        width: 85%;
     }
     
     .frosted-glass h1 {

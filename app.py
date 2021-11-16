@@ -289,9 +289,26 @@ def createEvent():
             
     return render_template("createEvent.html",form = form, title="Create Event")
 
-@app.route('/event-details/<id>', methods=['POST','GET'])
+@app.route('/event-details/<eventid>', methods=['POST','GET'])
 def eventDetails(eventid):  
-    return render_template('event-details.html', title="Event Details", eventid=eventid)
+    pin = []
+    with engine.begin() as conn:
+        query = sqlalchemy.text(f'SELECT * from events WHERE id={eventid}')
+        result = conn.execute(query)
+        for row in result:
+            event = {
+                "id": row.id,
+                "latitude" : row.latitude,
+                "longitude" : row.longitude,
+                "date": row.date,
+                "street" : row.street,
+                "city" : row.city,
+                "state" : row.state,
+                "title" : row.title,
+                "description" : row.description
+            }
+            pin.append(event)
+    return render_template('event-details.html', title="Event Details", event=event, pin=pin)
 
 
 
