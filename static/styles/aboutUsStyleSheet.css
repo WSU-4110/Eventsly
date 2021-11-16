@@ -1,0 +1,65 @@
+
+  /* For 2 equal columns */
+  .column {
+    float:left;
+    width: 50%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -20px;}
+
+  /* Style the counter cards */
+  .card {
+    box-shadow: 10px 10px 5px grey;
+    border-radius: 25px;
+    padding: 16px;
+    text-align: center;
+    background-color: #3A3E5E;
+    color: white
+  }
+  /*For scroll bar*/
+  body {
+    overflow-y: auto;
+  }
+  
+/*Styling for profile pictures on page*/
+  .image1{ 
+    border-radius: 48%;
+    border-collapse: separate;
+    height: 150px;
+    width: 150px;
+    box-shadow: 10px 10px 5px grey;
+  }
+
+  /*styling for Eventsly logo on page*/
+  .image2
+  {
+    width: 50px;
+    height: 40px;
+  }
+  .container {
+    float: left;
+    width: 20%;
+    justify-content: space-evenly;
+  }
+/* For responsive containers */
+  @media screen and (max-width: 600px) {
+    .container {
+      width: 100%;
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+      /* For responsive columns */
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: flex;
+      margin-bottom: 5px;
+    }
+  }
+  
+  }
+  
