@@ -6,34 +6,34 @@
 {% endblock %}
 
 {% block main %}
-<h1>Dashboard</h1>
-<h2>Welcome {{session.name}}</h2>
-
 <form id="myEvents" class='frosted-glass'>
-    <h3><i class="far fa-user-circle"></i> My Events</h3>
-    
-    <table class="dash-table">
-        <thead>
-          <tr>
-            <th scope="col">Event</th>
-            <th scope="col">Location</th>
-            <th scope="col">Date & Time</th>
-            <th></th>
-          </tr>
-        </thead>
-          {% for event in myEvents %}
-          <tr>
-          <td>{{event['title']}}</td>
-          <td>{{event['city']}}, {{event['state']}}
-          </td>
-          <td>{{event['date']}}
-          </td>
-          <td id = "linkcell"><a href="eventdetails.html" id="viewdetails">View Details</a></td>
-          <td><a href="/deleteEvent/{{event['event_id']}}" name="eventid" value="{{event['event_id']}}"><i class="fas fa-trash"></i></a></td>
-          </tr>
-          {% endfor %}
-      </table>
-    </form>
+  <h1>Dashboard</h1>
+  <h2>Welcome {{session.name}}</h2>
 
-    <a href="/deleteAccount" id="deleteAccount">Delete Account</a>
+  <h3><i class="far fa-user-circle"></i> My Events</h3>
+
+  <table class="dash-table">
+    <thead>
+      <tr>
+        <th scope="col">Event</th>
+        <th scope="col">Location</th>
+        <th scope="col">Date & Time</th>
+        <th></th>
+      </tr>
+    </thead>
+    {% for event in myEvents %}
+    <tr>
+      <td>{{event['title']}}</td>
+      <td>{{event['city']}}, {{event['state']}}
+      </td>
+      <td>{{event['date']}}
+      </td>
+      <td id="linkcell"><a href="/event-details/{{event['event_id']}}" id="viewdetails">View Details</a></td>
+      <td><a href="/deleteEvent/{{event['event_id']}}" name="eventid" value="{{event['event_id']}}"><i
+            class="fas fa-trash"></i></a></td>
+    </tr>
+    {% endfor %}
+  </table>
+  <div class='form-item'><a href="/deleteAccount" id="deleteAccount">Delete Account</a></div>
+</form>
 {% endblock %}

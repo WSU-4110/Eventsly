@@ -1,4 +1,4 @@
-main {
+/* main {
   align-items: center;
   justify-content: center;
   padding: 0;
@@ -6,49 +6,50 @@ main {
 
 body {
   overflow-y: auto;
-}
+} */
 
 #myBookmarks{
   margin:5%;
 }
-  .bm-table{
-    margin-top: 1rem;
-    max-height: 90%;
-    max-width: 100%;
-    width: 100%;
-  }
 
-  .bm-table td, .bm-table th {
-    text-align: center;
-    padding: 8px;
-  }
+.bm-table{
+  margin-top: 1rem;
+  max-height: 90%;
+  max-width: 100%;
+  width: 100%;
+}
 
-  .bm-table td, .bm-table th, .bm-table col {
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-  }
+.bm-table td, .bm-table th {
+  text-align: center;
+  padding: 8px;
+}
 
-  .bm-table thead th {
-    color: #ffffff;
-    background: #69779C;
-  }
+.bm-table td, .bm-table th, .bm-table col {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
 
-  .bm-table thead th:nth-child(odd) {
-    background: #3A3E5E;
-    color: #ffffff;
-  }
+.bm-table thead th {
+  color: #ffffff;
+  background: #69779C;
+}
 
-  .bm-table tr:nth-child(even) {
-    background: #69779C;
-    color: #ffffff;
-  }
+.bm-table thead th:nth-child(odd) {
+  background: #3A3E5E;
+  color: #ffffff;
+}
 
-  .bm-table tr:nth-child(odd) {
-    background: #F8F8F8;
-  }
+.bm-table tr:nth-child(even) {
+  background: #69779C;
+  color: #ffffff;
+}
 
-  /*Styling for odd row View Details links*/
+.bm-table tr:nth-child(odd) {
+  background: #F8F8F8;
+}
+
+/*Styling for odd row View Details links*/
 .bm-table tr:nth-child(odd) a#viewdetails:link {
   color: #3A3E5E;
   background-color: transparent;

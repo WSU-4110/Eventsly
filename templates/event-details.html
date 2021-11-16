@@ -1,8 +1,55 @@
 {% extends 'base.html' %}
 
 {% block head %}
+<link rel="stylesheet" href="/static/styles/mapStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/frostedStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/dashboardStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/tableStyleSheet.css">
+
+<!-- Required for Leaflet map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 {% endblock %}
 
 {% block main %}
-<h1>{{ eventid }}</h1>
+<div class='frosted-glass' id='event-details'>
+    <h1>{{ event['title'] }}</h1>
+    <div id="event-details-map" class="map"></div>
+    <table id='event-details-table'>
+        <tr>
+            <th>Event</th>
+            <th>{{event['title']}}</th>
+        <tr>
+            <th>Location</th>
+            <th>{{event['street'] }}, {{event['city']}}, {{event['state']}}</th>
+        </tr>
+        <tr>
+            <th>Date & Time</th>
+            <th>{{event['date']}}</th>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <th>{{event['description']}}</th>
+        </tr>
+    </table>
+</div>
+{% endblock %}
+
+{% block extraScripts %}
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
+    charset="utf-8"></script>
+<script src='/static/scripts/mapScripts.js'></script>
+<!-- Map Decorator -->
+<script>
+    pin = JSON.parse(`{{ pin | tojson | safe}}`);
+    let initialLat = JSON.parse(`{{pin[0]['latitude'] | tojson | safe }}`);
+    let initialLng = JSON.parse(`{{pin[0]['longitude'] | tojson | safe }}`);
+    let initialZoom = 15;
+    let map = new BaseMap('event-details-map', initialLat, initialLng, initialZoom);
+    map = new PinLoading(map, pin)
+</script>
 {% endblock %}

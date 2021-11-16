@@ -1,0 +1,24 @@
+table#event-details-table {
+    position: relative;
+    width: 91%;
+}
+
+table#event-details-table th {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #7b82b3;
+    border-radius: 5px;
+}
+
+table#event-details-table th {
+    padding: 10px;
+}
+
+table#event-details-table tr th:nth-child(even) {
+    font-weight: 500;
+    text-align: left;
+}
+
+table#event-details-table tr th:nth-child(odd) {
+    font-weight: bold;
+    text-align: right;
+}
