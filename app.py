@@ -373,7 +373,18 @@ def editEvent(eventid):
     with engine.begin() as conn:
         queryGetEvent = sqlalchemy.text(f"SELECT * FROM events WHERE events.id = {eventid}")
         result = conn.execute(queryGetEvent)
-        resultEvent = result.mappings().all()
+        for row in result:
+            event = {
+                "id": row.id,
+                "latitude" : row.latitude,
+                "longitude" : row.longitude,
+                "date": row.date,
+                "street" : row.street,
+                "city" : row.city,
+                "state" : row.state,
+                "title" : row.title,
+                "description" : row.description
+            }
 
     if request.method == 'POST':
         event_update = models.Event(
@@ -386,9 +397,9 @@ def editEvent(eventid):
         )
 
         with engine.begin() as conn:
-            queryUpdateEvent = sqlalchemy.text(f"UPDATE events SET title={event_update.title}, description={event_update.description}, date={event_update.date}, street={event_update.street}, city={event_update.city}, state={event_update.state} WHERE id = {resultEvent.id}")
+            queryUpdateEvent = sqlalchemy.text(f"UPDATE events SET title={event_update.title}, description={event_update.description}, date={event_update.date}, street={event_update.street}, city={event_update.city}, state={event_update.state} WHERE id = {result.id}")
             conn.execute(queryUpdateEvent)
-    return render_template('edit-event.html', event=resultEvent, form=form)
+    return render_template('edit-event.html', event=event, form=form)
 #endregion
 
 if __name__ == "__main__":
