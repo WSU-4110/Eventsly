@@ -207,8 +207,9 @@ def bookmarks():
         queryGetBookmarks = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id AND date > CURRENT_TIMESTAMP ORDER BY bookmarks.id')
         rows = conn.execute(queryGetBookmarks)
         bookmarkpull = rows.mappings().all()
+        app.logger.info(f"Bookmarkpull: {bookmarkpull}")
 
-    return render_template("Bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
+    return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
 @app.route('/addBookmark/<int:id>', methods=['POST', 'GET'])
 @is_logged_in
@@ -371,12 +372,22 @@ def editEvent(eventid):
     form = models.EventForm(request.form)
     with engine.begin() as conn:
         queryGetEvent = sqlalchemy.text(f"SELECT * FROM events WHERE events.id = {eventid}")
-        resultEvent = conn.execute(queryGetEvent)
-        app.logger.info(f"Result event: {resultEvent}")
+        result = conn.execute(queryGetEvent)
+        resultEvent = result.mappings().all()
 
     if request.method == 'POST':
-        pass
-    
+        event_update = models.Event(
+            title = form.title.data,
+            description = form.description.data,
+            date = form.date.data,
+            street = form.street.data,
+            city = form.city.data,
+            state = form.state.data
+        )
+
+        with engine.begin() as conn:
+            queryUpdateEvent = sqlalchemy.text(f"UPDATE events SET title={event_update.title}, description={event_update.description}, date={event_update.date}, street={event_update.street}, city={event_update.city}, state={event_update.state} WHERE id = {resultEvent.id}")
+            conn.execute(queryUpdateEvent)
     return render_template('edit-event.html', event=resultEvent, form=form)
 #endregion
 
