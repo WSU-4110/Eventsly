@@ -19,6 +19,11 @@ input {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
   }
+
+  .search-table th {
+    width: 50%;
+    max-width: 50%;
+  }
   
   .search-table thead th {
     color: #ffffff;
