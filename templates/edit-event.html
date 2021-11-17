@@ -19,7 +19,7 @@
 
 {% block main %}
 {% from "includes/_formhelpers.html" import render_field %}
-    <form id="signup-form" class="frosted-glass validated-form" action="/edit-event.html" method="POST">
+    <form id="signup-form" class="frosted-glass validated-form" action="/edit-event/{{event['id']}}" method="POST">
         <h1>Edit Event</h1>
         <div class='content-box'>
             <span class='counter'></span>
