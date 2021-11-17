@@ -208,7 +208,7 @@ def bookmarks():
         rows = conn.execute(queryGetBookmarks)
         bookmarkpull = rows.mappings().all()
 
-    return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
+    return render_template("Bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
 @app.route('/addBookmark/<int:id>', methods=['POST', 'GET'])
 @is_logged_in
