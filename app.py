@@ -369,30 +369,15 @@ def eventDetails(eventid):
 @is_logged_in
 def editEvent(eventid):
     form = models.EventForm(request.form)
-    pin = []
     with engine.begin() as conn:
-        query = sqlalchemy.text(f'SELECT * from events WHERE id={eventid}')
-        result = conn.execute(query)
-        for row in result:
-            event = {
-                "id": row.id,
-                "latitude" : row.latitude,
-                "longitude" : row.longitude,
-                "date": row.date,
-                "street" : row.street,
-                "city" : row.city,
-                "state" : row.state,
-                "title" : row.title,
-                "description" : row.description
-            }
-            pin.append(event)
-            
-        
         queryGetEvent = sqlalchemy.text(f"SELECT * FROM events WHERE events.id = {eventid}")
         resultEvent = conn.execute(queryGetEvent)
-
         app.logger.info(f"Result event: {resultEvent}")
-    return render_template('edit-event.html', pin=pin, event=resultEvent, form=form)
+
+    if request.method == 'POST':
+        pass
+    
+    return render_template('edit-event.html', event=resultEvent, form=form)
 #endregion
 
 if __name__ == "__main__":
