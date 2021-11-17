@@ -22,3 +22,20 @@ table#event-details-table tr th:nth-child(odd) {
     font-weight: bold;
     text-align: right;
 }
+table#event-details-table tr th:last-of-type{
+    text-align: center;
+}
+table#event-details-table tr th:last-of-type a{
+    text-decoration: none;
+    color: #3A3E5E;
+    font-weight: 500;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    
+}
+table#event-details-table tr th:last-of-type a:hover{
+    color: #7b82b3;
+}
