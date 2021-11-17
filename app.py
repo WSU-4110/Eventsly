@@ -356,7 +356,10 @@ def eventDetails(eventid):
     return render_template('event-details.html', title="Event Details", event=event, pin=pin, createdEvent=createdEvent)
 
 
-
+@app.route('/edit-event/<int: eventid>', method=['POST','GET'])
+@is_logged_in
+def editEvent(eventid):
+    return render_template('edit-event.html')
 #endregion
 
 if __name__ == "__main__":
