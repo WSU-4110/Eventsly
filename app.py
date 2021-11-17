@@ -397,8 +397,10 @@ def editEvent(eventid):
         )
 
         with engine.begin() as conn:
-            queryUpdateEvent = sqlalchemy.text(f"UPDATE events SET title={event_update.title}, description={event_update.description}, date={event_update.date}, street={event_update.street}, city={event_update.city}, state={event_update.state} WHERE id = {result.id}")
+            queryUpdateEvent = sqlalchemy.text(f"UPDATE events SET title='{event_update.title}', description='{event_update.description}', date='{event_update.date}', street='{event_update.street}', city='{event_update.city}', state='{event_update.state}' WHERE id = {event['id']}")
             conn.execute(queryUpdateEvent)
+        return redirect(url_for('index'))
+
     return render_template('edit-event.html', event=event, form=form)
 #endregion
 
