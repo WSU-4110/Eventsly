@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="/static/styles/frostedStyleSheet.css">
 <link rel="stylesheet" href="/static/styles/dashboardStyleSheet.css">
 <link rel="stylesheet" href="/static/styles/tableStyleSheet.css">
+<script src='/static/scripts/FormValidator.js'></script>
+<script src='/static/scripts/formScripts.js'></script>
 
 <!-- Required for Leaflet map -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -16,32 +18,37 @@
 {% endblock %}
 
 {% block main %}
-<div class='frosted-glass' id='event-details'>
-    <h1>{{ event['title'] }}</h1>
-    <div id="event-details-map" class="map"></div>
-    <table id='event-details-table'>
-        <tr>
-            <th>Event</th>
-            <th>{{event['title']}}</th>
-        <tr>
-            <th>Location</th>
-            <th>{{event['street'] }}, {{event['city']}}, {{event['state']}}</th>
-        </tr>
-        <tr>
-            <th>Date & Time</th>
-            <th>{{event['date']}}</th>
-        </tr>
-        <tr>
-            <th>Description</th>
-            <th>{{event['description']}}</th>
-        </tr>
-        {% if session.userid == createdEvent['user_id'] %}
-        <tr>
-            <th colspan="2">
-            <a href="edit-event/{{event['id']}}" name="eventid" value="{{event['id']}}">Edit Event Information</a>
-            </th>
-        </tr>
-        {% endif %}
+{% from "includes/_formhelpers.html" import render_field %}
+    <form id="signup-form" class="frosted-glass validated-form" action="/edit-event.html" method="POST">
+        <h1>Edit Event</h1>
+        <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.title) }}
+          </div>
+          <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.description) }}
+          </div>
+          <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.date) }}
+          </div>
+          <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.street) }}
+          </div>
+          <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.city) }}
+          </div>
+          <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.state) }}
+          </div>
+          <div class='content-box'>
+            <input type="submit" value="Edit Event" id="edit-event">
+          </div>
+    </form>
     </table>
 </div>
 {% endblock %}
@@ -50,13 +57,4 @@
 <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
     charset="utf-8"></script>
 <script src='/static/scripts/mapScripts.js'></script>
-<!-- Map Decorator -->
-<script>
-    pin = JSON.parse(`{{ pin | tojson | safe}}`);
-    let initialLat = JSON.parse(`{{pin[0]['latitude'] | tojson | safe }}`);
-    let initialLng = JSON.parse(`{{pin[0]['longitude'] | tojson | safe }}`);
-    let initialZoom = 15;
-    let map = new BaseMap('event-details-map', initialLat, initialLng, initialZoom);
-    map = new PinLoading(map, pin)
-</script>
 {% endblock %}

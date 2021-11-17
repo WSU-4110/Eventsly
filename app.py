@@ -335,12 +335,10 @@ def createEvent():
 @app.route('/event-details/<eventid>', methods=['POST','GET'])
 def eventDetails(eventid):  
     pin = []
+    createdEvent=[]
     with engine.begin() as conn:
         query = sqlalchemy.text(f'SELECT * from events WHERE id={eventid}')
         result = conn.execute(query)
-        query2 = sqlalchemy.text(f"SELECT * FROM created_events WHERE created_events.event_id = {eventid}")
-        createdEvent= conn.execute(query2).mappings().all()
-        app.logger.info(f"Created event to edit: {createdEvent}")
         for row in result:
             event = {
                 "id": row.id,
@@ -354,18 +352,47 @@ def eventDetails(eventid):
                 "description" : row.description
             }
             pin.append(event)
+
+        query2 = sqlalchemy.text(f"SELECT * FROM created_events WHERE created_events.event_id = {eventid}")
+        createdEventResult= conn.execute(query2).mappings().all()
+        for row in createdEventResult:
+            createdEvent = {
+                "id" : row.id,
+                "user_id": row.user_id,
+                "event_id": row.event_id
+            }
+            
     return render_template('event-details.html', title="Event Details", event=event, pin=pin, createdEvent=createdEvent)
 
 
 @app.route('/edit-event/<int:eventid>', methods=['POST','GET'])
 @is_logged_in
 def editEvent(eventid):
+    form = models.EventForm(request.form)
+    pin = []
     with engine.begin() as conn:
+        query = sqlalchemy.text(f'SELECT * from events WHERE id={eventid}')
+        result = conn.execute(query)
+        for row in result:
+            event = {
+                "id": row.id,
+                "latitude" : row.latitude,
+                "longitude" : row.longitude,
+                "date": row.date,
+                "street" : row.street,
+                "city" : row.city,
+                "state" : row.state,
+                "title" : row.title,
+                "description" : row.description
+            }
+            pin.append(event)
+            
+        
         queryGetEvent = sqlalchemy.text(f"SELECT * FROM events WHERE events.id = {eventid}")
         resultEvent = conn.execute(queryGetEvent)
 
         app.logger.info(f"Result event: {resultEvent}")
-    return render_template('edit-event.html', event=resultEvent)
+    return render_template('edit-event.html', pin=pin, event=resultEvent, form=form)
 #endregion
 
 if __name__ == "__main__":
