@@ -339,7 +339,8 @@ def eventDetails(eventid):
         query = sqlalchemy.text(f'SELECT * from events WHERE id={eventid}')
         result = conn.execute(query)
         query2 = sqlalchemy.text(f"SELECT * FROM created_events WHERE created_events.event_id = {eventid}")
-        createdEvent= conn.execute(query2)
+        createdEvent= conn.execute(query2).mappings().all()
+        app.logger.info(f"Created event to edit: {createdEvent}")
         for row in result:
             event = {
                 "id": row.id,
@@ -356,10 +357,15 @@ def eventDetails(eventid):
     return render_template('event-details.html', title="Event Details", event=event, pin=pin, createdEvent=createdEvent)
 
 
-@app.route('/edit-event/<int: eventid>', method=['POST','GET'])
+@app.route('/edit-event/<int:eventid>', methods=['POST','GET'])
 @is_logged_in
 def editEvent(eventid):
-    return render_template('edit-event.html')
+    with engine.begin() as conn:
+        queryGetEvent = sqlalchemy.text(f"SELECT * FROM events WHERE events.id = {eventid}")
+        resultEvent = conn.execute(queryGetEvent)
+
+        app.logger.info(f"Result event: {resultEvent}")
+    return render_template('edit-event.html', event=resultEvent)
 #endregion
 
 if __name__ == "__main__":
