@@ -18,32 +18,33 @@
 {% endblock %}
 
 {% block main %}
-{% from "includes/_formhelpers.html" import render_field %}
+{% from "includes/_editeventformhelpers.html" import render_field %}
     <form id="signup-form" class="frosted-glass validated-form" action="/edit-event.html" method="POST">
         <h1>Edit Event</h1>
         <div class='content-box'>
             <span class='counter'></span>
-            {{ render_field(form.title) }}
+            {{ render_field(form.title, placeholder = event['title'], value=event['title']) }}
+            
           </div>
           <div class='content-box'>
             <span class='counter'></span>
-            {{ render_field(form.description) }}
+            {{ render_field(form.description, placeholder = event['description'], value=event['description']) }}
           </div>
           <div class='content-box'>
             <span class='counter'></span>
-            {{ render_field(form.date) }}
+            {{ render_field(form.date, placeholder = event['date'], value=event['date']) }}
           </div>
           <div class='content-box'>
             <span class='counter'></span>
-            {{ render_field(form.street) }}
+            {{ render_field(form.street, placeholder = event['street'], value=event['street']) }}
           </div>
           <div class='content-box'>
             <span class='counter'></span>
-            {{ render_field(form.city) }}
+            {{ render_field(form.city, placeholder = event['city'], value=event['city']) }}
           </div>
           <div class='content-box'>
             <span class='counter'></span>
-            {{ render_field(form.state) }}
+            {{ render_field(form.state, placeholder = event['state'], value=event['state']) }}
           </div>
           <div class='content-box'>
             <input type="submit" value="Edit Event" id="edit-event">
