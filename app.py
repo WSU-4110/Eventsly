@@ -338,6 +338,8 @@ def eventDetails(eventid):
     with engine.begin() as conn:
         query = sqlalchemy.text(f'SELECT * from events WHERE id={eventid}')
         result = conn.execute(query)
+        query2 = sqlalchemy.text(f"SELECT * FROM created_events WHERE created_events.event_id = {eventid}")
+        createdEvent= conn.execute(query2)
         for row in result:
             event = {
                 "id": row.id,
@@ -351,7 +353,7 @@ def eventDetails(eventid):
                 "description" : row.description
             }
             pin.append(event)
-    return render_template('event-details.html', title="Event Details", event=event, pin=pin)
+    return render_template('event-details.html', title="Event Details", event=event, pin=pin, createdEvent=createdEvent)
 
 
 
