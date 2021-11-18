@@ -12,8 +12,9 @@
     <input type="text" placeholder="Name of Event" name="findEvent"> 
     <input type="submit" value="Search!" id="searchbutton" />
 
-{% for row in data %}
+
 <table class="search-table">
+    {% if data|length > 0 %}
     <thead>
       <tr>
           <th>Event Title</th>
@@ -21,21 +22,20 @@
           <!--<th>expiry timestamp</th>-->
       </tr>
     </thead>    
+    {% else %}
+    <h1>No matches! Please try another search.</h1>
+    {% endif %}
+    {% for row in data %}
+    {% if loop.index <= 10 %}
     <tbody>
-            
         <tr>
             <td>{{row['title']}}</td>
             <td>{{row['description']}}</td>
             <!--<td>{{row[2]}}</td>-->
         </tr>
-        
       </tbody>
+      {% endif %}
+      {% endfor %}
 </table>
-
-{% else %}
-<h1>No Matches!</h1>
-
-
-{% endfor %}
 </form>
 {% endblock %}
