@@ -10,7 +10,7 @@ from app import session, logger
 
 @pytest.fixture(autouse=True)
 def app(request):
-    flask_app.config.from_object('config.TestingConfig')
+    flask_app.config.from_object('config.DevelopmentConfig')
     flask_app.logger.info(f"DBURI: {flask_app.config['SQLALCHEMY_DATABASE_URI']}")
     engine = create_engine(flask_app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=True)
 
