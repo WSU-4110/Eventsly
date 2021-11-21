@@ -35,6 +35,13 @@
             <th>Description</th>
             <th>{{event['description']}}</th>
         </tr>
+        {% if session.userid == createdEvent['user_id'] %}
+        <tr>
+            <th colspan="2">
+            <a href="/edit-event/{{event['id']}}" name="eventid" value="{{event['id']}}">Edit Event Information</a>
+            </th>
+        </tr>
+        {% endif %}
     </table>
 </div>
 {% endblock %}
