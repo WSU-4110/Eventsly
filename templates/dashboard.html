@@ -13,6 +13,7 @@
   <h3><i class="far fa-user-circle"></i> My Events</h3>
 
   <table class="dash-table">
+    {% if myEvents|length > 0 %}
     <thead>
       <tr>
         <th scope="col">Event</th>
@@ -21,6 +22,10 @@
         <th></th>
       </tr>
     </thead>
+    {% else %}
+    <h3>No created events!</h3>
+    <h3>Please create one to see them here.</h1>
+    {% endif %}
     {% for event in myEvents %}
     <tr>
       <td>{{event['title']}}</td>

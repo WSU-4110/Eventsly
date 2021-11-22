@@ -22,7 +22,6 @@
         </thead> 
 {% for row in data %}   
     <tbody>
-            
         <tr>
             <td>{{row['title']}}</td>
             <td>{{row['description']}}</td>
@@ -31,6 +30,8 @@
         
         {% endfor %}
       </tbody>
+      {% endif %}
+      {% endfor %}
 </table>
 
 {% if products|length == 0 %}

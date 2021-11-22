@@ -236,7 +236,7 @@ body {
         height: 85%;
         flex-direction: column;
         width: 85%;
-        overflow-y: scroll;
+
         overflow-x: hidden;
     }
     
