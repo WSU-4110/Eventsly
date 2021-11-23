@@ -6,6 +6,17 @@ class BaseConfig(object):
     SECRET_KEY = 'wsu4110eventsly!!'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
+class TestingConfig(BaseConfig):
+    TESTING = True
+    localpass =''
+    try:
+        with open('dbconfig.txt') as f:
+            localpass = f.readline()
+    except FileNotFoundError:
+        pass
+
+    SQLALCHEMY_DATABASE_URI = f'postgresql://postgres:{localpass}@localhost/eventslytest'
+
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
     TESTING = True
