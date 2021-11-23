@@ -231,14 +231,6 @@ body {
         height: 85%;
         width: 85%;
     }
-
-    .frosted-glass#search-form {
-        height: 85%;
-        flex-direction: column;
-        width: 85%;
-
-        overflow-x: hidden;
-    }
     
     .frosted-glass h1 {
         text-align: center;
