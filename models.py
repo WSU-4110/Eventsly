@@ -52,7 +52,7 @@ class Event(db.Model):
     street = db.Column(db.String(100))
     city = db.Column(db.String(50))
     state = db.Column(db.String(2))
-    date = db.Column(db.DateTime)
+    date = db.Column(db.Date)
     description = db.Column(db.Text)
     title = db.Column(db.String(100))
 
