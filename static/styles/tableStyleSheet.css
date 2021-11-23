@@ -1,6 +1,10 @@
+table {
+    flex: 1;
+}
+
 table#event-details-table {
     position: relative;
-    width: 91%;
+    width: 90%;
 }
 
 table#event-details-table th {
@@ -16,13 +20,15 @@ table#event-details-table th {
 table#event-details-table tr th:nth-child(even) {
     font-weight: 500;
     text-align: left;
+    width: 50%;
 }
 
 table#event-details-table tr th:nth-child(odd) {
     font-weight: bold;
     text-align: right;
+    width: 50%;
 }
-table#event-details-table tr th:last-of-type{
+table#event-details-table tr:last-of-type th {
     text-align: center;
 }
 table#event-details-table tr th:last-of-type a{
