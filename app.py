@@ -264,7 +264,7 @@ def search():
         hereValue = request.form['findEvent']
 
     with engine.begin() as conn:
-        querySearchTitle = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%'")
+        querySearchTitle = sqlalchemy.text("SELECT * FROM events WHERE events.date > CURRENT_TIMESTAMP AND title LIKE '%" + hereValue + "%'")
         rows = conn.execute(querySearchTitle)
         hereData = rows.mappings().all()
 
