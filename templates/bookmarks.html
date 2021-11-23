@@ -7,11 +7,8 @@
 
 {% block main %}
 <form id ="myBookmarks" class="frosted-glass" id="bookmarks">
-  <h1><i class="fas fa-bookmark"></i> Bookmarks</h1>
-
-    {% if bookmarkpull|length > 0 %}
+  <h1><i class="fas fa-bookmark"></i>Bookmarks</h1>
   <table class="bm-table">
-
     <thead>
       <tr>
         <th scope="col">Event</th>
@@ -20,11 +17,6 @@
         <th scope="col"></th>
       </tr>
     </thead>
-    {% else %}
-    <h2>No events bookmarked!</h2>
-    <h3>Please return home to bookmark an event you like!</h3>
-    {% endif %}
-    
     {% for bookmark in bookmarkpull %}
     <tr>
       <td>{{bookmark['title']}}</th>
@@ -41,4 +33,3 @@
   </table>
 </form>
 {% endblock %}
-
