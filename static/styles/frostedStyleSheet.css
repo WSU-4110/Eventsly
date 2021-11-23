@@ -224,7 +224,7 @@ body {
         height: 85%;
         flex-direction: column;
         justify-content: space-evenly;
-        width: 85%;
+        max-width: 700px;
     }
 
     .frosted-glass#myEvents {
