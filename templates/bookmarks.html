@@ -9,8 +9,9 @@
 <form id ="myBookmarks" class="frosted-glass" id="bookmarks">
   <h1><i class="fas fa-bookmark"></i> Bookmarks</h1>
 
-  <table class="bm-table">
     {% if bookmarkpull|length > 0 %}
+  <table class="bm-table">
+
     <thead>
       <tr>
         <th scope="col">Event</th>
@@ -40,3 +41,4 @@
   </table>
 </form>
 {% endblock %}
+

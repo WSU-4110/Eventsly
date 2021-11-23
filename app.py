@@ -207,6 +207,7 @@ def bookmarks():
         queryGetBookmarks = sqlalchemy.text(f'SELECT * FROM events, bookmarks WHERE bookmarks.user_id = {session["userid"]} AND events.id = bookmarks.event_id AND date > CURRENT_TIMESTAMP ORDER BY bookmarks.id')
         rows = conn.execute(queryGetBookmarks)
         bookmarkpull = rows.mappings().all()
+        app.logger.info(f"Bookmarkpull: {bookmarkpull}")
 
     return render_template("bookmarks.html", title="Bookmarks", bookmarkpull=bookmarkpull)
 
@@ -335,6 +336,7 @@ def createEvent():
 @app.route('/event-details/<eventid>', methods=['POST','GET'])
 def eventDetails(eventid):  
     pin = []
+    createdEvent=[]
     with engine.begin() as conn:
         query = sqlalchemy.text(f'SELECT * from events WHERE id={eventid}')
         result = conn.execute(query)
@@ -351,10 +353,55 @@ def eventDetails(eventid):
                 "description" : row.description
             }
             pin.append(event)
-    return render_template('event-details.html', title="Event Details", event=event, pin=pin)
+
+        query2 = sqlalchemy.text(f"SELECT * FROM created_events WHERE created_events.event_id = {eventid}")
+        createdEventResult= conn.execute(query2).mappings().all()
+        for row in createdEventResult:
+            createdEvent = {
+                "id" : row.id,
+                "user_id": row.user_id,
+                "event_id": row.event_id
+            }
+            
+    return render_template('event-details.html', title="Event Details", event=event, pin=pin, createdEvent=createdEvent)
 
 
+@app.route('/edit-event/<int:eventid>', methods=['POST','GET'])
+@is_logged_in
+def editEvent(eventid):
+    form = models.EventForm(request.form)
+    with engine.begin() as conn:
+        queryGetEvent = sqlalchemy.text(f"SELECT * FROM events WHERE events.id = {eventid}")
+        result = conn.execute(queryGetEvent)
+        for row in result:
+            event = {
+                "id": row.id,
+                "latitude" : row.latitude,
+                "longitude" : row.longitude,
+                "date": row.date,
+                "street" : row.street,
+                "city" : row.city,
+                "state" : row.state,
+                "title" : row.title,
+                "description" : row.description
+            }
 
+    if request.method == 'POST':
+        event_update = models.Event(
+            title = form.title.data,
+            description = form.description.data,
+            date = form.date.data,
+            street = form.street.data,
+            city = form.city.data,
+            state = form.state.data
+        )
+
+        with engine.begin() as conn:
+            queryUpdateEvent = sqlalchemy.text(f"UPDATE events SET title='{event_update.title}', description='{event_update.description}', date='{event_update.date}', street='{event_update.street}', city='{event_update.city}', state='{event_update.state}' WHERE id = {event['id']}")
+            conn.execute(queryUpdateEvent)
+        return redirect(url_for('index'))
+
+    return render_template('edit-event.html', event=event, form=form)
 #endregion
 
 if __name__ == "__main__":

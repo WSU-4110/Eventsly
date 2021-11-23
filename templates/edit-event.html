@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/styles/mapStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/frostedStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/dashboardStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/tableStyleSheet.css">
+<script src='/static/scripts/FormValidator.js'></script>
+<script src='/static/scripts/formScripts.js'></script>
+
+<!-- Required for Leaflet map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+{% endblock %}
+
+{% block main %}
+{% from "includes/_formhelpers.html" import render_field %}
+    <form id="signup-form" class="frosted-glass validated-form" action="/edit-event/{{event['id']}}" method="POST">
+      <h1><i class="fas fa-edit"></i> Edit Event</h1>
+        <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.title, placeholder = event['title'], value=event['title']) }}
+            
+          </div>
+          <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.description, placeholder = event['description'], value=event['description']) }}
+          </div>
+          <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.date, placeholder = event['date'], value=event['date']) }}
+          </div>
+          <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.street, placeholder = event['street'], value=event['street']) }}
+          </div>
+          <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.city, placeholder = event['city'], value=event['city']) }}
+          </div>
+          <div class='content-box'>
+            <span class='counter'></span>
+            {{ render_field(form.state, placeholder = event['state'], value=event['state']) }}
+          </div>
+          <div class='content-box'>
+            <input type="submit" value="Edit Event" id="edit-event">
+          </div>
+    </form>
+    </table>
+</div>
+{% endblock %}
+
+{% block extraScripts %}
+<script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.74.0/dist/L.Control.Locate.min.js"
+    charset="utf-8"></script>
+<script src='/static/scripts/mapScripts.js'></script>
+{% endblock %}

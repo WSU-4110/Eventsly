@@ -73,6 +73,7 @@ class PinLoading extends BaseMapDecorator {
   loadPins(pins) {
     let marker = null;
     for (let pin of pins) {
+
       let form =
       `<form id="view-details" method="POST">` +
       `<a href="/event-details/${pin.id}" name="id" value="${pin.id}">View Details</a>` +
@@ -90,10 +91,11 @@ class PinLoading extends BaseMapDecorator {
       marker = new L.Marker([pin.latitude, pin.longitude]).addTo(this.map);
       marker.bindPopup(
         `<strong>${pin.title}</strong>` + 
-        bookmarkBtn + `<br>` +
+         `<br>` +
         `${pin.city}, ${pin.state}<br>` + 
         `${pin.date}<br>` +
-        `${form}`)
+        `${form}` + `<br>` +
+        bookmarkBtn) 
     }
   }
 }
