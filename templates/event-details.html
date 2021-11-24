@@ -36,7 +36,7 @@
         </tr>
         {% if session.userid == createdEvent['user_id'] %}
         <tr>
-            <th colspan="2">
+            <th colspan="2" id="edit-details">
             <a href="/edit-event/{{event['id']}}" name="eventid" value="{{event['id']}}">Edit Event Information</a>
             </th>
         </tr>
