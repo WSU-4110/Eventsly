@@ -288,6 +288,13 @@ def search():
     
     return render_template("search.html", title="Find Events", data = hereData)
 
+@app.route("/search.html", methods =['GET','POST'])
+def fromForm(nameOfField):
+    # Get data from form
+    hereValue = request.form[nameOfField]
+    return hereValue
+
+
 @app.route("/createEvent.html", methods=['POST','GET'])
 @is_logged_in
 def createEvent():
