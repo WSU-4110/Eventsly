@@ -1,31 +1,35 @@
 {% extends 'base.html' %}
 
+{% block head %}
+<link rel="stylesheet" href="/static/styles/frostedStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/tableStyleSheet.css">
+<link rel="stylesheet" href="/static/styles/searchStyleSheet.css">
+<script src='/static/scripts/FormValidator.js'></script>
+<script src='/static/scripts/formScripts.js'></script>
+{% endblock %}
+
 {% block main %}
-<h1><img src="/static/images/examplePic.png" width="50" height="40" alt="Eventsly">Event Search</h1>
+<div class='frosted-glass' id="search">
+    <form action="/search.html" method="POST" id="search-form">
+        <h1>Search for Events</h1>
+        <div class='content-box'>
+            <label for="findEvent">Event Title</label>
+            <input type="text" name="findEvent">
+        </div>
+        <div class="content-box">
+            <input type="submit">
+        </div>
+    </form>
 
-<form action="/search.html" method="POST">
-    <label for="findEvent"><b>Event Title</b></label>
-    <input type="text" placeholder="Name of Event" name="findEvent"> 
-    <br> <br>
-    <input type="submit"></input>
-</form>
+    <table id="search-table">
 
-<table>
-    <thead>
-      <tr>
-          <th>Event Title</th>
-          <th>Event Description</th>
-          <!--<th>expiry timestamp</th>-->
-      </tr>
-    </thead>    
-    <tbody>
-        {% for row in data %}    
-        <tr>
-            <td>{{row['title']}}</td>
-            <td>Description: {{row['description']}}</td>
-            <!--<td>{{row[2]}}</td>-->
+        {% for row in data %}
+        <tr class='result-set' rowspan=2>
+            <td><a href="/event-details/{{ row['id'] }}">{{row['title']}}</a></th>
+            <td>{{row['description']}}</td>
         </tr>
         {% endfor %}
-      </tbody>
-</table>
+
+    </table>
+</div>
 {% endblock %}

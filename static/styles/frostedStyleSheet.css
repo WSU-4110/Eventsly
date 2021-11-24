@@ -30,7 +30,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     height: 100%;
-    padding: 30px;
+    padding: 50px;
     width: 100%;
 }
 
@@ -138,6 +138,11 @@ body {
     top: 9px;
 }
 
+#search-form label {
+    left: 2px;
+    top: 9px;
+}
+
 .frosted-glass .move-label {
     color: #3A3E5E;
     font-size: 12pt;
@@ -149,6 +154,10 @@ body {
 }
 
 #login-form .move-label {
+    top: -20px;
+}
+
+#search-form .move-label {
     top: -20px;
 }
 
@@ -231,6 +240,15 @@ body {
         height: 85%;
         width: 85%;
     }
+
+    .frosted-glass#search {
+        align-items: space-evenly;
+        height: fit-content;
+        flex-direction: column;
+        justify-content: flex-start;
+        max-width: 500px;
+        width: 90%;
+    }
     
     .frosted-glass h1 {
         text-align: center;
@@ -284,6 +302,11 @@ body {
         top: 8px;
     }
 
+    #search-form label {
+        top: 8px;
+        left: 3px;
+    }
+
     .frosted-glass .move-label {
         font-size: 10pt;
     }
@@ -292,6 +315,9 @@ body {
         top: -17px;
     }
 
+    #search-form .move-label {
+        top: -17px;
+    }
     
     .frosted-glass span.counter,
     .frosted-glass span.input-description,
