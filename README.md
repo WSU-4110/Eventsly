@@ -34,7 +34,6 @@ Events in your area will be shown and you can feel free to coordinate your own e
 * Searching for events by event title
 * Bookmark Events
 * Viewing Bookmarks
-* Edit Event Details
 
 ## Technology Stack
 ### Front end

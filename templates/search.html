@@ -23,12 +23,16 @@
 
     <table id="search-table">
 
+        {% if data|length > 0 %}
         {% for row in data %}
         <tr class='result-set' rowspan=2>
             <td><a href="/event-details/{{ row['id'] }}">{{row['title']}}</a></th>
             <td>{{row['description']}}</td>
         </tr>
         {% endfor %}
+        {% else %}
+        <h2>No matches! Please try another search.</h2>
+        {% endif %}
 
     </table>
 </div>
