@@ -1,0 +1,14 @@
+{
+  "name": "unit_tests",
+  "version": "1.0.0",
+  "description": "unit testing",
+  "main": "mapScripts.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
