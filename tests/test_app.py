@@ -1,4 +1,6 @@
+import pytest
 from datetime import datetime
+from typing import ByteString
 from unittest import mock
 from flask import session
 from unittest.mock import MagicMock, Mock, patch
@@ -7,10 +9,10 @@ from sqlalchemy.engine import create_engine
 from sqlalchemy.sql.expression import false, select, true
 from werkzeug.wrappers import request
 from passlib.hash import sha256_crypt
+from app import fromForm
 import logger
 import models
 
-<<<<<<< HEAD
 
 #region SignUp Tests
 def test_SignUpIsFound(app,client):
@@ -144,7 +146,6 @@ def test_DeleteAccount(app,client):
     mock1.assert_any_call #assert database connection is used to delete account invo
     mock2.assert_called_once #assert login verification is called once
     mock3.assert_called_once #assert session clear method is called
-=======
 """
 This file (test_app.py) contains the unit tests for the app.py file bookmarks functionality.
 """
@@ -160,21 +161,6 @@ def test_bookmarks(app, client):
 
     mock1.assert_any_call #assert database connection used to get user events
     mock2.assert_called_once #assert login verification is called once
-
-#Create Event (Needed to Test Bookmarks)
-@patch('app.is_logged_in')
-@patch('app.engine')
-def test_createEvent(app, client, session):
-    res = client.post('/createEvent.html', data=dict(
-        title = "Test",
-        description = "Descript",
-        date = "11/30/21",
-        latitude = "50.534333",
-        longitude = "10.343445",
-        street = "Sycamore",
-        city = "Detroit",
-        state = "MI"
-    ))
 
 #Bookmark Add Test
 @patch('app.is_logged_in')
@@ -236,4 +222,53 @@ def test_bookmarkRouteFail(app, client):
 
     mock1.assert_any_call #assert database connection used to get user events
     mock2.assert_called_once #assert login verification is called once
->>>>>>> origin/DevinStawicki_unittest
+
+# tests for home() /////
+def test_home(client):
+    homepage = client.get('/')
+    assert homepage.status_code == 302 # redirects to index.html
+
+# /////////////////////
+
+# tests for index() /////
+def test_index(client):
+    homepage = client.get("/index.html")
+    assert homepage.status_code == 200 # asserts we find the correct page
+
+# /////////////////////
+
+# tests for aboutus() /////
+def test_aboutus(client):
+    page = client.get("/aboutus.html")
+    assert client.get("/aboutus/").data == page.data # asserts the page is displaying intended data
+
+# /////////////////////
+
+# tests for search() /////
+def test_search(app, client):
+    mock1 = Mock('app.engine')
+    page = client.get("/search.html")
+    assert page.status_code == 200 # asserts we find the correct page
+    mock1.assert_any_call # asserts that a connection is made to the database to search events
+
+# /////////////////////
+
+# tests for fromForm() /////
+@patch('app.engine')
+def test_fromForm(app, client):
+    mock1 = Mock('app.engine')
+    with pytest.raises(RuntimeError) as excinfo:
+        fromForm('findEvent')
+    assert "Working outside of request context." in str(excinfo.value) # asserts that a request is being made to the form
+
+# /////////////////////
+
+# tests for createEvent() /////
+@patch('app.engine')
+def test_createEvent(client):
+    mock1 = Mock('app.engine')
+    page = client.get("/createEvent.html")
+    assert client.get("/createEvent.html", follows_redirects=True)
+    mock1.assert_any_call # asserts that a connection is made to the database to add an event
+
+# /////////////////////
