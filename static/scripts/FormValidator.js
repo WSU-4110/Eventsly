@@ -10,6 +10,10 @@ var FormValidator = /** @class */ (function () {
             this.chain.push(validator)
         }
 
+        getValidatorArray() {
+            return this.chain;
+        }
+
         testValidity() {
             var invalidInputs = [];
             var validInputs = [];
@@ -22,7 +26,7 @@ var FormValidator = /** @class */ (function () {
                     invalidInputs.push(this.chain[i].input);
                 }
             }
-            
+
             return results;
         }
     }
@@ -36,27 +40,41 @@ var Validator = /** @class */ (function () {
             this.input = input;
         }
 
+        getInput() {
+            return this.input;
+        }
+
         isValid() {
-            var minLength = this.input.minLength;
-            var maxLength = this.input.maxLength;
-            var pattern = this.input.pattern;
+            return (this.validMinLength() && this.validMaxLength() && this.validPattern());
+        }
 
+        validMinLength() {
+            let minLength = this.input.minLength;
             if (minLength > 0) {
-                if (this.input.value.length < minLength) return false;
+                return (this.input.value.length > minLength);
             }
+            return true;
+        }
 
+        validMaxLength() {
+            let maxLength = this.input.maxLength;
             if (maxLength > 0) {
-                if (this.input.value.length > maxLength) return false;
+                return (this.input.value.length < maxLength);
             }
+            return true;
+        }
 
+        validPattern() {
+            let pattern = this.input.pattern;
             if (pattern) {
-                var regex = new RegExp(pattern);
-                if (!regex.test(this.input.value)) return false;
+                let regex = new RegExp(pattern);
+                return regex.test(this.input.value);
             }
-
             return true;
         }
     }
 
     return Validator;
 }());
+
+module.exports = { FormValidator: FormValidator, Validator: Validator }
