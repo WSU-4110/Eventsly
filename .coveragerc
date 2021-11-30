@@ -1,6 +1,17 @@
 [report]
 exclude_lines =
     app.logger
-    def is_logged_in(f)
-    def session_clear
     app.config
+    def is_logged_in
+    def session_clear
+    def session_login
+    return render_template
+    except
+    password_data
+    error
+    session_clear
+    flash
+    with engine.begin
+    eventid
+    hereValue
+    form

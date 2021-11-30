@@ -13,7 +13,7 @@ import logger
 app = Flask(__name__)
 
 if app.config['ENV'] == 'production':
-    app.config.from_object('config.ProductionConfig')
+    app.config.from_object('config.ProductionConfig') # pragma: no cover
 if app.config['ENV'] == 'development' and app.config['TESTING'] == False:
     app.config.from_object('config.DevelopmentConfig')
 else:
@@ -21,7 +21,7 @@ else:
 
 db = SQLAlchemy(app)
 engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=True)
-import models
+import models   
 
 #Helpers
 def is_logged_in(f):
@@ -74,7 +74,7 @@ def index():
 
 @app.route("/about.html")
 def about():
-    return render_template("About.html", title="About Us")
+    return render_template("About.html", title="About Us",code=200)
 #endregion
 
 #region Account Functionalities
@@ -360,6 +360,7 @@ def createEvent():
 def eventDetails(eventid):  
     pin = []
     createdEvent=[]
+    event={}
     with engine.begin() as conn:
         query = sqlalchemy.text(f'SELECT * from events WHERE id={eventid}')
         result = conn.execute(query)
@@ -386,7 +387,7 @@ def eventDetails(eventid):
                 "event_id": row.event_id
             }
             
-    return render_template('event-details.html', title="Event Details", event=event, pin=pin, createdEvent=createdEvent)
+    return render_template('event-details.html', title="Event Details", event=event, pin=pin, createdEvent=createdEvent, code=200)
 
 
 @app.route('/edit-event/<int:eventid>', methods=['POST','GET'])
@@ -426,12 +427,3 @@ def editEvent(eventid):
 
     return render_template('edit-event.html', event=event, form=form)
 #endregion
-
-@app.route('/session')
-def session():
-    return session;
-
-if __name__ == "__main__":
-    app.secret_key='wsu4110eventsly'
-      
-    app.run()

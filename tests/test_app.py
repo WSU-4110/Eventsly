@@ -2,17 +2,19 @@ import pytest
 from datetime import datetime
 from typing import ByteString
 from unittest import mock
-from flask import session
+from flask import session, template_rendered
 from unittest.mock import MagicMock, Mock, patch
 import sqlalchemy
 from sqlalchemy.engine import create_engine
 from sqlalchemy.sql.expression import false, select, true
 from werkzeug.wrappers import request
 from passlib.hash import sha256_crypt
-from app import fromForm
-import logger
 import models
+from app import eventDetails, fromForm
 
+def test_About(app,client):
+    res = client.get('/about.html')
+    assert res.status_code == 200
 
 #region SignUp Tests
 def test_SignUpIsFound(app,client):
@@ -272,3 +274,4 @@ def test_createEvent(client):
     mock1.assert_any_call # asserts that a connection is made to the database to add an event
 
 # /////////////////////
+
