@@ -57,6 +57,7 @@ nav {
     font-size: 1.8em;
     height: 100%;
     justify-content: space-evenly;
+    min-width: 190px;
     text-decoration: none;
 }
 
@@ -260,13 +261,6 @@ nav {
 
     .spacer {
         margin-left: auto;
-    }
-
-    /*
-    * logo
-    */
-    .logo {
-        min-width: 190px;
     }
 
     /*

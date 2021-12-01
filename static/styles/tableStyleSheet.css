@@ -1,4 +1,7 @@
-table {
+/*
+* event details table
+*/
+table#event-details {
     flex: 1;
 }
 
@@ -28,9 +31,11 @@ table#event-details-table tr th:nth-child(odd) {
     text-align: right;
     width: 50%;
 }
-table#event-details-table tr:last-of-type th {
+
+table#event-details-table th#edit-details {
     text-align: center;
 }
+
 table#event-details-table tr th:last-of-type a{
     text-decoration: none;
     color: #3A3E5E;
@@ -40,8 +45,72 @@ table#event-details-table tr th:last-of-type a{
     -ms-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    
 }
+
 table#event-details-table tr th:last-of-type a:hover{
     color: #7b82b3;
+}
+
+/*
+* search table table
+*/
+#search-table {
+    border-collapse: collapse;
+    border-radius: 10px;
+    text-align: left;
+    width: 100%;
+}
+
+#search-table tr {
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 1px solid #7b82b3;
+    padding: 10px;
+    line-height: 20pt;
+    padding: 5px;
+    width: 100%;
+}
+
+#search-table td {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#search-table tr td:first-of-type {
+    margin-top: 5px;
+}
+
+#search-table tr td:last-of-type {
+    margin-bottom: 5px;
+}
+
+#search-table tr td {
+    display: block;
+}
+
+#search-table th {
+    font-size: 16pt;
+}
+
+table#search-table  a{
+    text-decoration: none;
+    color: #3A3E5E;
+    font-weight: bold;
+    font-size: 14pt;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -ms-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+table#search-table a:hover{
+    color: #7b82b3;
+}
+
+#search-form, #search-form .content-box, #search-form input {
+    width: 100%;
+}
+
+#search-form {
+    margin: 0 0 20px 0;
 }
