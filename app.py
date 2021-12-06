@@ -45,7 +45,7 @@ def home():
 def index():
     pins = []
     with engine.begin() as conn:
-        queryGetPins = sqlalchemy.text('SELECT * FROM events WHERE date > CURRENT_TIMESTAMP')
+        queryGetPins = sqlalchemy.text("SELECT * FROM events WHERE date > (CURRENT_TIMESTAMP - INTERVAL '1 DAY')")
         rows = conn.execute(queryGetPins)
         for row in rows:
             pin = {
@@ -264,7 +264,7 @@ def search():
         hereValue = request.form['findEvent']
 
     with engine.begin() as conn:
-        querySearchTitle = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%' and events.date > CURRENT_TIMESTAMP")
+        querySearchTitle = sqlalchemy.text("SELECT * FROM events WHERE title LIKE '%" + hereValue + "%' and events.date > (CURRENT_TIMESTAMP - INTERVAL '1 DAY')")
         rows = conn.execute(querySearchTitle)
         hereData = rows.mappings().all()
 
