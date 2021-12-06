@@ -31,6 +31,7 @@ Events in your area will be shown and you can feel free to coordinate your own e
 * Clicking pins for event information preview
 * Full Event Details page
 * Creating an event
+* Editing event details
 * Searching for events by event title
 * Bookmark Events
 * Viewing Bookmarks
