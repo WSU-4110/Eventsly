@@ -11,17 +11,6 @@ class TestingConfig(BaseConfig):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = f'postgres://bkncoajjmbsfsx:af340557f290a2aee7def2d9f43c770380bae454df1a239c8cd1258648961034@ec2-34-203-182-172.compute-1.amazonaws.com:5432/decj4qbvqnoft9'
 
-class TestingConfig(BaseConfig):
-    TESTING = True
-    localpass =''
-    try:
-        with open('dbconfig.txt') as f:
-            localpass = f.readline()
-    except FileNotFoundError:
-        pass
-
-    SQLALCHEMY_DATABASE_URI = f'postgresql://postgres:{localpass}@localhost/eventslytest'
-
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
     DEVELOPMENT=True
