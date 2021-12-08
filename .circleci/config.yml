@@ -10,31 +10,39 @@ orbs:
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   python: circleci/python@1.2
-  node: circleci/node@2.0.2
+  node: circleci/node@4.9.0
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
   build-and-test-jest:
-  working_directory: ~/Eventsly
-    docker:
-      - image: circleci/node:10.14.2
-    steps:
-      - checkout
-      - restore_cache:
+  working_directory: ~/Eventsly/static/scripts/node_modules
+            docker:
+                - image: circleci/node:10-browsers
+            steps:
+                # Checkout the code from the branch into the working_directory
+                - checkout
+                # Log the current branch
+                # Restore local dependencies from cache
+                - restore_cache:
                     keys:
                     - v1-dependencies-{{ checksum "package-lock.json" }}
                     - v1-dependencies-
-      - run:
-          name: Install local dependencies
-          command: npm install
-      - save_cache:
+                # Install project dependencies
+                - run:
+                    name: Install local dependencies
+                    command: npm install
+                # Cache local dependencies if they don't exist
+                - save_cache:
                     key: v1-dependencies-{{ checksum "package-lock.json" }}
                     paths:
                         - node_modules
-      - run:    
-          name: Run tests
-          command: npm run tests
+                # Test the source code
+                - run:
+                    name: Testing
+                    command: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+                
+
       
   
   
