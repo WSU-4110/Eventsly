@@ -13,18 +13,17 @@ import logger
 app = Flask(__name__)
 
 if app.config['ENV'] == 'production':
-    app.config.from_object('config.ProductionConfig')
-if app.config['ENV'] == 'development':
+    app.config.from_object('config.ProductionConfig') # pragma: no cover
+if app.config['ENV'] == 'development' and app.config['TESTING'] == False:
     app.config.from_object('config.DevelopmentConfig')
-    app.logger.info(f'{app.config}')
 else:
     app.config.from_object('config.BaseConfig')
 
 db = SQLAlchemy(app)
 engine = create_engine(app.config['SQLALCHEMY_DATABASE_URI'],echo=True, future=True)
-import models
+import models   
 
-#Check if user logged in to access logout and dashboard
+#Helpers
 def is_logged_in(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -33,7 +32,18 @@ def is_logged_in(f):
         else:
             flash('Unauthorized, please login.','danger')
             return redirect(url_for('login'))
+    app.logger.info(f"WRAP: {wrap}")
     return wrap
+
+def session_clear():
+    session.clear()
+
+def session_login(user):
+    session['logged_in'] = True
+    session['username'] = user.username
+    session['userid'] = user.id
+    session['name'] = f'{user.firstname} {user.lastname}'
+
 #endregion
 
 #region Basic Functionalities
@@ -64,15 +74,20 @@ def index():
 
 @app.route("/about.html")
 def about():
-    return render_template("About.html", title="About Us")
+    return render_template("About.html", title="About Us",code=200)
 #endregion
 
 #region Account Functionalities
 @app.route("/signup.html", methods=['POST','GET'])
 def signup():
     form = models.SignUpForm(request.form)
+
+    app.logger.info(request.form)
+    app.logger.info(form.firstname.data)
+    app.logger.info(form.password.data)
+    app.logger.info(f'valid? :{form.validate()}')
     if request.method == 'POST' and form.validate():
-        encryptpassword = sha256_crypt.encrypt(str(form.password.data)) #encrypt password
+        encryptpassword = sha256_crypt.hash(str(form.password.data)) #encrypt password
 
         new_user = models.User(
             firstname=form.firstname.data, 
@@ -84,6 +99,7 @@ def signup():
             password = encryptpassword,
             signup_date = datetime.now(),
         )
+        app.logger.info
         try:
             db.session.add(new_user)
             db.session.commit()
@@ -95,9 +111,10 @@ def signup():
             # print call stack
             app.logger.warning(traceback.format_exc())
             app.logger.warning(f"User {form.username.data} account was unable to be created. Username or email already in use.")
-            return redirect(url_for('signup'))
-
-    return render_template("signup.html", form=form, title="Sign Up")
+            return redirect(url_for('signup'), 302)
+    if request.method == 'POST' and not form.validate():
+        return render_template("signup.html", form=form, title="Sign Up"), 400
+    return render_template("signup.html", form=form, title="Sign Up"), 200
 
 @app.route("/login.html", methods =['GET','POST'])
 def login():
@@ -105,6 +122,8 @@ def login():
         #Get Form Fields
         username_input = request.form['username']
         password_input = request.form['password']
+
+        app.logger.info(f"USERNAME INPUT: {username_input}")
 
         #Get user by username
         stmt = select(models.User).where(models.User.username == username_input)
@@ -120,14 +139,11 @@ def login():
         
             #Compare passwords
             if sha256_crypt.verify(password_input, password_data):
-                session['logged_in'] = True
-                session['username'] = result.username
-                session['userid'] = result.id
-                session['name'] = f'{result.firstname} {result.lastname}'
+                session_login(result)
 
                 flash('You are now logged in', 'success')
                 app.logger.info('Password input matched password stored in database')
-                return redirect(url_for('dashboard'))
+                return redirect(url_for('dashboard'), code = 302)
             else:
                 app.logger.info('Password input did not match password stored in database')
                 error = 'Invalid login'
@@ -143,9 +159,9 @@ def login():
 @app.route('/logout')
 @is_logged_in #uses is_logged_in wrapper for this URL
 def logout():
-    session.clear()
+    session_clear()
     flash('You are now logged out', 'success')
-    return redirect(url_for('login'))
+    return redirect(url_for('login'), code=302)
 
 @app.route('/dashboard.html')
 @is_logged_in
@@ -178,7 +194,7 @@ def deleteAccount():
         conn.execute(queryDeleteBookmarks)
         conn.execute(queryDeleteUser)
     
-    session.clear()
+    session_clear()
     flash('Your account has been deleted.', 'success')
     return redirect(url_for('index'))
 
@@ -272,6 +288,13 @@ def search():
     
     return render_template("search.html", title="Find Events", data = hereData)
 
+@app.route("/search.html", methods =['GET','POST'])
+def fromForm(nameOfField):
+    # Get data from form
+    hereValue = request.form[nameOfField]
+    return hereValue
+
+
 @app.route("/createEvent.html", methods=['POST','GET'])
 @is_logged_in
 def createEvent():
@@ -337,6 +360,7 @@ def createEvent():
 def eventDetails(eventid):  
     pin = []
     createdEvent=[]
+    event={}
     with engine.begin() as conn:
         query = sqlalchemy.text(f'SELECT * from events WHERE id={eventid}')
         result = conn.execute(query)
@@ -363,7 +387,7 @@ def eventDetails(eventid):
                 "event_id": row.event_id
             }
             
-    return render_template('event-details.html', title="Event Details", event=event, pin=pin, createdEvent=createdEvent)
+    return render_template('event-details.html', title="Event Details", event=event, pin=pin, createdEvent=createdEvent, code=200)
 
 
 @app.route('/edit-event/<int:eventid>', methods=['POST','GET'])
@@ -403,8 +427,3 @@ def editEvent(eventid):
 
     return render_template('edit-event.html', event=event, form=form)
 #endregion
-
-if __name__ == "__main__":
-    app.secret_key='wsu4110eventsly'
-      
-    app.run()
