@@ -10,20 +10,12 @@ orbs:
   # so you dont have to copy and paste it everywhere.
   # See the orb documentation here: https://circleci.com/developer/orbs/orb/circleci/python
   python: circleci/python@1.2
+  node: circleci/node@4.9.0
   jest: blimmer/jest@1.0.0
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
-jobs:
-  build-and-test-jest:
-    jest-cache: false 
-    jest-command-override: npm run test 
-    package-manager-cache: false 
-                
-
-      
-  
-  
+jobs:  
   build-and-test-python: # This is the name of the job, feel free to change it to better match what you're trying to do!
     # These next lines defines a Docker executors: https://circleci.com/docs/2.0/executor-types/
     # You can specify an image from Dockerhub or use one of the convenience images from CircleCI's Developer Hub
@@ -55,4 +47,4 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test-python
-      - build-and-test-jest
+      - jest/test
