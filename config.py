@@ -9,7 +9,7 @@ class BaseConfig(object):
 
 class TestingConfig(BaseConfig):
     TESTING = True
-    SQLALCHEMY_DATABASE_URI = f'postgres://bkncoajjmbsfsx:af340557f290a2aee7def2d9f43c770380bae454df1a239c8cd1258648961034@ec2-34-203-182-172.compute-1.amazonaws.com:5432/decj4qbvqnoft9'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://bkncoajjmbsfsx:af340557f290a2aee7def2d9f43c770380bae454df1a239c8cd1258648961034@ec2-34-203-182-172.compute-1.amazonaws.com:5432/decj4qbvqnoft9'
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = True
